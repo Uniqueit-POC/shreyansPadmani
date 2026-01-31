@@ -10,1275 +10,131 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <link rel="stylesheet" href="/assets/css/dev-style.css">
     <style>
-        .generate-btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
-            cursor: pointer;
-        }
 
-        .generate-btn svg {
-            width: 20px;
-            height: auto;
-        }
-
-        .generate-btn svg path {
-            fill: #335fff;
-            opacity: 0.3;
-            animation: blink 1.8s infinite;
-        }
-
-        /* Path-wise delay */
-        .generate-btn svg path:nth-child(1) {
-            animation-delay: 0s;
-        }
-
-        .generate-btn svg path:nth-child(2) {
-            animation-delay: 0.4s;
-        }
-
-        .generate-btn svg path:nth-child(3) {
-            animation-delay: 0.8s;
-        }
-
-        /* Blink animation */
-        @keyframes blink {
-            0% {
-                opacity: 0.3;
-            }
-
-            30% {
-                opacity: 1;
-            }
-
-            60% {
-                opacity: 0.3;
-            }
-
-            100% {
-                opacity: 0.3;
-            }
-        }
-
-        .generate-btn:hover svg path {
-            animation-duration: 1s;
-        }
-
-        .hero-gradient {
-            background: linear-gradient(135deg, #1e3a8a 0%, #60a5fa 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        .process-card {
-            background: #ffffff;
-            border-radius: 20px;
-            padding: 20px 22px;
-            text-align: center;
-            min-width: 120px;
-            cursor: pointer;
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
-            transition: all 0.3s ease;
-        }
-
-        .process-card span {
-            font-size: 20px;
-            font-weight: 700;
-            color: #6366f1;
-            display: block;
-            margin-bottom: 6px;
-        }
-
-        .process-card p {
-            font-weight: 600;
-            color: #111827;
-            font-size: 14px;
-        }
-
-        .process-card:hover {
-            transform: translateY(-6px);
-        }
-
-        .active-card {
-            background: #1e3a8a;
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
-        }
-
-        .active-card p {
-            color: white !important;
-        }
-
-        /* Navigation */
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        @keyframes fadeInDelay {
-
-            0%,
-            30% {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-
-            100% {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        @keyframes radialExpand {
-            from {
-                transform: scale(0);
-                opacity: 0;
-            }
-
-            to {
-                transform: scale(1);
-                opacity: 1;
-            }
-        }
-
-        @keyframes slideInStagger {
-            from {
-                opacity: 0;
-                transform: translateX(-50px);
-            }
-
-            to {
-                opacity: 1;
-                transform: translateX(0);
-            }
-        }
-
-        .animate-fade-in {
-            animation: fadeIn 1s ease-out forwards;
-        }
-
-        .animate-fade-in-delay {
-            animation: fadeInDelay 1.5s ease-out forwards;
-        }
-
-        /* Navbar Glassmorphism */
-        .navbar {
-            padding: 1.5rem 0;
-            backdrop-filter: blur(0px);
-            background: transparent;
-        }
-
-        .navbar.scrolled {
-            padding: 0.75rem 0;
-            backdrop-filter: blur(20px);
-            background: #ffffffb3;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37),
-                0 0 20px 0 rgba(168, 85, 247, 0.1);
-        }
-
-        .navbar-container {
-            transition: all 0.3s ease;
-        }
-
-        /* Logo */
-        .logo-icon {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 150px;
-            height: 2.5rem;
-            border-radius: 0.75rem;
-            /* background: linear-gradient(
-    135deg,
-    rgba(168, 85, 247, 0.8),
-    rgba(59, 130, 246, 0.8)
-  ); */
-            transition: all 0.3s ease;
-        }
-
-        .navbar.scrolled .logo-icon {
-            width: 150px;
-            height: 2rem;
-        }
-
-        .navbar.scrolled .logo-icon svg {
-            width: 150px;
-            height: 1.25rem;
-        }
-
-        .logo-text {
-            transition: all 0.3s ease;
-        }
-
-        .navbar.scrolled .logo-text {
-            font-size: 1.125rem;
-        }
-
-        /* Navigation Links */
-        .nav-link {
-            position: relative;
-            color: #1e3a8a;
-            font-weight: 700;
-            padding: 0.5rem 0;
-            transition: color 0.3s ease;
-            display: inline-block;
-        }
-
-        .nav-link::after {
-            content: "";
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: linear-gradient(90deg, #1e3a8a, #60a5fa);
-            transition: width 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-            border-radius: 2px;
-        }
-
-        .nav-link:hover {
-            color: #294ba7aa;
-        }
-
-        .nav-link:hover::after {
-            width: 100%;
-        }
-
-        /* Liquid Ink Bar Effect */
-        .nav-link::before {
-            content: "";
-            position: absolute;
-            bottom: 0;
-            left: 50%;
-            width: 0;
-            height: 2px;
-            background: rgba(168, 85, 247, 0.3);
-            transform: translateX(-50%);
-            transition: width 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
-            filter: blur(2px);
-            border-radius: 2px;
-        }
-
-        .nav-link:hover::before {
-            width: 120%;
-        }
-
-        /* CTA Button */
-        .hero-btn-pramiry {
-            position: relative;
-            padding: 0.75rem 2rem;
-            border-radius: 9999px;
-            background: linear-gradient(135deg, #1e3a8a, #60a5fa);
-            color: white;
-            font-weight: 600;
-            overflow: hidden;
-            transition: all 0.3s ease;
-            border: none;
-            cursor: pointer;
-        }
-
-        .hero-btn-pramiry:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 10px 30px rgba(168, 85, 247, 0.4);
-        }
-
-        .cta-button {
-            position: relative;
-            padding: 0.75rem 2rem;
-            border-radius: 9999px;
-            background: linear-gradient(135deg, #1e3a8a, #60a5fa);
-            color: white;
-            font-weight: 600;
-            overflow: hidden;
-            transition: all 0.3s ease;
-            border: none;
-            cursor: pointer;
-        }
-
-        .navbar.scrolled .cta-button {
-            padding: 0.5rem 1.5rem;
-            font-size: 0.875rem;
-        }
-
-        .cta-button:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 10px 30px rgba(168, 85, 247, 0.4);
-        }
-
-        .cta-shine {
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg,
-                    transparent,
-                    rgba(255, 255, 255, 0.3),
-                    transparent);
-            transition: left 0.5s ease;
-        }
-
-        .cta-button:hover .cta-shine {
-            left: 100%;
-        }
-
-        /* Mobile Menu Button */
-        .mobile-menu-btn {
-            display: flex;
-            flex-direction: column;
-            gap: 0.375rem;
-            background: transparent;
-            border: none;
-            cursor: pointer;
-            padding: 0.5rem;
-            transition: all 0.3s ease;
-        }
-
-        .hamburger-line {
-            width: 1.5rem;
-            height: 2px;
-            background: white;
-            border-radius: 2px;
-            transition: all 0.3s ease;
-        }
-
-        .mobile-menu-btn:hover .hamburger-line {
-            background: linear-gradient(90deg, #a855f7, #3b82f6);
-        }
-
-        .mobile-menu-btn.active .hamburger-line:nth-child(1) {
-            transform: rotate(45deg) translateY(0.5rem);
-        }
-
-        .mobile-menu-btn.active .hamburger-line:nth-child(2) {
-            opacity: 0;
-        }
-
-        .mobile-menu-btn.active .hamburger-line:nth-child(3) {
-            transform: rotate(-45deg) translateY(-0.5rem);
-        }
-
-        /* Mobile Menu Overlay */
-        .mobile-menu {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: rgba(15, 23, 42, 0.98);
-            backdrop-filter: blur(20px);
-            z-index: 100;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            opacity: 0;
-            visibility: hidden;
-            transition: opacity 0.3s ease, visibility 0.3s ease;
-        }
-
-        .mobile-menu.active {
-            opacity: 1;
-            visibility: visible;
-        }
-
-        .mobile-menu-content {
-            position: relative;
-            transform: scale(0);
-            transition: transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
-            border-radius: 50%;
-        }
-
-        .mobile-menu.active .mobile-menu-content {
-            transform: scale(1);
-            border-radius: 0;
-        }
-
-        .close-btn {
-            position: absolute;
-            top: 2rem;
-            right: 2rem;
-            background: transparent;
-            border: none;
-            cursor: pointer;
-            padding: 0.5rem;
-            opacity: 0;
-            transition: opacity 0.3s ease 0.3s, transform 0.3s ease;
-        }
-
-        .close-btn:hover {
-            transform: rotate(90deg);
-        }
-
-        .mobile-menu.active .close-btn {
-            opacity: 1;
-        }
-
-        /* Mobile Navigation List */
-        .mobile-nav-list {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-            text-align: center;
-        }
-
-        .mobile-nav-item {
-            opacity: 0;
-            transform: translateX(-50px);
-            margin: 1.5rem 0;
-        }
-
-        .mobile-menu.active .mobile-nav-item {
-            animation: slideInStagger 0.5s ease forwards;
-        }
-
-        .mobile-menu.active .mobile-nav-item:nth-child(1) {
-            animation-delay: 0.1s;
-        }
-
-        .mobile-menu.active .mobile-nav-item:nth-child(2) {
-            animation-delay: 0.2s;
-        }
-
-        .mobile-menu.active .mobile-nav-item:nth-child(3) {
-            animation-delay: 0.3s;
-        }
-
-        .mobile-menu.active .mobile-nav-item:nth-child(4) {
-            animation-delay: 0.4s;
-        }
-
-        .mobile-menu.active .mobile-nav-item:nth-child(5) {
-            animation-delay: 0.5s;
-        }
-
-        .mobile-menu.active .mobile-nav-item:nth-child(6) {
-            animation-delay: 0.6s;
-        }
-
-        .mobile-nav-link {
-            color: white;
-            font-size: 2rem;
-            font-weight: 700;
-            text-decoration: none;
-            display: inline-block;
-            position: relative;
-            transition: all 0.3s ease;
-        }
-
-        .mobile-nav-link::after {
-            content: "";
-            position: absolute;
-            bottom: -0.5rem;
-            left: 0;
-            width: 0;
-            height: 3px;
-            background: linear-gradient(90deg, #a855f7, #3b82f6);
-            transition: width 0.4s ease;
-            border-radius: 2px;
-        }
-
-        .mobile-nav-link:hover {
-            color: #a855f7;
-            transform: translateX(10px);
-        }
-
-        .mobile-nav-link:hover::after {
-            width: 100%;
-        }
-
-        .mobile-cta-button {
-            padding: 1rem 3rem;
-            border-radius: 9999px;
-            background: linear-gradient(135deg, #a855f7, #3b82f6);
-            color: white;
-            font-weight: 700;
-            font-size: 1.25rem;
-            border: none;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            box-shadow: 0 10px 40px rgba(168, 85, 247, 0.3);
-        }
-
-        .mobile-cta-button:hover {
-            transform: scale(1.05);
-            box-shadow: 0 15px 50px rgba(168, 85, 247, 0.5);
-        }
-
-        /* Responsive */
-        @media (max-width: 768px) {
-            .navbar {
-                padding: 1rem 0;
-            }
-
-            .navbar.scrolled {
-                padding: 0.75rem 0;
-            }
-        }
-
-
-        /* Hero Section */
-        .hero {
-            margin-top: 80px;
-            padding: 6rem 5% 4rem;
-            background: linear-gradient(135deg, #0a0e27 0%, #1a1f4d 100%);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            right: 0;
-            width: 60%;
-            height: 100%;
-            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600"><defs><linearGradient id="grad"><stop offset="0%" style="stop-color:%2300d4ff;stop-opacity:0.1"/><stop offset="100%" style="stop-color:%230a0e27;stop-opacity:0"/></linearGradient></defs><circle cx="600" cy="300" r="300" fill="url(%23grad)"/></svg>');
-            background-size: cover;
-            opacity: 0.3;
-        }
-
-        .hero-content {
-            max-width: 600px;
-            position: relative;
-            z-index: 1;
-        }
-
-        .hero h1 {
-            font-size: 4rem;
-            font-weight: 700;
-            line-height: 1.1;
-            margin-bottom: 1.5rem;
-        }
-
-        .hero h1 .highlight {
-            color: #1e3a8a;
-        }
-
-        .hero p {
-            font-size: 1.1rem;
-            color: #b8c5d6;
-            margin-bottom: 2rem;
-            line-height: 1.8;
-        }
-
-        .cta-buttons {
-            display: flex;
-            gap: 1rem;
-            flex-wrap: wrap;
-        }
-
-        .btn {
-            padding: 1rem 2rem;
-            border: none;
-            border-radius: 5px;
-            font-size: 1rem;
-            cursor: pointer;
-            transition: all 0.3s;
-            text-decoration: none;
-            display: inline-block;
-        }
-
-        .btn-primary {
-            background: #1e3a8a;
-            color: #0a0e27;
-            font-weight: bold;
-        }
-
-        .btn-primary:hover {
-            background: #00b8e6;
-            transform: translateY(-2px);
-            box-shadow: 0 5px 20px rgba(0, 212, 255, 0.3);
-        }
-
-        .btn-secondary {
-            background: transparent;
-            color: #1e3a8a;
-            border: 2px solid #1e3a8a;
-        }
-
-        .btn-secondary:hover {
-            background: rgba(0, 212, 255, 0.1);
-        }
-
-        /* Services Section */
-        .services {
-            padding: 5rem 5%;
-            background: #0a0e27;
-        }
-
-        .section-title {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-            text-align: center;
-        }
-
-        .section-subtitle {
-            text-align: center;
-            color: #b8c5d6;
-            margin-bottom: 3rem;
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-top: 3rem;
-        }
-
-        .service-card {
-            background: linear-gradient(135deg, #1a1f4d 0%, #0f1233 100%);
-            padding: 2rem;
-            border-radius: 10px;
-            transition: transform 0.3s, box-shadow 0.3s;
-            border: 1px solid rgba(0, 212, 255, 0.1);
-        }
-
-        .service-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 30px rgba(0, 212, 255, 0.2);
-        }
-
-        .service-icon {
-            width: 50px;
-            height: 50px;
-            background: rgba(0, 212, 255, 0.1);
-            border-radius: 10px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 1.5rem;
-            color: #1e3a8a;
-            font-size: 1.5rem;
-        }
-
-        .service-card h3 {
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
-            color: #1e3a8a;
-        }
-
-        .service-card p {
-            color: #b8c5d6;
-            line-height: 1.8;
-        }
-
-        /* Why Choose Us */
-        .why-choose {
-            padding: 5rem 5%;
-            background: linear-gradient(135deg, #0f1233 0%, #1a1f4d 100%);
-        }
-
-        .why-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 4rem;
-            align-items: start;
-        }
-
-        .why-left h2 {
-            font-size: 2.5rem;
-            margin-bottom: 1.5rem;
-        }
-
-        .why-left h2 .highlight {
-            color: #1e3a8a;
-        }
-
-        .why-left p {
-            color: #b8c5d6;
-            margin-bottom: 2rem;
-        }
-
-        .feature-list {
-            list-style: none;
-        }
-
-        .feature-item {
-            background: rgba(0, 212, 255, 0.05);
-            padding: 1.5rem;
-            margin-bottom: 1rem;
-            border-radius: 8px;
-            border-left: 3px solid #1e3a8a;
-        }
-
-        .feature-item h4 {
-            color: #1e3a8a;
-            margin-bottom: 0.5rem;
-        }
-
-        .feature-item p {
-            color: #b8c5d6;
-            font-size: 0.95rem;
-        }
-
-        /* Industries */
-        .industries {
-            padding: 5rem 5%;
-            background: #0a0e27;
-        }
-
-        .industries-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-            margin-top: 3rem;
-        }
-
-        .industry-card {
-            position: relative;
-            height: 300px;
-            border-radius: 10px;
-            overflow: hidden;
-            cursor: pointer;
-        }
-
-        .industry-card img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.3s;
-        }
-
-        .industry-card:hover img {
-            transform: scale(1.1);
-        }
-
-        .industry-overlay {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            background: linear-gradient(to top, rgba(0, 0, 0, 0.9), transparent);
-            padding: 2rem;
-        }
-
-        .industry-overlay h3 {
-            font-size: 1.5rem;
-        }
-
-        /* Development Process */
-        .process {
-            padding: 5rem 5%;
-            background: linear-gradient(135deg, #0f1233 0%, #1a1f4d 100%);
-        }
-
-        .process-timeline {
-            max-width: 800px;
-            margin: 3rem auto;
-        }
-
-        .process-step {
-            display: flex;
-            gap: 2rem;
-            margin-bottom: 3rem;
-            position: relative;
-        }
-
-        .process-step::before {
-            content: '';
-            position: absolute;
-            left: 20px;
-            top: 50px;
-            width: 2px;
-            height: calc(100% + 3rem);
-            background: rgba(0, 212, 255, 0.3);
-        }
-
-        .process-step:last-child::before {
-            display: none;
-        }
-
-        .step-number {
-            width: 40px;
-            height: 40px;
-            background: #1e3a8a;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #0a0e27;
-            font-weight: bold;
-            flex-shrink: 0;
-            z-index: 1;
-        }
-
-        .step-content {
-            flex: 1;
-        }
-
-        .step-content h3 {
-            font-size: 1.5rem;
-            margin-bottom: 0.5rem;
-            color: #1e3a8a;
-        }
-
-        .step-content p {
-            color: #b8c5d6;
-        }
-
-        /* CTA Section */
-        .cta-section {
-            padding: 5rem 5%;
-            background: #0a0e27;
-            text-align: center;
-        }
-
-        .cta-section h2 {
-            font-size: 3rem;
-            margin-bottom: 1rem;
-        }
-
-        .cta-section h2 .highlight {
-            color: #1e3a8a;
-        }
-
-        .cta-section p {
-            color: #b8c5d6;
-            margin-bottom: 2rem;
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        /* Footer */
-        footer {
-            padding: 3rem 5% 0;
-            background: #050812;
-            border-top: 1px solid rgba(0, 212, 255, 0.1);
-        }
-
-        .footer-content {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 3rem;
-            margin-bottom: 2rem;
-        }
-
-        .footer-section h3 {
-            color: #1e3a8a;
-            margin-bottom: 1rem;
-        }
-
-        .footer-section p,
-        .footer-section a {
-            color: #b8c5d6;
-            text-decoration: none;
-            display: block;
-            margin-bottom: 0.5rem;
-        }
-
-        .footer-section a:hover {
-            color: #1e3a8a;
-        }
-
-        .footer-bottom {
-            text-align: center;
-            padding-top: 2rem;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            color: #b8c5d6;
-        }
-
-        /* Responsive Design */
-        @media (max-width: 1024px) {
-            .why-content {
-                grid-template-columns: 1fr;
-                gap: 2rem;
-            }
-        }
-
-        @media (max-width: 768px) {
-            .nav-links {
-                position: fixed;
-                left: -100%;
-                top: 70px;
-                flex-direction: column;
-                background: rgba(10, 14, 39, 0.98);
-                width: 100%;
-                padding: 2rem;
-                transition: 0.3s;
-            }
-
-            .nav-links.active {
-                left: 0;
-            }
-
-            .menu-toggle {
-                display: flex;
-            }
-
-            .hero h1 {
-                font-size: 2.5rem;
-            }
-
-            .hero p {
-                font-size: 1rem;
-            }
-
-            .section-title {
-                font-size: 2rem;
-            }
-
-            .services-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .cta-section h2 {
-                font-size: 2rem;
-            }
-
-            .footer-content {
-                grid-template-columns: 1fr;
-            }
-        }
-
-        @media (max-width: 480px) {
-            nav {
-                padding: 1rem 5%;
-            }
-
-            .hero {
-                padding: 4rem 5% 3rem;
-            }
-
-            .hero h1 {
-                font-size: 2rem;
-            }
-
-            .cta-buttons {
-                flex-direction: column;
-            }
-
-            .btn {
-                width: 100%;
-                text-align: center;
-            }
-        }
-
-        *,
-        *::before,
-        *::after {
-            box-sizing: border-box;
-        }
-
-        body {
-            margin: 0;
-            font-family: Arial, Helvetica, sans-serif;
-            background: #ffffff;
-        }
-
-        .ai-timeline .timeline {
-            position: relative;
-            width: 100%;
-            max-width: 1140px;
-            margin: 0 auto;
-            padding: 15px 0;
-        }
-
-        .ai-timeline .timeline::after {
-            content: '';
-            position: absolute;
-            width: 2px;
-            background: #1e3a8a;
-            top: 0;
-            bottom: 0;
-            left: 50%;
-            margin-left: -1px;
-        }
-
-        .ai-timeline .container {
-            padding: 0px 30px;
-            position: relative;
-            background: inherit;
-            width: 50%;
-        }
-
-        .ai-timeline .container.left {
-            left: 0;
-        }
-
-        .ai-timeline .container.right {
-            left: 50%;
-        }
-
-        .ai-timeline .container::after {
-            content: '';
-            position: absolute;
-            width: 16px;
-            height: 16px;
-            top: calc(50% - 8px);
-            right: -8px;
-            background: #ffffff;
-            border: 2px solid #1e3a8a;
-            border-radius: 16px;
-            z-index: 1;
-        }
-
-        .ai-timeline .container.right::after {
-            left: -8px;
-        }
-
-        .ai-timeline .container::before {
-            content: '';
-            position: absolute;
-            width: 50px;
-            height: 2px;
-            top: calc(50% - 1px);
-            right: 8px;
-            background: #1e3a8a;
-            z-index: 1;
-        }
-
-        .ai-timeline .container.right::before {
-            left: 8px;
-        }
-
-        .ai-timeline .container .icon {
-            position: absolute;
-            display: inline-block;
-            width: 40px;
-            height: 40px;
-            padding: 9px 0;
-            top: calc(50% - 20px);
-            background: #dbeafe;
-            border: 2px solid #1e3a8a;
-            border-radius: 40px;
-            text-align: center;
-            font-size: 18px;
-            color: #1e3a8a;
-            z-index: 1;
-        }
-
-        .ai-timeline .container.left .icon {
-            right: 56px;
-        }
-
-        .ai-timeline .container.right .icon {
-            left: 56px;
-        }
-
-        .ai-timeline .container .content {
-            padding: 20px 90px 20px 30px;
-            background: #dbeafe;
-            position: relative;
-            border-radius: 0 500px 500px 0;
-        }
-
-        .ai-timeline .container.right .content {
-            padding: 30px 30px 30px 90px;
-            border-radius: 500px 0 0 500px;
-        }
-
-        .ai-timeline .container .content h2 {
-            margin: 0 0 10px 0;
-            font-size: 18px;
-            font-weight: normal;
-            color: #1e3a8a;
-        }
-
-        .ai-timeline .container .content p {
-            margin: 0;
-            font-size: 16px;
-            line-height: 22px;
-            color: #000000;
-        }
-
-        @media (max-width: 767.98px) {
-            .ai-timeline .timeline::after {
-                left: 90px;
-            }
-
-            .ai-timeline .container {
-                width: 100%;
-                padding-left: 120px;
-                padding-right: 30px;
-            }
-
-            .ai-timeline .container.right {
-                left: 0%;
-            }
-
-            .ai-timeline .container.left::after,
-            .ai-timeline .container.right::after {
-                left: 82px;
-            }
-
-            .ai-timeline .container.left::before,
-            .ai-timeline .container.right::before {
-                left: 100px;
-                border-color: transparent #1e3a8a transparent transparent;
-            }
-
-            .ai-timeline .container.left .icon,
-            .ai-timeline .container.right .icon {
-                right: auto;
-                left: 146px;
-            }
-
-            .ai-timeline .container.left .content,
-            .ai-timeline .container.right .content {
-                padding: 30px 30px 30px 90px;
-                border-radius: 500px 0 0 500px;
-            }
-        }
-
-        .step-count-flex {
-            left: -24px;
-        }
-
-        .newcta-bg-image {
-            background-image: url(https://webmobtechcdn.nyc3.cdn.digitaloceanspaces.com/wmt_v4/2025/04/CTA.png);
-            background-position: 50% !important;
-            background-size: cover !important;
-            background-repeat: no-repeat;
-        }
-
-        .dotted-line {
-            border-bottom: 2px dotted #01010166;
-        }
-
-        .pulse-star {
-            animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
-        }
-
-        @keyframes pulse {
-
-            0%,
-            100% {
-                opacity: 1;
-                transform: scale(1);
-            }
-
-            50% {
-                opacity: 0.7;
-                transform: scale(1.1);
-            }
-        }
-
-        .chevron-right {
-            width: 0;
-            height: 0;
-            border-top: 8px solid transparent;
-            border-bottom: 8px solid transparent;
-            border-left: 12px solid #0b0b0b99;
-        }
-
-        .chevron-left {
-            width: 0;
-            height: 0;
-            border-top: 8px solid transparent;
-            border-bottom: 8px solid transparent;
-            border-right: 12px solid #0b0b0b99;
-        }
-
-        .faq-content {
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.3s ease;
-        }
     </style>
 </head>
 
 <body>
     <!-- nav -->
-    <!-- Glassmorphism Navbar -->
-    <nav id="navbar" class="navbar fixed top-0 left-0 right-0 z-50 transition-all duration-500">
-        <div class="navbar-container max-w-7xl mx-auto px-6">
-            <div class="flex items-center justify-between">
-                <!-- Logo -->
-                <div class="logo-container">
-                    <a href="#" class="flex items-center gap-3">
-                        <div class="logo-icon">
-                            <img src="./assets/image/logo-1.png" alt="">
-                        </div>
-                    </a>
-                </div>
+    <section>
+        <nav id="navbar"
+            class="navbar py-3 backdrop-blur-0 bg-transparent fixed top-0 left-0 right-0 z-50 transition-all duration-500">
+            <div class="navbar-container max-w-7xl mx-auto px-6">
+                <div class="flex items-center justify-between">
+                    <!-- Logo -->
+                    <div class="logo-container">
+                        <a href="#" class="flex items-center gap-3">
+                            <div class="logo-icon text-4xl font-bold text-blue-900">
+                                <h1>SP.</h1>
+                            </div>
+                        </a>
+                    </div>
 
-                <!-- Desktop Menu -->
-                <ul class="desktop-menu hidden md:flex items-center gap-8">
-                    <li class="nav-item">
-                        <div class="generate-btn">
-                            <svg class="icon" viewBox="0 0 24 26">
-                                <path
-                                    d="M5.16515 2.62145L5.8075 0.999247C5.83876 0.919722 5.9154 0.866699 6.00112 0.866699C6.08683 0.866699 6.16347 0.919722 6.19473 0.999247L6.83708 2.62145L8.44145 3.27094C8.5201 3.30254 8.57254 3.38003 8.57254 3.4667C8.57254 3.55337 8.5201 3.63085 8.44145 3.66246L6.83708 4.31195L6.19473 5.93415C6.16347 6.0147 6.08683 6.0667 6.00112 6.0667C5.9154 6.0667 5.83876 6.0147 5.8075 5.93415L5.16515 4.31195L3.56078 3.66246C3.48112 3.63085 3.42969 3.55337 3.42969 3.4667C3.42969 3.38003 3.48112 3.30254 3.56078 3.27094L5.16515 2.62145Z" />
-                                <path
-                                    d="M11.2362 9.43967C11.5502 9.30067 11.8015 9.05025 11.9405 8.73617L13.5494 5.11725C13.7169 4.74204 14.0887 4.5 14.5 4.5C14.9112 4.5 15.2839 4.74204 15.4506 5.11725L17.0603 8.73617C17.1985 9.05025 17.4497 9.3015 17.7638 9.43967L21.3827 11.0494C21.7579 11.2161 22 11.5887 22 12C22 12.4112 21.7579 12.7831 21.3827 12.9506L17.7638 14.5595C17.4497 14.6985 17.1993 14.9497 17.0603 15.2638L15.4506 18.8827C15.2839 19.2579 14.9112 19.5 14.5 19.5C14.0887 19.5 13.7169 19.2579 13.5494 18.8827L11.9405 15.2638C11.8015 14.9497 11.5502 14.6985 11.2362 14.5595L7.61725 12.9506C7.24204 12.7831 7 12.4112 7 12C7 11.5887 7.24204 11.2161 7.61725 11.0494L11.2362 9.43967Z" />
-                                <path
-                                    d="M4.60728 19.392L5.67703 16.6875C5.72997 16.5541 5.85854 16.4666 6.00056 16.4666C6.14258 16.4666 6.27031 16.5541 6.32325 16.6875L7.39299 19.392L10.0678 20.4736C10.1997 20.5271 10.2863 20.6563 10.2863 20.7999C10.2863 20.9435 10.1997 21.0735 10.0678 21.1271L7.39299 22.2087L6.32325 24.9123C6.27031 25.0457 6.14258 25.1332 6.00056 25.1332C5.85854 25.1332 5.72997 25.0457 5.67703 24.9123L4.60728 22.2087L1.93333 21.1271C1.8014 21.0735 1.71484 20.9435 1.71484 20.7999C1.71484 20.6563 1.8014 20.5271 1.93333 20.4736L4.60728 19.392Z" />
-                            </svg>
-                            <a href="#features" class="nav-link">Expertise</a>
-                        </div>
-                    </li>
-                    <li class="nav-item">
-                        <a href="#features" class="nav-link">Services</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="#products" class="nav-link">Blog</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="#about" class="nav-link">Case Studies</a>
-                    </li>
-                </ul>
+                    <!-- Desktop Menu -->
+                    <ul class="desktop-menu hidden md:flex items-center gap-8">
+                        <li class="nav-item relative group">
+                            <div class="generate-btn inline-flex items-center gap-1.5 cursor-pointer">
+                                <svg class="icon mr-2 h-5 w-5 h-auto" viewBox="0 0 24 26">
+                                    <!-- SVG paths -->
+                                    <path
+                                        d="M5.16515 2.62145L5.8075 0.999247C5.83876 0.919722 5.9154 0.866699 6.00112 0.866699C6.08683 0.866699 6.16347 0.919722 6.19473 0.999247L6.83708 2.62145L8.44145 3.27094C8.5201 3.30254 8.57254 3.38003 8.57254 3.4667C8.57254 3.55337 8.5201 3.63085 8.44145 3.66246L6.83708 4.31195L6.19473 5.93415C6.16347 6.0147 6.08683 6.0667 6.00112 6.0667C5.9154 6.0667 5.83876 6.0147 5.8075 5.93415L5.16515 4.31195L3.56078 3.66246C3.48112 3.63085 3.42969 3.55337 3.42969 3.4667C3.42969 3.38003 3.48112 3.30254 3.56078 3.27094L5.16515 2.62145Z" />
+                                    <path
+                                        d="M11.2362 9.43967C11.5502 9.30067 11.8015 9.05025 11.9405 8.73617L13.5494 5.11725C13.7169 4.74204 14.0887 4.5 14.5 4.5C14.9112 4.5 15.2839 4.74204 15.4506 5.11725L17.0603 8.73617C17.1985 9.05025 17.4497 9.3015 17.7638 9.43967L21.3827 11.0494C21.7579 11.2161 22 11.5887 22 12C22 12.4112 21.7579 12.7831 21.3827 12.9506L17.7638 14.5595C17.4497 14.6985 17.1993 14.9497 17.0603 15.2638L15.4506 18.8827C15.2839 19.2579 14.9112 19.5 14.5 19.5C14.0887 19.5 13.7169 19.2579 13.5494 18.8827L11.9405 15.2638C11.8015 14.9497 11.5502 14.6985 11.2362 14.5595L7.61725 12.9506C7.24204 12.7831 7 12.4112 7 12C7 11.5887 7.24204 11.2161 7.61725 11.0494L11.2362 9.43967Z" />
+                                    <path
+                                        d="M4.60728 19.392L5.67703 16.6875C5.72997 16.5541 5.85854 16.4666 6.00056 16.4666C6.14258 16.4666 6.27031 16.5541 6.32325 16.6875L7.39299 19.392L10.0678 20.4736C10.1997 20.5271 10.2863 20.6563 10.2863 20.7999C10.2863 20.9435 10.1997 21.0735 10.0678 21.1271L7.39299 22.2087L6.32325 24.9123C6.27031 25.0457 6.14258 25.1332 6.00056 25.1332C5.85854 25.1332 5.72997 25.0457 5.67703 24.9123L4.60728 22.2087L1.93333 21.1271C1.8014 21.0735 1.71484 20.9435 1.71484 20.7999C1.71484 20.6563 1.8014 20.5271 1.93333 20.4736L4.60728 19.392Z" />
+                                </svg>
+                                <span class="nav-link font-medium">Expertise</span>
+                            </div>
 
-                <!-- CTA Button -->
-                <div class="hidden md:block">
-                    <button class="cta-button">
-                        <span class="cta-shine"></span>
-                        <span class="relative z-10">Hire Me</span>
+                            <!-- Dropdown Menu -->
+                            <ul
+                                class="absolute left-0 mt-6 w-64 rounded-md bg-gradient-to-br from-white via-blue-50 to-indigo-100 shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+
+                                <li>
+                                    <a href="#computer-vision-development-services"
+                                        class="flex items-center px-4 py-2 text-gray-700 hover:bg-gray-100 rounded-md gap-3">
+                                        <img src="./assets/image/computer-vision-development-services.svg" alt=""
+                                            class="w-5 h-5">
+                                        <span>Computer Vision Development Services</span>
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="generative-ai-development-services.html"
+                                        class="flex items-center px-4 py-2 text-gray-700 hover:bg-gray-100 rounded-md gap-3">
+                                        <img src="./assets/image/generative-ai-development-services.svg" alt=""
+                                            class="w-5 h-5">
+                                        <span>Generative AI Development Services</span>
+                                    </a>
+                                </li>
+
+                            </ul>
+                        </li>
+
+
+                        <li class="nav-item">
+                            <a href="#features" class="nav-link">Services</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#products" class="nav-link">Blog</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#about" class="nav-link">Case Studies</a>
+                        </li>
+                    </ul>
+
+                    <!-- CTA Button -->
+                    <div class="hidden md:block">
+                        <button class="cta-button">
+                            <span class="cta-shine"></span>
+                            <span class="relative z-10">Hire Me</span>
+                        </button>
+                    </div>
+
+                    <!-- Mobile Menu Button -->
+                    <button id="mobileMenuBtn" class="mobile-menu-btn md:hidden">
+                        <span class="hamburger-line"></span>
+                        <span class="hamburger-line"></span>
+                        <span class="hamburger-line"></span>
                     </button>
                 </div>
-
-                <!-- Mobile Menu Button -->
-                <button id="mobileMenuBtn" class="mobile-menu-btn md:hidden">
-                    <span class="hamburger-line"></span>
-                    <span class="hamburger-line"></span>
-                    <span class="hamburger-line"></span>
-                </button>
             </div>
-        </div>
-    </nav>
+        </nav>
 
-    <!-- Mobile Menu Overlay -->
-    <div id="mobileMenu" class="mobile-menu">
-        <div class="mobile-menu-content">
+        <!-- Mobile Menu Overlay -->
+        <div id="mobileMenu" class="mobile-menu">
             <button id="closeMobileMenu" class="close-btn">
                 <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
                 </svg>
             </button>
-            <ul class="mobile-nav-list">
-                <li class="mobile-nav-item">
-                    <a href="#home" class="mobile-nav-link">Expertise</a>
-                </li>
-                <li class="mobile-nav-item">
-                    <a href="#features" class="mobile-nav-link">Services</a>
-                </li>
-                <li class="mobile-nav-item">
-                    <a href="#products" class="mobile-nav-link">Blog</a>
-                </li>
-                <li class="mobile-nav-item">
-                    <a href="#about" class="mobile-nav-link">Case Studies</a>
-                </li>
-                <li class="mobile-nav-item mt-8">
-                    <button class="mobile-cta-button">Hire Me</button>
-                </li>
-            </ul>
+            <div class="mobile-menu-content">
+                <ul class="mobile-nav-list">
+                    <li class="mobile-nav-item">
+                        <a href="#home" class="mobile-nav-link">Expertise</a>
+                    </li>
+                    <li class="mobile-nav-item">
+                        <a href="#features" class="mobile-nav-link">Services</a>
+                    </li>
+                    <li class="mobile-nav-item">
+                        <a href="#products" class="mobile-nav-link">Blog</a>
+                    </li>
+                    <li class="mobile-nav-item">
+                        <a href="#about" class="mobile-nav-link">Case Studies</a>
+                    </li>
+                    <li class="mobile-nav-item mt-8">
+                        <button class="mobile-cta-button">Hire Me</button>
+                    </li>
+                </ul>
+            </div>
         </div>
-    </div>
+    </section>
+    <!--end nav -->
+
     <!-- Hero Section -->
     <section id="home" class="min-h-screen flex items-center justify-center py-12 lg:py-0">
         <div class="">
-            <div class="text-center max-w-5xl mx-auto px-4 sm:px-6 lg:px-5 w-full">
+            <div class="text-center max-w-5xl mx-auto px-4 sm:px-6 lg:px-5 w-full mt-16 lg:mt-0">
                 <!-- Left Content -->
                 <div class="space-y-8">
                     <div class="space-y-6">
@@ -1292,7 +148,9 @@
 
                         <!-- Headline -->
                         <h1 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 leading-tight">
-                            Building Intelligent <span class="hero-gradient">AI Solutions </span> for the Future
+                            Building Intelligent <span
+                                class="text-4xl font-bold bg-gradient-to-br from-blue-900 to-blue-400 bg-clip-text text-transparent">AI
+                                Solutions </span> for the Future
                         </h1>
 
                         <!-- Description -->
@@ -1385,7 +243,7 @@
             <!-- Buttons -->
             <div class="flex flex-wrap justify-center gap-4">
                 <a href="#contact"
-                    class="hero-btn-pramiry px-6 py-3 bg-black text-white font-medium rounded-lg shadow hover:bg-gray-300 transition flex items-center gap-2">
+                    class="hero-btn-pramiry relative px-8 py-3 rounded-full bg-gradient-to-br from-blue-900 to-blue-400 text-white font-semibold overflow-hidden transition-all duration-300 ease-in-out hover:-translate-y-0.5 hover:shadow-[0_10px_30px_rgba(168,85,247,0.4)] border-0 cursor-pointer active gap-2">
                     Talk to AI Expert
                 </a>
                 <a href="#solutions"
@@ -1395,41 +253,50 @@
             </div>
         </div>
     </section>
+    <!-- end Hero Section -->
 
-    <!-- tab  -->
+    <!-- Why Industry Leaders Choose shreyans padmani -->
+    <section class="relative mt-5 bg-cover bg-center bg-no-repeat" style="background-image: url('./assets/image/testimonial-bg-img.webp');">
 
-    <!-- AI Development Process -->
-    <section class="mx-auto mt-5 ">
-
-        <div class="w-full bg-cover bg-center  overflow-hidden" style="background-color:bg-blue-100">
-            <div class="flex items-center justify-center h-full  w-full  bg-blue-100">
+        <!-- Header -->
+        <div class="w-full bg-cover bg-center overflow-hidden ">
+            <div class="flex items-center justify-center h-full w-full ">
                 <div class="flex flex-col place-items-center items-center text-center py-16 m-4" data-aos="fade-up"
                     data-aos-easing="ease-out-back" data-aos-duration="700">
-                    <h2 class="font-serif font-bold lg:text-5xl tracking-normal text-4xl  text-shark-500 max-w-5xl"
-                        style="color:#24262B;line-height:1.20">Why Industry Leaders Choose WebMob
-                        Technologies <span class="hero-gradient">Development</span> <br>
+
+                    <h2 class="font-serif font-bold lg:text-5xl tracking-normal text-4xl text-white max-w-5xl"
+                        style="line-height:1.20">
+                        Why Industry Leaders Choose shreyans padmani
+                        Technologies <span
+                            class="text-4xl font-bold bg-gradient-to-br from-blue-900 to-blue-400 bg-clip-text text-transparent">Development</span>
                     </h2>
-                    <p class=" text-shark-500  pt-6 text-lg mx-auto  font-sans max-w-4xl"><b>Delivering Advanced AI
-                            Solutions That Drive Business Growth</b> With over 15 years of experience, we combine deep
-                        technical expertise and cutting-edge AI tools to create intelligent solutions—from Generative AI
-                        to Custom Model Training—that typical agencies cannot match. Our team transforms data into
-                        actionable insights, automates processes, and builds tailored AI systems that empower businesses
-                        across industries.</p>
-                    <div class="flex md:flex-row flex-col md:gap-9 gap-1"></div>
+
+                    <p class="text-gray-400 pt-6 text-lg mx-auto font-sans max-w-4xl">
+                        <b class="text-white">Delivering Advanced AI Solutions That Drive Business Growth</b>
+                        <br>
+                        With over 15 years of experience, we combine deep technical expertise and cutting-edge AI tools
+                        to create intelligent solutions—from Generative AI to Custom Model Training—that typical
+                        agencies
+                        cannot match.
+                    </p>
                 </div>
             </div>
         </div>
-        <div class="flex justify-center bg-blue-100 pb-5">
+
+        <!-- Cards -->
+        <div class="flex justify-center pb-16">
             <div class="px-4 sm:px-6 max-w-7xl lg:px-12">
-                <div class="lg:grid lg:grid-cols-3 lg:gap-6 " data-aos="fade-up">
+                <div class="md:grid md:grid-cols-2 md:gap-4 lg:grid lg:grid-cols-3 lg:gap-6" data-aos="fade-up">
+
+                    <!-- Card -->
                     <div
-                        class="shadow-lg text-center p-6 my-6 lg:my-0 bg-white rounded-3xl hover:bg-blue-500 hover:shadow-xl text-shark-400 hover:text-white transition duration-200 ease-in-out icon-card">
-                        <h3 class="font-serif font-semibold text-lg tracking-normal leading-8 font-bold text-left pb-5">
-                            Generative AI</h3>
-                        <p class="text-left flex-grow   text-lg mx-auto  font-sans max-w-4xl">Leverage advanced AI
-                            models like GPT, DALL-E, and GANs to generate text, images, music, and code, enhancing
-                            creativity and automation across industries.</p>
-                        <div class="mt-auto flex justify-end">
+                        class="shadow-lg p-6 my-6 lg:my-0 bg-[#0f172a] rounded-3xl hover:bg-blue-600 hover:shadow-xl text-gray-400 hover:text-white transition duration-200 ease-in-out icon-card">
+                        <h3 class="font-serif text-lg font-bold text-left pb-5 text-white">Generative AI</h3>
+                        <p class="text-left text-lg font-sans">
+                            Leverage advanced AI models like GPT, DALL-E, and GANs to generate text, images, music, and
+                            code, enhancing creativity and automation across industries.
+                        </p>
+                        <div class="mt-6 flex justify-end">
                             <a href="/generative-ai-details"
                                 class="bg-blue-600 hover:bg-blue-700 text-white p-3 rounded-full shadow-lg transition transform hover:scale-110">
                                 <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 rotate-[336deg]" fill="none"
@@ -1440,23 +307,24 @@
                             </a>
                         </div>
                     </div>
-                    <div
-                        class="shadow-lg text-center p-0 my-6 lg:my-0 bg-white rounded-3xl transition hover:border-blue-500 border-white hover:shadow-xl hover:-translate-y-1 text-shark-400">
-                        <div class="h-72 lg:h-full w-full flex justify-center items-center overflow-hidden flex-grow">
-                            <div class="w-full h-full"><img
-                                    src="https://webmobtechcdn.nyc3.cdn.digitaloceanspaces.com/wmt_v4/2025/12/WMT-692-49.png"
-                                    loading="lazy" height="302" width="692" alt="team"
-                                    class="w-full h-full object-cover text-center rounded-3xl"></div>
-                        </div>
+
+                    <!-- Image Card (unchanged) -->
+                    <div class="shadow-lg my-6 lg:my-0 bg-[#0f172a] rounded-3xl overflow-hidden">
+                        <img src="https://webmobtechcdn.nyc3.cdn.digitaloceanspaces.com/wmt_v4/2025/12/WMT-692-49.png"
+                            loading="lazy" alt="team" class="w-full h-full object-cover rounded-3xl">
                     </div>
+
+                    <!-- Card -->
                     <div
-                        class="shadow-lg text-center p-6 my-6 lg:my-0 bg-white rounded-3xl hover:bg-blue-500 hover:shadow-xl text-shark-400 hover:text-white transition duration-200 ease-in-out icon-card">
-                        <h3 class="font-serif font-semibold text-lg tracking-normal leading-8 font-bold text-left pb-5">
-                            Machine Learning & Predictive Analytics</h3>
-                        <p class="text-left flex-grow   text-lg mx-auto  font-sans max-w-4xl">Analyze data and forecast
-                            trends with tools like Python, R, and TensorFlow to drive actionable insights and predictive
-                            solutions.</p>
-                        <div class="mt-auto flex justify-end">
+                        class="shadow-lg p-6 my-6 lg:my-0 bg-[#0f172a] rounded-3xl hover:bg-blue-600 hover:shadow-xl text-gray-400 hover:text-white transition duration-200 ease-in-out icon-card">
+                        <h3 class="font-serif text-lg font-bold text-left pb-5 text-white">
+                            Machine Learning & Predictive Analytics
+                        </h3>
+                        <p class="text-left text-lg font-sans">
+                            Analyze data and forecast trends with Python, R, and TensorFlow to drive actionable
+                            insights.
+                        </p>
+                        <div class="mt-6 flex justify-end">
                             <a href="/generative-ai-details"
                                 class="bg-blue-600 hover:bg-blue-700 text-white p-3 rounded-full shadow-lg transition transform hover:scale-110">
                                 <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 rotate-[336deg]" fill="none"
@@ -1467,14 +335,17 @@
                             </a>
                         </div>
                     </div>
+
+                    <!-- Card -->
                     <div
-                        class="shadow-lg text-center p-6 my-6 lg:my-0 bg-white rounded-3xl hover:bg-blue-500 hover:shadow-xl text-shark-400 hover:text-white transition duration-200 ease-in-out icon-card">
-                        <h3 class="font-serif font-semibold text-lg tracking-normal leading-8 font-bold text-left pb-5">
-                            Natural Language Processing </h3>
-                        <p class="text-left flex-grow   text-lg mx-auto  font-sans max-w-4xl">Apply NLP techniques like
-                            sentiment analysis, text generation, and named entity recognition with BERT, SpaCy, and NLTK
-                            for smarter language-based solutions.</p>
-                        <div class="mt-auto flex justify-end">
+                        class="shadow-lg p-6 my-6 lg:my-0 bg-[#0f172a] rounded-3xl hover:bg-blue-600 hover:shadow-xl text-gray-400 hover:text-white transition duration-200 ease-in-out icon-card">
+                        <h3 class="font-serif text-lg font-bold text-left pb-5 text-white">
+                            Natural Language Processing
+                        </h3>
+                        <p class="text-left text-lg font-sans">
+                            Sentiment analysis, text generation, and NER using BERT, SpaCy, and NLTK.
+                        </p>
+                        <div class="mt-6 flex justify-end">
                             <a href="/generative-ai-details"
                                 class="bg-blue-600 hover:bg-blue-700 text-white p-3 rounded-full shadow-lg transition transform hover:scale-110">
                                 <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 rotate-[336deg]" fill="none"
@@ -1485,14 +356,16 @@
                             </a>
                         </div>
                     </div>
+
+                    <!-- Card -->
                     <div
-                        class="shadow-lg text-center p-6 my-6 lg:my-0 bg-white rounded-3xl hover:bg-blue-500 hover:shadow-xl text-shark-400 hover:text-white transition duration-200 ease-in-out icon-card">
-                        <h3 class="font-serif font-semibold text-lg tracking-normal leading-8 font-bold text-left pb-5">
-                            Computer Vision</h3>
-                        <p class="text-left flex-grow   text-lg mx-auto  font-sans max-w-4xl">Develop AI systems using
-                            Develop AI systems using OpenCV and TensorFlow for applications like facial recognition,
-                            medical imaging, drone detection, and smart retail solutions.</p>
-                        <div class="mt-auto flex justify-end">
+                        class="shadow-lg p-6 my-6 lg:my-0 bg-[#0f172a] rounded-3xl hover:bg-blue-600 hover:shadow-xl text-gray-400 hover:text-white transition duration-200 ease-in-out icon-card">
+                        <h3 class="font-serif text-lg font-bold text-left pb-5 text-white">Computer Vision</h3>
+                        <p class="text-left text-lg font-sans">
+                            Facial recognition, medical imaging, drone detection, and smart retail using OpenCV &
+                            TensorFlow.
+                        </p>
+                        <div class="mt-6 flex justify-end">
                             <a href="/generative-ai-details"
                                 class="bg-blue-600 hover:bg-blue-700 text-white p-3 rounded-full shadow-lg transition transform hover:scale-110">
                                 <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 rotate-[336deg]" fill="none"
@@ -1503,14 +376,17 @@
                             </a>
                         </div>
                     </div>
+
+                    <!-- Card -->
                     <div
-                        class="shadow-lg text-center p-6 my-6 lg:my-0 bg-white rounded-3xl hover:bg-blue-500 hover:shadow-xl text-shark-400 hover:text-white transition duration-200 ease-in-out icon-card">
-                        <h3 class="font-serif font-semibold text-lg tracking-normal leading-8 font-bold text-left pb-5">
-                            Custom Model Building & Training</h3>
-                        <p class="text-left flex-grow   text-lg mx-auto  font-sans max-w-4xl">Design and train AI models
-                            with TensorFlow, PyTorch, or Keras to deliver solutions for Banking Analytics, E-commerce,
-                            Fraud Detection, Demand Forecasting.</p>
-                        <div class="mt-auto flex justify-end">
+                        class="shadow-lg p-6 my-6 lg:my-0 bg-[#0f172a] rounded-3xl hover:bg-blue-600 hover:shadow-xl text-gray-400 hover:text-white transition duration-200 ease-in-out icon-card">
+                        <h3 class="font-serif text-lg font-bold text-left pb-5 text-white">
+                            Custom Model Building & Training
+                        </h3>
+                        <p class="text-left text-lg font-sans">
+                            AI model training for Banking, E-commerce, Fraud Detection, and Demand Forecasting.
+                        </p>
+                        <div class="mt-6 flex justify-end">
                             <a href="/generative-ai-details"
                                 class="bg-blue-600 hover:bg-blue-700 text-white p-3 rounded-full shadow-lg transition transform hover:scale-110">
                                 <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 rotate-[336deg]" fill="none"
@@ -1521,11 +397,12 @@
                             </a>
                         </div>
                     </div>
+
                 </div>
             </div>
         </div>
     </section>
-
+    <!--end Why Industry Leaders Choose shreyans padmani -->
 
     <!-- Why Choose Us -->
     <section>
@@ -1535,8 +412,10 @@
                 <div class="mx-auto max-w-full px-2 sm:px-1">
                     <div class="x flex-col justify-center items-center text-center mb-5">
                         <p
-                            class="text-3xl md:text-4xl font-bold text-gray-900 mb-0  pt-6 text-lg mx-auto  font-sans max-w-4xl">
-                            Why Choose <span class="hero-gradient">Us</span></p>
+                            class="text-3xl md:text-4xl font-bold text-gray-900 mb-0  pt-6 text-4xl mx-auto  font-sans max-w-4xl">
+                            Why Choose <span
+                                class="text-4xl font-bold bg-gradient-to-br from-blue-900 to-blue-400 bg-clip-text text-transparent">Us</span>
+                        </p>
                         <p
                             class="text-gray-600 text-2xl md:text-base max-w-7xl mt-4   text-lg mx-auto  font-sans max-w-4xl">
                             Enterprise-grade AI solutions built for scale and security</p>
@@ -1545,8 +424,8 @@
                         class="w-full md:p-12 sm:p-12 xs:p-12 grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-4 gap-8 justify-around">
                         <div
                             class="relative bg-transparent border border-blue-500 rounded-lg p-6 lg:m-0 md:m-0 mx-4 text-center shadow-sm max-w-full">
-                            <div class="absolute top-1/5 -translate-y-1/2 step-count-flex">
-                                <div class="step-number text-4xl font-bold text-blue-500 rounded-full w-12 h-12 flex items-center justify-center"
+                            <div class="absolute top-1/5 -translate-y-1/2 left-[-24px] step-count-flex">
+                                <div class="w-10 h-10 bg-blue-900 rounded-full flex items-center justify-center text-[#0a0e27] font-bold shrink-0 z-[1] text-4xl"
                                     style="background-color:#fff">01</div>
                             </div>
                             <h4 class="step-header text-xl font-semibold text-gray-900 mb-3">Enterprise-Grade AI</h4>
@@ -1558,8 +437,8 @@
                         </div>
                         <div
                             class="relative bg-transparent border border-blue-500 rounded-lg p-6 lg:m-0 md:m-0 mx-4 text-center shadow-sm max-w-full">
-                            <div class="absolute top-1/5 -translate-y-1/2 step-count-flex">
-                                <div class="step-number text-4xl font-bold text-blue-500 rounded-full w-12 h-12 flex items-center justify-center"
+                            <div class="absolute top-1/5 -translate-y-1/2 left-[-24px] step-count-flex">
+                                <div class="w-10 h-10 bg-blue-900 rounded-full flex items-center justify-center text-[#0a0e27] font-bold shrink-0 z-[1] text-4xl"
                                     style="background-color:#fff">02</div>
                             </div>
                             <h4 class="step-header text-xl font-semibold text-gray-900 mb-3">Custom-Built Systems</h4>
@@ -1571,8 +450,8 @@
                         </div>
                         <div
                             class="relative bg-transparent border border-blue-500 rounded-lg p-6 lg:m-0 md:m-0 mx-4 text-center shadow-sm max-w-full">
-                            <div class="absolute top-1/5 -translate-y-1/2 step-count-flex">
-                                <div class="step-number text-4xl font-bold text-blue-500 rounded-full w-12 h-12 flex items-center justify-center"
+                            <div class="absolute top-1/5 -translate-y-1/2 left-[-24px] step-count-flex">
+                                <div class="w-10 h-10 bg-blue-900 rounded-full flex items-center justify-center text-[#0a0e27] font-bold shrink-0 z-[1] text-4xl"
                                     style="background-color:#fff">03</div>
                             </div>
                             <h4 class="step-header text-xl font-semibold text-gray-900 mb-3">Secure & Scalable</h4>
@@ -1584,8 +463,8 @@
                         </div>
                         <div
                             class="relative bg-transparent border border-blue-500 rounded-lg p-6 lg:m-0 md:m-0 mx-4 text-center shadow-sm max-w-full">
-                            <div class="absolute top-1/5 -translate-y-1/2 step-count-flex">
-                                <div class="step-number text-4xl font-bold text-blue-500 rounded-full w-12 h-12 flex items-center justify-center"
+                            <div class="absolute top-1/5 -translate-y-1/2 left-[-24px] step-count-flex">
+                                <div class="w-10 h-10 bg-blue-900 rounded-full flex items-center justify-center text-[#0a0e27] font-bold shrink-0 z-[1] text-4xl"
                                     style="background-color:#fff">04</div>
                             </div>
                             <h4 class="step-header text-xl font-semibold text-gray-900 mb-3">End-to-End Delivery</h4>
@@ -1600,13 +479,169 @@
             </div>
         </div>
     </section>
+    <!--end Why Choose Us -->
+
+     <!-- Our Development Process -->
+    <section
+        class="min-h-screen items-center justify-center p-4 md:p-16 bg-gradient-to-b from-[#1e3a8a] to-black relative overflow-hidde bg-no-repeat bg-cover"
+        style="background-image: url(./assets/image/talk-to-us-banner.webp);">
+
+        <!-- Decorative Stars -->
+        <div class="absolute -top-10 right-10 md:right-20 text-white opacity-10 animate-pulse">
+            <svg class="w-16 md:w-24 h-16 md:h-24" viewBox="0 0 100 100" fill="currentColor">
+                <path d="M50 0 L61 39 L100 50 L61 61 L50 100 L39 61 L0 50 L39 39 Z" />
+            </svg>
+        </div>
+
+        <div class="absolute top-20 md:top-32 right-4 md:right-8 text-white opacity-20 animate-pulse"
+            style="animation-delay: 0.5s;">
+            <svg class="w-12 md:w-16 h-12 md:h-16" viewBox="0 0 100 100" fill="currentColor">
+                <path d="M50 0 L61 39 L100 50 L61 61 L50 100 L39 61 L0 50 L39 39 Z" />
+            </svg>
+        </div>
+
+        <!-- Title -->
+        <div class="max-w-full w-full text-center mb-12 md:mb-16">
+            <h1 class="text-3xl md:text-5xl font-bold text-white leading-snug">
+                Our <span
+                    class="text-4xl font-bold bg-gradient-to-br from-blue-900 to-blue-400 bg-clip-text text-transparent">AI
+                    Development</span> Process
+            </h1>
+            <p class="text-gray-400 mt-4 md:mt-6 max-w-3xl mx-auto">
+                A structured approach to creating AI solutions that deliver measurable business impact.
+            </p>
+        </div>
+
+        <!-- Process Steps -->
+        <div class="max-w-6xl w-full m-auto space-y-10 md:space-y-12">
+
+            <!-- Step 1 -->
+            <div class="flex flex-col md:flex-row items-start md:items-center group">
+                <div class="flex items-center w-full md:w-auto mb-4 md:mb-0">
+                    <div class="relative flex-shrink-0">
+                        <div
+                            class="w-20 h-20 rounded-full bg-[#0f172a] flex items-center justify-center border-4 border-gray-800 shadow-xl transition-transform group-hover:scale-105">
+                            <span class="text-2xl md:text-3xl font-bold text-blue-400">1</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="md:ml-6 flex-1">
+                    <h2 class="text-xl md:text-2xl font-semibold text-white mb-2">Requirement Discovery</h2>
+                    <p class="text-gray-400 text-sm md:text-base">
+                        We analyze your business goals and challenges to identify impactful AI use cases. <br>
+                        This ensures solutions align with objectives and deliver measurable value.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Step 2 -->
+            <div class="flex flex-col md:flex-row-reverse items-start md:items-center group">
+                <div class="flex items-center w-full md:w-auto mb-4 md:mb-0 flex-row-reverse md:flex-row">
+                    <div class="relative flex-shrink-0">
+                        <div
+                            class="w-20 h-20 rounded-full bg-[#0f172a] flex items-center justify-center border-4 border-gray-800 shadow-xl transition-transform group-hover:scale-105">
+                            <span class="text-2xl md:text-3xl font-bold text-blue-400">2</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="md:mr-6 flex-1 md:text-right">
+                    <h2 class="text-xl md:text-2xl font-semibold text-white mb-2">Planning & Analysis</h2>
+                    <p class="text-gray-400 text-sm md:text-base">
+                        We create a detailed roadmap covering system architecture, data strategy, <br>
+                        model selection, and timelines, ensuring smooth execution with minimal risk.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Step 3 -->
+            <div class="flex flex-col md:flex-row items-start md:items-center group">
+                <div class="flex items-center w-full md:w-auto mb-4 md:mb-0">
+                    <div class="relative flex-shrink-0">
+                        <div
+                            class="w-20 h-20 rounded-full bg-[#0f172a] flex items-center justify-center border-4 border-gray-800 shadow-xl transition-transform group-hover:scale-105">
+                            <span class="text-2xl md:text-3xl font-bold text-blue-400">3</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="md:ml-6 flex-1">
+                    <h2 class="text-xl md:text-2xl font-semibold text-white mb-2">Model Design</h2>
+                    <p class="text-gray-400 text-sm md:text-base">
+                        We design AI models including machine learning, deep learning, or <br>
+                        generative AI tailored to your business logic, ensuring accuracy and scalability.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Step 4 -->
+            <div class="flex flex-col md:flex-row-reverse items-start md:items-center group">
+                <div class="flex items-center w-full md:w-auto mb-4 md:mb-0 flex-row-reverse md:flex-row">
+                    <div class="relative flex-shrink-0">
+                        <div
+                            class="w-20 h-20 rounded-full bg-[#0f172a] flex items-center justify-center border-4 border-gray-800 shadow-xl transition-transform group-hover:scale-105">
+                            <span class="text-2xl md:text-3xl font-bold text-blue-400">4</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="md:mr-6 flex-1 md:text-right">
+                    <h2 class="text-xl md:text-2xl font-semibold text-white mb-2">Model Deployment Validation</h2>
+                    <p class="text-gray-400 text-sm md:text-base">
+                        Before full deployment, models are rigorously validated for accuracy, <br>
+                        bias control, and real-world performance under expected workloads.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Step 5 -->
+            <div class="flex flex-col md:flex-row items-start md:items-center group">
+                <div class="flex items-center w-full md:w-auto mb-4 md:mb-0">
+                    <div class="relative flex-shrink-0">
+                        <div
+                            class="w-20 h-20 rounded-full bg-[#0f172a] flex items-center justify-center border-4 border-gray-800 shadow-xl transition-transform group-hover:scale-105">
+                            <span class="text-2xl md:text-3xl font-bold text-blue-400">5</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="md:ml-6 flex-1">
+                    <h2 class="text-xl md:text-2xl font-semibold text-white mb-2">Integration & Testing</h2>
+                    <p class="text-gray-400 text-sm md:text-base">
+                        AI models are integrated into your systems, apps, or APIs. Extensive <br>
+                        testing ensures security, scalability, and flawless operation.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Step 6 -->
+            <div class="flex flex-col md:flex-row-reverse items-start md:items-center group">
+                <div class="flex items-center w-full md:w-auto mb-4 md:mb-0 flex-row-reverse md:flex-row">
+                    <div class="relative flex-shrink-0">
+                        <div
+                            class="w-20 h-20 rounded-full bg-[#0f172a] flex items-center justify-center border-4 border-gray-800 shadow-xl transition-transform group-hover:scale-105">
+                            <span class="text-2xl md:text-3xl font-bold text-blue-400">6</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="md:mr-6 flex-1 md:text-right">
+                    <h2 class="text-xl md:text-2xl font-semibold text-white mb-2">Deployment & Monitoring</h2>
+                    <p class="text-gray-400 text-sm md:text-base">
+                        AI solutions are deployed to production environments with continuous <br>
+                        monitoring, optimization, and scaling for long-term performance and impact.
+                    </p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+    <!--end Our Development Process -->
+
+    <!-- Deep Expertise in ai -->
     <section>
         <div class="w-full bg-cover bg-center overflow-hidden" style="background-color:bg-gray-100">
             <div class="flex items-center justify-center h-full w-full bg-gray-100">
                 <div class="flex flex-col place-items-center items-center text-center py-16 m-4" data-aos="fade-up"
                     data-aos-easing="ease-out-back" data-aos-duration="700">
                     <h2 class="font-serif font-bold lg:text-5xl tracking-normal text-4xl text-shark-500 max-w-5xl"
-                        style="color:#24262B;line-height:1.20">Deep Expertise in <span class="hero-gradient">Advanced
+                        style="color:#24262B;line-height:1.20">Deep Expertise in <span
+                            class="text-4xl font-bold bg-gradient-to-br from-blue-900 to-blue-400 bg-clip-text text-transparent">Advanced
                             AI</span> Technologies
                     </h2>
                     <p class="text-shark-500 pt-6 text-lg mx-auto font-sans max-w-4xl">Our team masters the latest AI
@@ -1616,8 +651,8 @@
             </div>
         </div>
         <div class="flex justify-center bg-gray-100 pb-16">
-            <div class="px-4 sm:px-6 max-w-7xl lg:px-12">
-                <div class="lg:grid lg:grid-cols-3 lg:gap-6" data-aos="fade-up">
+            <div class="px-4 sm:px-6 w-full max-w-7xl lg:px-12">
+                <div class="md:grid md:grid-cols-2 md:gap-4 lg:grid lg:grid-cols-3 lg:gap-6" data-aos="fade-up">
 
                     <!-- AI Chatbot Project -->
                     <div
@@ -1719,234 +754,37 @@
             </div>
         </div>
     </section>
+    <!--end Deep Expertise in ai -->
 
-
-    <!-- <section class="ai-timeline py-16">
-        <div class="text-center mb-16">
-            <h1 class="text-5xl font-bold text-blue-900 mb-4">Our AI Development Process</h1>
-        </div>
-        <div class="timeline">
-            <div class="container left">
-                <i class="icon fa-solid fa-magnifying-glass"></i>
-                <div class="content">
-                    <h2>Requirement Discovery</h2>
-                    <p>
-                        We deeply analyze your business objectives, workflows, and challenges to identify high-impact AI
-                        use cases. This phase ensures the solution aligns perfectly with your goals and delivers
-                        measurable value.
-                    </p>
+    <!-- Schedule a DevOps Assessment Session With Our -->
+    <section>
+        <div
+            class="newcta-bg-image bg-center bg-cover bg-no-repeat flex items-center justify-start h-full w-full bg-blue-500">
+            <div class="flex flex-col place-items-center items-start py-10 m-4 aos-init aos-animate leading-10 max-w-5xl"
+                data-aos="fade-up" data-aos-easing="ease-out-back" data-aos-duration="700">
+                <h2 class="font-serif font-bold lg:text-5xl tracking-normal text-4xl lg:max-w-screen-lg max-w-lg  text-start"
+                    style="color:#FFFFFF;line-height:1.20"> Schedule a DevOps Assessment Session With Our
+                    Expert Developers</h2>
+                <p class="text-white text-start pt-6 text-lg  font-sans ">As we are a custom software Development
+                    Company in the USA, our DevOps solutions are
+                    researched and tested that connects a user with the brand.</p>
+                <div class="mt-8 flex lg:flex-shrink-0">
+                    <div class="inline-flex rounded-full "><a href="../contact-us/index.htm"
+                            class="px-5 py-3 border border-gray-300 text-white font-medium rounded-full shadow hover:text-black hover:bg-gray-100 transition">Talk
+                            to a DevOps Expert</a></div>
                 </div>
             </div>
-            <div class="container right">
-                <i class="icon fa-solid fa-diagram-project"></i>
-                <div class="content">
-                    <h2>Planning & Analysis</h2>
-                    <p>
-                        A detailed roadmap is created covering system architecture, data strategy, model selection, and
-                        timelines. This ensures smooth execution with minimal risks and maximum efficiency.
-                    </p>
-                </div>
-            </div>
-            <div class="container left">
-                <i class="icon fa-solid fa-puzzle-piece"></i>
-                <div class="content">
-                    <h2>Model Design</h2>
-                    <p>
-                        We design custom machine learning, deep learning, or generative AI models tailored to your
-                        business logic — ensuring accuracy, performance, and scalability from the start.
-                    </p>
-                </div>
-            </div>
-            <div class="container right">
-                <i class="icon fa-solid fa-check-double"></i>
-                <div class="content">
-                    <h2>Model Deployment Validation</h2>
-                    <p>
-                        Before full deployment, models are rigorously validated to ensure accuracy, reliability, bias
-                        control, and real-world performance under expected workloads.
-                    </p>
-                </div>
-            </div>
-            <div class="container left">
-                <i class="icon fa-solid fa-laptop-code"></i>
-                <div class="content">
-                    <h2>Integration & Testing</h2>
-                    <p>
-                        AI models are seamlessly integrated into your existing systems, applications, or APIs. Extensive
-                        testing ensures security, scalability, and flawless operation.
-                    </p>
-                </div>
-            </div>
-            <div class="container right">
-                <i class="icon fa-solid fa-rocket"></i>
-                <div class="content">
-                    <h2>Deployment & Monitoring</h2>
-                    <p>
-                        AI solutions are deployed to production environments with continuous monitoring, optimization,
-                        and scaling to ensure long-term performance and business impact.
-                    </p>
-                </div>
-            </div>
-        </div>
-    </section> -->
-
-    <section
-        class="min-h-screen  items-center justify-center p-4 md:p-8 bg-gradient-to-b from-gray-50 to-gray-100 relative overflow-hidden">
-        <!-- Decorative Stars -->
-        <div class="absolute -top-10 right-10 md:right-20 text-white opacity-10 animate-pulse">
-            <svg class="w-16 md:w-24 h-16 md:h-24" viewBox="0 0 100 100" fill="currentColor">
-                <path d="M50 0 L61 39 L100 50 L61 61 L50 100 L39 61 L0 50 L39 39 Z" />
-            </svg>
-        </div>
-
-        <div class="absolute top-20 md:top-32 right-4 md:right-8 text-white opacity-20 animate-pulse"
-            style="animation-delay: 0.5s;">
-            <svg class="w-12 md:w-16 h-12 md:h-16" viewBox="0 0 100 100" fill="currentColor">
-                <path d="M50 0 L61 39 L100 50 L61 61 L50 100 L39 61 L0 50 L39 39 Z" />
-            </svg>
-        </div>
-
-        <!-- Title -->
-        <div class="max-w-full w-full text-center mb-12 md:mb-16">
-            <h1 class="text-3xl md:text-5xl font-bold text-gray-900 leading-snug">
-                Our <span class="hero-gradient">AI Development</span> Process
-            </h1>
-            <p class="text-gray-600 mt-4 md:mt-6 max-w-3xl mx-auto">A structured approach to creating AI solutions that
-                deliver measurable business impact.</p>
-        </div>
-
-        <!-- Process Steps -->
-        <div class="max-w-6xl w-full m-auto space-y-10 md:space-y-12 ">
-
-            <!-- Step 1 -->
-            <div class="flex flex-col md:flex-row items-start md:items-center group">
-                <div class="flex items-center w-full md:w-auto mb-4 md:mb-0">
-                    <div class="relative flex-shrink-0">
-                        <div
-                            class="w-20 h-20 rounded-full bg-[#F0F4FF] flex items-center justify-center border-4 border-white shadow-xl transition-transform group-hover:scale-105">
-                            <span class="text-2xl md:text-3xl font-bold text-[#1e3a8a]">1</span>
-                        </div>
-                    </div>
-                    <div class="dotted-line w-16 md:w-24 border-t-2 border-dashed border-gray-300 ml-4 hidden md:block">
-                    </div>
-                </div>
-                <div class="md:ml-6 flex-1">
-                    <h2 class="text-xl md:text-2xl font-semibold text-gray-900 mb-2">Requirement Discovery</h2>
-                    <p class="text-gray-600 text-sm md:text-base">We analyze your business goals and challenges to
-                        identify impactful AI use cases. <br> This ensures solutions align with objectives and deliver
-                        measurable value.</p>
-                </div>
-            </div>
-
-            <!-- Step 2 -->
-            <div class="flex flex-col md:flex-row-reverse items-start md:items-center group">
-                <div class="flex items-center w-full md:w-auto mb-4 md:mb-0 flex-row-reverse md:flex-row">
-                    <div class="relative flex-shrink-0">
-                        <div
-                            class="w-20 h-20 rounded-full bg-[#F0F4FF] flex items-center justify-center border-4 border-white shadow-xl transition-transform group-hover:scale-105">
-                            <span class="text-2xl md:text-3xl font-bold text-[#1e3a8a]">2</span>
-                        </div>
-                    </div>
-                    <div class="dotted-line w-16 md:w-24 border-t-2 border-dashed border-gray-300 mr-4 hidden md:block">
-                    </div>
-                </div>
-                <div class="md:mr-6 flex-1 md:text-right">
-                    <h2 class="text-xl md:text-2xl font-semibold text-gray-900 mb-2">Planning & Analysis</h2>
-                    <p class="text-gray-600 text-sm md:text-base">We create a detailed roadmap covering system
-                        architecture, data strategy, <br> model selection, and timelines, ensuring smooth execution with
-                        minimal risk.</p>
-                </div>
-            </div>
-
-            <!-- Step 3 -->
-            <div class="flex flex-col md:flex-row items-start md:items-center group">
-                <div class="flex items-center w-full md:w-auto mb-4 md:mb-0">
-                    <div class="relative flex-shrink-0">
-                        <div
-                            class="w-20 h-20 rounded-full bg-[#F0F4FF] flex items-center justify-center border-4 border-white shadow-xl transition-transform group-hover:scale-105">
-                            <span class="text-2xl md:text-3xl font-bold text-[#1e3a8a]">3</span>
-                        </div>
-                    </div>
-                    <div class="dotted-line w-16 md:w-24 border-t-2 border-dashed border-gray-300 ml-4 hidden md:block">
-                    </div>
-                </div>
-                <div class="md:ml-6 flex-1">
-                    <h2 class="text-xl md:text-2xl font-semibold text-gray-900 mb-2">Model Design</h2>
-                    <p class="text-gray-600 text-sm md:text-base">We design AI models including machine learning, deep
-                        learning, or <br> generative AI tailored to your business logic, ensuring accuracy and
-                        scalability.</p>
-                </div>
-            </div>
-
-            <!-- Step 4 -->
-            <div class="flex flex-col md:flex-row-reverse items-start md:items-center group">
-                <div class="flex items-center w-full md:w-auto mb-4 md:mb-0 flex-row-reverse md:flex-row">
-                    <div class="relative flex-shrink-0">
-                        <div
-                            class="w-20 h-20 rounded-full bg-[#F0F4FF] flex items-center justify-center border-4 border-white shadow-xl transition-transform group-hover:scale-105">
-                            <span class="text-2xl md:text-3xl font-bold text-[#1e3a8a]">4</span>
-                        </div>
-                    </div>
-                    <div class="dotted-line w-16 md:w-24 border-t-2 border-dashed border-gray-300 mr-4 hidden md:block">
-                    </div>
-                </div>
-                <div class="md:mr-6 flex-1 md:text-right">
-                    <h2 class="text-xl md:text-2xl font-semibold text-gray-900 mb-2">Model Deployment Validation</h2>
-                    <p class="text-gray-600 text-sm md:text-base">Before full deployment, models are rigorously
-                        validated for accuracy, <br> bias control, and real-world performance under expected workloads.
-                    </p>
-                </div>
-            </div>
-
-            <!-- Step 5 -->
-            <div class="flex flex-col md:flex-row items-start md:items-center group">
-                <div class="flex items-center w-full md:w-auto mb-4 md:mb-0">
-                    <div class="relative flex-shrink-0">
-                        <div
-                            class="w-20 h-20 rounded-full bg-[#F0F4FF] flex items-center justify-center border-4 border-white shadow-xl transition-transform group-hover:scale-105">
-                            <span class="text-2xl md:text-3xl font-bold text-[#1e3a8a]">5</span>
-                        </div>
-                    </div>
-                    <div class="dotted-line w-16 md:w-24 border-t-2 border-dashed border-gray-300 ml-4 hidden md:block">
-                    </div>
-                </div>
-                <div class="md:ml-6 flex-1">
-                    <h2 class="text-xl md:text-2xl font-semibold text-gray-900 mb-2">Integration & Testing</h2>
-                    <p class="text-gray-600 text-sm md:text-base">AI models are integrated into your systems, apps, or
-                        APIs. Extensive <br> testing ensures security, scalability, and flawless operation.</p>
-                </div>
-            </div>
-
-            <!-- Step 6 -->
-            <div class="flex flex-col md:flex-row-reverse items-start md:items-center group">
-                <div class="flex items-center w-full md:w-auto mb-4 md:mb-0 flex-row-reverse md:flex-row">
-                    <div class="relative flex-shrink-0">
-                        <div
-                            class="w-20 h-20 rounded-full bg-[#F0F4FF] flex items-center justify-center border-4 border-white shadow-xl transition-transform group-hover:scale-105">
-                            <span class="text-2xl md:text-3xl font-bold text-[#1e3a8a]">6</span>
-                        </div>
-                    </div>
-                    <div class="dotted-line w-16 md:w-24 border-t-2 border-dashed border-gray-300 mr-4 hidden md:block">
-                    </div>
-                </div>
-                <div class="md:mr-6 flex-1 md:text-right">
-                    <h2 class="text-xl md:text-2xl font-semibold text-gray-900 mb-2">Deployment & Monitoring</h2>
-                    <p class="text-gray-600 text-sm md:text-base">AI solutions are deployed to production environments
-                        with continuous <br> monitoring, optimization, and scaling for long-term performance and impact.
-                    </p>
-                </div>
-            </div>
-
         </div>
     </section>
+    <!-- end Schedule a DevOps Assessment Session With Our -->
 
-    <!-- faq  -->
+    <!-- faq section -->
     <section class="py-16 bg-white">
         <div class="px-4">
             <div class=" mt-10">
                 <div class="w-full bg-cover bg-center overflow-hidden">
                     <div class="flex items-center justify-center h-full w-full ">
-                        <div class="flex flex-col place-items-center items-center text-center py-16 m-4"
+                        <div class="flex flex-col place-items-center items-center text-center pb-16 m-4"
                             data-aos="fade-up" data-aos-easing="ease-out-back" data-aos-duration="700">
                             <span
                                 class="mb-3 inline-flex items-center gap-2 px-4 py-1 rounded-full bg-gray-900 text-sm text-white">
@@ -1954,14 +792,14 @@
                             </span>
                             <h2 class="font-serif font-bold lg:text-5xl tracking-normal text-4xl text-shark-500 max-w-5xl"
                                 style="color:#24262B;line-height:1.20">Frequently Asked <span
-                                    class="hero-gradient">Questions</span>
+                                    class="text-4xl font-bold bg-gradient-to-br from-blue-900 to-blue-400 bg-clip-text text-transparent">Questions</span>
                             </h2>
                             <div class="flex md:flex-row flex-col md:gap-9 gap-1"></div>
                         </div>
                     </div>
                 </div>
 
-                <div class="max-w-6xl w-full m-auto space-y-10 md:space-y-12">
+                <div class="max-w-6xl w-full m-auto ">
 
                     <!-- FAQ Item 1 -->
                     <div class="faq-item mb-4 border rounded-lg bg-white overflow-hidden transition-all duration-300">
@@ -1974,9 +812,10 @@
                                     d="M12 4v16m8-8H4"></path>
                             </svg>
                         </button>
-                        <div class="faq-content max-h-0 overflow-hidden px-4 transition-all duration-500">
+                        <div
+                            class="faq-content max-h-0 overflow-hidden transition-[max-height] duration-[350ms] ease-in-out px-4 duration-500">
                             <p class="py-2 text-gray-600">Costs vary by experience. We offer competitive rates,
-                                typically between $25 and $50 per hour. When you hire react native developers from us,
+                                typically between $25 and $50 per hour. from us,
                                 we give a clear quote upfront.</p>
                         </div>
                     </div>
@@ -1992,7 +831,8 @@
                                     d="M12 4v16m8-8H4"></path>
                             </svg>
                         </button>
-                        <div class="faq-content max-h-0 overflow-hidden px-4 transition-all duration-500">
+                        <div
+                            class="faq-content max-h-0 overflow-hidden transition-[max-height] duration-[350ms] ease-in-out px-4 duration-500">
                             <p class="py-2 text-gray-600">Yes. You can interview them and give technical tests before
                                 you decide to hire react native developer experts from us.</p>
                         </div>
@@ -2009,7 +849,8 @@
                                     d="M12 4v16m8-8H4"></path>
                             </svg>
                         </button>
-                        <div class="faq-content max-h-0 overflow-hidden px-4 transition-all duration-500">
+                        <div
+                            class="faq-content max-h-0 overflow-hidden transition-[max-height] duration-[350ms] ease-in-out px-4 duration-500">
                             <p class="py-2 text-gray-600">A basic app takes 2-3 months. Complex apps take 4-6 months.
                                 Our AI tools help us work faster than average.</p>
                         </div>
@@ -2024,7 +865,8 @@
                                     d="M12 4v16m8-8H4"></path>
                             </svg>
                         </button>
-                        <div class="faq-content max-h-0 overflow-hidden px-4 transition-all duration-500">
+                        <div
+                            class="faq-content max-h-0 overflow-hidden transition-[max-height] duration-[350ms] ease-in-out px-4 duration-500">
                             <p class="py-2 text-gray-600">A basic app takes 2-3 months. Complex apps take 4-6 months.
                                 Our AI tools help us work faster than average.</p>
                         </div>
@@ -2039,39 +881,92 @@
                                     d="M12 4v16m8-8H4"></path>
                             </svg>
                         </button>
-                        <div class="faq-content max-h-0 overflow-hidden px-4 transition-all duration-500">
+                        <div
+                            class="faq-content max-h-0 overflow-hidden transition-[max-height] duration-[350ms] ease-in-out px-4 duration-500">
                             <p class="py-2 text-gray-600">A basic app takes 2-3 months. Complex apps take 4-6 months.
                                 Our AI tools help us work faster than average.</p>
                         </div>
                     </div>
 
                 </div>
+
             </div>
         </div>
     </section>
+    <!--end faq section -->
 
-    <div class="newcta-bg-image flex items-center justify-center h-full w-full bg-blue-500">
-        <div class="flex flex-col place-items-center items-center text-center py-10 m-4 aos-init aos-animate leading-10"
-            data-aos="fade-up" data-aos-easing="ease-out-back" data-aos-duration="700">
-            <h2 class="font-serif font-bold lg:text-5xl tracking-normal text-4xl lg:max-w-screen-lg max-w-lg  text-center"
-                style="color:#FFFFFF;line-height:1.20"> Schedule a DevOps Assessment Session With Our
-                Expert Developers</h2>
-            <p class="text-white  pt-6 text-lg
-    mx-auto
-     font-sans max-w-4xl">As we are a custom software Development Company in the USA, our DevOps solutions are
-                researched and tested that connects a user with the brand.</p>
-            <div class="mt-8 flex lg:flex-shrink-0">
-                <div class="inline-flex rounded-full "><a href="../contact-us/index.htm"
-                        class="px-5 py-3 border border-gray-300 text-white font-medium rounded-full shadow hover:text-black hover:bg-gray-100 transition">Talk
-                        to a DevOps Expert</a></div>
+     <!-- Let's Talk -->
+    <section class="py-16 bg-gray-100 min-h-screen flex items-center justify-center p-4"
+        style="background-image: url(./assets/image/bg-form.png);">
+        <div class="w-full max-w-6xl rounded-sm shadow-2xl overflow-hidden bg-cover bg-center bg-no-repeat"
+            style="background-image: url('./assets/image/contact_bg.webp');">
+
+            <!-- GRID LAYOUT -->
+            <div class="grid grid-cols-1 lg:grid-cols-[65%_35%]">
+
+                <!-- LEFT : FORM (75%) -->
+                <div class="order-2 lg:order-1 p-8 md:p-12 lg:p-12">
+                    <h1 class="text-4xl md:text-5xl font-bold text-white mb-10">
+                        Let's Talk
+                    </h1>
+
+                    <form class="space-y-6" id="contactForm">
+
+                        <input type="text" placeholder="First Name*" required
+                            class="w-full bg-transparent border-b-2 border-purple-300 text-white placeholder-purple-200 py-3 focus:outline-none focus:border-white" />
+
+                        <input type="email" placeholder="Email*" required
+                            class="w-full bg-transparent border-b-2 border-purple-300 text-white placeholder-purple-200 py-3 focus:outline-none focus:border-white" />
+
+                        <input type="tel" placeholder="Phone Number"
+                            class="w-full bg-transparent border-b-2 border-purple-300 text-white placeholder-purple-200 py-3 focus:outline-none focus:border-white" />
+
+                        <textarea rows="3" placeholder="Message*" required
+                            class="w-full bg-transparent border-b-2 border-purple-300 text-white placeholder-purple-200 py-3 resize-none focus:outline-none focus:border-white"></textarea>
+
+                        <button type="submit"
+                            class="mt-6 px-5 py-3 border border-gray-300 text-white font-medium rounded-full shadow hover:text-black hover:bg-gray-100 transition">
+                            Get In Touch
+                        </button>
+
+                    </form>
+                </div>
+
+                <!-- RIGHT : PROFILE (25%) -->
+                <div class="order-1 lg:order-2 bg-[1e3a8a] flex items-center justify-center p-6">
+                    <div class="text-center">
+
+                        <img src="https://media.licdn.com/dms/image/v2/D4D03AQE9KprJTJ1cog/profile-displayphoto-shrink_400_400/B4DZYoTna6H4Ag-/0/1744432953475?e=1771459200&v=beta&t=1pbLRztGg0AUiB2k2hK_4BeI3eN1OPxSRrb2pHjlvug"
+                            class="w-32 h-32 rounded-full mx-auto border-4 border-white shadow-xl object-cover mb-4"
+                            alt="Profile" />
+
+                        <h2 class="text-2xl font-bold text-white mb-2">
+                            Shreyans Padmani
+                        </h2>
+
+                        <p class="text-purple-200 text-sm mb-6 leading-relaxed">
+                            Building scalable apps & tech roadmaps for growing businesses.
+                        </p>
+
+                        <button class="inline-flex items-center gap-2 text-white hover:text-pink-300 transition">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                <path
+                                    d="M20.01 15.38c-1.23 0-2.42-.2-3.53-.56a.977.977 0 0 0-1.01.24l-1.57 1.97c-2.83-1.35-5.48-3.9-6.89-6.83l1.95-1.66c.27-.28.35-.67.24-1.02-.37-1.11-.56-2.3-.56-3.53 0-.54-.45-.99-.99-.99H4.19C3.65 3 3 3.24 3 3.99 3 13.28 10.73 21 20.01 21c.71 0 .99-.63.99-1.18v-3.45c0-.54-.45-.99-.99-.99z" />
+                            </svg>
+                            <span class="font-semibold text-sm">CALL US</span>
+                        </button>
+
+                    </div>
+                </div>
+
             </div>
         </div>
-    </div>
-
+    </section>
+    <!--end Let's Talk -->
 
     <!-- Footer -->
     <footer class="bg-white text-black">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-12  lg:py-16">
             <!-- Main Footer Content -->
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
 
@@ -2149,53 +1044,75 @@
 
                 <!-- Services Column -->
                 <div>
-                    <h3 class="flex items-center justify-start text-lg font-semibold mb-4 border-b border-gray-700 pb-2">SERVICES</h3>
+                    <h3
+                        class="flex items-center justify-start text-lg font-semibold mb-4 border-b border-gray-700 pb-2">
+                        SERVICES</h3>
                     <ul class="space-y-3">
-                        <li class="flex items-center justify-start"><a href="#" class="text-gray-600 hover:text-white transition-colors text-sm">Web
+                        <li class="flex items-center justify-start"><a href="#"
+                                class="text-gray-600 hover:text-white transition-colors text-sm">Web
                                 Development</a></li>
-                        <li class="flex items-center justify-start"><a href="#" class="text-gray-600 hover:text-white transition-colors text-sm">Mobile
+                        <li class="flex items-center justify-start"><a href="#"
+                                class="text-gray-600 hover:text-white transition-colors text-sm">Mobile
                                 Development</a></li>
-                        <li class="flex items-center justify-start"><a href="#" class="text-gray-600 hover:text-white transition-colors text-sm">Product Design
+                        <li class="flex items-center justify-start"><a href="#"
+                                class="text-gray-600 hover:text-white transition-colors text-sm">Product Design
                                 and Development</a></li>
-                        <li class="flex items-center justify-start"><a href="#" class="text-gray-600 hover:text-white transition-colors text-sm">DevOps
+                        <li class="flex items-center justify-start"><a href="#"
+                                class="text-gray-600 hover:text-white transition-colors text-sm">DevOps
                                 Services</a></li>
-                        <li class="flex items-center justify-start"><a href="#" class="text-gray-600 hover:text-white transition-colors text-sm">Blockchain
+                        <li class="flex items-center justify-start"><a href="#"
+                                class="text-gray-600 hover:text-white transition-colors text-sm">Blockchain
                                 Services</a></li>
-                        <li class="flex items-center justify-start"><a href="#" class="text-gray-600 hover:text-white transition-colors text-sm">Q&A
+                        <li class="flex items-center justify-start"><a href="#"
+                                class="text-gray-600 hover:text-white transition-colors text-sm">Q&A
                                 Services</a></li>
-                        <li class="flex items-center justify-start"><a href="#" class="text-gray-600 hover:text-white transition-colors text-sm">Hire Dedicated
+                        <li class="flex items-center justify-start"><a href="#"
+                                class="text-gray-600 hover:text-white transition-colors text-sm">Hire Dedicated
                                 Developers</a></li>
-                        <li class="flex items-center justify-start"><a href="#" class="text-gray-600 hover:text-white transition-colors text-sm">Management & IT
+                        <li class="flex items-center justify-start"><a href="#"
+                                class="text-gray-600 hover:text-white transition-colors text-sm">Management & IT
                                 Consulting</a></li>
                     </ul>
                 </div>
 
                 <!-- Tools & Tech Column -->
                 <div>
-                    <h3 class="flex items-center justify-start text-lg font-semibold mb-4 border-b border-gray-700 pb-2">TOOLS & TECH</h3>
+                    <h3
+                        class="flex items-center justify-start text-lg font-semibold mb-4 border-b border-gray-700 pb-2">
+                        TOOLS & TECH</h3>
                     <ul class="space-y-3">
-                        <li class="flex items-center justify-start"><a href="#" class="text-gray-600 hover:text-white transition-colors text-sm">Laravel
+                        <li class="flex items-center justify-start"><a href="#"
+                                class="text-gray-600 hover:text-white transition-colors text-sm">Laravel
                                 Development Services</a></li>
-                        <li class="flex items-center justify-start"><a href="#" class="text-gray-600 hover:text-white transition-colors text-sm">React JS
+                        <li class="flex items-center justify-start"><a href="#"
+                                class="text-gray-600 hover:text-white transition-colors text-sm">React JS
                                 Development Services</a></li>
-                        <li class="flex items-center justify-start"><a href="#" class="text-gray-600 hover:text-white transition-colors text-sm">React Native
+                        <li class="flex items-center justify-start"><a href="#"
+                                class="text-gray-600 hover:text-white transition-colors text-sm">React Native
                                 Development</a></li>
-                        <li class="flex items-center justify-start"><a href="#" class="text-gray-600 hover:text-white transition-colors text-sm">Node Js
+                        <li class="flex items-center justify-start"><a href="#"
+                                class="text-gray-600 hover:text-white transition-colors text-sm">Node Js
                                 Development Services</a></li>
-                        <li class="flex items-center justify-start"><a href="#" class="text-gray-600 hover:text-white transition-colors text-sm">Flutter App
+                        <li class="flex items-center justify-start"><a href="#"
+                                class="text-gray-600 hover:text-white transition-colors text-sm">Flutter App
                                 Development</a></li>
-                        <li class="flex items-center justify-start"><a href="#" class="text-gray-600 hover:text-white transition-colors text-sm">Django
+                        <li class="flex items-center justify-start"><a href="#"
+                                class="text-gray-600 hover:text-white transition-colors text-sm">Django
                                 development services</a></li>
-                        <li class="flex items-center justify-start"><a href="#" class="text-gray-600 hover:text-white transition-colors text-sm">Python
+                        <li class="flex items-center justify-start"><a href="#"
+                                class="text-gray-600 hover:text-white transition-colors text-sm">Python
                                 development services</a></li>
-                        <li class="flex items-center justify-start"><a href="#" class="text-gray-600 hover:text-white transition-colors text-sm">AWS Development
+                        <li class="flex items-center justify-start"><a href="#"
+                                class="text-gray-600 hover:text-white transition-colors text-sm">AWS Development
                                 Services</a></li>
                     </ul>
                 </div>
 
                 <!-- Company Column -->
                 <div class="text-black">
-                    <h3 class="flex items-center justify-start text-lg font-semibold mb-6 border-b border-gray-700 pb-2">Contact Us</h3>
+                    <h3
+                        class="flex items-center justify-start text-lg font-semibold mb-6 border-b border-gray-700 pb-2">
+                        Contact Us</h3>
                     <ul class="space-y-4">
 
                         <!-- Address -->
@@ -2245,286 +1162,18 @@
                     <!-- Copyright -->
                     <div class="text-center md:text-center">
                         <p class="text-gray-400 text-sm">
-                            © 2026 WebMobTech Solutions Pvt.Ltd. All Rights Reserved.
+                            © 2026shreyans padmaniTech Solutions Pvt.Ltd. All Rights Reserved.
                         </p>
                     </div>
                 </div>
             </div>
         </div>
     </footer>
+    <!--end Footer -->
 
-
-    <script>
-        // Navbar Scroll Effect
-        const navbar = document.getElementById("navbar");
-        let lastScrollTop = 0;
-        let ticking = false;
-
-        function updateNavbar(scrollTop) {
-            if (scrollTop > 50) {
-                navbar.classList.add("scrolled");
-            } else {
-                navbar.classList.remove("scrolled");
-            }
-        }
-
-        function onScroll() {
-            lastScrollTop = window.pageYOffset || document.documentElement.scrollTop;
-
-            if (!ticking) {
-                window.requestAnimationFrame(() => {
-                    updateNavbar(lastScrollTop);
-                    ticking = false;
-                });
-
-                ticking = true;
-            }
-        }
-
-        window.addEventListener("scroll", onScroll);
-
-        // Mobile Menu Toggle
-        const mobileMenuBtn = document.getElementById("mobileMenuBtn");
-        const mobileMenu = document.getElementById("mobileMenu");
-        const closeMobileMenu = document.getElementById("closeMobileMenu");
-        const mobileNavLinks = document.querySelectorAll(".mobile-nav-link");
-
-        function openMobileMenu() {
-            mobileMenu.classList.add("active");
-            mobileMenuBtn.classList.add("active");
-            document.body.style.overflow = "hidden";
-        }
-
-        function closeMobileMenuFunc() {
-            mobileMenu.classList.remove("active");
-            mobileMenuBtn.classList.remove("active");
-            document.body.style.overflow = "";
-        }
-
-        mobileMenuBtn.addEventListener("click", () => {
-            if (mobileMenu.classList.contains("active")) {
-                closeMobileMenuFunc();
-            } else {
-                openMobileMenu();
-            }
-        });
-
-        closeMobileMenu.addEventListener("click", closeMobileMenuFunc);
-
-        // Close mobile menu when clicking on a link
-        mobileNavLinks.forEach((link) => {
-            link.addEventListener("click", () => {
-                closeMobileMenuFunc();
-            });
-        });
-
-        // Close mobile menu when clicking outside
-        mobileMenu.addEventListener("click", (e) => {
-            if (e.target === mobileMenu) {
-                closeMobileMenuFunc();
-            }
-        });
-
-        // Close mobile menu on ESC key
-        document.addEventListener("keydown", (e) => {
-            if (e.key === "Escape" && mobileMenu.classList.contains("active")) {
-                closeMobileMenuFunc();
-            }
-        });
-
-        // Smooth scroll for navigation links
-        document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
-            anchor.addEventListener("click", function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute("href"));
-
-                if (target) {
-                    const navbarHeight = navbar.offsetHeight;
-                    const targetPosition = target.offsetTop - navbarHeight - 20;
-
-                    window.scrollTo({
-                        top: targetPosition,
-                        behavior: "smooth",
-                    });
-                }
-            });
-        });
-
-        // Add active state to current section
-        const sections = document.querySelectorAll("section[id]");
-        const navLinks = document.querySelectorAll(".nav-link");
-
-        function highlightNavigation() {
-            const scrollY = window.pageYOffset;
-
-            sections.forEach((section) => {
-                const sectionHeight = section.offsetHeight;
-                const sectionTop = section.offsetTop - 100;
-                const sectionId = section.getAttribute("id");
-
-                if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
-                    navLinks.forEach((link) => {
-                        link.classList.remove("active");
-                        if (link.getAttribute("href") === `#${sectionId}`) {
-                            link.classList.add("active");
-                        }
-                    });
-                }
-            });
-        }
-
-        window.addEventListener("scroll", highlightNavigation);
-
-        // Parallax effect for hero section
-        const hero = document.querySelector(".h-screen");
-
-        if (hero) {
-            window.addEventListener("scroll", () => {
-                const scrolled = window.pageYOffset;
-                const parallax = scrolled * 0.5;
-                hero.style.transform = `translateY(${parallax}px)`;
-            });
-        }
-
-        // Initialize
-        document.addEventListener("DOMContentLoaded", () => {
-            // Initial navbar state
-            updateNavbar(window.pageYOffset || document.documentElement.scrollTop);
-
-            // Highlight initial section
-            highlightNavigation();
-
-            // Add smooth reveal animations to sections
-            const observerOptions = {
-                threshold: 0.1,
-                rootMargin: "0px 0px -100px 0px",
-            };
-
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach((entry) => {
-                    if (entry.isIntersecting) {
-                        entry.target.style.opacity = "1";
-                        entry.target.style.transform = "translateY(0)";
-                    }
-                });
-            }, observerOptions);
-
-            sections.forEach((section) => {
-                section.style.opacity = "0";
-                section.style.transform = "translateY(30px)";
-                section.style.transition = "opacity 0.6s ease, transform 0.6s ease";
-                observer.observe(section);
-            });
-        });
-
-        // Add ripple effect to buttons
-        function createRipple(event) {
-            const button = event.currentTarget;
-            const ripple = document.createElement("span");
-            const diameter = Math.max(button.clientWidth, button.clientHeight);
-            const radius = diameter / 2;
-
-            ripple.style.width = ripple.style.height = `${diameter}px`;
-            ripple.style.left = `${event.clientX - button.offsetLeft - radius}px`;
-            ripple.style.top = `${event.clientY - button.offsetTop - radius}px`;
-            ripple.classList.add("ripple");
-
-            const existingRipple = button.getElementsByClassName("ripple")[0];
-            if (existingRipple) {
-                existingRipple.remove();
-            }
-
-            button.appendChild(ripple);
-        }
-
-        const buttons = document.querySelectorAll(".cta-button, .mobile-cta-button");
-        buttons.forEach((button) => {
-            button.addEventListener("click", createRipple);
-        });
-
-        // Add ripple CSS dynamically
-        const style = document.createElement("style");
-        style.textContent = `
-  .ripple {
-    position: absolute;
-    border-radius: 50%;
-    background: rgba(255, 255, 255, 0.4);
-    transform: scale(0);
-    animation: ripple-animation 0.6s ease-out;
-    pointer-events: none;
-  }
-
-  @keyframes ripple-animation {
-    to {
-      transform: scale(4);
-      opacity: 0;
-    }
-  }
-`;
-        document.head.appendChild(style);
-
-    </script>
-
-    <script>
-        const cards = document.querySelectorAll(".process-card");
-        const contents = document.querySelectorAll(".tab-content");
-
-        cards.forEach(card => {
-            card.addEventListener("click", () => {
-                cards.forEach(c => c.classList.remove("active-card"));
-                contents.forEach(ct => ct.classList.add("hidden"));
-
-                card.classList.add("active-card");
-                document.getElementById(card.dataset.tab).classList.remove("hidden");
-            });
-        });
-    </script>
-    <script>
-        const faqToggles = document.querySelectorAll(".faq-toggle");
-
-        faqToggles.forEach(toggle => {
-            toggle.addEventListener("click", () => {
-                const content = toggle.nextElementSibling;
-                const icon = toggle.querySelector("svg");
-                const item = toggle.parentElement;
-
-                // Close all other FAQ items
-                faqToggles.forEach(other => {
-                    const otherContent = other.nextElementSibling;
-                    const otherIcon = other.querySelector("svg");
-                    const otherItem = other.parentElement;
-                    if (other !== toggle) {
-                        otherContent.style.maxHeight = "0";
-                        otherIcon.style.transform = "rotate(0deg)";
-                        otherItem.classList.remove("border-blue-500", "shadow-xl");
-                    }
-                });
-
-                // Toggle current FAQ
-                if (content.style.maxHeight && content.style.maxHeight !== "0px") {
-                    content.style.maxHeight = "0";
-                    icon.style.transform = "rotate(0deg)";
-                    item.classList.remove("border-blue-500", "shadow-xl");
-                } else {
-                    content.style.maxHeight = content.scrollHeight + "px";
-                    icon.style.transform = "rotate(45deg)";
-                    item.classList.add("border-blue-500", "shadow-xl");
-                }
-            });
-        });
-
-        // Optional: open first FAQ by default
-        const firstFAQ = document.querySelector(".faq-item .faq-toggle");
-        firstFAQ.click();
-    </script>
-
-</body>
-
-</html>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.js"></script>
 <script src="https://cdn.tailwindcss.com"></script>
-<script src="./assets/js/email.js"></script>
+<script src="./assets/js/dev-script.js"></script>
 
 </body>
-
 </html>
