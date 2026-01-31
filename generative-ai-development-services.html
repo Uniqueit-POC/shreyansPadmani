@@ -1339,6 +1339,85 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.js"></script>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="./assets/js/dev-script.js"></script>
+    <script>
+                 // Data Gathering section slider
+        const sliderContainer = document.getElementById('sliderContainer');
+        const prevBtn = document.getElementById('prevBtn');
+        const nextBtn = document.getElementById('nextBtn');
+        const currentSlideEl = document.getElementById('currentSlide');
+        const totalSlidesEl = document.getElementById('totalSlides');
+
+        const cards = document.querySelectorAll('.process-card');
+        const totalSlides = cards.length;
+        let currentSlide = 0;
+
+        totalSlidesEl.textContent = totalSlides.toString().padStart(2, '0');
+
+        function updateSlideCounter() {
+            currentSlideEl.textContent = (currentSlide + 1).toString().padStart(2, '0');
+        }
+
+        function scrollToSlide(index) {
+            const cardWidth = cards[0].offsetWidth + 24; 
+            sliderContainer.scrollLeft = index * cardWidth;
+            currentSlide = index;
+            updateSlideCounter();
+        }
+
+        prevBtn.addEventListener('click', () => {
+            if (currentSlide > 0) {
+                scrollToSlide(currentSlide - 1);
+            }
+        });
+
+        nextBtn.addEventListener('click', () => {
+            if (currentSlide < totalSlides - 1) {
+                scrollToSlide(currentSlide + 1);
+            }
+        });
+
+        let scrollTimeout;
+        sliderContainer.addEventListener('scroll', () => {
+            clearTimeout(scrollTimeout);
+            scrollTimeout = setTimeout(() => {
+                const cardWidth = cards[0].offsetWidth + 24;
+                const scrolled = sliderContainer.scrollLeft;
+                const newIndex = Math.round(scrolled / cardWidth);
+                if (newIndex !== currentSlide) {
+                    currentSlide = newIndex;
+                    updateSlideCounter();
+                }
+            }, 100);
+        });
+
+        let startX = 0;
+        let scrollLeft = 0;
+
+        sliderContainer.addEventListener('touchstart', (e) => {
+            startX = e.touches[0].pageX - sliderContainer.offsetLeft;
+            scrollLeft = sliderContainer.scrollLeft;
+        });
+
+        sliderContainer.addEventListener('touchmove', (e) => {
+            if (!startX) return;
+            const x = e.touches[0].pageX - sliderContainer.offsetLeft;
+            const walk = (x - startX) * 2;
+            sliderContainer.scrollLeft = scrollLeft - walk;
+        });
+
+        sliderContainer.addEventListener('touchend', () => {
+            startX = 0;
+        });
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowLeft') {
+                prevBtn.click();
+            } else if (e.key === 'ArrowRight') {
+                nextBtn.click();
+            }
+        });
+        // end Data Gathering section slider
+    </script>
 </body>
 
 </html>
