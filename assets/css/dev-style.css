@@ -1,4 +1,7 @@
     /* =-======================================================================================================== */
+     body {
+     font-family: 'Bodoni Grotesk', Arial, 'Inter', sans-serif !important;
+  }
      /* nav bar blink icon */
         .generate-btn svg path {
             fill: #335fff;
@@ -121,10 +124,7 @@
         }
 
         /* Logo */
-        .logo-icon h1 {
-            display: flex;
-            align-items: center;
-            justify-content: center;
+        .logo-icon {
             transition: all 0.3s ease;
         }
 
@@ -206,23 +206,6 @@
         .cta-button:hover {
             transform: translateY(-2px);
             box-shadow: 0 10px 30px rgba(168, 85, 247, 0.4);
-        }
-
-        .cta-shine {
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg,
-                    transparent,
-                    rgba(255, 255, 255, 0.3),
-                    transparent);
-            transition: left 0.5s ease;
-        }
-
-        .cta-button:hover .cta-shine {
-            left: 100%;
         }
 
         /* Mobile Menu Button */
@@ -487,9 +470,12 @@
             }
         }
 
+        
         .newcta-bg-image {
-            background-image: url(/assets/image/ai-integration-cta1.png);
+            background-image: url(https://webmobtechcdn.nyc3.cdn.digitaloceanspaces.com/wmt_v4/2025/04/CTA.png);
             background-position: 50% !important;
+            background-size: cover !important;
+            background-repeat: no-repeat;
         }
 
         @keyframes pulse {
@@ -596,4 +582,56 @@
             box-shadow:
                 0 10px 30px rgba(37, 99, 235, 0.12),
                 0 4px 10px rgba(59, 130, 246, 0.08);
+        }
+
+        /* home page our ai solution */
+        
+        /* home page our ai solution */
+        /* ================= Our AI Development Process ================= */
+    .custom-card {
+      flex: 1;
+      transition: all 0.7s cubic-bezier(0.25, 1, 0.3, 1);
+      cursor: pointer;
+    }
+
+    .custom-accordion-wrapper:hover .custom-card:hover,
+    .custom-accordion-wrapper:not(:hover) .custom-card.active {
+      flex: 6;
+    }
+
+    .custom-card-reveal {
+      opacity: 0;
+      visibility: hidden;
+      transform: translateX(20px);
+      transition: all 0.4s ease;
+      display: flex;
+      align-items: flex-end;
+      padding-left: 1.5rem;
+      padding-bottom: 0.25rem;
+      flex-grow: 1;
+      min-width: 260px;
+    }
+
+    .custom-accordion-wrapper:hover .custom-card:hover .custom-card-reveal,
+    .custom-accordion-wrapper:not(:hover) .custom-card.active .custom-card-reveal {
+      opacity: 1;
+      visibility: visible;
+      transform: translateX(0);
+      transition-delay: 0.2s;
+    }
+    /* ================= end Our AI Development Process ================= */
+    .menu-item svg.arrow {
+    display: none;
+}
+.menu-item.active svg.arrow {
+    display: inline-block;
+}
+   .active-toc {
+            color: #2563eb;
+            font-weight: 600;
+            border-left: 3px solid #2563eb;
+            background-color: #eff6ff;
+        }
+        .overlay-gradient {
+            background: linear-gradient(to top, rgba(0,0,0,0.7) 0%, transparent 100%);
         }

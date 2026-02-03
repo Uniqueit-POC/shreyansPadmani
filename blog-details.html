@@ -1,0 +1,784 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog Detail - How To Build a Farm Management Software</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="assets/image/favicon-logo.png" type="image/x-icon">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/css/dev-style.css">
+</head>
+
+<body class="bg-gray-50">
+
+    <!-- nav -->
+    <section class="text-white">
+        <nav id="navbar"
+            class="navbar py-3 backdrop-blur-0 bg-white fixed top-0 left-0 right-0 z-50 transition-all duration-500">
+            <div class="navbar-container max-w-7xl mx-auto px-6">
+                <div class="flex items-center justify-between">
+                    <div class="logo-container">
+                        <a href="index.html" class="flex items-center gap-3"
+                            aria-label="Shreyansh Padmani – AI Engineer & Software Developer">
+                            <div class="logo-icon text-4xl font-bold text-blue-900">
+                                SP.
+                            </div>
+                        </a>
+                    </div>
+
+                    <ul class="desktop-menu hidden md:flex items-center gap-8">
+                        <li class="nav-item relative group">
+                            <div class="generate-btn inline-flex items-center gap-1.5 cursor-pointer"
+                                aria-haspopup="true" aria-expanded="false" tabindex="0">
+                                <svg class="icon mr-2 h-5 w-5" aria-hidden="true" focusable="false">
+                                    <path
+                                        d="M5.16515 2.62145L5.8075 0.999247C5.83876 0.919722 5.9154 0.866699 6.00112 0.866699C6.08683 0.866699 6.16347 0.919722 6.19473 0.999247L6.83708 2.62145L8.44145 3.27094C8.5201 3.30254 8.57254 3.38003 8.57254 3.4667C8.57254 3.55337 8.5201 3.63085 8.44145 3.66246L6.83708 4.31195L6.19473 5.93415C6.16347 6.0147 6.08683 6.0667 6.00112 6.0667C5.9154 6.0667 5.83876 6.0147 5.8075 5.93415L5.16515 4.31195L3.56078 3.66246C3.48112 3.63085 3.42969 3.55337 3.42969 3.4667C3.42969 3.38003 3.48112 3.30254 3.56078 3.27094L5.16515 2.62145Z" />
+                                    <path
+                                        d="M11.2362 9.43967C11.5502 9.30067 11.8015 9.05025 11.9405 8.73617L13.5494 5.11725C13.7169 4.74204 14.0887 4.5 14.5 4.5C14.9112 4.5 15.2839 4.74204 15.4506 5.11725L17.0603 8.73617C17.1985 9.05025 17.4497 9.3015 17.7638 9.43967L21.3827 11.0494C21.7579 11.2161 22 11.5887 22 12C22 12.4112 21.7579 12.7831 21.3827 12.9506L17.7638 14.5595C17.4497 14.6985 17.1993 14.9497 17.0603 15.2638L15.4506 18.8827C15.2839 19.2579 14.9112 19.5 14.5 19.5C14.0887 19.5 13.7169 19.2579 13.5494 18.8827L11.9405 15.2638C11.8015 14.9497 11.5502 14.6985 11.2362 14.5595L7.61725 12.9506C7.24204 12.7831 7 12.4112 7 12C7 11.5887 7.24204 11.2161 7.61725 11.0494L11.2362 9.43967Z" />
+                                    <path
+                                        d="M4.60728 19.392L5.67703 16.6875C5.72997 16.5541 5.85854 16.4666 6.00056 16.4666C6.14258 16.4666 6.27031 16.5541 6.32325 16.6875L7.39299 19.392L10.0678 20.4736C10.1997 20.5271 10.2863 20.6563 10.2863 20.7999C10.2863 20.9435 10.1997 21.0735 10.0678 21.1271L7.39299 22.2087L6.32325 24.9123C6.27031 25.0457 6.14258 25.1332 6.00056 25.1332C5.85854 25.1332 5.72997 25.0457 5.67703 24.9123L4.60728 22.2087L1.93333 21.1271C1.8014 21.0735 1.71484 20.9435 1.71484 20.7999C1.71484 20.6563 1.8014 20.5271 1.93333 20.4736L4.60728 19.392Z" />
+                                </svg>
+                                <a href="index.html" class="text-blue-900 font-bold py-2 inline-block">Expertise</a>
+                            </div>
+                            <ul
+                                class="absolute left-0 mt-3 w-64 rounded-md bg-gradient-to-br from-white via-blue-50 to-indigo-100 shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+                                <li>
+                                    <a href="computer-vision-development-services.html"
+                                        class="flex items-center px-4 py-2 text-gray-700 hover:bg-gray-100 rounded-md gap-3">
+                                        <img src="./assets/image/Computer-Vision-Solutions.svg"
+                                            alt="Computer Vision AI Service Icon" class="w-5 h-5">
+                                        AI Computer Vision Development Services
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="generative-ai-development-services.html"
+                                        class="flex items-center px-4 py-2 text-gray-700 hover:bg-gray-100 rounded-md gap-3">
+                                        <img src="./assets/image/generative-ai-development-services.svg"
+                                            alt="Generative AI Service Icon" class="w-5 h-5">
+                                        Custom Generative AI Development Services
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="machine-learning-development-services.html"
+                                        class="flex items-center px-4 py-2 text-gray-700 hover:bg-gray-100 rounded-md gap-3">
+                                        <img src="./assets/image/Machine-Learning-Predictive-Analytics-Development.svg"
+                                            alt="Generative AI Service Icon" class="w-5 h-5">
+                                        ML Development 
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="custom-aI-model-training.html"
+                                        class="flex items-center px-4 py-2 text-gray-700 hover:bg-gray-100 rounded-md gap-3">
+                                        <img src="./assets/image/Custom-AI-Model-Training.svg"
+                                            alt="Generative AI Service Icon" class="w-5 h-5">
+                                       Custom AI Model Training
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="natural-language-processing.html"
+                                        class="flex items-center px-4 py-2 text-gray-700 hover:bg-gray-100 rounded-md gap-3">
+                                        <img src="./assets/image/Natural-Language-Processing.svg"
+                                            alt="Generative AI Service Icon" class="w-5 h-5">
+                                       Natural Language Processing
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <!-- <li class="nav-item">
+                            <a href="#features" class="nav-link">Services</a>
+                        </li> -->
+                        <li class="nav-item">
+                            <a href="blog.html" class="nav-link">Blog</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="case-studies.html" class="nav-link">Case Studies</a>
+                        </li>
+                    </ul>
+
+                    <div class="hidden md:block">
+                        <button
+                            class="hero-btn-pramiry relative px-8 py-3 rounded-full bg-gradient-to-br from-blue-900 to-blue-400 text-white font-semibold overflow-hidden transition-all duration-300 ease-in-out hover:-translate-y-0.5  hover:shadow-[0_10px_30px_rgba(51,95,255,0.55)] border-0 cursor-pointer active gap-2">
+                            <span class="relative z-10">Hire Me</span>
+                        </button>
+                    </div>
+
+                    <button id="mobileMenuBtn" class="mobile-menu-btn md:hidden" aria-label="Open mobile menu"
+                        aria-controls="mobileMenu" aria-expanded="false">
+                        <span class="hamburger-line"></span>
+                        <span class="hamburger-line"></span>
+                        <span class="hamburger-line"></span>
+                    </button>
+                </div>
+            </div>
+        </nav>
+
+        <div id="mobileMenu" class="mobile-menu">
+            <button id="closeMobileMenu" class="close-btn" aria-label="Close mobile menu">
+                <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"
+                    focusable="false">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+            </button>
+            <div class="mobile-menu-content">
+                <ul class="mobile-nav-list">
+                    <li class="mobile-nav-item">
+                        <a href="index.html" class="mobile-nav-link">Expertise</a>
+                    </li>
+                    <!-- <li class="mobile-nav-item">
+                        <a href="#features" class="mobile-nav-link">Services</a>
+                    </li> -->
+                    <li class="mobile-nav-item">
+                        <a href="blog.html" class="mobile-nav-link">Blog</a>
+                    </li>
+                    <li class="mobile-nav-item">
+                        <a href="case-studies.html" class="mobile-nav-link">Case Studies</a>
+                    </li>
+                    <li class="mobile-nav-item mt-8">
+                        <a href="contact.html" class="mobile-cta-button">Hire Me</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    <!--end nav -->
+
+    <!-- Hero Banner with Breadcrumb -->
+    <section
+        class="mt-10 relative min-h-[400px] flex items-center justify-center bg-gradient-to-br from-purple-200 via-white to-blue-200">
+
+        <!-- Decorative Elements -->
+        <div class="absolute inset-0 overflow-hidden">
+            <div class="absolute top-20 left-10 w-72 h-72 bg-purple-200/30 rounded-full blur-3xl"></div>
+            <div class="absolute bottom-20 right-10 w-96 h-96 bg-blue-200/30 rounded-full blur-3xl"></div>
+        </div>
+
+        <div class="relative z-10 max-w-5xl mx-auto px-4 py-16 text-center">
+            <!-- Breadcrumb -->
+            <nav class="flex justify-center mb-8 text-sm text-gray-200" aria-label="Breadcrumb">
+                <ol class="inline-flex items-center space-x-2">
+                    <li>
+                        <a href="index.html" class="text-gray-800 hover:text-blue-300 transition-colors">Home</a>
+                    </li>
+                    <li>
+                        <span class="mx-2 text-gray-700">›</span>
+                    </li>
+                    <li>
+                        <a href="blog.html" class="text-gray-700 hover:text-blue-300 transition-colors">Blog</a>
+                    </li>
+                    <li>
+                        <span class="mx-2 text-gray-700">›</span>
+                    </li>
+                    <li class="text-gray-500">Generative AI</li>
+                </ol>
+            </nav>
+
+            <!-- Category -->
+            <span
+                class="inline-block px-4 py-2 bg-purple-600 text-white text-sm font-semibold rounded-full shadow-lg mb-4">
+                Generative AI
+            </span>
+
+            <!-- Title -->
+            <div class="text-gray-900 font-extrabold text-4xl sm:text-5xl lg:text-6xl mb-6">
+                How Generative AI Is Transforming Modern Businesses
+            </div>
+
+            <!-- Meta -->
+            <div class="flex items-center justify-center gap-6 text-gray-200 mb-6">
+                <div class="flex items-center gap-3">
+                    <img src="https://ui-avatars.com/api/?name=AI+Research+Team&background=7c3aed&color=fff"
+                        alt="AI Research Team" class="w-12 h-12 rounded-full shadow">
+                    <div class="text-left">
+                        <p class="font-semibold text-gray-900 ">AI Research Team</p>
+                        <p class="text-sm text-gray-800">
+                            <time datetime="2026-02-18">18 Feb 2026</time>
+                        </p>
+                    </div>
+                </div>
+                <span class="hidden sm:block w-px h-10 bg-gray-300"></span>
+                <span class="text-sm text-gray-900">7 min read</span>
+            </div>
+
+            <!-- Description -->
+            <p class="text-lg max-w-3xl mx-auto">
+                Discover how <strong>Generative AI</strong> helps companies automate workflows, generate content,
+                enhance customer experiences, and gain a competitive edge in today’s fast-moving digital world.
+            </p>
+        </div>
+    </section>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <div class="grid lg:grid-cols-[236px_1fr_237px] grid-cols-1  gap-6">
+
+            <!-- Left Sidebar - Table of Contents -->
+            <aside class="">
+                <div class="sticky top-8">
+                    <div class="bg-white rounded-2xl shadow-md p-6 mb-6">
+                        <h3 class="text-lg font-bold text-gray-900 mb-4">Table of Contents</h3>
+                        <nav id="toc" class="space-y-1">
+                            <a href="#introduction"
+                                class="toc-item block py-2 px-3 text-sm text-gray-600 hover:text-blue-600 hover:bg-gray-50 rounded transition-all">Introduction</a>
+                            <a href="#understanding-farm"
+                                class="toc-item block py-2 px-3 text-sm text-gray-600 hover:text-blue-600 hover:bg-gray-50 rounded transition-all">Understanding
+                                Generative AI</a>
+                            <a href="#key-features"
+                                class="toc-item block py-2 px-3 text-sm text-gray-600 hover:text-blue-600 hover:bg-gray-50 rounded transition-all">Key
+                                Capabilities</a>
+                            <a href="#technology-stack"
+                                class="toc-item block py-2 px-3 text-sm text-gray-600 hover:text-blue-600 hover:bg-gray-50 rounded transition-all">Technology
+                                Stack</a>
+                            <a href="#development-process"
+                                class="toc-item block py-2 px-3 text-sm text-gray-600 hover:text-blue-600 hover:bg-gray-50 rounded transition-all">Implementation
+                                Process</a>
+                            <a href="#challenges"
+                                class="toc-item block py-2 px-3 text-sm text-gray-600 hover:text-blue-600 hover:bg-gray-50 rounded transition-all">Challenges</a>
+                            <a href="#best-practices"
+                                class="toc-item block py-2 px-3 text-sm text-gray-600 hover:text-blue-600 hover:bg-gray-50 rounded transition-all">Best
+                                Practices</a>
+                            <a href="#conclusion"
+                                class="toc-item block py-2 px-3 text-sm text-gray-600 hover:text-blue-600 hover:bg-gray-50 rounded transition-all">Conclusion</a>
+                        </nav>
+                    </div>
+                    <!-- Social Media Icons -->
+                    <div class="bg-white rounded-2xl shadow-md p-6">
+                        <h3 class="text-lg font-bold text-gray-900 mb-4">Share Article</h3>
+                        <div class="flex  items-center gap-3">
+                            <a href="#" class="flex items-center rounded-lg hover:bg-blue-50 transition-colors group">
+                                <div
+                                    class="w-10 h-10 bg-blue-600 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform">
+                                    <svg class="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 24 24">
+                                        <path
+                                            d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
+                                    </svg>
+                                </div>
+                            </a>
+                            <a href="#" class="flex items-center rounded-lg hover:bg-blue-50 transition-colors group">
+                                <div
+                                    class="w-10 h-10 bg-blue-400 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform">
+                                    <svg class="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 24 24">
+                                        <path
+                                            d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z" />
+                                    </svg>
+                                </div>
+                            </a>
+                            <a href="#" class="flex items-center rounded-lg hover:bg-blue-50 transition-colors group">
+                                <div
+                                    class="w-10 h-10 bg-blue-700 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform">
+                                    <svg class="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 24 24">
+                                        <path
+                                            d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+                                    </svg>
+                                </div>
+                            </a>
+                            <a href="#" class="flex items-center rounded-lg hover:bg-green-50 transition-colors group">
+                                <div
+                                    class="w-10 h-10 bg-green-500 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform">
+                                    <svg class="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 24 24">
+                                        <path
+                                            d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z" />
+                                    </svg>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </aside>
+
+            <!-- Main Content -->
+            <main class="">
+                <article class="bg-white rounded-2xl shadow-md overflow-hidden">
+
+                    <div class="relative h-96 overflow-hidden">
+                        <img src="https://www.silverwebbuzz.com/wp-content/uploads/2025/10/How-Is-Generative-AI-Transforming-Industries.png" alt="Generative AI transforming industries and modern business processes" loading="lazy" class="w-full h-full object-fill">
+                    </div>
+
+                    <div class="p-4 lg:p-4">
+
+                        <section id="introduction" class="mb-12 scroll-mt-8">
+                            <h2 class="text-3xl font-bold text-gray-900 mb-4">Introduction</h2>
+                            <p class="text-gray-700 leading-relaxed mb-4">
+                                Generative AI is transforming how modern businesses operate by enabling machines to
+                                create content, code, designs, and insights at scale.
+                            </p>
+                            <p class="text-gray-700 leading-relaxed">
+                                From startups to enterprises, organizations are adopting Generative AI to improve
+                                efficiency, automate workflows, and drive innovation.
+                            </p>
+                        </section>
+
+                        <section id="understanding-farm" class="mb-12 scroll-mt-8">
+                            <h2 class="text-3xl font-bold text-gray-900 mb-4">Understanding Generative AI</h2>
+                            <img src="https://media.licdn.com/dms/image/v2/D4D12AQFVpIkrDtsHog/article-cover_image-shrink_720_1280/B4DZt.QrfWGgAI-/0/1767349862432?e=2147483647&v=beta&t=0uDmzzfCvHoEajFvRejARHbKhtp13Iiik-6kXkOdXjI"
+                                class="w-full h-64 object-cover rounded-xl mb-6">
+                            <p class="text-gray-700 leading-relaxed mb-4">
+                                Generative AI refers to models that can generate new data such as text, images, audio,
+                                and code by learning patterns from large datasets.
+                            </p>
+                            <p class="text-gray-700 leading-relaxed">
+                                These systems use advanced neural networks like large language models and diffusion
+                                models to deliver human-like outputs.
+                            </p>
+                        </section>
+
+                        <section id="key-features" class="mb-12 scroll-mt-8">
+                            <h2 class="text-3xl font-bold text-gray-900 mb-4">Key Capabilities</h2>
+                            <div class="bg-blue-50 border-l-4 border-blue-500 p-6 mb-6 rounded-r-lg">
+                                <ul class="space-y-2 text-gray-700">
+                                    <li>✓ AI-powered content generation</li>
+                                    <li>✓ Intelligent chatbots & assistants</li>
+                                    <li>✓ Code generation & automation</li>
+                                    <li>✓ Image & video generation</li>
+                                    <li>✓ Personalized recommendations</li>
+                                </ul>
+                            </div>
+                            <p class="text-gray-700 leading-relaxed">
+                                These capabilities allow businesses to reduce manual effort while improving accuracy and
+                                creativity.
+                            </p>
+                        </section>
+
+                        <section id="technology-stack" class="mb-12 scroll-mt-8">
+                            <h2 class="text-3xl font-bold text-gray-900 mb-4">Technology Stack</h2>
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                <div class="bg-gray-50 p-4 rounded-lg">
+                                    <h4 class="font-bold">AI Models</h4>
+                                    <p class="text-sm">GPT, Claude, Gemini, LLaMA</p>
+                                </div>
+                                <div class="bg-gray-50 p-4 rounded-lg">
+                                    <h4 class="font-bold">Backend</h4>
+                                    <p class="text-sm">Python, Node.js, .NET</p>
+                                </div>
+                                <div class="bg-gray-50 p-4 rounded-lg">
+                                    <h4 class="font-bold">Vector DB</h4>
+                                    <p class="text-sm">Pinecone, FAISS, Weaviate</p>
+                                </div>
+                                <div class="bg-gray-50 p-4 rounded-lg">
+                                    <h4 class="font-bold">Cloud</h4>
+                                    <p class="text-sm">AWS, Azure, GCP</p>
+                                </div>
+                            </div>
+                        </section>
+
+                        <section id="development-process" class="mb-12 scroll-mt-8">
+                            <h2 class="text-3xl font-bold text-gray-900 mb-4">Implementation Process</h2>
+                            <div class="space-y-4">
+                                <div class="border-l-4 border-blue-500 pl-4">
+                                    <h4 class="font-bold">Use Case Identification</h4>
+                                    <p class="text-gray-600">Identify high-impact AI opportunities.</p>
+                                </div>
+                                <div class="border-l-4 border-blue-500 pl-4">
+                                    <h4 class="font-bold">Model Selection</h4>
+                                    <p class="text-gray-600">Choose suitable LLMs or custom models.</p>
+                                </div>
+                                <div class="border-l-4 border-blue-500 pl-4">
+                                    <h4 class="font-bold">Integration</h4>
+                                    <p class="text-gray-600">Embed AI into existing systems.</p>
+                                </div>
+                            </div>
+                        </section>
+
+                        <section id="challenges" class="mb-12 scroll-mt-8">
+                            <h2 class="text-3xl font-bold text-gray-900 mb-4">Challenges</h2>
+                            <p class="text-gray-700 leading-relaxed">
+                                Key challenges include data privacy, hallucinations, bias, and regulatory compliance.
+                            </p>
+                        </section>
+
+                        <section id="best-practices" class="mb-12 scroll-mt-8">
+                            <h2 class="text-3xl font-bold text-gray-900 mb-4">Best Practices</h2>
+                            <div class="bg-yellow-50 border border-yellow-200 rounded-lg p-6">
+                                <p class="text-gray-700 leading-relaxed">
+                                    Use human-in-the-loop validation, secure data pipelines, and continuous monitoring.
+                                </p>
+                            </div>
+                        </section>
+
+                        <section id="conclusion" class="mb-12 scroll-mt-8">
+                            <h2 class="text-3xl font-bold text-gray-900 mb-4">Conclusion</h2>
+                            <p class="text-gray-700 leading-relaxed">
+                                Generative AI is no longer optional — it is a strategic advantage for future-ready
+                                businesses.
+                            </p>
+                        </section>
+
+                        <div class="pt-8 border-t border-gray-200">
+                            <div class="flex flex-wrap gap-2">
+                                <span class="px-3 py-1 bg-gray-100 rounded-full text-sm">Generative AI</span>
+                                <span class="px-3 py-1 bg-gray-100 rounded-full text-sm">AI Automation</span>
+                                <span class="px-3 py-1 bg-gray-100 rounded-full text-sm">Machine Learning</span>
+                                <span class="px-3 py-1 bg-gray-100 rounded-full text-sm">LLM</span>
+                            </div>
+                        </div>
+
+                    </div>
+                </article>
+            </main>
+            <!-- Right Sidebar - Contact Form -->
+            <aside class="">
+                <div class="sticky top-8">
+                    <div class="bg-white rounded-2xl shadow-md overflow-hidden">
+                        <!-- Form Image with Overlay -->
+                        <div class="relative h-48">
+                            <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=600" alt="Contact"
+                                class="w-full h-full object-fill">
+                            <div class="absolute inset-0 overlay-gradient"></div>
+                            <div class="absolute bottom-0 left-0 right-0 p-6">
+                                <h3 class="text-2xl font-bold text-white">Get in Touch</h3>
+                                <p class="text-white text-sm opacity-90">Let's discuss your project</p>
+                            </div>
+                        </div>
+
+                        <!-- Contact Form -->
+                        <div class="p-6">
+                            <form class="space-y-4">
+                                <div>
+                                    <label for="name" class="block text-sm font-medium text-gray-700 mb-1">Name</label>
+                                    <input type="text" id="name" name="name" placeholder="Enter your name"
+                                        class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all">
+                                </div>
+
+                                <div>
+                                    <label for="email"
+                                        class="block text-sm font-medium text-gray-700 mb-1">Email</label>
+                                    <input type="email" id="email" name="email" placeholder="Enter your email"
+                                        class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all">
+                                </div>
+
+                                <div>
+                                    <label for="phone" class="block text-sm font-medium text-gray-700 mb-1">Phone
+                                        Number</label>
+                                    <input type="tel" id="phone" name="phone" placeholder="Enter your phone"
+                                        class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all">
+                                </div>
+
+                                <div>
+                                    <label for="message"
+                                        class="block text-sm font-medium text-gray-700 mb-1">Message</label>
+                                    <textarea id="message" name="message" rows="4" placeholder="Your message here..."
+                                        class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all resize-none"></textarea>
+                                </div>
+
+                                <button type="submit"
+                                    class="w-full bg-blue-600 text-white font-semibold py-3 rounded-lg hover:bg-blue-700 transition-colors shadow-md hover:shadow-lg transform hover:-translate-y-0.5 transition-transform">
+                                    Submit
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+
+                    <!-- Popular Articles -->
+                    <div class="bg-white rounded-2xl shadow-md p-6 mt-6">
+                        <h3 class="text-lg font-bold text-gray-900 mb-4">Popular Articles</h3>
+                        <div class="space-y-4">
+                            <a href="#" class="block group">
+                                <div class="flex space-x-3">
+                                    <img src="https://images.unsplash.com/photo-1560493676-04071c5f467b?w=200"
+                                        alt="Article" class="w-20 h-20 object-cover rounded-lg">
+                                    <div class="flex-1">
+                                        <h4
+                                            class="text-sm font-semibold text-gray-900 group-hover:text-blue-600 line-clamp-2">
+                                            Top 10 Farm Management Tools
+                                        </h4>
+                                        <p class="text-xs text-gray-500 mt-1">5 min read</p>
+                                    </div>
+                                </div>
+                            </a>
+                            <a href="#" class="block group">
+                                <div class="flex space-x-3">
+                                    <img src="https://images.unsplash.com/photo-1530836369250-ef72a3f5cda8?w=200"
+                                        alt="Article" class="w-20 h-20 object-cover rounded-lg">
+                                    <div class="flex-1">
+                                        <h4
+                                            class="text-sm font-semibold text-gray-900 group-hover:text-blue-600 line-clamp-2">
+                                            Digital Agriculture Revolution
+                                        </h4>
+                                        <p class="text-xs text-gray-500 mt-1">7 min read</p>
+                                    </div>
+                                </div>
+                            </a>
+                            <a href="#" class="block group">
+                                <div class="flex space-x-3">
+                                    <img src="https://images.unsplash.com/photo-1464226184884-fa280b87c399?w=200"
+                                        alt="Article" class="w-20 h-20 object-cover rounded-lg">
+                                    <div class="flex-1">
+                                        <h4
+                                            class="text-sm font-semibold text-gray-900 group-hover:text-blue-600 line-clamp-2">
+                                            Sustainable Farming Practices
+                                        </h4>
+                                        <p class="text-xs text-gray-500 mt-1">6 min read</p>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </aside>
+
+        </div>
+
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-white text-black">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-12  lg:py-16">
+            <!-- Main Footer Content -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
+
+                <!-- Brand Column -->
+                <div class="lg:col-span-1">
+                    <!-- Logo -->
+                    <div class="logo-icon text-4xl font-bold text-blue-500">
+                        <a href="index.html" class="flex items-center justify-start"
+                            aria-label="Shreyansh Padmani – AI Engineer & Software Developer">SP.</a>
+                    </div>
+
+                    <!-- Tagline -->
+                    <p class="text-gray-600 text-sm mb-6 leading-relaxed">
+                        We build your ideas blended with latest technologies, innovation & finest quality
+                    </p>
+
+                    <!-- Social Icons -->
+                    <div class="flex items-center space-x-4">
+                        <!-- Facebook -->
+                        <a href="#" class="text-gray-400 hover:text-blue-500 transition-colors">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                <path
+                                    d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
+                            </svg>
+                        </a>
+
+                        <!-- Instagram -->
+                        <a href="#" class="text-gray-400 hover:text-blue-500 transition-colors">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                <path
+                                    d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+                            </svg>
+                        </a>
+
+                        <!-- X (Twitter) -->
+                        <a href="#" class="text-gray-400 hover:text-blue-500 transition-colors">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                <path
+                                    d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+                            </svg>
+                        </a>
+
+                        <!-- GitHub -->
+                        <a href="#" class="text-gray-400 hover:text-blue-500 transition-colors">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                <path
+                                    d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
+                            </svg>
+                        </a>
+
+                        <!-- Dribbble -->
+                        <a href="#" class="text-gray-400 hover:text-blue-500 transition-colors">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                <path
+                                    d="M12 0C5.37 0 0 5.37 0 12s5.37 12 12 12 12-5.37 12-12S18.63 0 12 0zm7.83 9.24c-.28-.09-2.5-.83-5.06-.36.17.42.33.84.48 1.26 1.73-.22 3.44-.13 3.58-.12zm-1.28-3.58c.93 1.14 1.51 2.59 1.58 4.17-.17-.03-1.99-.4-3.83-.17-.11-.26-.22-.52-.33-.79-.07-.17-.15-.34-.23-.5 2-.81 2.88-1.98 2.81-2.71zM12 2.39c1.63 0 3.12.59 4.27 1.56-.06.07-.93 1.22-2.87 1.94-1.06-1.95-2.24-3.54-2.4-3.76.34-.05.68-.08 1-.08-.66-.06-1.32-.06-1.98.05zm-3.15.65c.16.22 1.34 1.81 2.41 3.75-3.04.81-5.73.8-6.01.8.52-1.99 1.89-3.65 3.6-4.55zM2.01 12v-.33c.27 0 3.31.03 6.61-.92.13.26.26.53.38.79-.08.02-.16.05-.24.08-3.32 1.08-5.13 4.04-5.23 4.19C2.65 14.83 2.01 13.48 2.01 12zm9.99 9.99c-1.44 0-2.78-.39-3.94-1.07.08-.14 1.44-2.41 5.06-3.7.02 0 .03-.01.05-.01.91 2.35 1.28 4.33 1.39 4.89-1.47.54-3.06.89-4.56.89zm6.15-1.33c-.08-.45-.42-2.31-1.28-4.64 1.64-.26 3.08.17 3.26.22-.24 1.47-.97 2.8-1.98 3.82v.6z" />
+                            </svg>
+                        </a>
+
+                        <!-- LinkedIn -->
+                        <a href="#" class="text-gray-400 hover:text-blue-500 transition-colors">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                <path
+                                    d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+                            </svg>
+                        </a>
+
+                        <!-- YouTube -->
+                        <a href="#" class="text-gray-400 hover:text-blue-500 transition-colors">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                <path
+                                    d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Services Column -->
+                <div>
+                    <h3
+                        class="flex items-center justify-start text-lg font-semibold mb-4 border-b border-gray-700 pb-2">
+                        SERVICES</h3>
+                    <ul class="space-y-3">
+                        <li class="flex items-center justify-start"><a href="#"
+                                class="text-gray-600 hover:text-blue-500 transition-colors text-sm">Web
+                                Development</a></li>
+                        <li class="flex items-center justify-start"><a href="#"
+                                class="text-gray-600 hover:text-blue-500 transition-colors text-sm">Mobile
+                                Development</a></li>
+                        <li class="flex items-center justify-start"><a href="#"
+                                class="text-gray-600 hover:text-blue-500 transition-colors text-sm">Product Design
+                                and Development</a></li>
+                        <li class="flex items-center justify-start"><a href="#"
+                                class="text-gray-600 hover:text-blue-500 transition-colors text-sm">DevOps
+                                Services</a></li>
+                        <li class="flex items-center justify-start"><a href="#"
+                                class="text-gray-600 hover:text-blue-500 transition-colors text-sm">Blockchain
+                                Services</a></li>
+                        <li class="flex items-center justify-start"><a href="#"
+                                class="text-gray-600 hover:text-blue-500 transition-colors text-sm">Q&A
+                                Services</a></li>
+                        <li class="flex items-center justify-start"><a href="#"
+                                class="text-gray-600 hover:text-blue-500 transition-colors text-sm">Hire Dedicated
+                                Developers</a></li>
+                        <li class="flex items-center justify-start"><a href="#"
+                                class="text-gray-600 hover:text-blue-500 transition-colors text-sm">Management & IT
+                                Consulting</a></li>
+                    </ul>
+                </div>
+
+                <!-- Tools & Tech Column -->
+                <div>
+                    <h3
+                        class="flex items-center justify-start text-lg font-semibold mb-4 border-b border-gray-700 pb-2">
+                        TOOLS & TECH</h3>
+                    <ul class="space-y-3">
+                        <li class="flex items-center justify-start"><a href="#"
+                                class="text-gray-600 hover:text-blue-500 transition-colors text-sm">Laravel
+                                Development Services</a></li>
+                        <li class="flex items-center justify-start"><a href="#"
+                                class="text-gray-600 hover:text-blue-500 transition-colors text-sm">React JS
+                                Development Services</a></li>
+                        <li class="flex items-center justify-start"><a href="#"
+                                class="text-gray-600 hover:text-blue-500 transition-colors text-sm">React Native
+                                Development</a></li>
+                        <li class="flex items-center justify-start"><a href="#"
+                                class="text-gray-600 hover:text-blue-500 transition-colors text-sm">Node Js
+                                Development Services</a></li>
+                        <li class="flex items-center justify-start"><a href="#"
+                                class="text-gray-600 hover:text-blue-500 transition-colors text-sm">Flutter App
+                                Development</a></li>
+                        <li class="flex items-center justify-start"><a href="#"
+                                class="text-gray-600 hover:text-blue-500 transition-colors text-sm">Django
+                                development services</a></li>
+                        <li class="flex items-center justify-start"><a href="#"
+                                class="text-gray-600 hover:text-blue-500 transition-colors text-sm">Python
+                                development services</a></li>
+                        <li class="flex items-center justify-start"><a href="#"
+                                class="text-gray-600 hover:text-blue-500 transition-colors text-sm">AWS Development
+                                Services</a></li>
+                    </ul>
+                </div>
+
+                <!-- Company Column -->
+                <div class="text-black">
+                    <h3
+                        class="flex items-center justify-start text-lg font-semibold mb-6 border-b border-gray-700 pb-2">
+                        Contact Us</h3>
+                    <ul class="space-y-4">
+
+                        <!-- Address -->
+                        <li class="flex items-center space-x-3 hover:text-blue-500 transition-colors">
+                            <div class="w-10 h-10 bg-[#F0F4FF] rounded-full flex items-center justify-center">
+                                <svg class="w-5 h-5 text-blue-500" fill="currentColor" viewBox="0 0 24 24">
+                                    <path
+                                        d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5S10.62 6.5 12 6.5s2.5 1.12 2.5 2.5S13.38 11.5 12 11.5z" />
+                                </svg>
+                            </div>
+                            <span class="text-sm">123 AI Street, Tech City, USA</span>
+                        </li>
+
+                        <!-- Phone -->
+                        <li class="flex items-center space-x-3 hover:text-blue-500 transition-colors">
+                            <div class="w-10 h-10 bg-[#F0F4FF] rounded-full flex items-center justify-center">
+                                <svg class="w-5 h-5 text-blue-500" fill="currentColor" viewBox="0 0 24 24">
+                                    <path
+                                        d="M6.62 10.79a15.053 15.053 0 006.59 6.59l2.2-2.2a1 1 0 011.11-.21c1.21.48 2.53.74 3.88.74a1 1 0 011 1v3.25a1 1 0 01-1 1C10.07 21.5 2.5 13.93 2.5 4a1 1 0 011-1H6.75a1 1 0 011 1c0 1.35.26 2.67.74 3.88.1.26.03.57-.21 1.11l-2.66 2.66z" />
+                                </svg>
+                            </div>
+                            <span class="text-sm">+1 (555) 123-4567</span>
+                        </li>
+
+                        <!-- Email -->
+                        <li class="flex items-center space-x-3 hover:text-blue-500 transition-colors">
+                            <div class="w-10 h-10 bg-[#F0F4FF] rounded-full flex items-center justify-center">
+                                <svg class="w-5 h-5 text-blue-500" fill="currentColor" viewBox="0 0 24 24">
+                                    <path
+                                        d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" />
+                                </svg>
+                            </div>
+                            <span class="text-sm">contact@aiagency.com</span>
+                        </li>
+
+                    </ul>
+                </div>
+
+
+            </div>
+        </div>
+
+        <!-- Bottom Bar -->
+        <div class="border-t border-gray-700">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+                <div class="flex  justify-center items-center space-y-4 md:space-y-0">
+                    <!-- Copyright -->
+                    <div class="text-center md:text-center">
+                        <p class="text-gray-400 text-sm">
+                            © 2026shreyans padmaniTech Solutions Pvt.Ltd. All Rights Reserved.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!--end Footer -->
+
+    <!-- Scroll-based Active TOC Script -->
+    <script>
+        // Get all sections and TOC links
+        const sections = document.querySelectorAll('section[id]');
+        const tocLinks = document.querySelectorAll('.toc-item');
+
+        // Function to update active link
+        function updateActiveLink() {
+            let current = '';
+
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (pageYOffset >= (sectionTop - 200)) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            tocLinks.forEach(link => {
+                link.classList.remove('active-toc');
+                if (link.getAttribute('href').substring(1) === current) {
+                    link.classList.add('active-toc');
+                }
+            });
+        }
+
+        // Listen for scroll events
+        window.addEventListener('scroll', updateActiveLink);
+
+        // Smooth scroll to sections
+        tocLinks.forEach(link => {
+            link.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href').substring(1);
+                const targetSection = document.getElementById(targetId);
+
+                window.scrollTo({
+                    top: targetSection.offsetTop - 100,
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Initialize on page load
+        updateActiveLink();
+    </script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="./assets/js/dev-script.js"></script>
+</body>
+
+</html>

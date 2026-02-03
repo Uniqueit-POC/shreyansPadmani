@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 
+    <!-- Google Fonts: Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="shortcut icon" href="assets/image/favicon-logo.png" type="image/x-icon">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <link rel="stylesheet" href="/assets/css/dev-style.css">
@@ -14,7 +16,7 @@
     </style>
 </head>
 
-<body>
+<body class="font-sans">
     <!-- nav -->
     <section>
         <nav id="navbar"
@@ -23,9 +25,10 @@
                 <div class="flex items-center justify-between">
                     <!-- Logo -->
                     <div class="logo-container">
-                        <a href="#" class="flex items-center gap-3">
+                        <a href="index.html" class="flex items-center gap-3"
+                            aria-label="Shreyansh Padmani – AI Engineer & Software Developer">
                             <div class="logo-icon text-4xl font-bold text-blue-900">
-                                <h1>SP.</h1>
+                                SP.
                             </div>
                         </a>
                     </div>
@@ -33,8 +36,8 @@
                     <!-- Desktop Menu -->
                     <ul class="desktop-menu hidden md:flex items-center gap-8">
                         <li class="nav-item relative group">
-                            <div class="generate-btn inline-flex items-center gap-1.5 cursor-pointer">
-                                <svg class="icon mr-2 h-5 w-5 h-auto" viewBox="0 0 24 26">
+                            <div class="generate-btn inline-flex items-center gap-1.5 cursor-pointer" aria-haspopup="true" aria-expanded="false" tabindex="0">
+                                <svg class="icon mr-2 h-5 w-5 h-auto" viewBox="0 0 24 26" aria-hidden="true" focusable="false">
                                     <!-- SVG paths -->
                                     <path
                                         d="M5.16515 2.62145L5.8075 0.999247C5.83876 0.919722 5.9154 0.866699 6.00112 0.866699C6.08683 0.866699 6.16347 0.919722 6.19473 0.999247L6.83708 2.62145L8.44145 3.27094C8.5201 3.30254 8.57254 3.38003 8.57254 3.4667C8.57254 3.55337 8.5201 3.63085 8.44145 3.66246L6.83708 4.31195L6.19473 5.93415C6.16347 6.0147 6.08683 6.0667 6.00112 6.0667C5.9154 6.0667 5.83876 6.0147 5.8075 5.93415L5.16515 4.31195L3.56078 3.66246C3.48112 3.63085 3.42969 3.55337 3.42969 3.4667C3.42969 3.38003 3.48112 3.30254 3.56078 3.27094L5.16515 2.62145Z" />
@@ -43,56 +46,79 @@
                                     <path
                                         d="M4.60728 19.392L5.67703 16.6875C5.72997 16.5541 5.85854 16.4666 6.00056 16.4666C6.14258 16.4666 6.27031 16.5541 6.32325 16.6875L7.39299 19.392L10.0678 20.4736C10.1997 20.5271 10.2863 20.6563 10.2863 20.7999C10.2863 20.9435 10.1997 21.0735 10.0678 21.1271L7.39299 22.2087L6.32325 24.9123C6.27031 25.0457 6.14258 25.1332 6.00056 25.1332C5.85854 25.1332 5.72997 25.0457 5.67703 24.9123L4.60728 22.2087L1.93333 21.1271C1.8014 21.0735 1.71484 20.9435 1.71484 20.7999C1.71484 20.6563 1.8014 20.5271 1.93333 20.4736L4.60728 19.392Z" />
                                 </svg>
-                                <span class="nav-link font-medium">Expertise</span>
+                                <span
+                                    class="relative text-blue-900 font-bold py-2 inline-block transition-colors duration-300 ease-in-out nav-link">Expertise</span>
                             </div>
 
                             <!-- Dropdown Menu -->
                             <ul
-                                class="absolute left-0 mt-6 w-64 rounded-md bg-gradient-to-br from-white via-blue-50 to-indigo-100 shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+                                class="absolute left-0 mt-3 w-64 rounded-md bg-gradient-to-br from-white via-blue-50 to-indigo-100 shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
 
-                                <li>
-                                    <a href="#computer-vision-development-services"
+                                 <li>
+                                    <a href="computer-vision-development-services.html"
                                         class="flex items-center px-4 py-2 text-gray-700 hover:bg-gray-100 rounded-md gap-3">
-                                        <img src="./assets/image/computer-vision-development-services.svg" alt=""
-                                            class="w-5 h-5">
-                                        <span>Computer Vision Development Services</span>
+                                        <img src="./assets/image/Computer-Vision-Solutions.svg"
+                                            alt="Computer Vision AI Service Icon" class="w-5 h-5">
+                                        AI Computer Vision Development Services
                                     </a>
                                 </li>
-
                                 <li>
                                     <a href="generative-ai-development-services.html"
                                         class="flex items-center px-4 py-2 text-gray-700 hover:bg-gray-100 rounded-md gap-3">
-                                        <img src="./assets/image/generative-ai-development-services.svg" alt=""
-                                            class="w-5 h-5">
-                                        <span>Generative AI Development Services</span>
+                                        <img src="./assets/image/generative-ai-development-services.svg"
+                                            alt="Generative AI Service Icon" class="w-5 h-5">
+                                        Custom Generative AI Development Services
                                     </a>
                                 </li>
-
+                                <li>
+                                    <a href="machine-learning-development-services.html"
+                                        class="flex items-center px-4 py-2 text-gray-700 hover:bg-gray-100 rounded-md gap-3">
+                                        <img src="./assets/image/Machine-Learning-Predictive-Analytics-Development.svg"
+                                            alt="Generative AI Service Icon" class="w-5 h-5">
+                                        ML Development 
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="custom-aI-model-training.html"
+                                        class="flex items-center px-4 py-2 text-gray-700 hover:bg-gray-100 rounded-md gap-3">
+                                        <img src="./assets/image/Custom-AI-Model-Training.svg"
+                                            alt="Generative AI Service Icon" class="w-5 h-5">
+                                       Custom AI Model Training
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="natural-language-processing.html"
+                                        class="flex items-center px-4 py-2 text-gray-700 hover:bg-gray-100 rounded-md gap-3">
+                                        <img src="./assets/image/Natural-Language-Processing.svg"
+                                            alt="Generative AI Service Icon" class="w-5 h-5">
+                                       Natural Language Processing
+                                    </a>
+                                </li>
                             </ul>
                         </li>
 
 
-                        <li class="nav-item">
+                        <!-- <li class="nav-item">
                             <a href="#features" class="nav-link">Services</a>
+                        </li> -->
+                        <li class="nav-item">
+                            <a href="blog.html" class="nav-link">Blog</a>
                         </li>
                         <li class="nav-item">
-                            <a href="#products" class="nav-link">Blog</a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="#about" class="nav-link">Case Studies</a>
+                            <a href="case-studies.html" class="nav-link">Case Studies</a>
                         </li>
                     </ul>
 
                     <!-- CTA Button -->
                     <div class="hidden md:block">
-                        <button class="cta-button">
-                            <span class="cta-shine"></span>
+                        <button
+                            class="hero-btn-pramiry relative px-8 py-3 rounded-full bg-gradient-to-br from-blue-900 to-blue-400 text-white font-semibold overflow-hidden transition-all duration-300 ease-in-out hover:-translate-y-0.5  hover:shadow-[0_10px_30px_rgba(51,95,255,0.55)] border-0 cursor-pointer active gap-2">
                             <span class="relative z-10">Hire Me</span>
                         </button>
                     </div>
 
                     <!-- Mobile Menu Button -->
-                    <button id="mobileMenuBtn" class="mobile-menu-btn md:hidden">
+                    <button id="mobileMenuBtn" class="mobile-menu-btn md:hidden" aria-label="Open mobile menu" aria-controls="mobileMenu" aria-expanded="false">
                         <span class="hamburger-line"></span>
                         <span class="hamburger-line"></span>
                         <span class="hamburger-line"></span>
@@ -103,27 +129,28 @@
 
         <!-- Mobile Menu Overlay -->
         <div id="mobileMenu" class="mobile-menu">
-            <button id="closeMobileMenu" class="close-btn">
-                <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <button id="closeMobileMenu" class="close-btn" aria-label="Close mobile menu">
+                <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"
+                    focusable="false">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
                 </svg>
             </button>
             <div class="mobile-menu-content">
                 <ul class="mobile-nav-list">
                     <li class="mobile-nav-item">
-                        <a href="#home" class="mobile-nav-link">Expertise</a>
+                        <a href="index.html" class="mobile-nav-link">Expertise</a>
                     </li>
-                    <li class="mobile-nav-item">
+                    <!-- <li class="mobile-nav-item">
                         <a href="#features" class="mobile-nav-link">Services</a>
+                    </li> -->
+                    <li class="mobile-nav-item">
+                        <a href="blog.html" class="mobile-nav-link">Blog</a>
                     </li>
                     <li class="mobile-nav-item">
-                        <a href="#products" class="mobile-nav-link">Blog</a>
-                    </li>
-                    <li class="mobile-nav-item">
-                        <a href="#about" class="mobile-nav-link">Case Studies</a>
+                        <a href="case-studies.html" class="mobile-nav-link">Case Studies</a>
                     </li>
                     <li class="mobile-nav-item mt-8">
-                        <button class="mobile-cta-button">Hire Me</button>
+                        <a href="contact.html" class="mobile-cta-button">Hire Me</a>
                     </li>
                 </ul>
             </div>
@@ -132,7 +159,7 @@
     <!--end nav -->
 
     <!-- Hero Section -->
-    <section id="home" class="min-h-screen flex items-center justify-center py-12 lg:py-0">
+    <section class="min-h-screen flex items-center justify-center py-12 lg:py-0">
         <div class="">
             <div class="text-center max-w-5xl mx-auto px-4 sm:px-6 lg:px-5 w-full mt-16 lg:mt-0">
                 <!-- Left Content -->
@@ -140,28 +167,28 @@
                     <div class="space-y-6">
                         <div class="space-y-4 text-lg text-gray-600 leading-relaxed">
                             <!-- AI Badge -->
-                            <p
-                                class="mr-8 inline-block px-3 py-1 text-lg font-medium text-gray-600 border border-gray-600 rounded-full">
-                                AI Enthusiast – Building Intelligent Solutions
-                            </p>
+                            <div class="inline-block mr-8 px-3 py-1 text-lg font-medium text-gray-600 border border-gray-600 rounded-full"
+                                aria-label="Professional role">
+                                AI Engineer & Software Developer – Building Intelligent Solutions
+                            </div>
                         </div>
 
                         <!-- Headline -->
                         <h1 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 leading-tight">
-                            Building Intelligent <span
-                                class="text-4xl font-bold bg-gradient-to-br from-blue-900 to-blue-400 bg-clip-text text-transparent">AI
-                                Solutions </span> for the Future
+                            AI Engineer Building Intelligent <span
+                                class="bg-gradient-to-br from-blue-900 to-blue-400 bg-clip-text text-transparent">
+                                AI & Generative AI Solutions
+                            </span> for Businesses
                         </h1>
 
                         <!-- Description -->
                         <div class="space-y-4 text-lg text-gray-600 leading-relaxed">
                             <p class="text-[20px] mr-8">
-                                We design and develop <strong>custom AI, Generative AI, and ML solutions</strong> that
-                                help
-                                businesses automate, scale, and innovate.
-                                Leveraging AI technologies, cloud services, and modern frameworks, we deliver
-                                <strong>real
-                                    AI impact</strong> to enterprises worldwide.
+                                I design and develop <strong>custom AI, Generative AI, and Machine Learning
+                                    solutions</strong>
+                                that help businesses automate processes, scale operations, and innovate faster.
+                                Using modern AI frameworks, cloud platforms, and proven architectures, I deliver
+                                <strong>real-world AI impact</strong> for growing companies and enterprises.
                             </p>
                         </div>
                     </div>
@@ -169,85 +196,85 @@
             </div>
 
             <!-- Tech Icons -->
-            <div class="max-w-7xl mx-auto flex flex-wrap justify-center gap-2 mb-8 mt-5">
+            <ul class="max-w-7xl mx-auto flex flex-wrap justify-center gap-2 mb-8 mt-5">
                 <!-- Tailwind -->
-                <div class="flex flex-col items-center space-y-2">
+                <li class="flex flex-col items-center space-y-2">
                     <div class="w-[120px] h-20 flex items-center justify-center rounded p-3 bg-sky-100">
                         <span class="text-sm text-gray-700 font-semibold">GenAI & AI Agents</span>
                     </div>
-                </div>
+                </li>
 
                 <!-- Blazor -->
-                <div class="flex flex-col items-center space-y-2">
+                <li class="flex flex-col items-center space-y-2">
                     <div class="w-[120px] h-20 flex items-center justify-center rounded p-3 bg-purple-100">
                         <span class="text-sm text-gray-700 font-semibold">NLP Solutions</span>
                     </div>
-                </div>
+                </li>
 
                 <!-- AWS -->
-                <div class="flex flex-col items-center space-y-2">
+                <li class="flex flex-col items-center space-y-2">
                     <div class="w-[120px] h-20 flex items-center justify-center rounded p-3 bg-yellow-100">
                         <span class="text-sm text-gray-700 font-semibold">Computer Vision Services</span>
                     </div>
-                </div>
+                </li>
 
                 <!-- .NET -->
-                <div class="flex flex-col items-center space-y-2">
+                <li class="flex flex-col items-center space-y-2">
                     <div class="w-[120px] h-20 flex items-center justify-center rounded p-3 bg-indigo-100">
                         <span class="text-sm text-gray-700 font-semibold">Generative AI Solutions</span>
                     </div>
-                </div>
+                </li>
 
                 <!-- MongoDB -->
-                <div class="flex flex-col items-center space-y-2">
+                <li class="flex flex-col items-center space-y-2">
                     <div class="w-[120px] h-20 flex items-center justify-center rounded p-3 bg-green-100">
                         <span class="text-sm text-gray-700 font-semibold">Data Science & Analytics</span>
                     </div>
-                </div>
+                </li>
 
                 <!-- MySQL -->
-                <div class="flex flex-col items-center space-y-2">
+                <li class="flex flex-col items-center space-y-2">
                     <div class="w-[120px] h-20 flex items-center justify-center rounded p-3 bg-teal-100">
                         <span class="text-sm text-gray-700 font-semibold">AI Tech Stack</span>
                     </div>
-                </div>
+                </li>
 
                 <!-- Docker -->
-                <div class="flex flex-col items-center space-y-2">
+                <li class="flex flex-col items-center space-y-2">
                     <div class="w-[120px] h-20 flex items-center justify-center rounded p-3 bg-blue-200">
                         <span class="text-sm text-gray-700 font-semibold">AI Operations (AI Ops)</span>
                     </div>
-                </div>
+                </li>
 
                 <!-- React -->
-                <div class="flex flex-col items-center space-y-2">
+                <li class="flex flex-col items-center space-y-2">
                     <div class="w-[120px] h-20 flex items-center justify-center rounded p-3 bg-cyan-100">
                         <span class="text-sm text-gray-700 font-semibold">Machine Learning</span>
                     </div>
-                </div>
+                </li>
 
                 <!-- Angular -->
-                <div class="flex flex-col items-center space-y-2">
+                <li class="flex flex-col items-center space-y-2">
                     <div class="w-[120px] h-20 flex items-center justify-center rounded p-3 bg-red-100">
                         <span class="text-sm text-gray-700 font-semibold">AI & ML Overview</span>
                     </div>
-                </div>
+                </li>
 
                 <!-- OpenAI -->
-                <div class="flex flex-col items-center space-y-2">
+                <li class="flex flex-col items-center space-y-2">
                     <div class="w-[120px] h-20 flex items-center justify-center rounded p-3 bg-gray-100">
                         <span class="text-sm text-gray-700 font-semibold">Transform Business</span>
                     </div>
-                </div>
-            </div>
+                </li>
+            </ul>
             <!-- Buttons -->
             <div class="flex flex-wrap justify-center gap-4">
-                <a href="#contact"
-                    class="hero-btn-pramiry relative px-8 py-3 rounded-full bg-gradient-to-br from-blue-900 to-blue-400 text-white font-semibold overflow-hidden transition-all duration-300 ease-in-out hover:-translate-y-0.5 hover:shadow-[0_10px_30px_rgba(168,85,247,0.4)] border-0 cursor-pointer active gap-2">
-                    Talk to AI Expert
+                <a href="contact.html"
+                    class="hero-btn-pramiry relative px-8 py-3 rounded-full bg-gradient-to-br from-blue-900 to-blue-400 text-white font-semibold overflow-hidden transition-all duration-300 ease-in-out hover:-translate-y-0.5  hover:shadow-[0_10px_30px_rgba(51,95,255,0.55)] border-0 cursor-pointer active gap-2">
+                    Talk to an AI Expert
                 </a>
-                <a href="#solutions"
-                    class="px-6 py-3 border border-gray-300 text-gray-800 font-medium rounded-lg shadow hover:bg-gray-100 transition">
+                <a href="case-studies.html"
+                    class="px-6 py-3 border border-gray-300 text-gray-800 font-medium rounded-full shadow hover:bg-gray-100 transition">
                     View Our AI Solutions
                 </a>
             </div>
@@ -256,147 +283,160 @@
     <!-- end Hero Section -->
 
     <!-- Why Industry Leaders Choose shreyans padmani -->
-    <section class="relative mt-5 bg-cover bg-center bg-no-repeat" style="background-image: url('./assets/image/testimonial-bg-img.webp');">
+    <section class="relative mt-5 bg-cover bg-center bg-no-repeat bg-blue-500" aria-labelledby="why-choose-us">
 
-        <!-- Header -->
-        <div class="w-full bg-cover bg-center overflow-hidden ">
-            <div class="flex items-center justify-center h-full w-full ">
-                <div class="flex flex-col place-items-center items-center text-center py-16 m-4" data-aos="fade-up"
+        <!-- ================= HEADER ================= -->
+        <div class="w-full overflow-hidden">
+            <div class="flex items-center justify-center">
+                <header class="flex flex-col items-center text-center py-16 m-4" data-aos="fade-up"
                     data-aos-easing="ease-out-back" data-aos-duration="700">
 
-                    <h2 class="font-serif font-bold lg:text-5xl tracking-normal text-4xl text-white max-w-5xl"
-                        style="line-height:1.20">
-                        Why Industry Leaders Choose shreyans padmani
-                        Technologies <span
-                            class="text-4xl font-bold bg-gradient-to-br from-blue-900 to-blue-400 bg-clip-text text-transparent">Development</span>
+                    <h2 id="why-choose-us" class="font-bold lg:text-5xl text-4xl text-white max-w-5xl leading-tight">
+                        Why
+                        <span class="bg-gradient-to-br from-white to-blue-400 bg-clip-text text-transparent">
+                            Industry Leaders
+                        </span>
+                        Choose Shreyansh Padmani for AI Development
                     </h2>
 
-                    <p class="text-gray-400 pt-6 text-lg mx-auto font-sans max-w-4xl">
-                        <b class="text-white">Delivering Advanced AI Solutions That Drive Business Growth</b>
-                        <br>
+                    <p class="text-white pt-6 text-lg max-w-4xl">
+                        <strong>Delivering Advanced AI Solutions That Drive Business Growth</strong><br>
                         With over 15 years of experience, we combine deep technical expertise and cutting-edge AI tools
-                        to create intelligent solutions—from Generative AI to Custom Model Training—that typical
-                        agencies
-                        cannot match.
+                        to create intelligent systems—from Generative AI to Custom Model Training—that traditional
+                        agencies cannot match.
                     </p>
-                </div>
+
+                </header>
             </div>
         </div>
 
-        <!-- Cards -->
+        <!-- ================= CARDS ================= -->
         <div class="flex justify-center pb-16">
             <div class="px-4 sm:px-6 max-w-7xl lg:px-12">
-                <div class="md:grid md:grid-cols-2 md:gap-4 lg:grid lg:grid-cols-3 lg:gap-6" data-aos="fade-up">
+                <div class="md:grid md:grid-cols-2 md:gap-4 lg:grid-cols-3 lg:gap-6" data-aos="fade-up">
 
-                    <!-- Card -->
-                    <div
-                        class="shadow-lg p-6 my-6 lg:my-0 bg-[#0f172a] rounded-3xl hover:bg-blue-600 hover:shadow-xl text-gray-400 hover:text-white transition duration-200 ease-in-out icon-card">
-                        <h3 class="font-serif text-lg font-bold text-left pb-5 text-white">Generative AI</h3>
-                        <p class="text-left text-lg font-sans">
-                            Leverage advanced AI models like GPT, DALL-E, and GANs to generate text, images, music, and
-                            code, enhancing creativity and automation across industries.
+                    <!-- ===== Card 1 ===== -->
+                    <article
+                        class="group shadow-lg p-6 my-6 bg-white rounded-3xl hover:bg-blue-600 hover:shadow-xl text-gray-500 hover:text-white transition">
+                        <h3 class="text-lg font-bold pb-5 text-blue-600 group-hover:text-white">
+                            Generative AI Solutions
+                        </h3>
+                        <p>
+                            Build intelligent systems using GPT, DALL·E, and GANs to automate text, image,
+                            and code generation across industries.
                         </p>
                         <div class="mt-6 flex justify-end">
-                            <a href="/generative-ai-details"
-                                class="bg-blue-600 hover:bg-blue-700 text-white p-3 rounded-full shadow-lg transition transform hover:scale-110">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 rotate-[336deg]" fill="none"
-                                    viewBox="0 0 24 24" stroke="currentColor">
+                            <a href="/services/generative-ai" aria-label="Explore Generative AI services"
+                                class="group-hover:bg-white bg-blue-600 text-white p-3 rounded-full shadow-lg transition transform hover:scale-110">
+                                <svg xmlns="http://www.w3.org/2000/svg"
+                                    class="h-5 w-5 group-hover:text-blue-600 rotate-[336deg]" fill="none"
+                                    viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true" focusable="false">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                         d="M13 7l5 5m0 0l-5 5m5-5H6" />
                                 </svg>
                             </a>
                         </div>
-                    </div>
+                    </article>
 
-                    <!-- Image Card (unchanged) -->
-                    <div class="shadow-lg my-6 lg:my-0 bg-[#0f172a] rounded-3xl overflow-hidden">
+                    <!-- ===== Image Card ===== -->
+                    <div class="shadow-lg my-6 bg-[#0f172a] rounded-3xl overflow-hidden">
                         <img src="https://webmobtechcdn.nyc3.cdn.digitaloceanspaces.com/wmt_v4/2025/12/WMT-692-49.png"
-                            loading="lazy" alt="team" class="w-full h-full object-cover rounded-3xl">
+                            loading="lazy"
+                            alt="AI development team working on machine learning and artificial intelligence solutions"
+                            class="w-full h-full object-cover rounded-3xl">
                     </div>
 
-                    <!-- Card -->
-                    <div
-                        class="shadow-lg p-6 my-6 lg:my-0 bg-[#0f172a] rounded-3xl hover:bg-blue-600 hover:shadow-xl text-gray-400 hover:text-white transition duration-200 ease-in-out icon-card">
-                        <h3 class="font-serif text-lg font-bold text-left pb-5 text-white">
+                    <!-- ===== Card 2 ===== -->
+                    <article
+                        class="group shadow-lg p-6 my-6 bg-white rounded-3xl hover:bg-blue-600 hover:shadow-xl text-gray-500 hover:text-white transition">
+                        <h3 class="text-lg font-bold pb-5 text-blue-600 group-hover:text-white">
                             Machine Learning & Predictive Analytics
                         </h3>
-                        <p class="text-left text-lg font-sans">
-                            Analyze data and forecast trends with Python, R, and TensorFlow to drive actionable
-                            insights.
+                        <p>
+                            Transform data into actionable insights using Python, TensorFlow, and advanced
+                            predictive modeling techniques.
                         </p>
                         <div class="mt-6 flex justify-end">
-                            <a href="/generative-ai-details"
-                                class="bg-blue-600 hover:bg-blue-700 text-white p-3 rounded-full shadow-lg transition transform hover:scale-110">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 rotate-[336deg]" fill="none"
-                                    viewBox="0 0 24 24" stroke="currentColor">
+                            <a href="/services/machine-learning" aria-label="Explore Machine Learning services"
+                                class="group-hover:bg-white bg-blue-600 text-white p-3 rounded-full shadow-lg transition transform hover:scale-110">
+                                <svg xmlns="http://www.w3.org/2000/svg"
+                                    class="h-5 w-5 group-hover:text-blue-600 rotate-[336deg]" fill="none"
+                                    viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true" focusable="false">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                         d="M13 7l5 5m0 0l-5 5m5-5H6" />
                                 </svg>
                             </a>
                         </div>
-                    </div>
+                    </article>
 
-                    <!-- Card -->
-                    <div
-                        class="shadow-lg p-6 my-6 lg:my-0 bg-[#0f172a] rounded-3xl hover:bg-blue-600 hover:shadow-xl text-gray-400 hover:text-white transition duration-200 ease-in-out icon-card">
-                        <h3 class="font-serif text-lg font-bold text-left pb-5 text-white">
-                            Natural Language Processing
+                    <!-- ===== Card 3 ===== -->
+                    <article
+                        class="group shadow-lg p-6 my-6 bg-white rounded-3xl hover:bg-blue-600 hover:shadow-xl text-gray-500 hover:text-white transition">
+                        <h3 class="text-lg font-bold pb-5 text-blue-600 group-hover:text-white">
+                            Natural Language Processing (NLP)
                         </h3>
-                        <p class="text-left text-lg font-sans">
-                            Sentiment analysis, text generation, and NER using BERT, SpaCy, and NLTK.
+                        <p>
+                            Enable machines to understand human language using BERT, SpaCy,
+                            and NLTK for sentiment analysis and text intelligence.
                         </p>
                         <div class="mt-6 flex justify-end">
-                            <a href="/generative-ai-details"
-                                class="bg-blue-600 hover:bg-blue-700 text-white p-3 rounded-full shadow-lg transition transform hover:scale-110">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 rotate-[336deg]" fill="none"
-                                    viewBox="0 0 24 24" stroke="currentColor">
+                            <a href="/services/nlp" aria-label="Explore Natural Language Processing services"
+                                class="group-hover:bg-white bg-blue-600 text-white p-3 rounded-full shadow-lg transition transform hover:scale-110">
+                                <svg xmlns="http://www.w3.org/2000/svg"
+                                    class="h-5 w-5 group-hover:text-blue-600 rotate-[336deg]" fill="none"
+                                    viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true" focusable="false">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                         d="M13 7l5 5m0 0l-5 5m5-5H6" />
                                 </svg>
                             </a>
                         </div>
-                    </div>
+                    </article>
 
-                    <!-- Card -->
-                    <div
-                        class="shadow-lg p-6 my-6 lg:my-0 bg-[#0f172a] rounded-3xl hover:bg-blue-600 hover:shadow-xl text-gray-400 hover:text-white transition duration-200 ease-in-out icon-card">
-                        <h3 class="font-serif text-lg font-bold text-left pb-5 text-white">Computer Vision</h3>
-                        <p class="text-left text-lg font-sans">
-                            Facial recognition, medical imaging, drone detection, and smart retail using OpenCV &
-                            TensorFlow.
-                        </p>
-                        <div class="mt-6 flex justify-end">
-                            <a href="/generative-ai-details"
-                                class="bg-blue-600 hover:bg-blue-700 text-white p-3 rounded-full shadow-lg transition transform hover:scale-110">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 rotate-[336deg]" fill="none"
-                                    viewBox="0 0 24 24" stroke="currentColor">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                        d="M13 7l5 5m0 0l-5 5m5-5H6" />
-                                </svg>
-                            </a>
-                        </div>
-                    </div>
-
-                    <!-- Card -->
-                    <div
-                        class="shadow-lg p-6 my-6 lg:my-0 bg-[#0f172a] rounded-3xl hover:bg-blue-600 hover:shadow-xl text-gray-400 hover:text-white transition duration-200 ease-in-out icon-card">
-                        <h3 class="font-serif text-lg font-bold text-left pb-5 text-white">
-                            Custom Model Building & Training
+                    <!-- ===== Card 4 ===== -->
+                    <article
+                        class="group shadow-lg p-6 my-6 bg-white rounded-3xl hover:bg-blue-600 hover:shadow-xl text-gray-500 hover:text-white transition">
+                        <h3 class="text-lg font-bold pb-5 text-blue-600 group-hover:text-white">
+                            Computer Vision Solutions
                         </h3>
-                        <p class="text-left text-lg font-sans">
-                            AI model training for Banking, E-commerce, Fraud Detection, and Demand Forecasting.
+                        <p>
+                            Develop intelligent visual systems for facial recognition,
+                            medical imaging, surveillance, and smart retail automation.
                         </p>
                         <div class="mt-6 flex justify-end">
-                            <a href="/generative-ai-details"
-                                class="bg-blue-600 hover:bg-blue-700 text-white p-3 rounded-full shadow-lg transition transform hover:scale-110">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 rotate-[336deg]" fill="none"
-                                    viewBox="0 0 24 24" stroke="currentColor">
+                            <a href="/services/computer-vision" aria-label="Explore Computer Vision services"
+                                class="group-hover:bg-white bg-blue-600 text-white p-3 rounded-full shadow-lg transition transform hover:scale-110">
+                                <svg xmlns="http://www.w3.org/2000/svg"
+                                    class="h-5 w-5 group-hover:text-blue-600 rotate-[336deg]" fill="none"
+                                    viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true" focusable="false">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                         d="M13 7l5 5m0 0l-5 5m5-5H6" />
                                 </svg>
                             </a>
                         </div>
-                    </div>
+                    </article>
+
+                    <!-- ===== Card 5 ===== -->
+                    <article
+                        class="group shadow-lg p-6 my-6 bg-white rounded-3xl hover:bg-blue-600 hover:shadow-xl text-gray-500 hover:text-white transition">
+                        <h3 class="text-lg font-bold pb-5 text-blue-600 group-hover:text-white">
+                            Custom AI Model Training
+                        </h3>
+                        <p>
+                            Design and train custom AI models for banking, e-commerce,
+                            fraud detection, and demand forecasting at scale.
+                        </p>
+                        <div class="mt-6 flex justify-end">
+                            <a href="/services/custom-ai-models" aria-label="Explore Custom AI Model Training services"
+                                class="group-hover:bg-white bg-blue-600 text-white p-3 rounded-full shadow-lg transition transform hover:scale-110">
+                                <svg xmlns="http://www.w3.org/2000/svg"
+                                    class="h-5 w-5 group-hover:text-blue-600 rotate-[336deg]" fill="none"
+                                    viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true" focusable="false">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                                </svg>
+                            </a>
+                        </div>
+                    </article>
 
                 </div>
             </div>
@@ -405,489 +445,446 @@
     <!--end Why Industry Leaders Choose shreyans padmani -->
 
     <!-- Why Choose Us -->
-    <section>
-        <div class=" relative centered-content-numbered-cards py-16 bg-gray-100" style="background-color:#fff"
-            data-color="#f5f5f5">
-            <div class="common-index relative">
-                <div class="mx-auto max-w-full px-2 sm:px-1">
-                    <div class="x flex-col justify-center items-center text-center mb-5">
-                        <p
-                            class="text-3xl md:text-4xl font-bold text-gray-900 mb-0  pt-6 text-4xl mx-auto  font-sans max-w-4xl">
-                            Why Choose <span
-                                class="text-4xl font-bold bg-gradient-to-br from-blue-900 to-blue-400 bg-clip-text text-transparent">Us</span>
-                        </p>
-                        <p
-                            class="text-gray-600 text-2xl md:text-base max-w-7xl mt-4   text-lg mx-auto  font-sans max-w-4xl">
-                            Enterprise-grade AI solutions built for scale and security</p>
+    <section class="relative py-16 bg-white" role="region" aria-labelledby="why-choose-us-numbered-cards">
+        <div class="px-4 sm:px-6 max-w-7xl lg:px-12 mx-auto">
+            <!-- Section Header -->
+            <header class="text-center mb-12">
+                <h2 id="why-choose-us-numbered-cards" class="text-4xl md:text-5xl font-bold text-gray-900">
+                    Why Choose <span
+                        class="bg-gradient-to-br from-blue-900 to-blue-400 bg-clip-text text-transparent">Us</span>
+                </h2>
+                <p class="text-gray-600 text-lg md:text-xl max-w-4xl mx-auto mt-4">
+                    Enterprise-grade AI solutions built for scale, security, and custom business needs.
+                </p>
+            </header>
+
+            <!-- Numbered Cards Grid -->
+            <div
+                class="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-4 gap-8 justify-around">
+
+                <!-- Card 1 -->
+                <article class="relative border border-blue-500 rounded-lg p-6 text-center shadow-sm">
+                    <div class="absolute top-1/5 -translate-y-1/2 left-[-24px]">
+                        <div class="w-10 h-10 bg-white text-blue-900 rounded-full flex items-center justify-center font-bold text-2xl"
+                            aria-hidden="true">01</div>
                     </div>
-                    <div
-                        class="w-full md:p-12 sm:p-12 xs:p-12 grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-4 gap-8 justify-around">
-                        <div
-                            class="relative bg-transparent border border-blue-500 rounded-lg p-6 lg:m-0 md:m-0 mx-4 text-center shadow-sm max-w-full">
-                            <div class="absolute top-1/5 -translate-y-1/2 left-[-24px] step-count-flex">
-                                <div class="w-10 h-10 bg-blue-900 rounded-full flex items-center justify-center text-[#0a0e27] font-bold shrink-0 z-[1] text-4xl"
-                                    style="background-color:#fff">01</div>
-                            </div>
-                            <h4 class="step-header text-xl font-semibold text-gray-900 mb-3">Enterprise-Grade AI</h4>
-                            <div class="card-body p-0">
-                                <p class="text-gray-600 text-sm md:text-base   text-lg mx-auto  font-sans max-w-4xl">
-                                    Production-ready AI systems built with security, compliance, and scalability at the
-                                    core.</p>
-                            </div>
-                        </div>
-                        <div
-                            class="relative bg-transparent border border-blue-500 rounded-lg p-6 lg:m-0 md:m-0 mx-4 text-center shadow-sm max-w-full">
-                            <div class="absolute top-1/5 -translate-y-1/2 left-[-24px] step-count-flex">
-                                <div class="w-10 h-10 bg-blue-900 rounded-full flex items-center justify-center text-[#0a0e27] font-bold shrink-0 z-[1] text-4xl"
-                                    style="background-color:#fff">02</div>
-                            </div>
-                            <h4 class="step-header text-xl font-semibold text-gray-900 mb-3">Custom-Built Systems</h4>
-                            <div class="card-body p-0">
-                                <p class="text-gray-600 text-sm md:text-base   text-lg mx-auto  font-sans max-w-4xl">No
-                                    off-the-shelf solutions. Every AI system is tailored to your specific business
-                                    needs.</p>
-                            </div>
-                        </div>
-                        <div
-                            class="relative bg-transparent border border-blue-500 rounded-lg p-6 lg:m-0 md:m-0 mx-4 text-center shadow-sm max-w-full">
-                            <div class="absolute top-1/5 -translate-y-1/2 left-[-24px] step-count-flex">
-                                <div class="w-10 h-10 bg-blue-900 rounded-full flex items-center justify-center text-[#0a0e27] font-bold shrink-0 z-[1] text-4xl"
-                                    style="background-color:#fff">03</div>
-                            </div>
-                            <h4 class="step-header text-xl font-semibold text-gray-900 mb-3">Secure & Scalable</h4>
-                            <div class="card-body p-0">
-                                <p class="text-gray-600 text-sm md:text-base   text-lg mx-auto  font-sans max-w-4xl">
-                                    Built on cloud-native architecture with robust security protocols and infinite
-                                    scalability.</p>
-                            </div>
-                        </div>
-                        <div
-                            class="relative bg-transparent border border-blue-500 rounded-lg p-6 lg:m-0 md:m-0 mx-4 text-center shadow-sm max-w-full">
-                            <div class="absolute top-1/5 -translate-y-1/2 left-[-24px] step-count-flex">
-                                <div class="w-10 h-10 bg-blue-900 rounded-full flex items-center justify-center text-[#0a0e27] font-bold shrink-0 z-[1] text-4xl"
-                                    style="background-color:#fff">04</div>
-                            </div>
-                            <h4 class="step-header text-xl font-semibold text-gray-900 mb-3">End-to-End Delivery</h4>
-                            <div class="card-body p-0">
-                                <p class="text-gray-600 text-sm md:text-base   text-lg mx-auto  font-sans max-w-4xl">
-                                    From discovery to deployment and monitoring, we handle the complete AI development
-                                    lifecycle.</p>
-                            </div>
-                        </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-3">Enterprise-Grade AI</h3>
+                    <p class="text-gray-600 text-base">
+                        Production-ready AI systems designed with **security, compliance, and scalability** at the core.
+                    </p>
+                </article>
+
+                <!-- Card 2 -->
+                <article class="relative border border-blue-500 rounded-lg p-6 text-center shadow-sm">
+                    <div class="absolute top-1/5 -translate-y-1/2 left-[-24px]">
+                        <div class="w-10 h-10 bg-white text-blue-900 rounded-full flex items-center justify-center font-bold text-2xl"
+                            aria-hidden="true">02</div>
                     </div>
-                </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-3">Custom-Built Systems</h3>
+                    <p class="text-gray-600 text-base">
+                        Every AI solution is **tailored to your unique business requirements**—no off-the-shelf systems.
+                    </p>
+                </article>
+
+                <!-- Card 3 -->
+                <article class="relative border border-blue-500 rounded-lg p-6 text-center shadow-sm">
+                    <div class="absolute top-1/5 -translate-y-1/2 left-[-24px]">
+                        <div class="w-10 h-10 bg-white text-blue-900 rounded-full flex items-center justify-center font-bold text-2xl"
+                            aria-hidden="true">03</div>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-3">Secure & Scalable</h3>
+                    <p class="text-gray-600 text-base">
+                        Cloud-native architecture with **robust security protocols** and infinite scalability.
+                    </p>
+                </article>
+
+                <!-- Card 4 -->
+                <article class="relative border border-blue-500 rounded-lg p-6 text-center shadow-sm">
+                    <div class="absolute top-1/5 -translate-y-1/2 left-[-24px]">
+                        <div class="w-10 h-10 bg-white text-blue-900 rounded-full flex items-center justify-center font-bold text-2xl"
+                            aria-hidden="true">04</div>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-3">End-to-End Delivery</h3>
+                    <p class="text-gray-600 text-base">
+                        From discovery to deployment and monitoring, we handle the **complete AI development
+                        lifecycle**.
+                    </p>
+                </article>
+
             </div>
         </div>
     </section>
     <!--end Why Choose Us -->
 
-     <!-- Our Development Process -->
-    <section
-        class="min-h-screen items-center justify-center p-4 md:p-16 bg-gradient-to-b from-[#1e3a8a] to-black relative overflow-hidde bg-no-repeat bg-cover"
-        style="background-image: url(./assets/image/talk-to-us-banner.webp);">
-
-        <!-- Decorative Stars -->
-        <div class="absolute -top-10 right-10 md:right-20 text-white opacity-10 animate-pulse">
-            <svg class="w-16 md:w-24 h-16 md:h-24" viewBox="0 0 100 100" fill="currentColor">
-                <path d="M50 0 L61 39 L100 50 L61 61 L50 100 L39 61 L0 50 L39 39 Z" />
-            </svg>
-        </div>
-
-        <div class="absolute top-20 md:top-32 right-4 md:right-8 text-white opacity-20 animate-pulse"
-            style="animation-delay: 0.5s;">
-            <svg class="w-12 md:w-16 h-12 md:h-16" viewBox="0 0 100 100" fill="currentColor">
-                <path d="M50 0 L61 39 L100 50 L61 61 L50 100 L39 61 L0 50 L39 39 Z" />
-            </svg>
-        </div>
-
-        <!-- Title -->
+    <!-- Our Development Process -->
+    <section class="bg-blue-500 min-h-screen px-8 py-16" role="region" aria-labelledby="ai-process-section">
         <div class="max-w-full w-full text-center mb-12 md:mb-16">
-            <h1 class="text-3xl md:text-5xl font-bold text-white leading-snug">
-                Our <span
-                    class="text-4xl font-bold bg-gradient-to-br from-blue-900 to-blue-400 bg-clip-text text-transparent">AI
+            <h2 id="ai-process-section" class="text-3xl md:text-5xl font-bold text-white leading-snug">
+                Our <span class="bg-gradient-to-br from-white to-blue-400 bg-clip-text text-transparent">AI
                     Development</span> Process
-            </h1>
-            <p class="text-gray-400 mt-4 md:mt-6 max-w-3xl mx-auto">
+            </h2>
+            <p class="text-white text-lg mt-4 md:mt-6 max-w-3xl mx-auto">
                 A structured approach to creating AI solutions that deliver measurable business impact.
             </p>
         </div>
 
-        <!-- Process Steps -->
-        <div class="max-w-6xl w-full m-auto space-y-10 md:space-y-12">
+        <div class="flex justify-center items-center">
+            <div
+                class="custom-accordion-wrapper flex w-full max-w-[1600px] h-[350px] border-t border-b border-gray-800">
 
-            <!-- Step 1 -->
-            <div class="flex flex-col md:flex-row items-start md:items-center group">
-                <div class="flex items-center w-full md:w-auto mb-4 md:mb-0">
-                    <div class="relative flex-shrink-0">
-                        <div
-                            class="w-20 h-20 rounded-full bg-[#0f172a] flex items-center justify-center border-4 border-gray-800 shadow-xl transition-transform group-hover:scale-105">
-                            <span class="text-2xl md:text-3xl font-bold text-blue-400">1</span>
+                <!-- Card Template -->
+                <article class="custom-card active flex overflow-hidden bg-white border-l border-gray-300 min-w-[187px]"
+                    aria-label="Step 1: Requirement Discovery">
+                    <div class="flex w-full h-full p-10">
+                        <div class="flex flex-col justify-between w-[140px] pr-5 shrink-0">
+                            <span
+                                class="text-6xl font-semibold bg-gradient-to-br from-blue-900 to-blue-400 bg-clip-text text-transparent"
+                                aria-hidden="true">01</span>
+                            <h3 class="text-lg font-semibold text-gray-800 max-w-[280px]">Requirement Discovery</h3>
+                        </div>
+                        <div class="custom-card-reveal">
+                            <p class="text-black text-base leading-relaxed max-w-[400px]">
+                                We analyze your business goals and challenges to identify impactful AI use cases,
+                                ensuring solutions align with objectives and deliver measurable value.
+                            </p>
                         </div>
                     </div>
-                </div>
-                <div class="md:ml-6 flex-1">
-                    <h2 class="text-xl md:text-2xl font-semibold text-white mb-2">Requirement Discovery</h2>
-                    <p class="text-gray-400 text-sm md:text-base">
-                        We analyze your business goals and challenges to identify impactful AI use cases. <br>
-                        This ensures solutions align with objectives and deliver measurable value.
-                    </p>
-                </div>
-            </div>
+                </article>
 
-            <!-- Step 2 -->
-            <div class="flex flex-col md:flex-row-reverse items-start md:items-center group">
-                <div class="flex items-center w-full md:w-auto mb-4 md:mb-0 flex-row-reverse md:flex-row">
-                    <div class="relative flex-shrink-0">
-                        <div
-                            class="w-20 h-20 rounded-full bg-[#0f172a] flex items-center justify-center border-4 border-gray-800 shadow-xl transition-transform group-hover:scale-105">
-                            <span class="text-2xl md:text-3xl font-bold text-blue-400">2</span>
+                <!-- Card 2 -->
+                <article class="custom-card flex overflow-hidden bg-white border-l border-gray-300 min-w-[187px]"
+                    aria-label="Step 2: Planning & Analysis">
+                    <div class="flex w-full h-full p-10">
+                        <div class="flex flex-col justify-between w-[140px] pr-5 shrink-0">
+                            <span
+                                class="text-6xl font-semibold bg-gradient-to-br from-blue-900 to-blue-400 bg-clip-text text-transparent"
+                                aria-hidden="true">02</span>
+                            <h3 class="text-lg font-semibold text-gray-800 max-w-[280px]">Planning & Analysis</h3>
+                        </div>
+                        <div class="custom-card-reveal">
+                            <p class="text-black text-base leading-relaxed max-w-[400px]">
+                                We create a detailed roadmap covering system architecture, data strategy, model
+                                selection, and timelines to ensure smooth execution with minimal risk.
+                            </p>
                         </div>
                     </div>
-                </div>
-                <div class="md:mr-6 flex-1 md:text-right">
-                    <h2 class="text-xl md:text-2xl font-semibold text-white mb-2">Planning & Analysis</h2>
-                    <p class="text-gray-400 text-sm md:text-base">
-                        We create a detailed roadmap covering system architecture, data strategy, <br>
-                        model selection, and timelines, ensuring smooth execution with minimal risk.
-                    </p>
-                </div>
-            </div>
+                </article>
 
-            <!-- Step 3 -->
-            <div class="flex flex-col md:flex-row items-start md:items-center group">
-                <div class="flex items-center w-full md:w-auto mb-4 md:mb-0">
-                    <div class="relative flex-shrink-0">
-                        <div
-                            class="w-20 h-20 rounded-full bg-[#0f172a] flex items-center justify-center border-4 border-gray-800 shadow-xl transition-transform group-hover:scale-105">
-                            <span class="text-2xl md:text-3xl font-bold text-blue-400">3</span>
+                <!-- Card 3 -->
+                <article class="custom-card flex overflow-hidden bg-white border-l border-gray-300 min-w-[187px]"
+                    aria-label="Step 3: Model Design">
+                    <div class="flex w-full h-full p-10">
+                        <div class="flex flex-col justify-between w-[140px] pr-5 shrink-0">
+                            <span
+                                class="text-6xl font-semibold bg-gradient-to-br from-blue-900 to-blue-400 bg-clip-text text-transparent"
+                                aria-hidden="true">03</span>
+                            <h3 class="text-lg font-semibold text-gray-800 max-w-[280px]">Model Design</h3>
+                        </div>
+                        <div class="custom-card-reveal">
+                            <p class="text-black text-base leading-relaxed max-w-[400px]">
+                                AI models are designed including machine learning, deep learning, or generative AI
+                                tailored to your business logic, ensuring accuracy and scalability.
+                            </p>
                         </div>
                     </div>
-                </div>
-                <div class="md:ml-6 flex-1">
-                    <h2 class="text-xl md:text-2xl font-semibold text-white mb-2">Model Design</h2>
-                    <p class="text-gray-400 text-sm md:text-base">
-                        We design AI models including machine learning, deep learning, or <br>
-                        generative AI tailored to your business logic, ensuring accuracy and scalability.
-                    </p>
-                </div>
-            </div>
+                </article>
 
-            <!-- Step 4 -->
-            <div class="flex flex-col md:flex-row-reverse items-start md:items-center group">
-                <div class="flex items-center w-full md:w-auto mb-4 md:mb-0 flex-row-reverse md:flex-row">
-                    <div class="relative flex-shrink-0">
-                        <div
-                            class="w-20 h-20 rounded-full bg-[#0f172a] flex items-center justify-center border-4 border-gray-800 shadow-xl transition-transform group-hover:scale-105">
-                            <span class="text-2xl md:text-3xl font-bold text-blue-400">4</span>
+                <!-- Card 4 -->
+                <article class="custom-card flex overflow-hidden bg-white border-l border-gray-300 min-w-[187px]"
+                    aria-label="Step 4: Model Deployment & Validation">
+                    <div class="flex w-full h-full p-10">
+                        <div class="flex flex-col justify-between w-[140px] pr-5 shrink-0">
+                            <span
+                                class="text-6xl font-semibold bg-gradient-to-br from-blue-900 to-blue-400 bg-clip-text text-transparent"
+                                aria-hidden="true">04</span>
+                            <h3 class="text-lg font-semibold text-gray-800 max-w-[280px]">Model Deployment Validation
+                            </h3>
+                        </div>
+                        <div class="custom-card-reveal">
+                            <p class="text-black text-base leading-relaxed max-w-[400px]">
+                                Models are rigorously validated for accuracy, bias control, and real-world performance
+                                before full deployment.
+                            </p>
                         </div>
                     </div>
-                </div>
-                <div class="md:mr-6 flex-1 md:text-right">
-                    <h2 class="text-xl md:text-2xl font-semibold text-white mb-2">Model Deployment Validation</h2>
-                    <p class="text-gray-400 text-sm md:text-base">
-                        Before full deployment, models are rigorously validated for accuracy, <br>
-                        bias control, and real-world performance under expected workloads.
-                    </p>
-                </div>
-            </div>
+                </article>
 
-            <!-- Step 5 -->
-            <div class="flex flex-col md:flex-row items-start md:items-center group">
-                <div class="flex items-center w-full md:w-auto mb-4 md:mb-0">
-                    <div class="relative flex-shrink-0">
-                        <div
-                            class="w-20 h-20 rounded-full bg-[#0f172a] flex items-center justify-center border-4 border-gray-800 shadow-xl transition-transform group-hover:scale-105">
-                            <span class="text-2xl md:text-3xl font-bold text-blue-400">5</span>
+                <!-- Card 5 -->
+                <article class="custom-card flex overflow-hidden bg-white border-l border-gray-300 min-w-[187px]"
+                    aria-label="Step 5: Integration & Testing">
+                    <div class="flex w-full h-full p-10">
+                        <div class="flex flex-col justify-between w-[140px] pr-5 shrink-0">
+                            <span
+                                class="text-6xl font-semibold bg-gradient-to-br from-blue-900 to-blue-400 bg-clip-text text-transparent"
+                                aria-hidden="true">05</span>
+                            <h3 class="text-lg font-semibold text-gray-800 max-w-[280px]">Integration & Testing</h3>
+                        </div>
+                        <div class="custom-card-reveal">
+                            <p class="text-black text-base leading-relaxed max-w-[400px]">
+                                AI models are integrated into your systems, apps, or APIs. Extensive testing ensures
+                                security, scalability, and flawless operation.
+                            </p>
                         </div>
                     </div>
-                </div>
-                <div class="md:ml-6 flex-1">
-                    <h2 class="text-xl md:text-2xl font-semibold text-white mb-2">Integration & Testing</h2>
-                    <p class="text-gray-400 text-sm md:text-base">
-                        AI models are integrated into your systems, apps, or APIs. Extensive <br>
-                        testing ensures security, scalability, and flawless operation.
-                    </p>
-                </div>
-            </div>
+                </article>
 
-            <!-- Step 6 -->
-            <div class="flex flex-col md:flex-row-reverse items-start md:items-center group">
-                <div class="flex items-center w-full md:w-auto mb-4 md:mb-0 flex-row-reverse md:flex-row">
-                    <div class="relative flex-shrink-0">
-                        <div
-                            class="w-20 h-20 rounded-full bg-[#0f172a] flex items-center justify-center border-4 border-gray-800 shadow-xl transition-transform group-hover:scale-105">
-                            <span class="text-2xl md:text-3xl font-bold text-blue-400">6</span>
+                <!-- Card 6 -->
+                <article
+                    class="custom-card flex overflow-hidden bg-white border-l border-gray-300 border-r min-w-[187px]"
+                    aria-label="Step 6: Deployment & Monitoring">
+                    <div class="flex w-full h-full p-10">
+                        <div class="flex flex-col justify-between w-[140px] pr-5 shrink-0">
+                            <span
+                                class="text-6xl font-semibold bg-gradient-to-br from-blue-900 to-blue-400 bg-clip-text text-transparent"
+                                aria-hidden="true">06</span>
+                            <h3 class="text-lg font-semibold text-gray-800 max-w-[280px]">Deployment & Monitoring</h3>
+                        </div>
+                        <div class="custom-card-reveal">
+                            <p class="text-black text-base leading-relaxed max-w-[400px]">
+                                AI solutions are deployed to production with continuous monitoring, optimization, and
+                                scaling for long-term performance and impact.
+                            </p>
                         </div>
                     </div>
-                </div>
-                <div class="md:mr-6 flex-1 md:text-right">
-                    <h2 class="text-xl md:text-2xl font-semibold text-white mb-2">Deployment & Monitoring</h2>
-                    <p class="text-gray-400 text-sm md:text-base">
-                        AI solutions are deployed to production environments with continuous <br>
-                        monitoring, optimization, and scaling for long-term performance and impact.
-                    </p>
-                </div>
-            </div>
+                </article>
 
+            </div>
         </div>
     </section>
     <!--end Our Development Process -->
 
     <!-- Deep Expertise in ai -->
-    <section>
-        <div class="w-full bg-cover bg-center overflow-hidden" style="background-color:bg-gray-100">
-            <div class="flex items-center justify-center h-full w-full bg-gray-100">
-                <div class="flex flex-col place-items-center items-center text-center py-16 m-4" data-aos="fade-up"
-                    data-aos-easing="ease-out-back" data-aos-duration="700">
-                    <h2 class="font-serif font-bold lg:text-5xl tracking-normal text-4xl text-shark-500 max-w-5xl"
-                        style="color:#24262B;line-height:1.20">Deep Expertise in <span
-                            class="text-4xl font-bold bg-gradient-to-br from-blue-900 to-blue-400 bg-clip-text text-transparent">Advanced
-                            AI</span> Technologies
-                    </h2>
-                    <p class="text-shark-500 pt-6 text-lg mx-auto font-sans max-w-4xl">Our team masters the latest AI
-                        technologies to deliver cutting-edge solutions</p>
-                    <div class="flex md:flex-row flex-col md:gap-9 gap-1"></div>
-                </div>
-            </div>
+    <section class="bg-gray-100 py-16 px-8" role="region" aria-labelledby="ai-projects-section">
+        <div class="px-4 sm:px-6 max-w-7xl lg:px-12 mx-auto text-center mb-12 md:mb-16">
+            <h2 id="ai-projects-section" class="text-3xl md:text-5xl font-bold text-gray-900 leading-snug">
+                Deep Expertise in <span
+                    class="bg-gradient-to-br from-blue-900 to-blue-400 bg-clip-text text-transparent">Advanced AI</span>
+                Technologies
+            </h2>
+            <p class="text-gray-700 text-lg mt-4 md:mt-6 max-w-3xl mx-auto">
+                Our team masters the latest AI technologies to deliver cutting-edge solutions across industries.
+            </p>
         </div>
-        <div class="flex justify-center bg-gray-100 pb-16">
-            <div class="px-4 sm:px-6 w-full max-w-7xl lg:px-12">
-                <div class="md:grid md:grid-cols-2 md:gap-4 lg:grid lg:grid-cols-3 lg:gap-6" data-aos="fade-up">
 
-                    <!-- AI Chatbot Project -->
-                    <div
-                        class="shadow-lg text-center p-6 my-6 lg:my-0 bg-white rounded-3xl flex flex-col transition border-white hover:shadow-xl hover:-translate-y-1">
-                        <a href="#" class="cursor-pointer flex flex-col h-full">
-                            <div class="flex flex-col h-full">
-                                <div class="pb-5 h-52">
-                                    <div class="w-full h-full rounded-3xl text-white overflow-hidden">
-                                        <img src="../wmt_v4/ai-chatbot.png" loading="lazy" height="302" width="692"
-                                            alt="AI Chatbot" class="object-cover w-full h-full">
-                                    </div>
-                                </div>
-                                <h3
-                                    class="font-serif font-semibold text-lg tracking-normal leading-8 font-bold text-left pb-5">
-                                    AI Chatbot Platform</h3>
-                                <p class="text-left text-lg mx-auto font-sans max-w-4xl">Developed an intelligent AI
-                                    chatbot that handles customer queries, automates support, and learns from
-                                    interactions over time.</p>
-                                <div class="bullet-container mt-auto"
-                                    style="background-color:rgba(196, 199, 206, 0.2);border-radius:8px">
-                                    <ul class="list-disc pl-5 space-y-2 m-4 text-shark-400">
-                                        <li class="text-left"><span>Natural Language Understanding</span></li>
-                                        <li class="text-left"><span>Multi-platform support</span></li>
-                                        <li class="text-left"><span>Sentiment analysis integration</span></li>
-                                        <li class="text-left"><span>Real-time conversation logging</span></li>
-                                        <li class="text-left"><span>Adaptive learning engine</span></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
+        <div class="flex justify-center">
+            <div class="px-4 sm:px-6 max-w-7xl lg:px-12 mx-auto grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
 
-                    <!-- AI Image Recognition Project -->
-                    <div
-                        class="shadow-lg text-center p-6 my-6 lg:my-0 bg-white rounded-3xl flex flex-col transition border-white hover:shadow-xl hover:-translate-y-1">
-                        <a href="#" class="cursor-pointer flex flex-col h-full">
-                            <div class="flex flex-col h-full">
-                                <div class="pb-5 h-52">
-                                    <div class="w-full h-full rounded-3xl text-white overflow-hidden">
-                                        <img src="../wmt_v4/ai-image-recognition.png" loading="lazy" height="302"
-                                            width="692" alt="AI Image Recognition" class="object-cover w-full h-full">
-                                    </div>
-                                </div>
-                                <h3
-                                    class="font-serif font-semibold text-lg tracking-normal leading-8 font-bold text-left pb-5">
-                                    AI Image Recognition</h3>
-                                <p class="text-left text-lg mx-auto font-sans max-w-4xl">Implemented a computer vision
-                                    system that detects objects and anomalies in images for industrial and medical
-                                    applications.</p>
-                                <div class="bullet-container mt-auto"
-                                    style="background-color:rgba(196, 199, 206, 0.2);border-radius:8px">
-                                    <ul class="list-disc pl-5 space-y-2 m-4 text-shark-400">
-                                        <li class="text-left"><span>Object detection & classification</span></li>
-                                        <li class="text-left"><span>Medical image analysis</span></li>
-                                        <li class="text-left"><span>Real-time video processing</span></li>
-                                        <li class="text-left"><span>Drone & satellite integration</span></li>
-                                        <li class="text-left"><span>TensorFlow & PyTorch powered</span></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
+                <!-- AI Chatbot Project -->
+                <article
+                    class="shadow-lg p-6 bg-white rounded-3xl flex flex-col transition hover:shadow-xl hover:-translate-y-1"
+                    aria-label="AI Chatbot Platform Project">
+                    <a href="/projects/ai-chatbot" class="flex flex-col h-full">
+                        <div class="pb-5 h-52">
+                            <img src="../wmt_v4/ai-chatbot.png" loading="lazy" height="302" width="692"
+                                alt="AI Chatbot Platform - handles customer queries, automates support"
+                                class="object-cover w-full h-full rounded-3xl">
+                        </div>
+                        <h3 class="font-semibold text-lg leading-8 text-left pb-5">AI Chatbot Platform</h3>
+                        <p class="text-left text-lg mb-4">
+                            Developed an intelligent AI chatbot that handles customer queries, automates support, and
+                            learns from interactions over time.
+                        </p>
+                        <ul class="list-disc pl-5 space-y-2 text-gray-600">
+                            <li>Natural Language Understanding</li>
+                            <li>Multi-platform support</li>
+                            <li>Sentiment analysis integration</li>
+                            <li>Real-time conversation logging</li>
+                            <li>Adaptive learning engine</li>
+                        </ul>
+                    </a>
+                </article>
 
-                    <!-- AI Predictive Analytics Project -->
-                    <div
-                        class="shadow-lg text-center p-6 my-6 lg:my-0 bg-white rounded-3xl flex flex-col transition border-white hover:shadow-xl hover:-translate-y-1">
-                        <a href="#" class="cursor-pointer flex flex-col h-full">
-                            <div class="flex flex-col h-full">
-                                <div class="pb-5 h-52">
-                                    <div class="w-full h-full rounded-3xl text-white overflow-hidden">
-                                        <img src="../wmt_v4/ai-predictive-analytics.png" loading="lazy" height="302"
-                                            width="692" alt="AI Predictive Analytics"
-                                            class="object-cover w-full h-full">
-                                    </div>
-                                </div>
-                                <h3
-                                    class="font-serif font-semibold text-lg tracking-normal leading-8 font-bold text-left pb-5">
-                                    AI Predictive Analytics</h3>
-                                <p class="text-left text-lg mx-auto font-sans max-w-4xl">Built predictive models using
-                                    machine learning to forecast trends, customer behavior, and business outcomes with
-                                    high accuracy.</p>
-                                <div class="bullet-container mt-auto"
-                                    style="background-color:rgba(196, 199, 206, 0.2);border-radius:8px">
-                                    <ul class="list-disc pl-5 space-y-2 m-4 text-shark-400">
-                                        <li class="text-left"><span>Sales trend prediction</span></li>
-                                        <li class="text-left"><span>Customer behavior modeling</span></li>
-                                        <li class="text-left"><span>Demand forecasting</span></li>
-                                        <li class="text-left"><span>Energy consumption analysis</span></li>
-                                        <li class="text-left"><span>Python & R based models</span></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
+                <!-- AI Image Recognition Project -->
+                <article
+                    class="shadow-lg p-6 bg-white rounded-3xl flex flex-col transition hover:shadow-xl hover:-translate-y-1"
+                    aria-label="AI Image Recognition Project">
+                    <a href="/projects/ai-image-recognition" class="flex flex-col h-full">
+                        <div class="pb-5 h-52">
+                            <img src="../wmt_v4/ai-image-recognition.png" loading="lazy" height="302" width="692"
+                                alt="AI Image Recognition - object detection and medical analysis"
+                                class="object-cover w-full h-full rounded-3xl">
+                        </div>
+                        <h3 class="font-semibold text-lg leading-8 text-left pb-5">AI Image Recognition</h3>
+                        <p class="text-left text-lg mb-4">
+                            Implemented a computer vision system that detects objects and anomalies in images for
+                            industrial and medical applications.
+                        </p>
+                        <ul class="list-disc pl-5 space-y-2 text-gray-600">
+                            <li>Object detection & classification</li>
+                            <li>Medical image analysis</li>
+                            <li>Real-time video processing</li>
+                            <li>Drone & satellite integration</li>
+                            <li>TensorFlow & PyTorch powered</li>
+                        </ul>
+                    </a>
+                </article>
 
-                    <!-- Add more AI project cards in the same format if needed -->
+                <!-- AI Predictive Analytics Project -->
+                <article
+                    class="shadow-lg p-6 bg-white rounded-3xl flex flex-col transition hover:shadow-xl hover:-translate-y-1"
+                    aria-label="AI Predictive Analytics Project">
+                    <a href="/projects/ai-predictive-analytics" class="flex flex-col h-full">
+                        <div class="pb-5 h-52">
+                            <img src="../wmt_v4/ai-predictive-analytics.png" loading="lazy" height="302" width="692"
+                                alt="AI Predictive Analytics - forecast trends and business outcomes"
+                                class="object-cover w-full h-full rounded-3xl">
+                        </div>
+                        <h3 class="font-semibold text-lg leading-8 text-left pb-5">AI Predictive Analytics</h3>
+                        <p class="text-left text-lg mb-4">
+                            Built predictive models using machine learning to forecast trends, customer behavior, and
+                            business outcomes with high accuracy.
+                        </p>
+                        <ul class="list-disc pl-5 space-y-2 text-gray-600">
+                            <li>Sales trend prediction</li>
+                            <li>Customer behavior modeling</li>
+                            <li>Demand forecasting</li>
+                            <li>Energy consumption analysis</li>
+                            <li>Python & R based models</li>
+                        </ul>
+                    </a>
+                </article>
 
-                </div>
             </div>
         </div>
     </section>
     <!--end Deep Expertise in ai -->
 
     <!-- Schedule a DevOps Assessment Session With Our -->
-    <section>
-        <div
-            class="newcta-bg-image bg-center bg-cover bg-no-repeat flex items-center justify-start h-full w-full bg-blue-500">
-            <div class="flex flex-col place-items-center items-start py-10 m-4 aos-init aos-animate leading-10 max-w-5xl"
-                data-aos="fade-up" data-aos-easing="ease-out-back" data-aos-duration="700">
-                <h2 class="font-serif font-bold lg:text-5xl tracking-normal text-4xl lg:max-w-screen-lg max-w-lg  text-start"
-                    style="color:#FFFFFF;line-height:1.20"> Schedule a DevOps Assessment Session With Our
-                    Expert Developers</h2>
-                <p class="text-white text-start pt-6 text-lg  font-sans ">As we are a custom software Development
-                    Company in the USA, our DevOps solutions are
-                    researched and tested that connects a user with the brand.</p>
-                <div class="mt-8 flex lg:flex-shrink-0">
-                    <div class="inline-flex rounded-full "><a href="../contact-us/index.htm"
-                            class="px-5 py-3 border border-gray-300 text-white font-medium rounded-full shadow hover:text-black hover:bg-gray-100 transition">Talk
-                            to a DevOps Expert</a></div>
+    <section class="newcta-bg-image bg-blue-500 py-16 px-8" role="region" aria-labelledby="devops-cta-section">
+        <div class="px-4 sm:px-6 max-w-7xl lg:px-12 mx-auto text-center">
+            <div class="flex flex-col items-center justify-center text-center space-y-6" data-aos="fade-up"
+                data-aos-easing="ease-out-back" data-aos-duration="700">
+
+                <!-- Heading -->
+                <h2 id="devops-cta-section"
+                    class="text-3xl md:text-5xl font-bold leading-snug lg:max-w-screen-lg max-w-lg mx-auto text-white">
+                    Schedule a <span
+                        class="bg-gradient-to-br from-white to-blue-400 bg-clip-text text-transparent">DevOps
+                        Assessment</span> Session With Our Expert Developers
+                </h2>
+
+                <!-- Description -->
+                <p class="text-white text-lg max-w-3xl mx-auto">
+                    As a leading custom software development company in the USA, our DevOps solutions are carefully
+                    researched, tested, and designed to connect your business with your users efficiently and securely.
+                </p>
+
+                <!-- CTA Button -->
+                <div class="mt-8">
+                    <a href="../contact-us/index.htm"
+                        class="px-8 py-3 bg-white text-blue-600 font-semibold rounded-full shadow hover:bg-gray-100 hover:text-blue-700 transition-all duration-300">
+                        Talk to a DevOps Expert
+                    </a>
                 </div>
+
             </div>
         </div>
     </section>
     <!-- end Schedule a DevOps Assessment Session With Our -->
 
     <!-- faq section -->
-    <section class="py-16 bg-white">
-        <div class="px-4">
-            <div class=" mt-10">
-                <div class="w-full bg-cover bg-center overflow-hidden">
-                    <div class="flex items-center justify-center h-full w-full ">
-                        <div class="flex flex-col place-items-center items-center text-center pb-16 m-4"
-                            data-aos="fade-up" data-aos-easing="ease-out-back" data-aos-duration="700">
-                            <span
-                                class="mb-3 inline-flex items-center gap-2 px-4 py-1 rounded-full bg-gray-900 text-sm text-white">
-                                ✦ FAQ ✦
-                            </span>
-                            <h2 class="font-serif font-bold lg:text-5xl tracking-normal text-4xl text-shark-500 max-w-5xl"
-                                style="color:#24262B;line-height:1.20">Frequently Asked <span
-                                    class="text-4xl font-bold bg-gradient-to-br from-blue-900 to-blue-400 bg-clip-text text-transparent">Questions</span>
-                            </h2>
-                            <div class="flex md:flex-row flex-col md:gap-9 gap-1"></div>
-                        </div>
+    <section class="py-16 bg-white" aria-labelledby="faq-section">
+        <div class="px-4 px-4 sm:px-6 max-w-7xl lg:px-12 mx-auto">
+
+            <!-- Header -->
+            <div class="text-center mb-12" data-aos="fade-up" data-aos-easing="ease-out-back" data-aos-duration="700">
+                <span class="inline-flex items-center gap-2 px-4 py-1 rounded-full bg-gray-900 text-sm text-white mb-3">
+                    ✦ FAQ ✦
+                </span>
+                <h2 id="faq-section"
+                    class="text-4xl lg:text-5xl font-bold text-gray-900 max-w-5xl mx-auto leading-tight">
+                    Frequently Asked <span
+                        class="bg-gradient-to-br from-blue-900 to-blue-400 bg-clip-text text-transparent">Questions</span>
+                </h2>
+                <p class="text-gray-600 text-lg mt-4 max-w-3xl mx-auto">
+                    Answers to common questions about our React Native & AI development services.
+                </p>
+            </div>
+
+            <!-- FAQ Items -->
+            <div class="space-y-4">
+                <!-- FAQ Item 1 -->
+                <div class="faq-item border rounded-lg bg-white overflow-hidden transition-all duration-300">
+                    <button
+                        class="faq-toggle w-full flex justify-between items-center px-4 py-4 text-left text-lg font-semibold text-gray-800 focus:outline-none"
+                        aria-expanded="false" aria-controls="faq1">
+                        How much does it cost to hire a React Native developer?
+                        <svg class="w-5 h-5 transition-transform duration-300" fill="none" stroke="currentColor"
+                            viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4">
+                            </path>
+                        </svg>
+                    </button>
+                    <div id="faq1"
+                        class="faq-content max-h-0 overflow-hidden px-4 transition-[max-height] duration-500 ease-in-out">
+                        <p class="py-2 text-gray-600">
+                            Costs vary by experience. We offer competitive rates, typically between $25 and $50 per
+                            hour. We provide a clear quote upfront so there are no surprises.
+                        </p>
                     </div>
                 </div>
 
-                <div class="max-w-6xl w-full m-auto ">
+                <!-- FAQ Item 2 -->
+                <div class="faq-item border rounded-lg bg-white overflow-hidden transition-all duration-300">
+                    <button
+                        class="faq-toggle w-full flex justify-between items-center px-4 py-4 text-left text-lg font-semibold text-gray-800 focus:outline-none"
+                        aria-expanded="false" aria-controls="faq2">
+                        Can I interview the developers first?
+                        <svg class="w-5 h-5 transition-transform duration-300" fill="none" stroke="currentColor"
+                            viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4">
+                            </path>
+                        </svg>
+                    </button>
+                    <div id="faq2"
+                        class="faq-content max-h-0 overflow-hidden px-4 transition-[max-height] duration-500 ease-in-out">
+                        <p class="py-2 text-gray-600">
+                            Yes. You can interview them and give technical tests before hiring React Native experts from
+                            us.
+                        </p>
+                    </div>
+                </div>
 
-                    <!-- FAQ Item 1 -->
-                    <div class="faq-item mb-4 border rounded-lg bg-white overflow-hidden transition-all duration-300">
-                        <button
-                            class="faq-toggle w-full flex justify-between items-center px-4 py-4 text-left text-lg font-semibold text-gray-800 focus:outline-none">
-                            Q1: How much does it cost to hire a React Native developer?
-                            <svg class="w-5 h-5 transition-transform duration-300" fill="none" stroke="currentColor"
-                                viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M12 4v16m8-8H4"></path>
-                            </svg>
-                        </button>
-                        <div
-                            class="faq-content max-h-0 overflow-hidden transition-[max-height] duration-[350ms] ease-in-out px-4 duration-500">
-                            <p class="py-2 text-gray-600">Costs vary by experience. We offer competitive rates,
-                                typically between $25 and $50 per hour. from us,
-                                we give a clear quote upfront.</p>
-                        </div>
+                <!-- FAQ Item 3 -->
+                <div class="faq-item border rounded-lg bg-white overflow-hidden transition-all duration-300">
+                    <button
+                        class="faq-toggle w-full flex justify-between items-center px-4 py-4 text-left text-lg font-semibold text-gray-800 focus:outline-none"
+                        aria-expanded="false" aria-controls="faq3">
+                        How long does development take?
+                        <svg class="w-5 h-5 transition-transform duration-300" fill="none" stroke="currentColor"
+                            viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4">
+                            </path>
+                        </svg>
+                    </button>
+                    <div id="faq3"
+                        class="faq-content max-h-0 overflow-hidden px-4 transition-[max-height] duration-500 ease-in-out">
+                        <p class="py-2 text-gray-600">
+                            A basic app takes 2-3 months. Complex apps take 4-6 months. Our AI tools help us work faster
+                            than average.
+                        </p>
                     </div>
+                </div>
 
-                    <!-- FAQ Item 2 -->
-                    <div class="faq-item mb-4 border rounded-lg bg-white overflow-hidden transition-all duration-300">
-                        <button
-                            class="faq-toggle w-full flex justify-between items-center px-4 py-4 text-left text-lg font-semibold text-gray-800 focus:outline-none">
-                            Q2: Can I interview the developers first?
-                            <svg class="w-5 h-5 transition-transform duration-300" fill="none" stroke="currentColor"
-                                viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M12 4v16m8-8H4"></path>
-                            </svg>
-                        </button>
-                        <div
-                            class="faq-content max-h-0 overflow-hidden transition-[max-height] duration-[350ms] ease-in-out px-4 duration-500">
-                            <p class="py-2 text-gray-600">Yes. You can interview them and give technical tests before
-                                you decide to hire react native developer experts from us.</p>
-                        </div>
+                <!-- FAQ Item 4 -->
+                <div class="faq-item border rounded-lg bg-white overflow-hidden transition-all duration-300">
+                    <button
+                        class="faq-toggle w-full flex justify-between items-center px-4 py-4 text-left text-lg font-semibold text-gray-800 focus:outline-none"
+                        aria-expanded="false" aria-controls="faq4">
+                        Do you provide ongoing maintenance and support?
+                        <svg class="w-5 h-5 transition-transform duration-300" fill="none" stroke="currentColor"
+                            viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4">
+                            </path>
+                        </svg>
+                    </button>
+                    <div id="faq4"
+                        class="faq-content max-h-0 overflow-hidden px-4 transition-[max-height] duration-500 ease-in-out">
+                        <p class="py-2 text-gray-600">
+                            Yes, we offer ongoing maintenance, performance monitoring, and support to ensure your app
+                            continues to run smoothly after launch.
+                        </p>
                     </div>
-
-                    <!-- FAQ Item 3 -->
-                    <div class="faq-item mb-4 border rounded-lg bg-white overflow-hidden transition-all duration-300">
-                        <button
-                            class="faq-toggle w-full flex justify-between items-center px-4 py-4 text-left text-lg font-semibold text-gray-800 focus:outline-none">
-                            Q3: How long does development take?
-                            <svg class="w-5 h-5 transition-transform duration-300" fill="none" stroke="currentColor"
-                                viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M12 4v16m8-8H4"></path>
-                            </svg>
-                        </button>
-                        <div
-                            class="faq-content max-h-0 overflow-hidden transition-[max-height] duration-[350ms] ease-in-out px-4 duration-500">
-                            <p class="py-2 text-gray-600">A basic app takes 2-3 months. Complex apps take 4-6 months.
-                                Our AI tools help us work faster than average.</p>
-                        </div>
-                    </div>
-                    <div class="faq-item mb-4 border rounded-lg bg-white overflow-hidden transition-all duration-300">
-                        <button
-                            class="faq-toggle w-full flex justify-between items-center px-4 py-4 text-left text-lg font-semibold text-gray-800 focus:outline-none">
-                            Q3: How long does development take?
-                            <svg class="w-5 h-5 transition-transform duration-300" fill="none" stroke="currentColor"
-                                viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M12 4v16m8-8H4"></path>
-                            </svg>
-                        </button>
-                        <div
-                            class="faq-content max-h-0 overflow-hidden transition-[max-height] duration-[350ms] ease-in-out px-4 duration-500">
-                            <p class="py-2 text-gray-600">A basic app takes 2-3 months. Complex apps take 4-6 months.
-                                Our AI tools help us work faster than average.</p>
-                        </div>
-                    </div>
-                    <div class="faq-item mb-4 border rounded-lg bg-white overflow-hidden transition-all duration-300">
-                        <button
-                            class="faq-toggle w-full flex justify-between items-center px-4 py-4 text-left text-lg font-semibold text-gray-800 focus:outline-none">
-                            Q3: How long does development take?
-                            <svg class="w-5 h-5 transition-transform duration-300" fill="none" stroke="currentColor"
-                                viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M12 4v16m8-8H4"></path>
-                            </svg>
-                        </button>
-                        <div
-                            class="faq-content max-h-0 overflow-hidden transition-[max-height] duration-[350ms] ease-in-out px-4 duration-500">
-                            <p class="py-2 text-gray-600">A basic app takes 2-3 months. Complex apps take 4-6 months.
-                                Our AI tools help us work faster than average.</p>
-                        </div>
-                    </div>
-
                 </div>
 
             </div>
@@ -895,285 +892,231 @@
     </section>
     <!--end faq section -->
 
-     <!-- Let's Talk -->
-    <section class="py-16 bg-gray-100 min-h-screen flex items-center justify-center p-4"
-        style="background-image: url(./assets/image/bg-form.png);">
-        <div class="w-full max-w-6xl rounded-sm shadow-2xl overflow-hidden bg-cover bg-center bg-no-repeat"
-            style="background-image: url('./assets/image/contact_bg.webp');">
+    <!-- Let's Talk -->
+    <section class="py-16 min-h-screen flex items-center justify-center bg-blue-500">
+        <div class="w-full px-4 sm:px-6 max-w-7xl lg:px-12 mx-auto rounded-xl shadow-2xl overflow-hidden bg-white">
 
             <!-- GRID LAYOUT -->
             <div class="grid grid-cols-1 lg:grid-cols-[65%_35%]">
 
-                <!-- LEFT : FORM (75%) -->
+                <!-- LEFT : CONTACT FORM -->
                 <div class="order-2 lg:order-1 p-8 md:p-12 lg:p-12">
-                    <h1 class="text-4xl md:text-5xl font-bold text-white mb-10">
-                        Let's Talk
+                    <h1 class="font-bold lg:text-5xl text-4xl text-gray-900 max-w-5xl mb-10">
+                        Call Us <span
+                            class="bg-gradient-to-br from-blue-900 to-blue-400 bg-clip-text text-transparent">Now!</span>
                     </h1>
 
-                    <form class="space-y-6" id="contactForm">
+                    <form class="space-y-6" id="contactForm" aria-label="Contact Form">
 
                         <input type="text" placeholder="First Name*" required
-                            class="w-full bg-transparent border-b-2 border-purple-300 text-white placeholder-purple-200 py-3 focus:outline-none focus:border-white" />
+                            class="w-full bg-gray-100 border-b-2 border-gray-300 text-gray-900 placeholder-gray-500 py-3 focus:outline-none focus:border-blue-500 rounded-sm px-3"
+                            aria-label="First Name" />
 
                         <input type="email" placeholder="Email*" required
-                            class="w-full bg-transparent border-b-2 border-purple-300 text-white placeholder-purple-200 py-3 focus:outline-none focus:border-white" />
+                            class="w-full bg-gray-100 border-b-2 border-gray-300 text-gray-900 placeholder-gray-500 py-3 focus:outline-none focus:border-blue-500 rounded-sm px-3"
+                            aria-label="Email" />
 
                         <input type="tel" placeholder="Phone Number"
-                            class="w-full bg-transparent border-b-2 border-purple-300 text-white placeholder-purple-200 py-3 focus:outline-none focus:border-white" />
+                            class="w-full bg-gray-100 border-b-2 border-gray-300 text-gray-900 placeholder-gray-500 py-3 focus:outline-none focus:border-blue-500 rounded-sm px-3"
+                            aria-label="Phone Number" />
 
                         <textarea rows="3" placeholder="Message*" required
-                            class="w-full bg-transparent border-b-2 border-purple-300 text-white placeholder-purple-200 py-3 resize-none focus:outline-none focus:border-white"></textarea>
+                            class="w-full bg-gray-100 border-b-2 border-gray-300 text-gray-900 placeholder-gray-500 py-3 resize-none focus:outline-none focus:border-blue-500 rounded-sm px-3"
+                            aria-label="Message"></textarea>
 
                         <button type="submit"
-                            class="mt-6 px-5 py-3 border border-gray-300 text-white font-medium rounded-full shadow hover:text-black hover:bg-gray-100 transition">
+                            class="relative px-8 py-3 rounded-full bg-gradient-to-br from-blue-900 to-blue-400 text-white font-semibold overflow-hidden transition-all duration-300 ease-in-out hover:-translate-y-0.5 hover:shadow-[0_10px_30px_rgba(51,95,255,0.55)] border-0 cursor-pointer gap-2">
                             Get In Touch
                         </button>
 
                     </form>
                 </div>
 
-                <!-- RIGHT : PROFILE (25%) -->
-                <div class="order-1 lg:order-2 bg-[1e3a8a] flex items-center justify-center p-6">
+                <!-- RIGHT : PROFILE CARD -->
+                <div class="order-1 lg:order-2 bg-white flex items-center justify-center p-8">
                     <div class="text-center">
-
                         <img src="https://media.licdn.com/dms/image/v2/D4D03AQE9KprJTJ1cog/profile-displayphoto-shrink_400_400/B4DZYoTna6H4Ag-/0/1744432953475?e=1771459200&v=beta&t=1pbLRztGg0AUiB2k2hK_4BeI3eN1OPxSRrb2pHjlvug"
-                            class="w-32 h-32 rounded-full mx-auto border-4 border-white shadow-xl object-cover mb-4"
-                            alt="Profile" />
+                            class="w-32 h-32 rounded-full mx-auto border-4 border-blue-500 shadow-xl object-cover mb-4"
+                            alt="Shreyans Padmani Profile" />
 
-                        <h2 class="text-2xl font-bold text-white mb-2">
-                            Shreyans Padmani
-                        </h2>
+                        <h2 class="text-2xl font-bold text-gray-900 mb-2">Shreyansh Padmani</h2>
 
-                        <p class="text-purple-200 text-sm mb-6 leading-relaxed">
+                        <p class="text-gray-700 text-sm mb-6 leading-relaxed">
                             Building scalable apps & tech roadmaps for growing businesses.
                         </p>
 
-                        <button class="inline-flex items-center gap-2 text-white hover:text-pink-300 transition">
-                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                        <a href="tel:+1234567890"
+                            class="inline-flex items-center gap-2 text-blue-600 hover:text-blue-800 transition font-semibold text-sm">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"
+                                focusable="false">
                                 <path
                                     d="M20.01 15.38c-1.23 0-2.42-.2-3.53-.56a.977.977 0 0 0-1.01.24l-1.57 1.97c-2.83-1.35-5.48-3.9-6.89-6.83l1.95-1.66c.27-.28.35-.67.24-1.02-.37-1.11-.56-2.3-.56-3.53 0-.54-.45-.99-.99-.99H4.19C3.65 3 3 3.24 3 3.99 3 13.28 10.73 21 20.01 21c.71 0 .99-.63.99-1.18v-3.45c0-.54-.45-.99-.99-.99z" />
                             </svg>
-                            <span class="font-semibold text-sm">CALL US</span>
-                        </button>
-
+                            CALL US
+                        </a>
                     </div>
                 </div>
 
             </div>
         </div>
     </section>
-    <!--end Let's Talk -->
+    <!--end Let's Talk -->  
 
     <!-- Footer -->
     <footer class="bg-white text-black">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-12  lg:py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-12 lg:py-16">
             <!-- Main Footer Content -->
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
 
                 <!-- Brand Column -->
                 <div class="lg:col-span-1">
-                    <!-- Logo -->
-                    <div class="flex items-start space-x-2 ">
-                        <img src="./assets/image/footer-logo.png" width="200px" alt="">
+                    <div class="logo-icon text-4xl font-bold text-blue-500">
+                        <a href="index.html" class="flex items-center justify-start"
+                            aria-label="Shreyansh Padmani – AI Engineer & Software Developer">SP.</a>
                     </div>
-
-                    <!-- Tagline -->
                     <p class="text-gray-600 text-sm mb-6 leading-relaxed">
                         We build your ideas blended with latest technologies, innovation & finest quality
                     </p>
-
-                    <!-- Social Icons -->
                     <div class="flex items-center space-x-4">
-                        <!-- Facebook -->
-                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
-                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                                <path
-                                    d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
-                            </svg>
+                        <a href="#" aria-label="Facebook" class="text-gray-400 hover:text-blue-500 transition-colors">
+                            <!-- Facebook SVG -->
                         </a>
-
-                        <!-- Instagram -->
-                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
-                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                                <path
-                                    d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
-                            </svg>
+                        <a href="#" aria-label="Instagram" class="text-gray-400 hover:text-blue-500 transition-colors">
+                            <!-- Instagram SVG -->
                         </a>
-
-                        <!-- X (Twitter) -->
-                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
-                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                                <path
-                                    d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
-                            </svg>
+                        <a href="#" aria-label="X / Twitter"
+                            class="text-gray-400 hover:text-blue-500 transition-colors">
+                            <!-- X / Twitter SVG -->
                         </a>
-
-                        <!-- GitHub -->
-                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
-                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                                <path
-                                    d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
-                            </svg>
+                        <a href="#" aria-label="GitHub" class="text-gray-400 hover:text-blue-500 transition-colors">
+                            <!-- GitHub SVG -->
                         </a>
-
-                        <!-- Dribbble -->
-                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
-                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                                <path
-                                    d="M12 0C5.37 0 0 5.37 0 12s5.37 12 12 12 12-5.37 12-12S18.63 0 12 0zm7.83 9.24c-.28-.09-2.5-.83-5.06-.36.17.42.33.84.48 1.26 1.73-.22 3.44-.13 3.58-.12zm-1.28-3.58c.93 1.14 1.51 2.59 1.58 4.17-.17-.03-1.99-.4-3.83-.17-.11-.26-.22-.52-.33-.79-.07-.17-.15-.34-.23-.5 2-.81 2.88-1.98 2.81-2.71zM12 2.39c1.63 0 3.12.59 4.27 1.56-.06.07-.93 1.22-2.87 1.94-1.06-1.95-2.24-3.54-2.4-3.76.34-.05.68-.08 1-.08-.66-.06-1.32-.06-1.98.05zm-3.15.65c.16.22 1.34 1.81 2.41 3.75-3.04.81-5.73.8-6.01.8.52-1.99 1.89-3.65 3.6-4.55zM2.01 12v-.33c.27 0 3.31.03 6.61-.92.13.26.26.53.38.79-.08.02-.16.05-.24.08-3.32 1.08-5.13 4.04-5.23 4.19C2.65 14.83 2.01 13.48 2.01 12zm9.99 9.99c-1.44 0-2.78-.39-3.94-1.07.08-.14 1.44-2.41 5.06-3.7.02 0 .03-.01.05-.01.91 2.35 1.28 4.33 1.39 4.89-1.47.54-3.06.89-4.56.89zm6.15-1.33c-.08-.45-.42-2.31-1.28-4.64 1.64-.26 3.08.17 3.26.22-.24 1.47-.97 2.8-1.98 3.82v.6z" />
-                            </svg>
+                        <a href="#" aria-label="Dribbble" class="text-gray-400 hover:text-blue-500 transition-colors">
+                            <!-- Dribbble SVG -->
                         </a>
-
-                        <!-- LinkedIn -->
-                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
-                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                                <path
-                                    d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
-                            </svg>
+                        <a href="#" aria-label="LinkedIn" class="text-gray-400 hover:text-blue-500 transition-colors">
+                            <!-- LinkedIn SVG -->
                         </a>
-
-                        <!-- YouTube -->
-                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
-                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                                <path
-                                    d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
-                            </svg>
+                        <a href="#" aria-label="YouTube" class="text-gray-400 hover:text-blue-500 transition-colors">
+                            <!-- YouTube SVG -->
                         </a>
                     </div>
                 </div>
 
                 <!-- Services Column -->
                 <div>
-                    <h3
-                        class="flex items-center justify-start text-lg font-semibold mb-4 border-b border-gray-700 pb-2">
-                        SERVICES</h3>
-                    <ul class="space-y-3">
-                        <li class="flex items-center justify-start"><a href="#"
-                                class="text-gray-600 hover:text-white transition-colors text-sm">Web
+                    <h3 class="text-lg font-semibold mb-4 border-b border-gray-700 pb-2">SERVICES</h3>
+                    <ul class="space-y-3 text-sm">
+                        <li><a href="#" class="text-gray-600 hover:text-blue-500 transition-colors">Web Development</a>
+                        </li>
+                        <li><a href="#" class="text-gray-600 hover:text-blue-500 transition-colors">Mobile
                                 Development</a></li>
-                        <li class="flex items-center justify-start"><a href="#"
-                                class="text-gray-600 hover:text-white transition-colors text-sm">Mobile
+                        <li><a href="#" class="text-gray-600 hover:text-blue-500 transition-colors">Product Design and
                                 Development</a></li>
-                        <li class="flex items-center justify-start"><a href="#"
-                                class="text-gray-600 hover:text-white transition-colors text-sm">Product Design
-                                and Development</a></li>
-                        <li class="flex items-center justify-start"><a href="#"
-                                class="text-gray-600 hover:text-white transition-colors text-sm">DevOps
+                        <li><a href="#" class="text-gray-600 hover:text-blue-500 transition-colors">DevOps Services</a>
+                        </li>
+                        <li><a href="#" class="text-gray-600 hover:text-blue-500 transition-colors">Blockchain
                                 Services</a></li>
-                        <li class="flex items-center justify-start"><a href="#"
-                                class="text-gray-600 hover:text-white transition-colors text-sm">Blockchain
-                                Services</a></li>
-                        <li class="flex items-center justify-start"><a href="#"
-                                class="text-gray-600 hover:text-white transition-colors text-sm">Q&A
-                                Services</a></li>
-                        <li class="flex items-center justify-start"><a href="#"
-                                class="text-gray-600 hover:text-white transition-colors text-sm">Hire Dedicated
+                        <li><a href="#" class="text-gray-600 hover:text-blue-500 transition-colors">Q&A Services</a>
+                        </li>
+                        <li><a href="#" class="text-gray-600 hover:text-blue-500 transition-colors">Hire Dedicated
                                 Developers</a></li>
-                        <li class="flex items-center justify-start"><a href="#"
-                                class="text-gray-600 hover:text-white transition-colors text-sm">Management & IT
+                        <li><a href="#" class="text-gray-600 hover:text-blue-500 transition-colors">Management & IT
                                 Consulting</a></li>
                     </ul>
                 </div>
 
                 <!-- Tools & Tech Column -->
                 <div>
-                    <h3
-                        class="flex items-center justify-start text-lg font-semibold mb-4 border-b border-gray-700 pb-2">
-                        TOOLS & TECH</h3>
-                    <ul class="space-y-3">
-                        <li class="flex items-center justify-start"><a href="#"
-                                class="text-gray-600 hover:text-white transition-colors text-sm">Laravel
-                                Development Services</a></li>
-                        <li class="flex items-center justify-start"><a href="#"
-                                class="text-gray-600 hover:text-white transition-colors text-sm">React JS
-                                Development Services</a></li>
-                        <li class="flex items-center justify-start"><a href="#"
-                                class="text-gray-600 hover:text-white transition-colors text-sm">React Native
+                    <h3 class="text-lg font-semibold mb-4 border-b border-gray-700 pb-2">TOOLS & TECH</h3>
+                    <ul class="space-y-3 text-sm">
+                        <li><a href="#" class="text-gray-600 hover:text-blue-500 transition-colors">Laravel Development
+                                Services</a></li>
+                        <li><a href="#" class="text-gray-600 hover:text-blue-500 transition-colors">React JS Development
+                                Services</a></li>
+                        <li><a href="#" class="text-gray-600 hover:text-blue-500 transition-colors">React Native
                                 Development</a></li>
-                        <li class="flex items-center justify-start"><a href="#"
-                                class="text-gray-600 hover:text-white transition-colors text-sm">Node Js
-                                Development Services</a></li>
-                        <li class="flex items-center justify-start"><a href="#"
-                                class="text-gray-600 hover:text-white transition-colors text-sm">Flutter App
+                        <li><a href="#" class="text-gray-600 hover:text-blue-500 transition-colors">Node Js Development
+                                Services</a></li>
+                        <li><a href="#" class="text-gray-600 hover:text-blue-500 transition-colors">Flutter App
                                 Development</a></li>
-                        <li class="flex items-center justify-start"><a href="#"
-                                class="text-gray-600 hover:text-white transition-colors text-sm">Django
-                                development services</a></li>
-                        <li class="flex items-center justify-start"><a href="#"
-                                class="text-gray-600 hover:text-white transition-colors text-sm">Python
-                                development services</a></li>
-                        <li class="flex items-center justify-start"><a href="#"
-                                class="text-gray-600 hover:text-white transition-colors text-sm">AWS Development
+                        <li><a href="#" class="text-gray-600 hover:text-blue-500 transition-colors">Django Development
+                                Services</a></li>
+                        <li><a href="#" class="text-gray-600 hover:text-blue-500 transition-colors">Python Development
+                                Services</a></li>
+                        <li><a href="#" class="text-gray-600 hover:text-blue-500 transition-colors">AWS Development
                                 Services</a></li>
                     </ul>
                 </div>
 
-                <!-- Company Column -->
-                <div class="text-black">
-                    <h3
-                        class="flex items-center justify-start text-lg font-semibold mb-6 border-b border-gray-700 pb-2">
-                        Contact Us</h3>
+                <!-- Contact Column -->
+                <div>
+                    <h3 class="text-lg font-semibold mb-6 border-b border-gray-700 pb-2">Contact Us</h3>
                     <ul class="space-y-4">
-
-                        <!-- Address -->
-                        <li class="flex items-center space-x-3 hover:text-[#1e3a8a] transition-colors">
+                        <li class="flex items-center space-x-3 hover:text-blue-500 transition-colors">
                             <div class="w-10 h-10 bg-[#F0F4FF] rounded-full flex items-center justify-center">
-                                <svg class="w-5 h-5 text-[#1e3a8a]" fill="currentColor" viewBox="0 0 24 24">
+                               <svg class="w-5 h-5 text-blue-500" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"
+                                    focusable="false">
                                     <path
                                         d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5S10.62 6.5 12 6.5s2.5 1.12 2.5 2.5S13.38 11.5 12 11.5z" />
                                 </svg>
                             </div>
                             <span class="text-sm">123 AI Street, Tech City, USA</span>
                         </li>
-
-                        <!-- Phone -->
-                        <li class="flex items-center space-x-3 hover:text-[#1e3a8a] transition-colors">
+                        <li class="flex items-center space-x-3 hover:text-blue-500 transition-colors">
                             <div class="w-10 h-10 bg-[#F0F4FF] rounded-full flex items-center justify-center">
-                                <svg class="w-5 h-5 text-[#1e3a8a]" fill="currentColor" viewBox="0 0 24 24">
+                                <svg class="w-5 h-5 text-blue-500" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"
+                                    focusable="false">
                                     <path
                                         d="M6.62 10.79a15.053 15.053 0 006.59 6.59l2.2-2.2a1 1 0 011.11-.21c1.21.48 2.53.74 3.88.74a1 1 0 011 1v3.25a1 1 0 01-1 1C10.07 21.5 2.5 13.93 2.5 4a1 1 0 011-1H6.75a1 1 0 011 1c0 1.35.26 2.67.74 3.88.1.26.03.57-.21 1.11l-2.66 2.66z" />
                                 </svg>
                             </div>
-                            <span class="text-sm">+1 (555) 123-4567</span>
+                            <a href="tel:+15551234567" class="text-sm">+1 (555) 123-4567</a>
                         </li>
-
-                        <!-- Email -->
-                        <li class="flex items-center space-x-3 hover:text-[#1e3a8a] transition-colors">
+                        <li class="flex items-center space-x-3 hover:text-blue-500 transition-colors">
                             <div class="w-10 h-10 bg-[#F0F4FF] rounded-full flex items-center justify-center">
-                                <svg class="w-5 h-5 text-[#1e3a8a]" fill="currentColor" viewBox="0 0 24 24">
+                                 <svg class="w-5 h-5 text-blue-500" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"
+                                    focusable="false">
                                     <path
                                         d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" />
                                 </svg>
                             </div>
-                            <span class="text-sm">contact@aiagency.com</span>
+                            <a href="mailto:contact@aiagency.com" class="text-sm">contact@aiagency.com</a>
                         </li>
-
                     </ul>
                 </div>
-
-
             </div>
         </div>
 
         <!-- Bottom Bar -->
         <div class="border-t border-gray-700">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
-                <div class="flex  justify-center items-center space-y-4 md:space-y-0">
-                    <!-- Copyright -->
-                    <div class="text-center md:text-center">
-                        <p class="text-gray-400 text-sm">
-                            © 2026shreyans padmaniTech Solutions Pvt.Ltd. All Rights Reserved.
-                        </p>
-                    </div>
-                </div>
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 text-center">
+                <p class="text-gray-400 text-sm">
+                    © 2026 Shreyansh Padmani Tech Solutions Pvt. Ltd. All Rights Reserved.
+                </p>
             </div>
         </div>
     </footer>
     <!--end Footer -->
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.js"></script>
-<script src="https://cdn.tailwindcss.com"></script>
-<script src="./assets/js/dev-script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="./assets/js/dev-script.js"></script>
+
+    <script>
+        // tailwind.config.js
+        module.exports = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Bodoni Grotesk', 'Arial', 'Inter', 'sans-serif'],
+                    },
+                },
+            },
+        };
+
+    </script>
 
 </body>
+
 </html>
