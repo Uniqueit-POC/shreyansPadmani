@@ -3,14 +3,11 @@ module.exports = {
   content: [
     "./*.html",
     "./**/*.html",
-    "./assets/js/**/*.js"
+    "./assets/**/*.{js,html}",
+    "./**/*.{html,js}"
   ],
   theme: {
-    extend: {
-      fontFamily: {
-        sans: ['Inter', 'Arial', 'sans-serif'],
-      },
-    },
+    extend: {},
   },
   plugins: [],
 }

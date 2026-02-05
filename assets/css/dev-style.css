@@ -635,3 +635,68 @@
         .overlay-gradient {
             background: linear-gradient(to top, rgba(0,0,0,0.7) 0%, transparent 100%);
         }
+
+        /* home model open style */
+        /* Modal animation */
+        .modal-overlay {
+            display: none;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        
+        .modal-overlay.active {
+            display: flex;
+            opacity: 1;
+        }
+
+        .modal-container {
+            transform: scale(0.9);
+            transition: transform 0.3s ease;
+        }
+
+        .modal-overlay.active .modal-container {
+            transform: scale(1);
+        }
+
+        /* CSS-only testimonial slider */
+        .testimonial-slide {
+            display: none;
+        }
+
+        #slide1:checked ~ .testimonial-content #content1,
+        #slide2:checked ~ .testimonial-content #content2,
+        #slide3:checked ~ .testimonial-content #content3 {
+            display: block;
+        }
+
+        /* Navigation arrows styling */
+        #slide1:checked ~ .testimonial-nav label[for="slide3"],
+        #slide1:checked ~ .testimonial-nav label[for="slide2"],
+        #slide2:checked ~ .testimonial-nav label[for="slide1"],
+        #slide2:checked ~ .testimonial-nav label[for="slide3"],
+        #slide3:checked ~ .testimonial-nav label[for="slide2"],
+        #slide3:checked ~ .testimonial-nav label[for="slide1"] {
+            display: flex;
+        }
+
+        .nav-label {
+            display: none;
+        }
+
+        /* Background gradient for left section */
+        .bg-testimonial {
+            background: linear-gradient(135deg, rgba(255, 87, 34, 0.95) 0%, rgba(255, 152, 0, 0.95) 100%);
+            background-size: cover;
+            background-position: center;
+        }
+
+        /* Background decoration */
+        .bg-decoration::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
+        }
