@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Voice Agent Case Study | 24×7 Customer Support Automation</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#3B82F6',
+                        secondary: '#10B981',
+                        accent: '#8B5CF6',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .gradient-bg {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        .step-number {
+            background: linear-gradient(135deg, #3B82F6 0%, #8B5CF6 100%);
+        }
+        .stat-card {
+            background: linear-gradient(135deg, rgba(59, 130, 246, 0.1) 0%, rgba(139, 92, 246, 0.1) 100%);
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+
+    <!-- Hero Section -->
+    <header class="gradient-bg text-white py-16 px-4">
+        <div class="max-w-7xl mx-auto">
+            <div class="flex items-center gap-2 mb-4">
+                <span class="text-2xl">📞</span>
+                <span class="text-sm font-semibold uppercase tracking-wider">Case Study</span>
+            </div>
+            <h1 class="text-4xl md:text-6xl font-bold mb-6 leading-tight">
+                AI Voice Agent for 24×7<br>Customer Support Automation
+            </h1>
+            <div class="flex flex-wrap gap-4 text-lg">
+                <div class="flex items-center gap-2">
+                    <span class="text-2xl">📌</span>
+                    <span>Industry: <strong>E-commerce Customer Support</strong></span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="max-w-7xl mx-auto px-4 py-12">
+
+        <!-- Business Problem Section -->
+        <section class="mb-16">
+            <div class="bg-white rounded-2xl shadow-lg p-8 md:p-12">
+                <div class="flex items-center gap-3 mb-6">
+                    <span class="text-3xl">❌</span>
+                    <h2 class="text-3xl font-bold text-gray-900">Business Problem</h2>
+                </div>
+                <p class="text-lg text-gray-700 mb-8">
+                    The e-commerce company was facing serious challenges in handling customer support calls.
+                </p>
+                
+                <div class="bg-red-50 border-l-4 border-red-500 p-6 mb-6">
+                    <h3 class="text-xl font-bold text-red-900 mb-4 flex items-center gap-2">
+                        <span>🔴</span> Key Issues
+                    </h3>
+                    <ul class="space-y-3">
+                        <li class="flex items-start gap-3 text-gray-700">
+                            <span class="text-red-500 mt-1">•</span>
+                            <span>Very high number of customer calls every day</span>
+                        </li>
+                        <li class="flex items-start gap-3 text-gray-700">
+                            <span class="text-red-500 mt-1">•</span>
+                            <span>Long waiting time for customers</span>
+                        </li>
+                        <li class="flex items-start gap-3 text-gray-700">
+                            <span class="text-red-500 mt-1">•</span>
+                            <span>Support agents overloaded with repetitive queries</span>
+                        </li>
+                        <li class="flex items-start gap-3 text-gray-700">
+                            <span class="text-red-500 mt-1">•</span>
+                            <span>Customer calls coming after office hours</span>
+                        </li>
+                        <li class="flex items-start gap-3 text-gray-700">
+                            <span class="text-red-500 mt-1">•</span>
+                            <span>High operational cost of running a call center</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="bg-blue-50 border-l-4 border-blue-500 p-6">
+                    <h3 class="text-xl font-bold text-blue-900 mb-4 flex items-center gap-2">
+                        <span>🧾</span> Common Customer Queries
+                    </h3>
+                    <p class="text-gray-700 mb-4">Most customer questions were simple but repetitive:</p>
+                    <div class="grid md:grid-cols-2 gap-3">
+                        <div class="bg-white p-4 rounded-lg shadow-sm">
+                            <span class="text-blue-600 font-medium">"Where is my order?"</span>
+                        </div>
+                        <div class="bg-white p-4 rounded-lg shadow-sm">
+                            <span class="text-blue-600 font-medium">"I want to cancel my order"</span>
+                        </div>
+                        <div class="bg-white p-4 rounded-lg shadow-sm">
+                            <span class="text-blue-600 font-medium">"What is my refund status?"</span>
+                        </div>
+                        <div class="bg-white p-4 rounded-lg shadow-sm">
+                            <span class="text-blue-600 font-medium">"Has my order been delivered?"</span>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 mt-4 italic">These repetitive queries consumed most of the support team's time.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Objective Section -->
+        <section class="mb-16">
+            <div class="bg-white rounded-2xl shadow-lg p-8 md:p-12">
+                <div class="flex items-center gap-3 mb-6">
+                    <span class="text-3xl">🎯</span>
+                    <h2 class="text-3xl font-bold text-gray-900">Objective</h2>
+                </div>
+                <p class="text-lg text-gray-700 mb-6">The company wanted a solution that could:</p>
+                <div class="grid md:grid-cols-2 gap-4">
+                    <div class="flex items-start gap-3 p-4 bg-green-50 rounded-lg">
+                        <span class="text-2xl">✔</span>
+                        <span class="text-gray-700">Answer customer calls instantly</span>
+                    </div>
+                    <div class="flex items-start gap-3 p-4 bg-green-50 rounded-lg">
+                        <span class="text-2xl">✔</span>
+                        <span class="text-gray-700">Provide 24×7 customer support</span>
+                    </div>
+                    <div class="flex items-start gap-3 p-4 bg-green-50 rounded-lg">
+                        <span class="text-2xl">✔</span>
+                        <span class="text-gray-700">Understand customer language naturally</span>
+                    </div>
+                    <div class="flex items-start gap-3 p-4 bg-green-50 rounded-lg">
+                        <span class="text-2xl">✔</span>
+                        <span class="text-gray-700">Respond in a human-like voice</span>
+                    </div>
+                    <div class="flex items-start gap-3 p-4 bg-green-50 rounded-lg md:col-span-2">
+                        <span class="text-2xl">✔</span>
+                        <span class="text-gray-700">Reduce call center workload and cost</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Solution Section -->
+        <section class="mb-16">
+            <div class="bg-gradient-to-br from-blue-600 to-purple-600 rounded-2xl shadow-lg p-8 md:p-12 text-white">
+                <div class="flex items-center gap-3 mb-6">
+                    <span class="text-3xl">✅</span>
+                    <h2 class="text-3xl font-bold">AI Voice Agent Solution</h2>
+                </div>
+                <p class="text-lg mb-8 opacity-95">
+                    An AI Voice Agent powered by NLP (Natural Language Processing) was implemented to automate customer support calls.
+                </p>
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div class="bg-white/10 backdrop-blur-sm p-6 rounded-xl">
+                        <p class="font-medium">Answers customer calls like a human agent</p>
+                    </div>
+                    <div class="bg-white/10 backdrop-blur-sm p-6 rounded-xl">
+                        <p class="font-medium">Understands customer speech and intent</p>
+                    </div>
+                    <div class="bg-white/10 backdrop-blur-sm p-6 rounded-xl">
+                        <p class="font-medium">Responds with clear, natural voice</p>
+                    </div>
+                    <div class="bg-white/10 backdrop-blur-sm p-6 rounded-xl">
+                        <p class="font-medium">Handles complete conversations end-to-end</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- How It Works Section -->
+        <section class="mb-16">
+            <div class="bg-white rounded-2xl shadow-lg p-8 md:p-12">
+                <div class="flex items-center gap-3 mb-8">
+                    <span class="text-3xl">🔁</span>
+                    <h2 class="text-3xl font-bold text-gray-900">How the AI Voice Agent Works</h2>
+                </div>
+
+                <!-- Step 1 -->
+                <div class="mb-8 card-hover">
+                    <div class="flex items-start gap-6">
+                        <div class="step-number text-white rounded-full w-12 h-12 flex items-center justify-center font-bold text-xl flex-shrink-0">
+                            1
+                        </div>
+                        <div class="flex-1">
+                            <h3 class="text-xl font-bold text-gray-900 mb-3">Customer Calls the Support Number</h3>
+                            <p class="text-gray-700 mb-3">The customer dials the e-commerce support number. The call is automatically connected to the AI Voice Agent.</p>
+                            <div class="bg-blue-50 border-l-4 border-blue-500 p-4 rounded">
+                                <p class="text-sm font-medium text-blue-900">Example:</p>
+                                <p class="text-gray-700 italic">Customer: "I want to check my order status"</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 2 -->
+                <div class="mb-8 card-hover">
+                    <div class="flex items-start gap-6">
+                        <div class="step-number text-white rounded-full w-12 h-12 flex items-center justify-center font-bold text-xl flex-shrink-0">
+                            2
+                        </div>
+                        <div class="flex-1">
+                            <h3 class="text-xl font-bold text-gray-900 mb-3">Speech-to-Text Conversion (STT)</h3>
+                            <p class="text-gray-700 mb-3">The AI converts the customer's voice into text so the system can process it.</p>
+                            <div class="bg-purple-50 p-4 rounded-lg text-center">
+                                <p class="text-lg font-semibold text-purple-900">🎙️ Voice → 📝 Text</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 3 -->
+                <div class="mb-8 card-hover">
+                    <div class="flex items-start gap-6">
+                        <div class="step-number text-white rounded-full w-12 h-12 flex items-center justify-center font-bold text-xl flex-shrink-0">
+                            3
+                        </div>
+                        <div class="flex-1">
+                            <h3 class="text-xl font-bold text-gray-900 mb-3">NLP Understanding (Core Intelligence)</h3>
+                            <p class="text-gray-700 mb-3">Using NLP, the AI:</p>
+                            <ul class="space-y-2 mb-4">
+                                <li class="flex items-start gap-2 text-gray-700">
+                                    <span class="text-blue-500">•</span>
+                                    <span>Understands customer intent</span>
+                                </li>
+                                <li class="flex items-start gap-2 text-gray-700">
+                                    <span class="text-blue-500">•</span>
+                                    <span>Identifies keywords and meaning</span>
+                                </li>
+                                <li class="flex items-start gap-2 text-gray-700">
+                                    <span class="text-blue-500">•</span>
+                                    <span>Handles different ways of speaking</span>
+                                </li>
+                            </ul>
+                            <div class="bg-green-50 border-l-4 border-green-500 p-4 rounded">
+                                <p class="text-sm font-medium text-green-900 mb-2">Example:</p>
+                                <div class="space-y-1 text-gray-700 mb-2">
+                                    <p class="italic">"Where is my order?"</p>
+                                    <p class="italic">"Track my delivery"</p>
+                                    <p class="italic">"Order status please"</p>
+                                </div>
+                                <p class="text-green-900 font-semibold">➡ NLP understands all these as <strong>Order Tracking</strong></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 4 -->
+                <div class="mb-8 card-hover">
+                    <div class="flex items-start gap-6">
+                        <div class="step-number text-white rounded-full w-12 h-12 flex items-center justify-center font-bold text-xl flex-shrink-0">
+                            4
+                        </div>
+                        <div class="flex-1">
+                            <h3 class="text-xl font-bold text-gray-900 mb-3">Backend System Integration</h3>
+                            <p class="text-gray-700 mb-3">After understanding the intent, the AI connects with backend systems such as:</p>
+                            <div class="grid md:grid-cols-2 gap-4">
+                                <div class="bg-blue-50 p-4 rounded-lg text-center font-medium text-blue-900">
+                                    Order Management System
+                                </div>
+                                <div class="bg-blue-50 p-4 rounded-lg text-center font-medium text-blue-900">
+                                    Customer Database
+                                </div>
+                            </div>
+                            <p class="text-gray-700 mt-3">It fetches real-time order information.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 5 -->
+                <div class="mb-8 card-hover">
+                    <div class="flex items-start gap-6">
+                        <div class="step-number text-white rounded-full w-12 h-12 flex items-center justify-center font-bold text-xl flex-shrink-0">
+                            5
+                        </div>
+                        <div class="flex-1">
+                            <h3 class="text-xl font-bold text-gray-900 mb-3">Text-to-Speech Conversion (TTS)</h3>
+                            <p class="text-gray-700 mb-3">The AI converts the response into a natural, human-like voice.</p>
+                            <div class="bg-purple-50 border-l-4 border-purple-500 p-4 rounded">
+                                <p class="text-sm font-medium text-purple-900 mb-2">🗣️ Example Response:</p>
+                                <p class="text-gray-700 italic">"Your order was shipped yesterday and will be delivered tomorrow."</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 6 -->
+                <div class="mb-8 card-hover">
+                    <div class="flex items-start gap-6">
+                        <div class="step-number text-white rounded-full w-12 h-12 flex items-center justify-center font-bold text-xl flex-shrink-0">
+                            6
+                        </div>
+                        <div class="flex-1">
+                            <h3 class="text-xl font-bold text-gray-900 mb-3">Context-Aware Conversation</h3>
+                            <p class="text-gray-700 mb-3">The AI remembers conversation context and handles follow-up questions.</p>
+                            <div class="bg-yellow-50 border-l-4 border-yellow-500 p-4 rounded space-y-2">
+                                <p class="text-gray-700"><strong>Customer:</strong> <span class="italic">"Can I cancel it?"</span></p>
+                                <p class="text-gray-700"><strong>AI:</strong> <span class="italic">"Yes, your order is eligible for cancellation. Shall I proceed?"</span></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 7 -->
+                <div class="card-hover">
+                    <div class="flex items-start gap-6">
+                        <div class="step-number text-white rounded-full w-12 h-12 flex items-center justify-center font-bold text-xl flex-shrink-0">
+                            7
+                        </div>
+                        <div class="flex-1">
+                            <h3 class="text-xl font-bold text-gray-900 mb-3">Smart Escalation to Human Agent</h3>
+                            <p class="text-gray-700 mb-3">If:</p>
+                            <ul class="space-y-2 mb-4">
+                                <li class="flex items-start gap-2 text-gray-700">
+                                    <span class="text-red-500">•</span>
+                                    <span>The query is complex</span>
+                                </li>
+                                <li class="flex items-start gap-2 text-gray-700">
+                                    <span class="text-red-500">•</span>
+                                    <span>The customer is unhappy</span>
+                                </li>
+                                <li class="flex items-start gap-2 text-gray-700">
+                                    <span class="text-red-500">•</span>
+                                    <span>AI confidence is low</span>
+                                </li>
+                            </ul>
+                            <div class="bg-red-50 p-4 rounded-lg">
+                                <p class="text-red-900 font-semibold">➡ The call is transferred to a human agent with full conversation context.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- NLP Role Section -->
+        <section class="mb-16">
+            <div class="bg-gradient-to-br from-purple-600 to-pink-600 rounded-2xl shadow-lg p-8 md:p-12 text-white">
+                <div class="flex items-center gap-3 mb-6">
+                    <span class="text-3xl">🧠</span>
+                    <h2 class="text-3xl font-bold">Role of NLP (Simple Explanation)</h2>
+                </div>
+                <p class="text-lg mb-6 opacity-95">NLP enables the AI voice agent to:</p>
+                <div class="grid md:grid-cols-2 gap-4 mb-6">
+                    <div class="bg-white/10 backdrop-blur-sm p-5 rounded-xl">
+                        <p class="font-medium">Understand natural human language</p>
+                    </div>
+                    <div class="bg-white/10 backdrop-blur-sm p-5 rounded-xl">
+                        <p class="font-medium">Handle different sentence structures</p>
+                    </div>
+                    <div class="bg-white/10 backdrop-blur-sm p-5 rounded-xl">
+                        <p class="font-medium">Recognize intent, not just words</p>
+                    </div>
+                    <div class="bg-white/10 backdrop-blur-sm p-5 rounded-xl">
+                        <p class="font-medium">Respond accurately and politely</p>
+                    </div>
+                </div>
+                <div class="bg-white/20 backdrop-blur-sm p-6 rounded-xl">
+                    <p class="text-xl font-semibold">✔ Not just speech conversion</p>
+                    <p class="text-xl font-semibold">✔ Real understanding like a human</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Use Cases Section -->
+        <section class="mb-16">
+            <div class="bg-white rounded-2xl shadow-lg p-8 md:p-12">
+                <div class="flex items-center gap-3 mb-8">
+                    <span class="text-3xl">🎯</span>
+                    <h2 class="text-3xl font-bold text-gray-900">Use Cases Covered</h2>
+                </div>
+                <div class="grid md:grid-cols-3 gap-6">
+                    <div class="bg-gradient-to-br from-blue-50 to-blue-100 p-6 rounded-xl text-center card-hover">
+                        <p class="text-lg font-semibold text-blue-900">Order tracking</p>
+                    </div>
+                    <div class="bg-gradient-to-br from-purple-50 to-purple-100 p-6 rounded-xl text-center card-hover">
+                        <p class="text-lg font-semibold text-purple-900">Order cancellation</p>
+                    </div>
+                    <div class="bg-gradient-to-br from-pink-50 to-pink-100 p-6 rounded-xl text-center card-hover">
+                        <p class="text-lg font-semibold text-pink-900">Refund status</p>
+                    </div>
+                    <div class="bg-gradient-to-br from-green-50 to-green-100 p-6 rounded-xl text-center card-hover">
+                        <p class="text-lg font-semibold text-green-900">Delivery confirmation</p>
+                    </div>
+                    <div class="bg-gradient-to-br from-yellow-50 to-yellow-100 p-6 rounded-xl text-center card-hover">
+                        <p class="text-lg font-semibold text-yellow-900">Customer complaints</p>
+                    </div>
+                    <div class="bg-gradient-to-br from-indigo-50 to-indigo-100 p-6 rounded-xl text-center card-hover">
+                        <p class="text-lg font-semibold text-indigo-900">Frequently asked questions</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Results Section -->
+        <section class="mb-16">
+            <div class="bg-white rounded-2xl shadow-lg p-8 md:p-12">
+                <div class="flex items-center gap-3 mb-8">
+                    <span class="text-3xl">📊</span>
+                    <h2 class="text-3xl font-bold text-gray-900">Results & Business Impact</h2>
+                </div>
+
+                <!-- Operational Improvements -->
+                <div class="mb-8">
+                    <h3 class="text-2xl font-bold text-gray-900 mb-6 flex items-center gap-2">
+                        <span>📉</span> Operational Improvements
+                    </h3>
+                    <div class="grid md:grid-cols-3 gap-6">
+                        <div class="stat-card p-6 rounded-xl text-center card-hover">
+                            <div class="text-4xl font-bold text-blue-600 mb-2">65-75%</div>
+                            <p class="text-gray-700 font-medium">of calls handled automatically</p>
+                        </div>
+                        <div class="stat-card p-6 rounded-xl text-center card-hover">
+                            <div class="text-4xl font-bold text-green-600 mb-2">0 min</div>
+                            <p class="text-gray-700 font-medium">customer waiting time</p>
+                        </div>
+                        <div class="stat-card p-6 rounded-xl text-center card-hover">
+                            <div class="text-4xl font-bold text-purple-600 mb-2">↓↓↓</div>
+                            <p class="text-gray-700 font-medium">significant cost reduction</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Customer Experience -->
+                <div class="mb-8">
+                    <h3 class="text-2xl font-bold text-gray-900 mb-6 flex items-center gap-2">
+                        <span>🤝</span> Customer Experience
+                    </h3>
+                    <div class="grid md:grid-cols-3 gap-4">
+                        <div class="flex items-start gap-3 p-4 bg-green-50 rounded-lg">
+                            <span class="text-2xl">✅</span>
+                            <span class="text-gray-700">24×7 support availability</span>
+                        </div>
+                        <div class="flex items-start gap-3 p-4 bg-green-50 rounded-lg">
+                            <span class="text-2xl">✅</span>
+                            <span class="text-gray-700">Faster and accurate responses</span>
+                        </div>
+                        <div class="flex items-start gap-3 p-4 bg-green-50 rounded-lg">
+                            <span class="text-2xl">✅</span>
+                            <span class="text-gray-700">No IVR "Press 1, Press 2" frustration</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Business Growth -->
+                <div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-6 flex items-center gap-2">
+                        <span>🚀</span> Business Growth
+                    </h3>
+                    <div class="grid md:grid-cols-3 gap-4">
+                        <div class="flex items-start gap-3 p-4 bg-blue-50 rounded-lg">
+                            <span class="text-2xl">✅</span>
+                            <span class="text-gray-700">Support team focuses on complex issues</span>
+                        </div>
+                        <div class="flex items-start gap-3 p-4 bg-blue-50 rounded-lg">
+                            <span class="text-2xl">✅</span>
+                            <span class="text-gray-700">Higher customer satisfaction</span>
+                        </div>
+                        <div class="flex items-start gap-3 p-4 bg-blue-50 rounded-lg">
+                            <span class="text-2xl">✅</span>
+                            <span class="text-gray-700">Easy scalability without hiring more agents</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Key Benefits Section -->
+        <section class="mb-16">
+            <div class="bg-gradient-to-br from-green-600 to-teal-600 rounded-2xl shadow-lg p-8 md:p-12 text-white">
+                <div class="flex items-center gap-3 mb-8">
+                    <span class="text-3xl">⭐</span>
+                    <h2 class="text-3xl font-bold">Key Benefits</h2>
+                </div>
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <div class="bg-white/10 backdrop-blur-sm p-6 rounded-xl flex items-center gap-3">
+                        <span class="text-2xl">✔</span>
+                        <span class="font-medium">Human-like voice conversations</span>
+                    </div>
+                    <div class="bg-white/10 backdrop-blur-sm p-6 rounded-xl flex items-center gap-3">
+                        <span class="text-2xl">✔</span>
+                        <span class="font-medium">Multilingual support</span>
+                    </div>
+                    <div class="bg-white/10 backdrop-blur-sm p-6 rounded-xl flex items-center gap-3">
+                        <span class="text-2xl">✔</span>
+                        <span class="font-medium">24×7 availability</span>
+                    </div>
+                    <div class="bg-white/10 backdrop-blur-sm p-6 rounded-xl flex items-center gap-3">
+                        <span class="text-2xl">✔</span>
+                        <span class="font-medium">Reduced operational cost</span>
+                    </div>
+                    <div class="bg-white/10 backdrop-blur-sm p-6 rounded-xl flex items-center gap-3">
+                        <span class="text-2xl">✔</span>
+                        <span class="font-medium">Faster query resolution</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Summary Section -->
+        <section class="mb-16">
+            <div class="bg-gradient-to-br from-gray-900 to-gray-800 rounded-2xl shadow-lg p-8 md:p-12 text-white">
+                <div class="flex items-center gap-3 mb-6">
+                    <span class="text-3xl">🏁</span>
+                    <h2 class="text-3xl font-bold">Summary</h2>
+                </div>
+                <p class="text-lg leading-relaxed opacity-95">
+                    We implemented an AI voice agent powered by NLP to automate e-commerce customer support calls. 
+                    The system understands customer intent, interacts using natural human-like voice, and resolves 
+                    common queries such as order tracking, cancellations, and refunds in real time—providing 24×7 
+                    support while significantly reducing call center workload and operational costs.
+                </p>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-8 px-4">
+        <div class="max-w-7xl mx-auto text-center">
+            <p class="text-gray-400">© 2024 AI Voice Agent Solutions. All rights reserved.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
