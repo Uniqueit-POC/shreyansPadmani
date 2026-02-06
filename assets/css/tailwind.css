@@ -154,7 +154,7 @@ html,
   -o-tab-size: 4;
      tab-size: 4;
   /* 3 */
-  font-family: Inter, Arial, sans-serif !important;
+  font-family: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   /* 4 */
   font-feature-settings: normal;
   /* 5 */
@@ -3020,9 +3020,27 @@ video {
   --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
 }
 
+.from-yellow-200 {
+  --tw-gradient-from: #fef08a var(--tw-gradient-from-position);
+  --tw-gradient-to: rgb(254 240 138 / 0) var(--tw-gradient-to-position);
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
+}
+
 .from-yellow-50 {
   --tw-gradient-from: #fefce8 var(--tw-gradient-from-position);
   --tw-gradient-to: rgb(254 252 232 / 0) var(--tw-gradient-to-position);
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
+}
+
+.from-yellow-100 {
+  --tw-gradient-from: #fef9c3 var(--tw-gradient-from-position);
+  --tw-gradient-to: rgb(254 249 195 / 0) var(--tw-gradient-to-position);
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
+}
+
+.from-green-100 {
+  --tw-gradient-from: #dcfce7 var(--tw-gradient-from-position);
+  --tw-gradient-to: rgb(220 252 231 / 0) var(--tw-gradient-to-position);
   --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
 }
 
@@ -3097,6 +3115,10 @@ video {
 
 .to-purple-200 {
   --tw-gradient-to: #e9d5ff var(--tw-gradient-to-position);
+}
+
+.to-purple-300 {
+  --tw-gradient-to: #d8b4fe var(--tw-gradient-to-position);
 }
 
 .to-purple-50 {
