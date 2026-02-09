@@ -8,55 +8,207 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="shortcut icon" href="assets/image/favicon-logo.png" type="image/x-icon">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="./assets/css/dev-style.css">
-    <link rel="stylesheet" href="./assets/css/tailwind.css">
-    <style>
-        /* Base styles for all TOC links */
-        .toc-item,
-        .toc-subitem {
-            display: block;
-            width: 100%;
-            padding: 0.25rem 0.5rem;
-            border-radius: 0.25rem;
-            color: #4B5563;
-            /* gray-600 */
-            text-decoration: none;
-            transition: background-color 0.2s, color 0.2s;
-        }
-
-        .toc-item:hover,
-        .toc-subitem:hover {
-            background-color: #F3F4F6;
-            /* gray-100 */
-        }
-
-        /* Active main item */
-        .toc-item.active {
-            color: #4B5563;
-            background-color: #EFF6FF;
-            font-weight: 600;
-            border-left: 4px solid #1D4ED8;
-            /* blue-700 */
-        }
-
-        /* Active sub-item */
-        .toc-subitem.active {
-            color: #4B5563;
-            background-color: #EFF6FF;
-            font-weight: 600;
-            border-left: 4px solid #1D4ED8;
-            /* blue-700 */
-        }
-
-        /* Rotate arrow for open submenu */
-        .toc-item-wrapper .rotate-90 {
-            transform: rotate(90deg);
-            transition: transform 0.2s;
-        }
-    </style>
+    <link rel="stylesheet" href="./assets/CSS/dev-style.css">
+    <link rel="stylesheet" href="./assets/CSS/tailwind.css">
 </head>
 
 <body class="bg-gray-50">
+    <!-- nav -->
+    <section class="text-white">
+        <nav id="navbar"
+            class="navbar py-3 backdrop-blur-0 bg-white fixed top-0 left-0 right-0 z-50 transition-all duration-500">
+            <div class="navbar-container max-w-7xl mx-auto px-6">
+                <div class="flex items-center justify-between">
+                    <div class="logo-container">
+                        <a href="index.html" class="flex items-center gap-3"
+                            aria-label="Shreyansh Padmani – AI Engineer & Software Developer">
+                            <div class="logo-icon text-4xl font-bold text-blue-900">
+                                SP.
+                            </div>
+                        </a>
+                    </div>
+
+                    <ul class="desktop-menu hidden md:flex items-center gap-8">
+                        <li class="nav-item relative group">
+                            <div class="generate-btn inline-flex items-center gap-1.5 cursor-pointer"
+                                aria-haspopup="true" aria-expanded="false" tabindex="0">
+                                <svg class="icon mr-2 h-5 w-5" aria-hidden="true" focusable="false">
+                                    <path
+                                        d="M5.16515 2.62145L5.8075 0.999247C5.83876 0.919722 5.9154 0.866699 6.00112 0.866699C6.08683 0.866699 6.16347 0.919722 6.19473 0.999247L6.83708 2.62145L8.44145 3.27094C8.5201 3.30254 8.57254 3.38003 8.57254 3.4667C8.57254 3.55337 8.5201 3.63085 8.44145 3.66246L6.83708 4.31195L6.19473 5.93415C6.16347 6.0147 6.08683 6.0667 6.00112 6.0667C5.9154 6.0667 5.83876 6.0147 5.8075 5.93415L5.16515 4.31195L3.56078 3.66246C3.48112 3.63085 3.42969 3.55337 3.42969 3.4667C3.42969 3.38003 3.48112 3.30254 3.56078 3.27094L5.16515 2.62145Z" />
+                                    <path
+                                        d="M11.2362 9.43967C11.5502 9.30067 11.8015 9.05025 11.9405 8.73617L13.5494 5.11725C13.7169 4.74204 14.0887 4.5 14.5 4.5C14.9112 4.5 15.2839 4.74204 15.4506 5.11725L17.0603 8.73617C17.1985 9.05025 17.4497 9.3015 17.7638 9.43967L21.3827 11.0494C21.7579 11.2161 22 11.5887 22 12C22 12.4112 21.7579 12.7831 21.3827 12.9506L17.7638 14.5595C17.4497 14.6985 17.1993 14.9497 17.0603 15.2638L15.4506 18.8827C15.2839 19.2579 14.9112 19.5 14.5 19.5C14.0887 19.5 13.7169 19.2579 13.5494 18.8827L11.9405 15.2638C11.8015 14.9497 11.5502 14.6985 11.2362 14.5595L7.61725 12.9506C7.24204 12.7831 7 12.4112 7 12C7 11.5887 7.24204 11.2161 7.61725 11.0494L11.2362 9.43967Z" />
+                                    <path
+                                        d="M4.60728 19.392L5.67703 16.6875C5.72997 16.5541 5.85854 16.4666 6.00056 16.4666C6.14258 16.4666 6.27031 16.5541 6.32325 16.6875L7.39299 19.392L10.0678 20.4736C10.1997 20.5271 10.2863 20.6563 10.2863 20.7999C10.2863 20.9435 10.1997 21.0735 10.0678 21.1271L7.39299 22.2087L6.32325 24.9123C6.27031 25.0457 6.14258 25.1332 6.00056 25.1332C5.85854 25.1332 5.72997 25.0457 5.67703 24.9123L4.60728 22.2087L1.93333 21.1271C1.8014 21.0735 1.71484 20.9435 1.71484 20.7999C1.71484 20.6563 1.8014 20.5271 1.93333 20.4736L4.60728 19.392Z" />
+                                </svg>
+                                <a href="index.html" class="text-blue-900 font-bold py-2 inline-block">Expertise</a>
+                            </div>
+                            <ul
+                                class="absolute left-0 mt-3 w-64 rounded-md bg-blue-50 shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+                                <li>
+                                    <a href="computer-vision-development-services.html"
+                                        class="flex items-center px-4 py-2 text-gray-700 hover:bg-gray-100 rounded-md gap-3">
+                                        <img src="./assets/image/Computer-Vision-Solutions.svg"
+                                            alt="Computer Vision AI Service Icon" class="w-5 h-5">
+                                        Computer Vision
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="generative-ai-development-services.html"
+                                        class="flex items-center px-4 py-2 text-gray-700 hover:bg-gray-100 rounded-md gap-3">
+                                        <img src="./assets/image/generative-ai-development-services.svg"
+                                            alt="Generative AI Service Icon" class="w-5 h-5">
+                                        Generative AI
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="machine-learning-development-services.html"
+                                        class="flex items-center px-4 py-2 text-gray-700 hover:bg-gray-100 rounded-md gap-3">
+                                        <img src="./assets/image/Machine-Learning-Predictive-Analytics-Development.svg"
+                                            alt="Generative AI Service Icon" class="w-5 h-5">
+                                        ML Development
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="custom-aI-model-training.html"
+                                        class="flex items-center px-4 py-2 text-gray-700 hover:bg-gray-100 rounded-md gap-3">
+                                        <img src="./assets/image/Custom-AI-Model-Training.svg"
+                                            alt="Generative AI Service Icon" class="w-5 h-5">
+                                        Model Training
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="natural-language-processing.html"
+                                        class="flex items-center px-4 py-2 text-gray-700 hover:bg-gray-100 rounded-md gap-3">
+                                        <img src="./assets/image/Natural-Language-Processing.svg"
+                                            alt="Generative AI Service Icon" class="w-5 h-5">
+                                        Natural Language Processing
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <!-- <li class="nav-item">
+                            <a href="#features" class="nav-link">Services</a>
+                        </li> -->
+                        <li class="nav-item">
+                            <a href="blog.html" class="nav-link">Blog</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="case-studies.html" class="nav-link">Case Studies</a>
+                        </li>
+                    </ul>
+
+                    <div class="hidden md:block">
+                        <button
+                            class="hero-btn-pramiry relative px-8 py-3 rounded-full bg-blue-500 text-white font-semibold overflow-hidden transition-all duration-300 ease-in-out hover:-translate-y-0.5  hover:shadow-[0_10px_30px_rgba(51,95,255,0.55)] border-0 cursor-pointer active gap-2">
+                            <span class="relative z-10">Hire Me</span>
+                        </button>
+                    </div>
+
+                    <button id="mobileMenuBtn" class="mobile-menu-btn md:hidden" aria-label="Open mobile menu"
+                        aria-controls="mobileMenu" aria-expanded="false">
+                        <span class="hamburger-line"></span>
+                        <span class="hamburger-line"></span>
+                        <span class="hamburger-line"></span>
+                    </button>
+                </div>
+            </div>
+        </nav>
+
+        <div id="mobileMenu" class="mobile-menu">
+            <button id="closeMobileMenu" class="close-btn" aria-label="Close mobile menu">
+                <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"
+                    focusable="false">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+            </button>
+            <div class="mobile-menu-content">
+                <ul class="mobile-nav-list">
+                    <li class="mobile-nav-item">
+                        <a href="index.html" class="mobile-nav-link">Expertise</a>
+                    </li>
+                    <!-- <li class="mobile-nav-item">
+                        <a href="#features" class="mobile-nav-link">Services</a>
+                    </li> -->
+                    <li class="mobile-nav-item">
+                        <a href="blog.html" class="mobile-nav-link">Blog</a>
+                    </li>
+                    <li class="mobile-nav-item">
+                        <a href="case-studies.html" class="mobile-nav-link">Case Studies</a>
+                    </li>
+                    <li class="mobile-nav-item mt-8">
+                        <a href="contact.html" class="mobile-cta-button">Hire Me</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    <!--end nav -->
+
+    <!-- Hero Banner with Breadcrumb -->
+    <section
+        class="mt-10 relative min-h-[400px] flex items-center justify-center bg-gradient-to-br from-purple-200 via-white to-blue-200">
+
+        <!-- Decorative Elements -->
+        <div class="absolute inset-0 overflow-hidden">
+            <div class="absolute top-20 left-10 w-72 h-72 bg-purple-200/30 rounded-full blur-3xl"></div>
+            <div class="absolute bottom-20 right-10 w-96 h-96 bg-blue-200/30 rounded-full blur-3xl"></div>
+        </div>
+
+        <div class="relative z-10 max-w-5xl mx-auto px-4 py-16 text-center">
+            <!-- Breadcrumb -->
+            <nav class="flex justify-center mb-8 text-sm text-gray-200" aria-label="Breadcrumb">
+                <ol class="inline-flex items-center space-x-2">
+                    <li>
+                        <a href="index.html" class="text-gray-800 hover:text-blue-300 transition-colors">Home</a>
+                    </li>
+                    <li>
+                        <span class="mx-2 text-gray-700">›</span>
+                    </li>
+                    <li>
+                        <a href="blog.html" class="text-gray-700 hover:text-blue-300 transition-colors">Blog</a>
+                    </li>
+                    <li>
+                        <span class="mx-2 text-gray-700">›</span>
+                    </li>
+                    <li class="text-gray-500">Generative AI</li>
+                </ol>
+            </nav>
+
+            <!-- Category -->
+            <span
+                class="inline-block px-4 py-2 bg-purple-600 text-white text-sm font-semibold rounded-full shadow-lg mb-4">
+                Generative AI
+            </span>
+
+            <!-- Title -->
+            <h1 class="text-gray-900 mb-6 font-bold lg:text-5xl tracking-normal text-4xl">
+                How Generative AI Is Transforming <br> <span class="text-blue-500">Modern Businesses</span>
+            </h1>
+
+            <!-- Meta -->
+            <div class="flex items-center justify-center gap-6 text-gray-200 mb-6">
+                <div class="flex items-center gap-3">
+                    <img src="https://ui-avatars.com/api/?name=AI+Research+Team&background=7c3aed&color=fff"
+                        alt="AI Research Team" class="w-12 h-12 rounded-full shadow">
+                    <div class="text-left">
+                        <p class="font-semibold text-gray-900 ">AI Research Team</p>
+                        <p class="text-sm text-gray-800">
+                            <time datetime="2026-02-18">18 Feb 2026</time>
+                        </p>
+                    </div>
+                </div>
+                <span class="hidden sm:block w-px h-10 bg-gray-300"></span>
+                <span class="text-sm text-gray-900">7 min read</span>
+            </div>
+
+            <!-- Description -->
+            <p class="text-base sm:text-lg md:text-lg text-gray-700 leading-relaxed max-w-3xl mx-auto mt-6">
+                Discover how <strong>Generative AI</strong> helps companies automate workflows, generate content,
+                enhance customer experiences, and gain a competitive edge in today’s fast-moving digital world.
+            </p>
+        </div>
+    </section>
 
     <div class="max-w-full mx-auto px-4 sm:px-6 lg:px-16 py-8">
         <div class="w-full grid grid-cols-1 lg:grid-cols-[315px_1fr_267px] gap-6">
@@ -68,6 +220,20 @@
                         <h3 class="text-lg font-semibold mb-3">Table of Contents</h3>
                         <ul class="space-y-1 toc">
 
+                            <li class="toc-item-wrapper">
+                                <div class="flex items-center">
+                                    <button class="toggle mr-2">
+                                        <svg class="w-4 h-4 transition-transform" fill="none" stroke="currentColor"
+                                            viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                d="M9 5l7 7-7 7" />
+                                        </svg>
+                                    </button>
+                                    <a href="#introduction"
+                                        class="toc-item text-sm text-left flex-1 p-0.5 rounded transition-colors duration-200 text-gray-700 hover:text-blue-500 hover:bg-gray-100">Introduction</a>
+                                </div>
+                            </li>
+
                             <!-- 1. The Uber Eats Reality -->
                             <li class="toc-item-wrapper">
                                 <div class="flex items-center">
@@ -78,11 +244,15 @@
                                                 d="M9 5l7 7-7 7" />
                                         </svg>
                                     </button>
-                                    <a href="#uber-eats" class="toc-item flex-1">The Uber Eats Reality – Convenience at
+                                    <a href="#uber-eats"
+                                        class="toc-item text-sm text-left flex-1 p-0.5 rounded transition-colors duration-200 text-gray-700 hover:text-blue-500 hover:bg-gray-100 ">The
+                                        Uber Eats Reality – Convenience at
                                         What Cost?</a>
                                 </div>
                                 <ul class="ml-6 mt-1 space-y-1 hidden">
-                                    <li><a href="#true-price" class="toc-subitem">Understanding the True Price of
+                                    <li><a href="#true-price"
+                                            class="toc-subitem text-left w-full p-0.5 rounded transition-colors duration-200 text-gray-600 hover:text-blue-500 hover:bg-gray-100 text-[12px]">Understanding
+                                            the True Price of
                                             Third-Party
                                             Aggregators</a></li>
                                 </ul>
@@ -98,27 +268,43 @@
                                                 d="M9 5l7 7-7 7" />
                                         </svg>
                                     </button>
-                                    <a href="#custom-app" class="toc-item flex-1">Unpacking the Custom Ordering App – An
+                                    <a href="#custom-app"
+                                        class="toc-item text-sm text-left flex-1 p-0.5 rounded transition-colors duration-200 text-gray-700 hover:text-blue-500 hover:bg-gray-100">Unpacking
+                                        the Custom Ordering App – An
                                         Investment in
                                         Your Future</a>
                                 </div>
                                 <ul class="ml-6 mt-1 space-y-1 hidden">
-                                    <li><a href="#what-is-app" class="toc-subitem">What Exactly is a Custom Restaurant
+                                    <li><a href="#what-is-app"
+                                            class="toc-subitem text-left w-full p-0.5 rounded transition-colors duration-200 text-gray-600 hover:text-blue-500 hover:bg-gray-100 text-[12px]">What
+                                            Exactly is a Custom Restaurant
                                             Ordering App?</a>
                                     </li>
-                                    <li><a href="#dev-cost" class="toc-subitem">The “Elephant in the Room”: Demystifying
+                                    <li><a href="#dev-cost"
+                                            class="toc-subitem text-left w-full p-0.5 rounded transition-colors duration-200 text-gray-600 hover:text-blue-500 hover:bg-gray-100 text-[12px]">The
+                                            “Elephant in the Room”: Demystifying
                                             Restaurant App
                                             Development Cost</a></li>
-                                    <li><a href="#financial-returns" class="toc-subitem">Financial Returns & Profit
+                                    <li><a href="#financial-returns"
+                                            class="toc-subitem text-left w-full p-0.5 rounded transition-colors duration-200 text-gray-600 hover:text-blue-500 hover:bg-gray-100 text-[12px]">Financial
+                                            Returns & Profit
                                             Retention</a></li>
-                                    <li><a href="#operational-efficiency" class="toc-subitem">Operational Efficiency &
+                                    <li><a href="#operational-efficiency"
+                                            class="toc-subitem text-left w-full p-0.5 rounded transition-colors duration-200 text-gray-600 hover:text-blue-500 hover:bg-gray-100 text-[12px]">Operational
+                                            Efficiency &
                                             Streamlining</a>
                                     </li>
-                                    <li><a href="#customer-ownership" class="toc-subitem">Customer Ownership & Data
+                                    <li><a href="#customer-ownership"
+                                            class="toc-subitem text-left w-full p-0.5 rounded transition-colors duration-200 text-gray-600 hover:text-blue-500 hover:bg-gray-100 text-[12px]">Customer
+                                            Ownership & Data
                                             Leverage</a></li>
-                                    <li><a href="#brand-building" class="toc-subitem">Brand Building, Control &
+                                    <li><a href="#brand-building"
+                                            class="toc-subitem text-left w-full p-0.5 rounded transition-colors duration-200 text-gray-600 hover:text-blue-500 hover:bg-gray-100 text-[12px]">Brand
+                                            Building, Control &
                                             Flexibility</a></li>
-                                    <li><a href="#case-study" class="toc-subitem">Real-World (Hypothetical) Case Study:
+                                    <li><a href="#case-study"
+                                            class="toc-subitem text-left w-full p-0.5 rounded transition-colors duration-200 text-gray-600 hover:text-blue-500 hover:bg-gray-100 text-[12px]">Real-World
+                                            (Hypothetical) Case Study:
                                             “The Corner
                                             Bistro”</a></li>
                                 </ul>
@@ -134,14 +320,20 @@
                                                 d="M9 5l7 7-7 7" />
                                         </svg>
                                     </button>
-                                    <a href="#custom-app-right" class="toc-item flex-1">Is a Custom App Right for Your
+                                    <a href="#custom-app-right"
+                                        class="toc-item text-sm text-left flex-1 p-0.5 rounded transition-colors duration-200 text-gray-700 hover:text-blue-500 hover:bg-gray-100">Is
+                                        a Custom App Right for Your
                                         Restaurant?</a>
                                 </div>
                                 <ul class="ml-6 mt-1 space-y-1 hidden">
-                                    <li><a href="#when-to-invest" class="toc-subitem">When to Invest in Your Own Food
+                                    <li><a href="#when-to-invest"
+                                            class="toc-subitem text-left w-full p-0.5 rounded transition-colors duration-200 text-gray-600 hover:text-blue-500 hover:bg-gray-100 text-[12px]">When
+                                            to Invest in Your Own Food
                                             Ordering
                                             System</a></li>
-                                    <li><a href="#overcoming-hurdles" class="toc-subitem">Overcoming the Hurdles: What
+                                    <li><a href="#overcoming-hurdles"
+                                            class="toc-subitem text-left w-full p-0.5 rounded transition-colors duration-200 text-gray-600 hover:text-blue-500 hover:bg-gray-100 text-[12px]">Overcoming
+                                            the Hurdles: What
                                             to Expect</a>
                                     </li>
                                 </ul>
@@ -157,25 +349,25 @@
                                                 d="M9 5l7 7-7 7" />
                                         </svg>
                                     </button>
-                                    <a href="#partnering" class="toc-item flex-1">Partnering for Success – How to Build
+                                    <a href="#partnering"
+                                        class="toc-item text-sm text-left flex-1 p-0.5 rounded transition-colors duration-200 text-gray-700 hover:text-blue-500 hover:bg-gray-100">Partnering
+                                        for Success – How to Build
                                         Your Custom
                                         Ordering App</a>
                                 </div>
                                 <ul class="ml-6 mt-1 space-y-1 hidden">
-                                    <li><a href="#finding-partner" class="toc-subitem">Finding the Right Partner: “Hire
+                                    <li><a href="#finding-partner"
+                                            class="toc-subitem text-left w-full p-0.5 rounded transition-colors duration-200 text-gray-600 hover:text-blue-500 hover:bg-gray-100 text-[12px]">Finding
+                                            the Right Partner: “Hire
                                             Foodtech
                                             Developers”</a></li>
-                                    <li><a href="#webmob-advantage" class="toc-subitem">The WebMob Technologies
+                                    <li><a href="#webmob-advantage"
+                                            class="toc-subitem text-left w-full p-0.5 rounded transition-colors duration-200 text-gray-600 hover:text-blue-500 hover:bg-gray-100 text-[12px]">The
+                                            WebMob Technologies
                                             Advantage</a></li>
                                 </ul>
                             </li>
 
-                            <!-- 5. Conclusion -->
-                            <li class="toc-item-wrapper">
-                                <div class="flex items-center">
-                                    <a href="#conclusion" class="toc-item flex-1">Conclusion – Reclaim Your Plate</a>
-                                </div>
-                            </li>
 
                             <!-- TOC: FAQ -->
                             <li class="toc-item-wrapper">
@@ -187,25 +379,69 @@
                                                 d="M9 5l7 7-7 7" />
                                         </svg>
                                     </button>
-                                    <a href="#faq" class="toc-item flex-1">Frequently Asked Questions (FAQ)</a>
+                                    <a href="#faq"
+                                        class="toc-item text-sm text-left flex-1 p-0.5 rounded transition-colors duration-200 text-gray-700 hover:text-blue-500 hover:bg-gray-100">Frequently
+                                        Asked Questions (FAQ)</a>
                                 </div>
                                 <ul class="ml-6 mt-1 space-y-1 hidden">
-                                    <li><a href="#q1" class="toc-subitem">Q1. How much commission does Uber Eats really
+                                    <li><a href="#q1"
+                                            class="toc-subitem text-left w-full p-0.5 rounded transition-colors duration-200 text-gray-600 hover:text-blue-500 hover:bg-gray-100 text-[12px]">Q1.
+                                            How much commission does Uber Eats really
                                             take from
                                             restaurants?</a></li>
-                                    <li><a href="#q2" class="toc-subitem">Q2. Is it cheaper for a restaurant to have its
+                                    <li><a href="#q2"
+                                            class="toc-subitem text-left w-full p-0.5 rounded transition-colors duration-200 text-gray-600 hover:text-blue-500 hover:bg-gray-100 text-[12px]">Q2.
+                                            Is it cheaper for a restaurant to have its
                                             own delivery
                                             app?</a></li>
-                                    <li><a href="#q3" class="toc-subitem">Q3. What is the average cost to build a simple
+                                    <li><a href="#q3"
+                                            class="toc-subitem text-left w-full p-0.5 rounded transition-colors duration-200 text-gray-600 hover:text-blue-500 hover:bg-gray-100 text-[12px]">Q3.
+                                            What is the average cost to build a simple
                                             restaurant
                                             app?</a></li>
-                                    <li><a href="#q4" class="toc-subitem">Q4. How can I convince my existing customers
+                                    <li><a href="#q4"
+                                            class="toc-subitem text-left w-full p-0.5 rounded transition-colors duration-200 text-gray-600 hover:text-blue-500 hover:bg-gray-100 text-[12px]">Q4.
+                                            How can I convince my existing customers
                                             to use my new app
                                             instead of Uber Eats?</a></li>
-                                    <li><a href="#q5" class="toc-subitem">Q5. What is the difference between a custom
+                                    <li><a href="#q5"
+                                            class="toc-subitem text-left w-full p-0.5 rounded transition-colors duration-200 text-gray-600 hover:text-blue-500 hover:bg-gray-100 text-[12px]">Q5.
+                                            What is the difference between a custom
                                             app and a
                                             white-label solution?</a></li>
                                 </ul>
+                            </li>
+
+                            <!-- 5. Conclusion -->
+                            <li class="toc-item-wrapper">
+                                <div class="flex items-center">
+                                    <button class="toggle mr-2">
+                                        <svg class="w-4 h-4 transition-transform" fill="none" stroke="currentColor"
+                                            viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                d="M9 5l7 7-7 7" />
+                                        </svg>
+                                    </button>
+                                    <a href="#conclusion"
+                                        class="toc-item text-sm text-left flex-1 p-0.5 rounded transition-colors duration-200 text-gray-700 hover:text-blue-500 hover:bg-gray-100">Conclusion
+                                        – Reclaim Your Plate</a>
+                                </div>
+                            </li>
+
+                            <!-- 5. Conclusion -->
+                            <li class="toc-item-wrapper">
+                                <div class="flex items-center">
+                                    <button class="toggle mr-2">
+                                        <svg class="w-4 h-4 transition-transform" fill="none" stroke="currentColor"
+                                            viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                d="M9 5l7 7-7 7" />
+                                        </svg>
+                                    </button>
+                                    <a href="#best-practices"
+                                        class="toc-item text-sm text-left flex-1 p-0.5 rounded transition-colors duration-200 text-gray-700 hover:text-blue-500 hover:bg-gray-100">Best
+                                        Practices</a>
+                                </div>
                             </li>
                         </ul>
                     </div>
@@ -264,215 +500,215 @@
                             alt="Generative AI transforming industries and modern business processes" loading="lazy"
                             class="w-full h-full object-fill">
                     </div>
+                    <div class="flex-1pr-6">
 
-                    <div class="p-4 lg:p-4">
+                        <!--  id="introduction" -->
+                        <section class="mb-4 scroll-mt-8 px-4 md:px-8 mt-4">
+                            <h1 id="introduction" class="text-3xl font-bold text-gray-900 mb-4">Introduction</h1>
+                            <p class="text-gray-700 leading-relaxed mb-4">
+                                The digital ordering boom has reshaped the restaurant industry. Platforms like Uber
+                                Eats, DoorDash, and Grubhub became essential lifelines, connecting hungry customers with
+                                their favorite local spots. This convenience, however, comes at a steep price. According
+                                to the National Restaurant Association, digital orders are a massive part of the market,
+                                but many owners are now questioning the long-term sustainability of the third-party
+                                model.
+                            </p>
+                            <p class="text-gray-700 leading-relaxed mb-4">The hidden costs, relentless commission fees,
+                                and loss of brand control are creating a digital dilemma for restaurant owners. You’re
+                                busy serving great food, but a significant slice of your revenue is walking out the door
+                                with a delivery driver you don’t even employ.</p>
+                            <p class="text-gray-700 leading-relaxed">This reliance creates a dangerous dependency. You
+                                lose direct contact with your most loyal customers, handing over valuable data and the
+                                relationship itself to a tech giant. But there is a powerful alternative: developing
+                                your own custom ordering app. The core question is no longer if you need a digital
+                                presence, but how you control it. This article offers a deep dive into the return on
+                                investment (ROI) of a custom app, directly comparing it to aggregator fees and exploring
+                                the real “restaurant app development cost” as a long-term investment in your brand’s
+                                future.</p>
+                        </section>
+                        <section class="mb-4 scroll-mt-8 px-4 md:px-8 mt-4">
+                            <!-- id="uber-eats" -->
+                            <h1 id="uber-eats" class="text-3xl font-bold text-gray-900 mb-4">The Uber Eats Reality:
+                                Convenience at What
+                                Cost?</h1>
+                            <p class="text-gray-700 leading-relaxed mb-5">Partnering with a third-party aggregator feels
+                                like an easy win at first. You gain instant access to a massive user base and a
+                                ready-made delivery infrastructure. But once the orders start rolling in, the true cost
+                                of this convenience becomes painfully clear.</p>
+                            <h2 class="text-2xl font-bold text-gray-900 mb-5" id="true-price">Understanding the True
+                                Price of
+                                Third-Party Aggregators</h2>
+                            <p class="text-gray-700 leading-relaxed mb-3">The sticker price is just the beginning. These
+                                platforms nibble away at your profits from multiple angles, making it difficult to
+                                maintain healthy margins.</p>
+                            <p class="text-gray-700 leading-relaxed mb-3">Let’s look at a simple example. A customer
+                                places a $50 order through Uber Eats.</p>
+                            <p class="text-gray-700 leading-relaxed mb-3">You just lost $14.00, or 28% of your revenue,
+                                on one order before even accounting for your food and labor costs. This silent erosion
+                                of your brand and customer relationships is just as damaging. You don’t get your
+                                customer’s email or phone number. You can’t send them a special offer for their
+                                birthday. Uber Eats owns that relationship, not you. This is the convenience trap: a
+                                short-term boost in orders in exchange for long-term dependency and reduced
+                                profitability.</p>
+                            <img src="https://media.licdn.com/dms/image/v2/D4D12AQFVpIkrDtsHog/article-cover_image-shrink_720_1280/B4DZt.QrfWGgAI-/0/1767349862432?e=2147483647&v=beta&t=0uDmzzfCvHoEajFvRejARHbKhtp13Iiik-6kXkOdXjI"
+                                class="w-full h-64 object-cover rounded-xl mb-6">
+                            <h1 id="custom-app" class="text-3xl font-bold text-gray-900 mb-4">Unpacking theCustom
+                                Ordering App: An
+                                Investment in Your Future</h1>
+                            <p class="text-gray-700 leading-relaxed mb-4">
+                                A custom ordering app is more than just a piece of software; it’s your restaurant’s
+                                dedicated digital storefront. It’s an asset you own and control completely.
+                            </p>
+                            <p class="text-gray-700 leading-relaxed">Core functionalities often include: Branded Digital
+                                Menu: Your menu, your photos, your descriptions Secure Payment Gateway: Direct, secure
+                                payments into your account Order Management Dashboard: A central hub to track and manage
+                                incoming orders Customer Profiles: Let customers save their favorite orders and payment
+                                details Push Notifications: Send targeted promotions and updates directly to your
+                                customers’ phones Loyalty & Rewards Programs: Build repeat business with custom loyalty
+                                schemes Delivery & Pickup Options: Full control over your logistics and scheduling The
+                                most significant benefit is ownership. You control the branding, the customer
+                                experience, and most importantly, the data.</p>
+                            <h2 id="what-is-app" class="text-2xl font-bold text-gray-900">What Exactly is a Custom
+                                Restaurant Ordering App?
+                            </h2>
+                            <p class="text-gray-700 leading-relaxed">
+                                A custom app is a mobile or web-based platform built specifically for your brand. It’s a
+                                direct channel between you and your customers, free from the noise and competition of
+                                third-party marketplaces.
+                            </p>
+                            <h2 id="dev-cost" class="text-2xl font-bold text-gray-900">The “Elephant in the Room”:
+                                Demystifying
+                                “Restaurant App Development Cost”</h2>
+                            <p class="text-gray-700 leading-relaxed">The primary hesitation for many restaurant owners
+                                is the upfront investment. Let’s demystify the “custom food ordering system price.” It’s
+                                not a one-size-fits-all number; it’s influenced by several factors.</p>
+                            <p class="text-gray-700 leading-relaxed">A realistic cost range for a quality MVP can start
+                                from $15,000 – $30,000, while more complex, feature-rich solutions can exceed $50,000.
+                                It’s crucial to view this as a capital investment—much like a new oven or dining room
+                                renovation—that pays for itself over time. To get it right, you need to “hire foodtech
+                                developers” who understand the unique challenges of the restaurant industry.</p>
+                            <p class="text-gray-700 leading-relaxed">When you move beyond the initial sticker shock, the
+                                long-term ROI of a custom app becomes incredibly compelling. The analysis isn’t just
+                                about saving on fees; it’s about building a more resilient and profitable business.</p>
+                            <h2 id="financial-returns" class="text-2xl font-bold text-gray-900">Financial Returns &
+                                Profit
+                                Retention</h2>
+                            <p class="text-gray-700 leading-relaxed">This is the most direct and measurable return. By
+                                eliminating commissions, you immediately boost your profit margin on every digital
+                                order.A Quick Comparison:</p>
+                            <p class="text-gray-700 leading-relaxed">Beyond savings, a custom app actively grows
+                                revenue. You can use push notifications to promote daily specials, driving an increased
+                                average order value (AOV). Integrated loyalty programs dramatically improve customer
+                                lifetime value (CLV) by encouraging repeat business.</p>
+                            <h2 id="operational-efficiency" class="text-2xl font-bold text-gray-900">Operational
+                                Efficiency & Streamlining</h2>
+                            <p>A well-built custom app integrates directly with your kitchen’s workflow. When connected
+                                to your POS system, orders appear instantly without staff needing to re-enter them from
+                                a separate tablet. This reduces human error, improves order accuracy, and speeds up your
+                                entire process from order placement to fulfillment.</p>
+                            <h2 id="customer-ownership" class="text-2xl font-bold text-gray-900">Operational Efficiency
+                                & Streamlining</h2>
+                            <p>A well-built custom app integrates directly with your kitchen’s workflow. When connected
+                                to your POS system, orders appear instantly without staff needing to re-enter them from
+                                a separate tablet. This reduces human error, improves order accuracy, and speeds up your
+                                entire process from order placement to fulfillment.</p>
+                            <h2 id="brand-building" class="text-2xl font-bold text-gray-900">Operational Efficiency &
+                                Streamlining</h2>
+                            <p>A well-built custom app integrates directly with your kitchen’s workflow. When connected
+                                to your POS system, orders appear instantly without staff needing to re-enter them from
+                                a separate tablet. This reduces human error, improves order accuracy, and speeds up your
+                                entire process from order placement to fulfillment.</p>
+                            <h2 id="case-study" class="text-2xl font-bold text-gray-900">Operational Efficiency &
+                                Streamlining</h2>
+                            <p>A well-built custom app integrates directly with your kitchen’s workflow. When connected
+                                to your POS system, orders appear instantly without staff needing to re-enter them from
+                                a separate tablet. This reduces human error, improves order accuracy, and speeds up your
+                                entire process from order placement to fulfillment.</p>
+                        </section>
 
-                        <section id="introduction" class="mb-12 scroll-mt-8">
-    <h2 class="text-3xl font-bold text-gray-900 mb-4" id="uber-eats">Introduction</h2>
-    <p class="text-gray-700 leading-relaxed mb-4">
-        The digital ordering boom has reshaped the restaurant industry. Platforms like Uber
-        Eats, DoorDash, and Grubhub became essential lifelines, connecting hungry customers with
-        their favorite local spots. This convenience, however, comes at a steep price. According
-        to the National Restaurant Association, digital orders are a massive part of the market,
-        but many owners are now questioning the long-term sustainability of the third-party
-        model.
-    </p>
-    <p class="text-gray-700 leading-relaxed mb-4">The hidden costs, relentless commission fees,
-        and loss of brand control are creating a digital dilemma for restaurant owners. You’re
-        busy serving great food, but a significant slice of your revenue is walking out the door
-        with a delivery driver you don’t even employ.</p>
-    <p class="text-gray-700 leading-relaxed">This reliance creates a dangerous dependency. You
-        lose direct contact with your most loyal customers, handing over valuable data and the
-        relationship itself to a tech giant. But there is a powerful alternative: developing
-        your own custom ordering app. The core question is no longer if you need a digital
-        presence, but how you control it. This article offers a deep dive into the return on
-        investment (ROI) of a custom app, directly comparing it to aggregator fees and exploring
-        the real “restaurant app development cost” as a long-term investment in your brand’s
-        future.</p>
-</section>
+                        <section class="mb-4 scroll-mt-8 px-4 md:px-8 mt-4">
+                            <h2 class="text-3xl font-bold text-gray-900 mb-4" id="custom-app-right">Is a Custom App
+                                Right for Your Restaurant?
+                            </h2>
+                            <p>A custom app is a powerful tool, but it requires commitment. So, how do you know if it’s
+                                the right move for your business?</p>
+                            <div class="bg-blue-50 border-l-4 border-blue-500 p-6 mb-6 rounded-r-lg">
+                                <ul class="space-y-2 text-gray-700">
+                                    <li>✓ AI-powered content generation</li>
+                                    <li>✓ Intelligent chatbots & assistants</li>
+                                    <li>✓ Code generation & automation</li>
+                                    <li>✓ Image & video generation</li>
+                                    <li>✓ Personalized recommendations</li>
+                                </ul>
+                            </div>
+                            <p class="text-gray-700 leading-relaxed">
+                                These capabilities allow businesses to reduce manual effort while improving accuracy and
+                                creativity.
+                            </p>
+                            <h2 id="when-to-invest" class="text-2xl font-bold text-gray-900">Overcoming the Hurdles:
+                                What to Expect</h2>
+                            <p>The journey involves more than just development. You’ll need to plan for the initial
+                                investment. More importantly, you must have a strategy for marketing your new app. This
+                                includes in-store signage, promoting it on social media, and training your staff to
+                                encourage customers to use your direct channel. Finally, plan for ongoing maintenance
+                                and updates, which highlights the need for a reliable development partner.</p>
+                            <h2 id="overcoming-hurdles" class="text-2xl font-bold text-gray-900">Overcoming the Hurdles:
+                                What to Expect</h2>
+                            <p>The journey involves more than just development. You’ll need to plan for the initial
+                                investment. More importantly, you must have a strategy for marketing your new app. This
+                                includes in-store signage, promoting it on social media, and training your staff to
+                                encourage customers to use your direct channel. Finally, plan for ongoing maintenance
+                                and updates, which highlights the need for a reliable development partner.</p>
+                        </section>
 
-<section id="understanding-farm" class="mb-12 scroll-mt-8">
-    <h2 class="text-3xl font-bold text-gray-900 mb-4" id="true-price">The Uber Eats Reality: Convenience at What
-        Cost?</h2>
-    <p class="text-gray-700 leading-relaxed mb-5">Partnering with a third-party aggregator feels
-        like an easy win at first. You gain instant access to a massive user base and a
-        ready-made delivery infrastructure. But once the orders start rolling in, the true cost
-        of this convenience becomes painfully clear.</p>
-    <h3 class="text-2xl font-bold text-gray-900 mb-5" id="true-price">Understanding the True
-        Price of
-        Third-Party Aggregators</h3>
-    <p class="text-gray-700 leading-relaxed mb-3">The sticker price is just the beginning. These
-        platforms nibble away at your profits from multiple angles, making it difficult to
-        maintain healthy margins.</p>
-    <p class="text-gray-700 leading-relaxed mb-3">Let’s look at a simple example. A customer
-        places a $50 order through Uber Eats.</p>
-    <p class="text-gray-700 leading-relaxed mb-3">You just lost $14.00, or 28% of your revenue,
-        on one order before even accounting for your food and labor costs. This silent erosion
-        of your brand and customer relationships is just as damaging. You don’t get your
-        customer’s email or phone number. You can’t send them a special offer for their
-        birthday. Uber Eats owns that relationship, not you. This is the convenience trap: a
-        short-term boost in orders in exchange for long-term dependency and reduced
-        profitability.</p>
-    <img src="https://media.licdn.com/dms/image/v2/D4D12AQFVpIkrDtsHog/article-cover_image-shrink_720_1280/B4DZt.QrfWGgAI-/0/1767349862432?e=2147483647&v=beta&t=0uDmzzfCvHoEajFvRejARHbKhtp13Iiik-6kXkOdXjI"
-        class="w-full h-64 object-cover rounded-xl mb-6">
-    <h2 class="text-3xl font-bold text-gray-900 mb-4" id="custom-app">Unpacking the Custom
-        Ordering App: An
-        Investment in Your Future</h2>
-    <p class="text-gray-700 leading-relaxed mb-4">
-        A custom ordering app is more than just a piece of software; it’s your restaurant’s
-        dedicated digital storefront. It’s an asset you own and control completely.
-    </p>
-    <p class="text-gray-700 leading-relaxed">Core functionalities often include: Branded Digital
-        Menu: Your menu, your photos, your descriptions Secure Payment Gateway: Direct, secure
-        payments into your account Order Management Dashboard: A central hub to track and manage
-        incoming orders Customer Profiles: Let customers save their favorite orders and payment
-        details Push Notifications: Send targeted promotions and updates directly to your
-        customers’ phones Loyalty & Rewards Programs: Build repeat business with custom loyalty
-        schemes Delivery & Pickup Options: Full control over your logistics and scheduling The
-        most significant benefit is ownership. You control the branding, the customer
-        experience, and most importantly, the data.</p>
-    <h3 class="text-2xl font-bold text-gray-900" id="what-is-app">What Exactly is a Custom
-        Restaurant Ordering App?
-    </h3>
-    <p class="text-gray-700 leading-relaxed">
-        A custom app is a mobile or web-based platform built specifically for your brand. It’s a
-        direct channel between you and your customers, free from the noise and competition of
-        third-party marketplaces.
-    </p>
-    <h3 class="text-2xl font-bold text-gray-900" id="dev-cost">The “Elephant in the Room”:
-        Demystifying
-        “Restaurant App Development Cost”</h3>
-    <p class="text-gray-700 leading-relaxed">The primary hesitation for many restaurant owners
-        is the upfront investment. Let’s demystify the “custom food ordering system price.” It’s
-        not a one-size-fits-all number; it’s influenced by several factors.</p>
-    <p class="text-gray-700 leading-relaxed">A realistic cost range for a quality MVP can start
-        from $15,000 – $30,000, while more complex, feature-rich solutions can exceed $50,000.
-        It’s crucial to view this as a capital investment—much like a new oven or dining room
-        renovation—that pays for itself over time. To get it right, you need to “hire foodtech
-        developers” who understand the unique challenges of the restaurant industry.</p>
-    <p class="text-gray-700 leading-relaxed">When you move beyond the initial sticker shock, the
-        long-term ROI of a custom app becomes incredibly compelling. The analysis isn’t just
-        about saving on fees; it’s about building a more resilient and profitable business.</p>
-    <h3 class="text-2xl font-bold text-gray-900" id="financial-returns">Financial Returns & Profit
-        Retention</h3>
-    <p class="text-gray-700 leading-relaxed">This is the most direct and measurable return. By
-        eliminating commissions, you immediately boost your profit margin on every digital
-        order.A Quick Comparison:</p>
-    <p class="text-gray-700 leading-relaxed">Beyond savings, a custom app actively grows
-        revenue. You can use push notifications to promote daily specials, driving an increased
-        average order value (AOV). Integrated loyalty programs dramatically improve customer
-        lifetime value (CLV) by encouraging repeat business.</p>
-    <h3 class="text-2xl font-bold text-gray-900" id="operational-efficiency">Operational Efficiency
-        & Streamlining</h3>
-    <p>A well-built custom app integrates directly with your kitchen’s workflow. When connected
-        to your POS system, orders appear instantly without staff needing to re-enter them from
-        a separate tablet. This reduces human error, improves order accuracy, and speeds up your
-        entire process from order placement to fulfillment.</p>
-</section>
+                        <!-- 4 -->
+                        <section class="mb-4 scroll-mt-8 px-4 md:px-8 mt-4">
+                            <h1 id="partnering" class="text-3xl font-bold text-gray-900 mb-4">Partnering for Success:
+                                How to Build Your
+                                Custom Ordering App</h1>
+                            <p>Choosing the right development partner is the most critical step in this process. You
+                                aren’t just buying a product; you’re enlisting a team to build a core piece of your
+                                business infrastructure.</p>
+                            <h2 id="finding-partner" class="text-2xl font-bold text-gray-900">
+                                Finding the Right Partner:
+                                “Hire Foodtech
+                                Developers”</h2>
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                <div class="bg-gray-50 p-4 rounded-lg">
+                                    <h4 class="font-bold">AI Models</h4>
+                                    <p class="text-sm">GPT, Claude, Gemini, LLaMA</p>
+                                </div>
+                                <div class="bg-gray-50 p-4 rounded-lg">
+                                    <h4 class="font-bold">Backend</h4>
+                                    <p class="text-sm">Python, Node.js, .NET</p>
+                                </div>
+                                <div class="bg-gray-50 p-4 rounded-lg">
+                                    <h4 class="font-bold">Vector DB</h4>
+                                    <p class="text-sm">Pinecone, FAISS, Weaviate</p>
+                                </div>
+                                <div class="bg-gray-50 p-4 rounded-lg">
+                                    <h4 class="font-bold">Cloud</h4>
+                                    <p class="text-sm">AWS, Azure, GCP</p>
+                                </div>
+                            </div>
+                            <h2 class="text-2xl font-bold text-gray-900" id="webmob-advantage">The WebMob Technologies
+                                Advantage</h2>
+                            <p>At WebMob Technologies, we specialize in creating custom food ordering systems that drive
+                                profitability and growth for restaurants. We don’t just build apps; we build business
+                                solutions. Our team of experienced foodtech developers works with you to understand your
+                                unique brand, operational needs, and business goals. We provide a clear, detailed
+                                estimate of your “restaurant app development cost” and guide you through every stage of
+                                the process—from initial discovery and MVP development to launch and ongoing support.
+                            </p>
+                        </section>
 
-<section id="key-features" class="mb-12 scroll-mt-8">
-    <h2 class="text-3xl font-bold text-gray-900 mb-4" id="custom-app-right">Is a Custom App
-        Right for Your Restaurant?
-    </h2>
-    <p>A custom app is a powerful tool, but it requires commitment. So, how do you know if it’s
-        the right move for your business?</p>
-    <div class="bg-blue-50 border-l-4 border-blue-500 p-6 mb-6 rounded-r-lg">
-        <ul class="space-y-2 text-gray-700">
-            <li>✓ AI-powered content generation</li>
-            <li>✓ Intelligent chatbots & assistants</li>
-            <li>✓ Code generation & automation</li>
-            <li>✓ Image & video generation</li>
-            <li>✓ Personalized recommendations</li>
-        </ul>
-    </div>
-    <p class="text-gray-700 leading-relaxed">
-        These capabilities allow businesses to reduce manual effort while improving accuracy and
-        creativity.
-    </p>
-    <h3 class="text-2xl font-bold text-gray-900" id="overcoming-hurdles">Overcoming the Hurdles:
-        What to Expect</h3>
-    <p>The journey involves more than just development. You’ll need to plan for the initial
-        investment. More importantly, you must have a strategy for marketing your new app. This
-        includes in-store signage, promoting it on social media, and training your staff to
-        encourage customers to use your direct channel. Finally, plan for ongoing maintenance
-        and updates, which highlights the need for a reliable development partner.</p>
-</section>
-
-<section id="technology-stack" class="mb-12 scroll-mt-8">
-    <h2 class="text-3xl font-bold text-gray-900 mb-4" id="partnering">Partnering for Success:
-        How to Build Your
-        Custom Ordering App</h2>
-    <p>Choosing the right development partner is the most critical step in this process. You
-        aren’t just buying a product; you’re enlisting a team to build a core piece of your
-        business infrastructure.</p>
-    <h3 class="text-2xl font-bold text-gray-900" id="finding-partner">Finding the Right Partner:
-        “Hire Foodtech
-        Developers”</h3>
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-        <div class="bg-gray-50 p-4 rounded-lg">
-            <h4 class="font-bold">AI Models</h4>
-            <p class="text-sm">GPT, Claude, Gemini, LLaMA</p>
-        </div>
-        <div class="bg-gray-50 p-4 rounded-lg">
-            <h4 class="font-bold">Backend</h4>
-            <p class="text-sm">Python, Node.js, .NET</p>
-        </div>
-        <div class="bg-gray-50 p-4 rounded-lg">
-            <h4 class="font-bold">Vector DB</h4>
-            <p class="text-sm">Pinecone, FAISS, Weaviate</p>
-        </div>
-        <div class="bg-gray-50 p-4 rounded-lg">
-            <h4 class="font-bold">Cloud</h4>
-            <p class="text-sm">AWS, Azure, GCP</p>
-        </div>
-    </div>
-    <h3 class="text-2xl font-bold text-gray-900" id="webmob-advantage">The WebMob Technologies
-        Advantage</h3>
-    <p>At WebMob Technologies, we specialize in creating custom food ordering systems that drive
-        profitability and growth for restaurants. We don’t just build apps; we build business
-        solutions. Our team of experienced foodtech developers works with you to understand your
-        unique brand, operational needs, and business goals. We provide a clear, detailed
-        estimate of your “restaurant app development cost” and guide you through every stage of
-        the process—from initial discovery and MVP development to launch and ongoing support.
-    </p>
-</section>
-
-<section id="development-process" class="mb-12 scroll-mt-8">
-    <h2 class="text-3xl font-bold text-gray-900 mb-4" id="conclusion">Conclusion: Reclaim Your
-        Plate – The
-        Future is Custom</h2>
-    <p>The choice between paying endless fees to third-party aggregators and investing in your
-        own digital asset is becoming clearer every day. A custom ordering app is not an
-        expense; it’s a strategic investment in your restaurant’s profitability, brand identity,
-        and long-term success. By taking control of your digital storefront, you gain
-        unparalleled customer insights, foster genuine loyalty, and secure your financial
-        future. You stop renting your customers and start owning the relationship. It’s time to
-        stop paying exorbitant fees that bleed your business dry. Start investing in a platform
-        that builds your brand and puts profits back where they belong—in your pocket.</p>
-    <div class="space-y-4">
-        <div class="border-l-4 border-blue-500 pl-4">
-            <h4 class="font-bold">Use Case Identification</h4>
-            <p class="text-gray-600">Identify high-impact AI opportunities.</p>
-        </div>
-        <div class="border-l-4 border-blue-500 pl-4">
-            <h4 class="font-bold">Model Selection</h4>
-            <p class="text-gray-600">Choose suitable LLMs or custom models.</p>
-        </div>
-        <div class="border-l-4 border-blue-500 pl-4">
-            <h4 class="font-bold">Integration</h4>
-            <p class="text-gray-600">Embed AI into existing systems.</p>
-        </div>
-    </div>
-</section>
-
-
-                        <!-- FAQ Section -->
-                        <section id="faq" class="mb-12 scroll-mt-8 px-4 md:px-8">
-                            <h1 class="text-3xl font-bold text-gray-900 mb-6">Frequently Asked Questions (FAQ)</h1>
+                        <!-- FAQ -->
+                        <section class="mb-4 scroll-mt-8 px-4 md:px-8">
+                            <h1 id="faq" class="text-3xl font-bold text-gray-900 mb-6">Frequently Asked Questions (FAQ)
+                            </h1>
                             <p class="text-gray-700 leading-relaxed mb-8">
                                 Key challenges include data privacy, hallucinations, bias, and regulatory compliance.
                             </p>
-
                             <div class="space-y-6">
                                 <div>
                                     <h2 id="q1" class="text-2xl font-semibold text-gray-900 mb-2">
@@ -540,9 +776,39 @@
                             </div>
                         </section>
 
-
-                        <section id="best-practices" class="mb-12 scroll-mt-8">
-                            <h2 class="text-3xl font-bold text-gray-900 mb-4">Best Practices</h2>
+                        <!-- Conclusion -->
+                        <section class="mb-4 scroll-mt-8 px-4 md:px-8">
+                            <h2 id="conclusion" class="text-3xl font-bold text-gray-900 mb-4">Conclusion</h2>
+                            <p class="text-gray-700 leading-relaxed">
+                                Generative AI is no longer optional — it is a strategic advantage for future-ready
+                                businesses.
+                            </p>
+                            <p>The choice between paying endless fees to third-party aggregators and investing in your
+                                own digital asset is becoming clearer every day. A custom ordering app is not an
+                                expense; it’s a strategic investment in your restaurant’s profitability, brand identity,
+                                and long-term success. By taking control of your digital storefront, you gain
+                                unparalleled customer insights, foster genuine loyalty, and secure your financial
+                                future. You stop renting your customers and start owning the relationship. It’s time to
+                                stop paying exorbitant fees that bleed your business dry. Start investing in a platform
+                                that builds your brand and puts profits back where they belong—in your pocket.</p>
+                            <div class="space-y-4">
+                                <div class="border-l-4 border-blue-500 pl-4">
+                                    <h4 class="font-bold">Use Case Identification</h4>
+                                    <p class="text-gray-600">Identify high-impact AI opportunities.</p>
+                                </div>
+                                <div class="border-l-4 border-blue-500 pl-4">
+                                    <h4 class="font-bold">Model Selection</h4>
+                                    <p class="text-gray-600">Choose suitable LLMs or custom models.</p>
+                                </div>
+                                <div class="border-l-4 border-blue-500 pl-4">
+                                    <h4 class="font-bold">Integration</h4>
+                                    <p class="text-gray-600">Embed AI into existing systems.</p>
+                                </div>
+                            </div>
+                        </section>
+                        <!-- Best Practices -->
+                        <section class="mb-4 scroll-mt-8 px-4 md:px-8">
+                            <h1 id="best-practices" class="text-3xl font-bold text-gray-900 mb-4">Best Practices</h1>
                             <div class="bg-yellow-50 border border-yellow-200 rounded-lg p-6">
                                 <p class="text-gray-700 leading-relaxed">
                                     Use human-in-the-loop validation, secure data pipelines, and continuous monitoring.
@@ -550,15 +816,7 @@
                             </div>
                         </section>
 
-                        <section id="conclusion" class="mb-12 scroll-mt-8">
-                            <h2 class="text-3xl font-bold text-gray-900 mb-4">Conclusion</h2>
-                            <p class="text-gray-700 leading-relaxed">
-                                Generative AI is no longer optional — it is a strategic advantage for future-ready
-                                businesses.
-                            </p>
-                        </section>
-
-                        <div class="pt-8 border-t border-gray-200">
+                        <div class="scroll-mt-8 px-4 md:px-8 py-8 border-t border-gray-200">
                             <div class="flex flex-wrap gap-2">
                                 <span class="px-3 py-1 bg-gray-100 rounded-full text-sm">Generative AI</span>
                                 <span class="px-3 py-1 bg-gray-100 rounded-full text-sm">AI Automation</span>
@@ -566,21 +824,19 @@
                                 <span class="px-3 py-1 bg-gray-100 rounded-full text-sm">LLM</span>
                             </div>
                         </div>
-
                     </div>
                 </article>
             </main>
             <!-- Right Sidebar - Contact Form -->
-            <aside>
+            <aside class="w-full max-w-md mx-auto">
                 <div class="sticky top-8">
-                    <div class="bg-blue-50 rounded-2xl shadow-md overflow-hidden">
+                    <div class="bg-blue-500 rounded-2xl shadow-xl overflow-hidden transition-all duration-300">
 
-                        <!-- Image Header -->
                         <div class="relative h-48">
                             <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=600" alt="Contact"
                                 class="w-full h-full object-cover">
 
-                            <div class="absolute inset-0 bg-gradient-to-t from-blue-900/70 to-transparent"></div>
+                            <div class="absolute inset-0 bg-gradient-to-t from-blue-600/90 to-transparent"></div>
 
                             <div class="absolute bottom-0 left-0 right-0 p-6">
                                 <h3 class="text-2xl font-bold text-white">Get in Touch</h3>
@@ -588,37 +844,39 @@
                             </div>
                         </div>
 
-                        <!-- Contact Form -->
-                        <div class="p-4">
-                            <form class="space-y-4">
+                        <div class="p-6">
+                            <form class="space-y-6">
 
-                                <!-- Name -->
-                                <input type="text" placeholder="Enter your name"
-                                    class="w-full px-4 py-2 bg-transparent text-blue-500 placeholder-blue-600 border-b-2 border-black/40 focus:border-white focus:ring-0 outline-none transition-all duration-300">
+                                <div class="relative">
+                                    <input type="text" placeholder="Enter your name"
+                                        class="w-full px-0 py-2 bg-transparent text-white placeholder-blue-100 border-b-2 border-white/40 focus:border-white focus:ring-0 outline-none transition-all duration-300">
+                                </div>
 
-                                <!-- Email -->
-                                <input type="email" placeholder="Enter your email"
-                                    class="w-full px-4 py-2 bg-transparent text-blue-500 placeholder-blue-600 border-b-2 border-black/40 focus:border-white focus:ring-0 outline-none transition-all duration-300">
+                                <div class="relative">
+                                    <input type="email" placeholder="Enter your email"
+                                        class="w-full px-0 py-2 bg-transparent text-white placeholder-blue-100 border-b-2 border-white/40 focus:border-white focus:ring-0 outline-none transition-all duration-300">
+                                </div>
 
-                                <!-- Phone -->
-                                <input type="tel" placeholder="Enter your phone"
-                                    class="w-full px-4 py-2 bg-transparent text-blue-500 placeholder-blue-600 border-b-2 border-black/40 focus:border-white focus:ring-0 outline-none transition-all duration-300">
+                                <div class="relative">
+                                    <input type="tel" placeholder="Enter your phone"
+                                        class="w-full px-0 py-2 bg-transparent text-white placeholder-blue-100 border-b-2 border-white/40 focus:border-white focus:ring-0 outline-none transition-all duration-300">
+                                </div>
 
-                                <!-- Message -->
-                                <textarea rows="3" placeholder="Your message here..."
-                                    class="w-full px-4 py-2 bg-transparent text-blue-500 placeholder-blue-600 resize-none border-b-2 border-black/40 focus:border-white focus:ring-0 outline-none transition-all duration-300"></textarea>
+                                <div class="relative">
+                                    <textarea rows="3" placeholder="Your message here..."
+                                        class="w-full px-0 py-2 bg-transparent text-white placeholder-blue-100 resize-none border-b-2 border-white/40 focus:border-white focus:ring-0 outline-none transition-all duration-300"></textarea>
+                                </div>
 
-                                <!-- Captcha + Submit -->
-                                <div class="flex items-center gap-3 whitespace-nowrap">
-                                    <span class="text-black font-medium">1 + 1 =</span>
+                                <div class="flex items-center gap-3 pt-2">
+                                    <div class="flex items-center gap-2 whitespace-nowrap">
+                                        <span class="text-white font-bold">1 + 1 =</span>
+                                        <input type="text" placeholder="?"
+                                            class="w-10 text-center px-0 py-1 bg-transparent text-white border-b-2 border-white focus:border-white focus:ring-0 outline-none transition-all">
+                                    </div>
 
-                                    <input type="text" placeholder="?" class="w-10 text-center px-2 py-2 bg-transparent text-blue-600
-                            border-b-2 border-white/50
-                            focus:border-white focus:ring-0 outline-none transition-all">
-
-                                    <button type="submit" class="ml-auto bg-blue-600 text-white font-semibold py-3 px-6 rounded-lg
-                            hover:bg-blue-600 shadow-md hover:shadow-lg
-                            transform hover:-translate-y-0.5 transition-all">
+                                    <button type="submit" class="ml-auto bg-white text-blue-600 font-bold py-2.5 px-6 rounded-lg
+                            hover:bg-blue-50 shadow-md hover:shadow-lg
+                            transform hover:-translate-y-0.5 active:translate-y-0 transition-all">
                                         Submit
                                     </button>
                                 </div>
@@ -630,7 +888,213 @@
             </aside>
         </div>
     </div>
+    <!-- Footer -->
+    <footer class="bg-white text-black">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-12  lg:py-16">
+            <!-- Main Footer Content -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
 
+                <!-- Brand Column -->
+                <div class="lg:col-span-1">
+                    <!-- Logo -->
+                    <div class="logo-icon text-4xl font-bold text-blue-500">
+                        <a href="index.html" class="flex items-center justify-start"
+                            aria-label="Shreyansh Padmani – AI Engineer & Software Developer">SP.</a>
+                    </div>
+
+                    <!-- Tagline -->
+                    <p class="text-gray-600 text-sm mb-6 leading-relaxed">
+                        We build your ideas blended with latest technologies, innovation & finest quality
+                    </p>
+
+                    <!-- Social Icons -->
+                    <div class="flex items-center space-x-4">
+                        <!-- Facebook -->
+                        <a href="#" class="text-gray-400 hover:text-blue-500 transition-colors">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                <path
+                                    d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
+                            </svg>
+                        </a>
+
+                        <!-- Instagram -->
+                        <a href="#" class="text-gray-400 hover:text-blue-500 transition-colors">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                <path
+                                    d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+                            </svg>
+                        </a>
+
+                        <!-- X (Twitter) -->
+                        <a href="#" class="text-gray-400 hover:text-blue-500 transition-colors">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                <path
+                                    d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+                            </svg>
+                        </a>
+
+                        <!-- GitHub -->
+                        <a href="#" class="text-gray-400 hover:text-blue-500 transition-colors">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                <path
+                                    d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
+                            </svg>
+                        </a>
+
+                        <!-- Dribbble -->
+                        <a href="#" class="text-gray-400 hover:text-blue-500 transition-colors">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                <path
+                                    d="M12 0C5.37 0 0 5.37 0 12s5.37 12 12 12 12-5.37 12-12S18.63 0 12 0zm7.83 9.24c-.28-.09-2.5-.83-5.06-.36.17.42.33.84.48 1.26 1.73-.22 3.44-.13 3.58-.12zm-1.28-3.58c.93 1.14 1.51 2.59 1.58 4.17-.17-.03-1.99-.4-3.83-.17-.11-.26-.22-.52-.33-.79-.07-.17-.15-.34-.23-.5 2-.81 2.88-1.98 2.81-2.71zM12 2.39c1.63 0 3.12.59 4.27 1.56-.06.07-.93 1.22-2.87 1.94-1.06-1.95-2.24-3.54-2.4-3.76.34-.05.68-.08 1-.08-.66-.06-1.32-.06-1.98.05zm-3.15.65c.16.22 1.34 1.81 2.41 3.75-3.04.81-5.73.8-6.01.8.52-1.99 1.89-3.65 3.6-4.55zM2.01 12v-.33c.27 0 3.31.03 6.61-.92.13.26.26.53.38.79-.08.02-.16.05-.24.08-3.32 1.08-5.13 4.04-5.23 4.19C2.65 14.83 2.01 13.48 2.01 12zm9.99 9.99c-1.44 0-2.78-.39-3.94-1.07.08-.14 1.44-2.41 5.06-3.7.02 0 .03-.01.05-.01.91 2.35 1.28 4.33 1.39 4.89-1.47.54-3.06.89-4.56.89zm6.15-1.33c-.08-.45-.42-2.31-1.28-4.64 1.64-.26 3.08.17 3.26.22-.24 1.47-.97 2.8-1.98 3.82v.6z" />
+                            </svg>
+                        </a>
+
+                        <!-- LinkedIn -->
+                        <a href="#" class="text-gray-400 hover:text-blue-500 transition-colors">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                <path
+                                    d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+                            </svg>
+                        </a>
+
+                        <!-- YouTube -->
+                        <a href="#" class="text-gray-400 hover:text-blue-500 transition-colors">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                <path
+                                    d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Services Column -->
+                <div>
+                    <h3
+                        class="flex items-center justify-start text-lg font-semibold mb-4 border-b border-gray-700 pb-2">
+                        SERVICES</h3>
+                    <ul class="space-y-3">
+                        <li class="flex items-center justify-start"><a href="#"
+                                class="text-gray-600 hover:text-blue-500 transition-colors text-sm">Web
+                                Development</a></li>
+                        <li class="flex items-center justify-start"><a href="#"
+                                class="text-gray-600 hover:text-blue-500 transition-colors text-sm">Mobile
+                                Development</a></li>
+                        <li class="flex items-center justify-start"><a href="#"
+                                class="text-gray-600 hover:text-blue-500 transition-colors text-sm">Product Design
+                                and Development</a></li>
+                        <li class="flex items-center justify-start"><a href="#"
+                                class="text-gray-600 hover:text-blue-500 transition-colors text-sm">DevOps
+                                Services</a></li>
+                        <li class="flex items-center justify-start"><a href="#"
+                                class="text-gray-600 hover:text-blue-500 transition-colors text-sm">Blockchain
+                                Services</a></li>
+                        <li class="flex items-center justify-start"><a href="#"
+                                class="text-gray-600 hover:text-blue-500 transition-colors text-sm">Q&A
+                                Services</a></li>
+                        <li class="flex items-center justify-start"><a href="#"
+                                class="text-gray-600 hover:text-blue-500 transition-colors text-sm">Hire Dedicated
+                                Developers</a></li>
+                        <li class="flex items-center justify-start"><a href="#"
+                                class="text-gray-600 hover:text-blue-500 transition-colors text-sm">Management & IT
+                                Consulting</a></li>
+                    </ul>
+                </div>
+
+                <!-- Tools & Tech Column -->
+                <div>
+                    <h3
+                        class="flex items-center justify-start text-lg font-semibold mb-4 border-b border-gray-700 pb-2">
+                        TOOLS & TECH</h3>
+                    <ul class="space-y-3">
+                        <li class="flex items-center justify-start"><a href="#"
+                                class="text-gray-600 hover:text-blue-500 transition-colors text-sm">Laravel
+                                Development Services</a></li>
+                        <li class="flex items-center justify-start"><a href="#"
+                                class="text-gray-600 hover:text-blue-500 transition-colors text-sm">React JS
+                                Development Services</a></li>
+                        <li class="flex items-center justify-start"><a href="#"
+                                class="text-gray-600 hover:text-blue-500 transition-colors text-sm">React Native
+                                Development</a></li>
+                        <li class="flex items-center justify-start"><a href="#"
+                                class="text-gray-600 hover:text-blue-500 transition-colors text-sm">Node Js
+                                Development Services</a></li>
+                        <li class="flex items-center justify-start"><a href="#"
+                                class="text-gray-600 hover:text-blue-500 transition-colors text-sm">Flutter App
+                                Development</a></li>
+                        <li class="flex items-center justify-start"><a href="#"
+                                class="text-gray-600 hover:text-blue-500 transition-colors text-sm">Django
+                                development services</a></li>
+                        <li class="flex items-center justify-start"><a href="#"
+                                class="text-gray-600 hover:text-blue-500 transition-colors text-sm">Python
+                                development services</a></li>
+                        <li class="flex items-center justify-start"><a href="#"
+                                class="text-gray-600 hover:text-blue-500 transition-colors text-sm">AWS Development
+                                Services</a></li>
+                    </ul>
+                </div>
+
+                <!-- Company Column -->
+                <div class="text-black">
+                    <h3
+                        class="flex items-center justify-start text-lg font-semibold mb-6 border-b border-gray-700 pb-2">
+                        Contact Us</h3>
+                    <ul class="space-y-4">
+
+                        <!-- Address -->
+                        <li class="flex items-center space-x-3 hover:text-blue-500 transition-colors">
+                            <div class="w-10 h-10 bg-[#F0F4FF] rounded-full flex items-center justify-center">
+                                <svg class="w-5 h-5 text-blue-500" fill="currentColor" viewBox="0 0 24 24">
+                                    <path
+                                        d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5S10.62 6.5 12 6.5s2.5 1.12 2.5 2.5S13.38 11.5 12 11.5z" />
+                                </svg>
+                            </div>
+                            <span class="text-sm">123 AI Street, Tech City, USA</span>
+                        </li>
+
+                        <!-- Phone -->
+                        <li class="flex items-center space-x-3 hover:text-blue-500 transition-colors">
+                            <div class="w-10 h-10 bg-[#F0F4FF] rounded-full flex items-center justify-center">
+                                <svg class="w-5 h-5 text-blue-500" fill="currentColor" viewBox="0 0 24 24">
+                                    <path
+                                        d="M6.62 10.79a15.053 15.053 0 006.59 6.59l2.2-2.2a1 1 0 011.11-.21c1.21.48 2.53.74 3.88.74a1 1 0 011 1v3.25a1 1 0 01-1 1C10.07 21.5 2.5 13.93 2.5 4a1 1 0 011-1H6.75a1 1 0 011 1c0 1.35.26 2.67.74 3.88.1.26.03.57-.21 1.11l-2.66 2.66z" />
+                                </svg>
+                            </div>
+                            <span class="text-sm">+1 (555) 123-4567</span>
+                        </li>
+
+                        <!-- Email -->
+                        <li class="flex items-center space-x-3 hover:text-blue-500 transition-colors">
+                            <div class="w-10 h-10 bg-[#F0F4FF] rounded-full flex items-center justify-center">
+                                <svg class="w-5 h-5 text-blue-500" fill="currentColor" viewBox="0 0 24 24">
+                                    <path
+                                        d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" />
+                                </svg>
+                            </div>
+                            <span class="text-sm">contact@aiagency.com</span>
+                        </li>
+
+                    </ul>
+                </div>
+
+
+            </div>
+        </div>
+
+        <!-- Bottom Bar -->
+        <div class="border-t border-gray-700">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+                <div class="flex  justify-center items-center space-y-4 md:space-y-0">
+                    <!-- Copyright -->
+                    <div class="text-center md:text-center">
+                        <p class="text-gray-400 text-sm">
+                            © 2026shreyans padmaniTech Solutions Pvt.Ltd. All Rights Reserved.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!--end Footer -->
 
     <!-- Scroll-based Active TOC Script -->
     <script>
