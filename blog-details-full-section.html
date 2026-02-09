@@ -33,7 +33,7 @@
                         <li class="nav-item relative group">
                             <div class="generate-btn inline-flex items-center gap-1.5 cursor-pointer"
                                 aria-haspopup="true" aria-expanded="false" tabindex="0">
-                                <svg class="icon mr-2 h-5 w-5" aria-hidden="true" focusable="false">
+                                <svg class="icon mr-2 h-7 w-7" aria-hidden="true" focusable="false">
                                     <path
                                         d="M5.16515 2.62145L5.8075 0.999247C5.83876 0.919722 5.9154 0.866699 6.00112 0.866699C6.08683 0.866699 6.16347 0.919722 6.19473 0.999247L6.83708 2.62145L8.44145 3.27094C8.5201 3.30254 8.57254 3.38003 8.57254 3.4667C8.57254 3.55337 8.5201 3.63085 8.44145 3.66246L6.83708 4.31195L6.19473 5.93415C6.16347 6.0147 6.08683 6.0667 6.00112 6.0667C5.9154 6.0667 5.83876 6.0147 5.8075 5.93415L5.16515 4.31195L3.56078 3.66246C3.48112 3.63085 3.42969 3.55337 3.42969 3.4667C3.42969 3.38003 3.48112 3.30254 3.56078 3.27094L5.16515 2.62145Z" />
                                     <path
@@ -95,7 +95,13 @@
                             <a href="blog.html" class="nav-link">Blog</a>
                         </li>
                         <li class="nav-item">
-                            <a href="case-studies.html" class="nav-link">Case Studies</a>
+                            <a href="case-studies.html" class="nav-link relative inline-block pr-4">
+                                Case Studies
+                                <span
+                                    class="absolute top-0 right-0 transform -translate-y-1/2 flex h-5 w-5 items-center justify-center rounded-full bg-blue-500 text-[10px] font-bold text-white shadow-sm ring-2 ring-white">
+                                    20
+                                </span>
+                            </a>
                         </li>
                     </ul>
 
@@ -304,45 +310,108 @@
                         <section id="introduction" class="mb-12 scroll-mt-8">
                             <h2 class="text-3xl font-bold text-gray-900 mb-4">Introduction</h2>
                             <p class="text-gray-700 leading-relaxed mb-4">
-                                The digital ordering boom has reshaped the restaurant industry. Platforms like Uber Eats, DoorDash, and Grubhub became essential lifelines, connecting hungry customers with their favorite local spots. This convenience, however, comes at a steep price. According to the National Restaurant Association, digital orders are a massive part of the market, but many owners are now questioning the long-term sustainability of the third-party model.
+                                The digital ordering boom has reshaped the restaurant industry. Platforms like Uber
+                                Eats, DoorDash, and Grubhub became essential lifelines, connecting hungry customers with
+                                their favorite local spots. This convenience, however, comes at a steep price. According
+                                to the National Restaurant Association, digital orders are a massive part of the market,
+                                but many owners are now questioning the long-term sustainability of the third-party
+                                model.
                             </p>
-                            <p class="text-gray-700 leading-relaxed mb-4">The hidden costs, relentless commission fees, and loss of brand control are creating a digital dilemma for restaurant owners. You’re busy serving great food, but a significant slice of your revenue is walking out the door with a delivery driver you don’t even employ.</p>
-                            <p class="text-gray-700 leading-relaxed">This reliance creates a dangerous dependency. You lose direct contact with your most loyal customers, handing over valuable data and the relationship itself to a tech giant. But there is a powerful alternative: developing your own custom ordering app. The core question is no longer if you need a digital presence, but how you control it. This article offers a deep dive into the return on investment (ROI) of a custom app, directly comparing it to aggregator fees and exploring the real “restaurant app development cost” as a long-term investment in your brand’s future.</p>
+                            <p class="text-gray-700 leading-relaxed mb-4">The hidden costs, relentless commission fees,
+                                and loss of brand control are creating a digital dilemma for restaurant owners. You’re
+                                busy serving great food, but a significant slice of your revenue is walking out the door
+                                with a delivery driver you don’t even employ.</p>
+                            <p class="text-gray-700 leading-relaxed">This reliance creates a dangerous dependency. You
+                                lose direct contact with your most loyal customers, handing over valuable data and the
+                                relationship itself to a tech giant. But there is a powerful alternative: developing
+                                your own custom ordering app. The core question is no longer if you need a digital
+                                presence, but how you control it. This article offers a deep dive into the return on
+                                investment (ROI) of a custom app, directly comparing it to aggregator fees and exploring
+                                the real “restaurant app development cost” as a long-term investment in your brand’s
+                                future.</p>
                         </section>
 
                         <section id="understanding-farm" class="mb-12 scroll-mt-8">
-                            <h2 class="text-3xl font-bold text-gray-900 mb-4">The Uber Eats Reality: Convenience at What Cost?</h2>
-                            <p class="text-gray-700 leading-relaxed mb-5">Partnering with a third-party aggregator feels like an easy win at first. You gain instant access to a massive user base and a ready-made delivery infrastructure. But once the orders start rolling in, the true cost of this convenience becomes painfully clear.</p>
-                            <h3 class="text-2xl font-bold text-gray-900 mb-5">Understanding the True Price of Third-Party Aggregators</h3>
-                            <p class="text-gray-700 leading-relaxed mb-3">The sticker price is just the beginning. These platforms nibble away at your profits from multiple angles, making it difficult to maintain healthy margins.</p>
-                            <p class="text-gray-700 leading-relaxed mb-3">Let’s look at a simple example. A customer places a $50 order through Uber Eats.</p>
-                            <p class="text-gray-700 leading-relaxed mb-3">You just lost $14.00, or 28% of your revenue, on one order before even accounting for your food and labor costs. This silent erosion of your brand and customer relationships is just as damaging. You don’t get your customer’s email or phone number. You can’t send them a special offer for their birthday. Uber Eats owns that relationship, not you. This is the convenience trap: a short-term boost in orders in exchange for long-term dependency and reduced profitability.</p>
+                            <h2 class="text-3xl font-bold text-gray-900 mb-4">The Uber Eats Reality: Convenience at What
+                                Cost?</h2>
+                            <p class="text-gray-700 leading-relaxed mb-5">Partnering with a third-party aggregator feels
+                                like an easy win at first. You gain instant access to a massive user base and a
+                                ready-made delivery infrastructure. But once the orders start rolling in, the true cost
+                                of this convenience becomes painfully clear.</p>
+                            <h3 class="text-2xl font-bold text-gray-900 mb-5">Understanding the True Price of
+                                Third-Party Aggregators</h3>
+                            <p class="text-gray-700 leading-relaxed mb-3">The sticker price is just the beginning. These
+                                platforms nibble away at your profits from multiple angles, making it difficult to
+                                maintain healthy margins.</p>
+                            <p class="text-gray-700 leading-relaxed mb-3">Let’s look at a simple example. A customer
+                                places a $50 order through Uber Eats.</p>
+                            <p class="text-gray-700 leading-relaxed mb-3">You just lost $14.00, or 28% of your revenue,
+                                on one order before even accounting for your food and labor costs. This silent erosion
+                                of your brand and customer relationships is just as damaging. You don’t get your
+                                customer’s email or phone number. You can’t send them a special offer for their
+                                birthday. Uber Eats owns that relationship, not you. This is the convenience trap: a
+                                short-term boost in orders in exchange for long-term dependency and reduced
+                                profitability.</p>
                             <img src="https://media.licdn.com/dms/image/v2/D4D12AQFVpIkrDtsHog/article-cover_image-shrink_720_1280/B4DZt.QrfWGgAI-/0/1767349862432?e=2147483647&v=beta&t=0uDmzzfCvHoEajFvRejARHbKhtp13Iiik-6kXkOdXjI"
                                 class="w-full h-64 object-cover rounded-xl mb-6">
-                             <h2 class="text-3xl font-bold text-gray-900 mb-4">Unpacking the Custom Ordering App: An Investment in Your Future</h2>
-                                <p class="text-gray-700 leading-relaxed mb-4">
-                                A custom ordering app is more than just a piece of software; it’s your restaurant’s dedicated digital storefront. It’s an asset you own and control completely.
+                            <h2 class="text-3xl font-bold text-gray-900 mb-4">Unpacking the Custom Ordering App: An
+                                Investment in Your Future</h2>
+                            <p class="text-gray-700 leading-relaxed mb-4">
+                                A custom ordering app is more than just a piece of software; it’s your restaurant’s
+                                dedicated digital storefront. It’s an asset you own and control completely.
                             </p>
-                            <p class="text-gray-700 leading-relaxed">Core functionalities often include: Branded Digital Menu: Your menu, your photos, your descriptions Secure Payment Gateway: Direct, secure payments into your account Order Management Dashboard: A central hub to track and manage incoming orders Customer Profiles: Let customers save their favorite orders and payment details Push Notifications: Send targeted promotions and updates directly to your customers’ phones Loyalty & Rewards Programs: Build repeat business with custom loyalty schemes Delivery & Pickup Options: Full control over your logistics and scheduling The most significant benefit is ownership. You control the branding, the customer experience, and most importantly, the data.</p>
-                            <h3 class="text-2xl font-bold text-white">What Exactly is a Custom Restaurant Ordering App?</h3>
+                            <p class="text-gray-700 leading-relaxed">Core functionalities often include: Branded Digital
+                                Menu: Your menu, your photos, your descriptions Secure Payment Gateway: Direct, secure
+                                payments into your account Order Management Dashboard: A central hub to track and manage
+                                incoming orders Customer Profiles: Let customers save their favorite orders and payment
+                                details Push Notifications: Send targeted promotions and updates directly to your
+                                customers’ phones Loyalty & Rewards Programs: Build repeat business with custom loyalty
+                                schemes Delivery & Pickup Options: Full control over your logistics and scheduling The
+                                most significant benefit is ownership. You control the branding, the customer
+                                experience, and most importantly, the data.</p>
+                            <h3 class="text-2xl font-bold text-white">What Exactly is a Custom Restaurant Ordering App?
+                            </h3>
                             <p class="text-gray-700 leading-relaxed">
-                                A custom app is a mobile or web-based platform built specifically for your brand. It’s a direct channel between you and your customers, free from the noise and competition of third-party marketplaces.
+                                A custom app is a mobile or web-based platform built specifically for your brand. It’s a
+                                direct channel between you and your customers, free from the noise and competition of
+                                third-party marketplaces.
                             </p>
-                            <h3 class="text-2xl font-bold text-white">The “Elephant in the Room”: Demystifying “Restaurant App Development Cost”</h3>
-                            <p class="text-gray-700 leading-relaxed">The primary hesitation for many restaurant owners is the upfront investment. Let’s demystify the “custom food ordering system price.” It’s not a one-size-fits-all number; it’s influenced by several factors.</p>
-                            <p class="text-gray-700 leading-relaxed">A realistic cost range for a quality MVP can start from $15,000 – $30,000, while more complex, feature-rich solutions can exceed $50,000. It’s crucial to view this as a capital investment—much like a new oven or dining room renovation—that pays for itself over time. To get it right, you need to “hire foodtech developers” who understand the unique challenges of the restaurant industry.</p>
-                            <p class="text-gray-700 leading-relaxed">When you move beyond the initial sticker shock, the long-term ROI of a custom app becomes incredibly compelling. The analysis isn’t just about saving on fees; it’s about building a more resilient and profitable business.</p>
-                            <p class="text-gray-700 leading-relaxed">When you move beyond the initial sticker shock, the long-term ROI of a custom app becomes incredibly compelling. The analysis isn’t just about saving on fees; it’s about building a more resilient and profitable business.</p>
+                            <h3 class="text-2xl font-bold text-white">The “Elephant in the Room”: Demystifying
+                                “Restaurant App Development Cost”</h3>
+                            <p class="text-gray-700 leading-relaxed">The primary hesitation for many restaurant owners
+                                is the upfront investment. Let’s demystify the “custom food ordering system price.” It’s
+                                not a one-size-fits-all number; it’s influenced by several factors.</p>
+                            <p class="text-gray-700 leading-relaxed">A realistic cost range for a quality MVP can start
+                                from $15,000 – $30,000, while more complex, feature-rich solutions can exceed $50,000.
+                                It’s crucial to view this as a capital investment—much like a new oven or dining room
+                                renovation—that pays for itself over time. To get it right, you need to “hire foodtech
+                                developers” who understand the unique challenges of the restaurant industry.</p>
+                            <p class="text-gray-700 leading-relaxed">When you move beyond the initial sticker shock, the
+                                long-term ROI of a custom app becomes incredibly compelling. The analysis isn’t just
+                                about saving on fees; it’s about building a more resilient and profitable business.</p>
+                            <p class="text-gray-700 leading-relaxed">When you move beyond the initial sticker shock, the
+                                long-term ROI of a custom app becomes incredibly compelling. The analysis isn’t just
+                                about saving on fees; it’s about building a more resilient and profitable business.</p>
                             <h3 class="text-2xl font-bold text-white">Financial Returns & Profit Retention</h3>
-                            <p class="text-gray-700 leading-relaxed">This is the most direct and measurable return. By eliminating commissions, you immediately boost your profit margin on every digital order.A Quick Comparison:</p>
-                            <p class="text-gray-700 leading-relaxed">Beyond savings, a custom app actively grows revenue. You can use push notifications to promote daily specials, driving an increased average order value (AOV). Integrated loyalty programs dramatically improve customer lifetime value (CLV) by encouraging repeat business.</p>
+                            <p class="text-gray-700 leading-relaxed">This is the most direct and measurable return. By
+                                eliminating commissions, you immediately boost your profit margin on every digital
+                                order.A Quick Comparison:</p>
+                            <p class="text-gray-700 leading-relaxed">Beyond savings, a custom app actively grows
+                                revenue. You can use push notifications to promote daily specials, driving an increased
+                                average order value (AOV). Integrated loyalty programs dramatically improve customer
+                                lifetime value (CLV) by encouraging repeat business.</p>
                             <h3 class="text-2xl font-bold text-white">Operational Efficiency & Streamlining</h3>
-                            <p>A well-built custom app integrates directly with your kitchen’s workflow. When connected to your POS system, orders appear instantly without staff needing to re-enter them from a separate tablet. This reduces human error, improves order accuracy, and speeds up your entire process from order placement to fulfillment.</p>
+                            <p>A well-built custom app integrates directly with your kitchen’s workflow. When connected
+                                to your POS system, orders appear instantly without staff needing to re-enter them from
+                                a separate tablet. This reduces human error, improves order accuracy, and speeds up your
+                                entire process from order placement to fulfillment.</p>
                         </section>
 
                         <section id="key-features" class="mb-12 scroll-mt-8">
-                            <h2 class="text-3xl font-bold text-gray-900 mb-4">Is a Custom App Right for Your Restaurant?</h2>
-                            <p>A custom app is a powerful tool, but it requires commitment. So, how do you know if it’s the right move for your business?</p>
+                            <h2 class="text-3xl font-bold text-gray-900 mb-4">Is a Custom App Right for Your Restaurant?
+                            </h2>
+                            <p>A custom app is a powerful tool, but it requires commitment. So, how do you know if it’s
+                                the right move for your business?</p>
                             <div class="bg-blue-50 border-l-4 border-blue-500 p-6 mb-6 rounded-r-lg">
                                 <ul class="space-y-2 text-gray-700">
                                     <li>✓ AI-powered content generation</li>
@@ -357,13 +426,21 @@
                                 creativity.
                             </p>
                             <h3 class="text-2xl font-bold text-white">Overcoming the Hurdles: What to Expect</h3>
-                            <p>The journey involves more than just development. You’ll need to plan for the initial investment. More importantly, you must have a strategy for marketing your new app. This includes in-store signage, promoting it on social media, and training your staff to encourage customers to use your direct channel. Finally, plan for ongoing maintenance and updates, which highlights the need for a reliable development partner.</p>
+                            <p>The journey involves more than just development. You’ll need to plan for the initial
+                                investment. More importantly, you must have a strategy for marketing your new app. This
+                                includes in-store signage, promoting it on social media, and training your staff to
+                                encourage customers to use your direct channel. Finally, plan for ongoing maintenance
+                                and updates, which highlights the need for a reliable development partner.</p>
                         </section>
 
                         <section id="technology-stack" class="mb-12 scroll-mt-8">
-                            <h2 class="text-3xl font-bold text-gray-900 mb-4">Partnering for Success: How to Build Your Custom Ordering App</h2>
-                            <p>Choosing the right development partner is the most critical step in this process. You aren’t just buying a product; you’re enlisting a team to build a core piece of your business infrastructure.</p>
-                            <h3 class="text-2xl font-bold text-white">Finding the Right Partner: “Hire Foodtech Developers”</h3>
+                            <h2 class="text-3xl font-bold text-gray-900 mb-4">Partnering for Success: How to Build Your
+                                Custom Ordering App</h2>
+                            <p>Choosing the right development partner is the most critical step in this process. You
+                                aren’t just buying a product; you’re enlisting a team to build a core piece of your
+                                business infrastructure.</p>
+                            <h3 class="text-2xl font-bold text-white">Finding the Right Partner: “Hire Foodtech
+                                Developers”</h3>
                             <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                                 <div class="bg-gray-50 p-4 rounded-lg">
                                     <h4 class="font-bold">AI Models</h4>
@@ -383,12 +460,26 @@
                                 </div>
                             </div>
                             <h3 class="text-2xl font-bold text-white">The WebMob Technologies Advantage</h3>
-                            <p>At WebMob Technologies, we specialize in creating custom food ordering systems that drive profitability and growth for restaurants. We don’t just build apps; we build business solutions. Our team of experienced foodtech developers works with you to understand your unique brand, operational needs, and business goals. We provide a clear, detailed estimate of your “restaurant app development cost” and guide you through every stage of the process—from initial discovery and MVP development to launch and ongoing support.</p>
+                            <p>At WebMob Technologies, we specialize in creating custom food ordering systems that drive
+                                profitability and growth for restaurants. We don’t just build apps; we build business
+                                solutions. Our team of experienced foodtech developers works with you to understand your
+                                unique brand, operational needs, and business goals. We provide a clear, detailed
+                                estimate of your “restaurant app development cost” and guide you through every stage of
+                                the process—from initial discovery and MVP development to launch and ongoing support.
+                            </p>
                         </section>
 
                         <section id="development-process" class="mb-12 scroll-mt-8">
-                            <h2 class="text-3xl font-bold text-gray-900 mb-4">Conclusion: Reclaim Your Plate – The Future is Custom</h2>
-                            <p>The choice between paying endless fees to third-party aggregators and investing in your own digital asset is becoming clearer every day. A custom ordering app is not an expense; it’s a strategic investment in your restaurant’s profitability, brand identity, and long-term success. By taking control of your digital storefront, you gain unparalleled customer insights, foster genuine loyalty, and secure your financial future. You stop renting your customers and start owning the relationship. It’s time to stop paying exorbitant fees that bleed your business dry. Start investing in a platform that builds your brand and puts profits back where they belong—in your pocket.</p>
+                            <h2 class="text-3xl font-bold text-gray-900 mb-4">Conclusion: Reclaim Your Plate – The
+                                Future is Custom</h2>
+                            <p>The choice between paying endless fees to third-party aggregators and investing in your
+                                own digital asset is becoming clearer every day. A custom ordering app is not an
+                                expense; it’s a strategic investment in your restaurant’s profitability, brand identity,
+                                and long-term success. By taking control of your digital storefront, you gain
+                                unparalleled customer insights, foster genuine loyalty, and secure your financial
+                                future. You stop renting your customers and start owning the relationship. It’s time to
+                                stop paying exorbitant fees that bleed your business dry. Start investing in a platform
+                                that builds your brand and puts profits back where they belong—in your pocket.</p>
                             <div class="space-y-4">
                                 <div class="border-l-4 border-blue-500 pl-4">
                                     <h4 class="font-bold">Use Case Identification</h4>
@@ -410,16 +501,36 @@
                             <p class="text-gray-700 leading-relaxed">
                                 Key challenges include data privacy, hallucinations, bias, and regulatory compliance.
                             </p>
-                            <h3 class="text-2xl font-bold text-white">Q1. How much commission does Uber Eats really take from restaurants?</h3>
-                            <p class="text-gray-700 leading-relaxed">A: Uber Eats commission fees vary by market and the services chosen, but they generally range from 15% for basic marketplace access to over 30% for plans that include delivery and marketing services.</p>
-                            <h3 class="text-2xl font-bold text-white">Q2. Is it cheaper for a restaurant to have its own delivery app?</h3>
-                            <p class="text-gray-700 leading-relaxed">A: While there is an upfront investment, it is almost always cheaper in the long run. By eliminating the 15-30% commission on every order, a restaurant with steady volume can recoup its investment quickly and enjoy significantly higher profit margins thereafter.</p>
-                            <h3 class="text-2xl font-bold text-white">Q3. What is the average cost to build a simple restaurant app?</h3>
-                            <p class="text-gray-700 leading-relaxed">A: A simple, high-quality restaurant app (an MVP or Minimum Viable Product) with core features like a menu, ordering, and payments can cost between $15,000 and $30,000. The price increases with more advanced features like POS integration, loyalty programs, and support for multiple platforms (iOS and Android).</p>
-                            <h3 class="text-2xl font-bold text-white">Q4. How can I convince my existing customers to use my new app instead of Uber Eats?</h3>
-                            <p class="text-gray-700 leading-relaxed">A: Incentivize them! Offer an exclusive discount on their first in-app order, create an app-only loyalty program, and ensure the ordering process is smooth and easy. Promote the app heavily in-store, on your website, and through your social media channels.</p>
-                            <h3 class="text-2xl font-bold text-white">Q5. What is the difference between a custom app and a white-label solution?</h3>
-                            <p class="text-gray-700 leading-relaxed">A: A white-label solution is a pre-built, generic app that is rebranded with your logo. It offers less flexibility and control. A custom app is built from the ground up specifically for your business, allowing for unique features, deeper integrations (like with your specific POS), and a brand experience that is 100% your own.</p>
+                            <h3 class="text-2xl font-bold text-white">Q1. How much commission does Uber Eats really take
+                                from restaurants?</h3>
+                            <p class="text-gray-700 leading-relaxed">A: Uber Eats commission fees vary by market and the
+                                services chosen, but they generally range from 15% for basic marketplace access to over
+                                30% for plans that include delivery and marketing services.</p>
+                            <h3 class="text-2xl font-bold text-white">Q2. Is it cheaper for a restaurant to have its own
+                                delivery app?</h3>
+                            <p class="text-gray-700 leading-relaxed">A: While there is an upfront investment, it is
+                                almost always cheaper in the long run. By eliminating the 15-30% commission on every
+                                order, a restaurant with steady volume can recoup its investment quickly and enjoy
+                                significantly higher profit margins thereafter.</p>
+                            <h3 class="text-2xl font-bold text-white">Q3. What is the average cost to build a simple
+                                restaurant app?</h3>
+                            <p class="text-gray-700 leading-relaxed">A: A simple, high-quality restaurant app (an MVP or
+                                Minimum Viable Product) with core features like a menu, ordering, and payments can cost
+                                between $15,000 and $30,000. The price increases with more advanced features like POS
+                                integration, loyalty programs, and support for multiple platforms (iOS and Android).</p>
+                            <h3 class="text-2xl font-bold text-white">Q4. How can I convince my existing customers to
+                                use my new app instead of Uber Eats?</h3>
+                            <p class="text-gray-700 leading-relaxed">A: Incentivize them! Offer an exclusive discount on
+                                their first in-app order, create an app-only loyalty program, and ensure the ordering
+                                process is smooth and easy. Promote the app heavily in-store, on your website, and
+                                through your social media channels.</p>
+                            <h3 class="text-2xl font-bold text-white">Q5. What is the difference between a custom app
+                                and a white-label solution?</h3>
+                            <p class="text-gray-700 leading-relaxed">A: A white-label solution is a pre-built, generic
+                                app that is rebranded with your logo. It offers less flexibility and control. A custom
+                                app is built from the ground up specifically for your business, allowing for unique
+                                features, deeper integrations (like with your specific POS), and a brand experience that
+                                is 100% your own.</p>
                         </section>
 
                         <section id="best-practices" class="mb-12 scroll-mt-8">
@@ -474,16 +585,20 @@
                             <form class="space-y-4">
 
                                 <!-- Name -->
-                                <input type="text" placeholder="Enter your name" class="w-full px-4 py-2 bg-transparent text-blue-500 placeholder-blue-600 border-b-2 border-white/40 focus:border-white focus:ring-0 outline-none transition-all duration-300">
+                                <input type="text" placeholder="Enter your name"
+                                    class="w-full px-4 py-2 bg-transparent text-blue-500 placeholder-blue-600 border-b-2 border-white/40 focus:border-white focus:ring-0 outline-none transition-all duration-300">
 
                                 <!-- Email -->
-                                <input type="email" placeholder="Enter your email" class="w-full px-4 py-2 bg-transparent text-blue-500 placeholder-blue-600 border-b-2 border-white/40 focus:border-white focus:ring-0 outline-none transition-all duration-300">
+                                <input type="email" placeholder="Enter your email"
+                                    class="w-full px-4 py-2 bg-transparent text-blue-500 placeholder-blue-600 border-b-2 border-white/40 focus:border-white focus:ring-0 outline-none transition-all duration-300">
 
                                 <!-- Phone -->
-                                <input type="tel" placeholder="Enter your phone" class="w-full px-4 py-2 bg-transparent text-blue-500 placeholder-blue-600 border-b-2 border-white/40 focus:border-white focus:ring-0 outline-none transition-all duration-300">
+                                <input type="tel" placeholder="Enter your phone"
+                                    class="w-full px-4 py-2 bg-transparent text-blue-500 placeholder-blue-600 border-b-2 border-white/40 focus:border-white focus:ring-0 outline-none transition-all duration-300">
 
                                 <!-- Message -->
-                                <textarea rows="3" placeholder="Your message here..." class="w-full px-4 py-2 bg-transparent text-blue-500 placeholder-blue-600 resize-none border-b-2 border-white/40 focus:border-white focus:ring-0 outline-none transition-all duration-300"></textarea>
+                                <textarea rows="3" placeholder="Your message here..."
+                                    class="w-full px-4 py-2 bg-transparent text-blue-500 placeholder-blue-600 resize-none border-b-2 border-white/40 focus:border-white focus:ring-0 outline-none transition-all duration-300"></textarea>
 
                                 <!-- Captcha + Submit -->
                                 <div class="flex items-center gap-3 whitespace-nowrap">
