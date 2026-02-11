@@ -748,6 +748,10 @@ video {
   top: 5rem;
 }
 
+.top-24 {
+  top: 6rem;
+}
+
 .top-3 {
   top: 0.75rem;
 }
@@ -770,10 +774,6 @@ video {
 
 .top-auto {
   top: auto;
-}
-
-.top-24 {
-  top: 6rem;
 }
 
 .z-0 {
@@ -1114,8 +1114,8 @@ video {
   height: 280px;
 }
 
-.h-\[350px\] {
-  height: 350px;
+.h-\[300px\] {
+  height: 300px;
 }
 
 .h-\[60px\] {
