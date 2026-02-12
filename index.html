@@ -12,6 +12,45 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <link rel="stylesheet" href="./assets/css/dev-style.css">
     <link rel="stylesheet" href="./assets/css/tailwind.css">
+<style>
+/* Hide all slides */
+.testimonial-slide {
+    display: none;
+}
+
+/* Show active slide */
+#slide1:checked ~ .testimonial-content #content1,
+#slide2:checked ~ .testimonial-content #content2,
+#slide3:checked ~ .testimonial-content #content3 {
+    display: block;
+}
+
+/* Navigation logic */
+
+/* Default hide all */
+.prev-1, .prev-2, .prev-3,
+.next-1, .next-2, .next-3 {
+    display: none;
+}
+
+/* When slide1 active */
+#slide1:checked ~ .testimonial-nav .prev-1,
+#slide1:checked ~ .testimonial-nav .next-1 {
+    display: flex;
+}
+
+/* When slide2 active */
+#slide2:checked ~ .testimonial-nav .prev-2,
+#slide2:checked ~ .testimonial-nav .next-2 {
+    display: flex;
+}
+
+/* When slide3 active */
+#slide3:checked ~ .testimonial-nav .prev-3,
+#slide3:checked ~ .testimonial-nav .next-3 {
+    display: flex;
+}
+</style>
 
 </head>
 
@@ -787,19 +826,17 @@
                             AI Chatbot Platform
                         </h3>
 
-                        <p class="text-left text-base font-normal leading-relaxed mb-4">
+                        <p class="text-left text-base font-normal leading-relaxed">
                             Developed an intelligent AI chatbot that handles customer queries, automates support,
                             and learns from interactions over time.
                         </p>
-
-                        <ul class="list-disc pl-5 space-y-2 text-base font-normal leading-relaxed text-gray-600">
-                            <li>Natural Language Understanding</li>
-                            <li>Multi-platform support</li>
-                            <li>Sentiment analysis integration</li>
-                            <li>Real-time conversation logging</li>
-                            <li>Adaptive learning engine</li>
-                        </ul>
-
+                        <div class="flex justify-end">
+                            <a href="generative-ai-development-services.html" class="group-hover:bg-white bg-blue-600 text-white p-3 rounded-full shadow-lg transition transform hover:scale-110" aria-label="Explore Generative AI services">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 group-hover:text-blue-600 rotate-[336deg]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
+                                </svg>
+                            </a>
+                        </div>
                     </a>
                 </article>
 
@@ -820,19 +857,17 @@
                             AI Image Recognition
                         </h3>
 
-                        <p class="text-left text-base font-normal leading-relaxed mb-4">
+                        <p class="text-left text-base font-normal leading-relaxed">
                             Implemented a computer vision system that detects objects and anomalies in images
                             for industrial and medical applications.
                         </p>
-
-                        <ul class="list-disc pl-5 space-y-2 text-base font-normal leading-relaxed text-gray-600">
-                            <li>Object detection & classification</li>
-                            <li>Medical image analysis</li>
-                            <li>Real-time video processing</li>
-                            <li>Drone & satellite integration</li>
-                            <li>TensorFlow & PyTorch powered</li>
-                        </ul>
-
+                        <div class="flex justify-end">
+                            <a href="generative-ai-development-services.html" class="group-hover:bg-white bg-blue-600 text-white p-3 rounded-full shadow-lg transition transform hover:scale-110" aria-label="Explore Generative AI services">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 group-hover:text-blue-600 rotate-[336deg]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
+                                </svg>
+                            </a>
+                        </div>
                     </a>
                 </article>
 
@@ -853,19 +888,17 @@
                             AI Predictive Analytics
                         </h3>
 
-                        <p class="text-left text-base font-normal leading-relaxed mb-4">
+                        <p class="text-left text-base font-normal leading-relaxed">
                             Built predictive models using machine learning to forecast trends, customer behavior,
                             and business outcomes with high accuracy.
                         </p>
-
-                        <ul class="list-disc pl-5 space-y-2 text-base font-normal leading-relaxed text-gray-600">
-                            <li>Sales trend prediction</li>
-                            <li>Customer behavior modeling</li>
-                            <li>Demand forecasting</li>
-                            <li>Energy consumption analysis</li>
-                            <li>Python & R based models</li>
-                        </ul>
-
+                        <div class="flex justify-end">
+                            <a href="generative-ai-development-services.html" class="group-hover:bg-white bg-blue-600 text-white p-3 rounded-full shadow-lg transition transform hover:scale-110" aria-label="Explore Generative AI services">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 group-hover:text-blue-600 rotate-[336deg]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
+                                </svg>
+                            </a>
+                        </div>
                     </a>
                 </article>
 
@@ -1247,7 +1280,7 @@
 
                 <!-- Left Section -->
                 <div class="p-12 lg:p-14  relative overflow-hidden"
-                    style="background-image: url(./assets/image/testimonial-bg-img.webp);">
+                    style="background-image: url(./assets/image/model-bg.png);">
                     <!-- Background decoration -->
                     <div class="absolute top-0 right-0 w-full h-full opacity-10">
                         <div
@@ -1338,25 +1371,38 @@
                             </div>
 
                             <!-- Navigation Arrows -->
-                            <div class="testimonial-nav flex gap-4 justify-end mt-5">
-                                <label for="slide3"
-                                    class="nav-label w-10 h-10 bg-white bg-opacity-10 border border-white border-opacity-30 rounded-full items-center justify-center cursor-pointer hover:bg-opacity-20 transition text-white">
-                                    ←
-                                </label>
-                                <label for="slide1"
-                                    class="nav-label w-10 h-10 bg-white bg-opacity-10 border border-white border-opacity-30 rounded-full items-center justify-center cursor-pointer hover:bg-opacity-20 transition text-white">
-                                    ←
-                                </label>
-                                <label for="slide2"
-                                    class="nav-label w-10 h-10 bg-white bg-opacity-10 border border-white border-opacity-30 rounded-full items-center justify-center cursor-pointer hover:bg-opacity-20 transition text-white">
-                                    →
-                                </label>
+                            <!-- Navigation Arrows -->
+<div class="testimonial-nav flex gap-4 justify-end mt-5 relative">
 
-                            </div>
+    <!-- Prev Buttons -->
+    <label for="slide3"
+        class="prev-1 nav-label w-10 h-10 bg-white bg-opacity-10 border border-white border-opacity-30 rounded-full flex items-center justify-center cursor-pointer hover:bg-opacity-20 transition text-white">
+        ←
+    </label>
+
+    <label for="slide1"
+        class="prev-2 nav-label w-10 h-10 bg-white bg-opacity-10 border border-white border-opacity-30 rounded-full flex items-center justify-center cursor-pointer hover:bg-opacity-20 transition text-white hidden">
+        ←
+    </label>
+
+    
+
+    <label for="slide3"
+        class="next-2 nav-label w-10 h-10 bg-white bg-opacity-10 border border-white border-opacity-30 rounded-full flex items-center justify-center cursor-pointer hover:bg-opacity-20 transition text-white hidden">
+        →
+    </label>
+
+    <label for="slide1"
+        class="next-3 nav-label w-10 h-10 bg-white bg-opacity-10 border border-white border-opacity-30 rounded-full flex items-center justify-center cursor-pointer hover:bg-opacity-20 transition text-white hidden">
+        →
+    </label>
+
+</div>
+
                         </div>
 
-                        <p class="text-white text-opacity-95 mb-10">
-                            Start your <span class="font-semibold">5-day free trial</span> today.
+                        <p class="text-white text-opacity-95 mb-10 text-lg">
+                            Start your <span class="font-semibold">5-day free trial</span> .
                         </p>
                     </div>
                 </div>
