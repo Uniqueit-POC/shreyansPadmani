@@ -1563,36 +1563,54 @@
     </script> -->
 
     <script>
-       const headings = document.querySelectorAll('h1, h2');
+const headings = document.querySelectorAll('h1, h2');
 const tocLinks = document.querySelectorAll('.toc a');
 const progressBar = document.getElementById('pageProgress');
 
+let manualToggle = false; // 👈 important flag
+
+/* ================= TOGGLE CLICK ================= */
+
+document.querySelectorAll('.toggle').forEach(btn => {
+    btn.addEventListener('click', () => {
+
+        manualToggle = true;
+
+        const wrapper = btn.closest('.toc-item-wrapper');
+        const subMenu = wrapper.querySelector('ul');
+        const icon = btn.querySelector('svg');
+
+        if (!subMenu) return;
+
+        subMenu.classList.toggle('hidden');
+        icon.classList.toggle('rotate-90');
+
+        // allow scroll-spy again after short delay
+        setTimeout(() => manualToggle = false, 400);
+    });
+});
+
+
+/* ================= SCROLL ================= */
+
 window.addEventListener('scroll', () => {
 
-    /* =========================
-       PAGE PROGRESS
-    ========================== */
-
+    /* PAGE PROGRESS */
     const scrollTop = window.scrollY;
     const docHeight = document.documentElement.scrollHeight - window.innerHeight;
     const progress = (scrollTop / docHeight) * 100;
-
     progressBar.style.width = progress + "%";
 
+    /* STOP AUTO TOC WHEN USER JUST CLICKED */
+    if (manualToggle) return;
 
-    /* =========================
-       SCROLL SPY
-    ========================== */
-
+    /* SCROLL SPY */
     let current = null;
     const offset = window.innerHeight * 0.50;
 
     headings.forEach(heading => {
         const top = heading.getBoundingClientRect().top;
-
-        if (top <= offset) {
-            current = heading;
-        }
+        if (top <= offset) current = heading;
     });
 
     if (current) {
@@ -1602,24 +1620,38 @@ window.addEventListener('scroll', () => {
         const activeLink =
             document.querySelector(`.toc a[href="#${current.id}"]`);
 
-        if (activeLink) activeLink.classList.add('active');
+        if (activeLink) {
 
-        document.querySelectorAll('.toc-item-wrapper ul')
-            .forEach(ul => ul.classList.add('hidden'));
+            activeLink.classList.add('active');
 
-        if (activeLink.closest('ul')) {
+            // CLOSE NON ACTIVE
+            document.querySelectorAll('.toc-item-wrapper').forEach(item => {
 
-            activeLink.closest('ul').classList.remove('hidden');
+                const sub = item.querySelector('ul');
+                const icon = item.querySelector('.toggle svg');
 
-            const parentBtn =
-                activeLink.closest('.toc-item-wrapper')
-                ?.querySelector('.toggle svg');
+                if (!item.contains(activeLink)) {
+                    sub?.classList.add('hidden');
+                    icon?.classList.remove('rotate-90');
+                }
+            });
 
-            if (parentBtn) parentBtn.classList.add('rotate-90');
+            // OPEN ACTIVE PARENT
+            const parentUL = activeLink.closest('ul');
+
+            if (parentUL) {
+                parentUL.classList.remove('hidden');
+
+                const parentIcon =
+                    activeLink.closest('.toc-item-wrapper')
+                    ?.querySelector('.toggle svg');
+
+                parentIcon?.classList.add('rotate-90');
+            }
         }
     }
-
 });
+
     </script>
 </body>
 
