@@ -329,6 +329,13 @@
         </div>
     </section>
     <!--end nav -->
+    <!-- PAGE PROGRESS BAR -->
+<div class="fixed top-0 left-0 w-full h-1 bg-gray-200 z-[9999]">
+    <div id="pageProgress"
+         class="h-full w-0 bg-blue-600 transition-all duration-150 ease-out">
+    </div>
+</div>
+
 
     <!-- Hero Banner with Breadcrumb -->
     <section
@@ -399,7 +406,7 @@
         <div class="w-full grid grid-cols-1 lg:grid-cols-[315px_1fr_267px] gap-6">
 
             <!-- Left Sidebar - Table of Contents -->
-            <aside class="hidden lg:block ">
+            <aside class="">
                 <div class="sticky top-8">
                     <div class="bg-white rounded-2xl shadow-md p-6 mb-6">
                         <h3 class="text-lg font-semibold mb-3">Table of Contents</h3>
@@ -415,7 +422,7 @@
                                         </svg>
                                     </button>
                                     <a href="#introduction"
-                                        class="toc-item text-sm text-left flex-1 p-0.5 rounded transition-colors duration-200 text-gray-700 hover:text-blue-500 hover:bg-gray-100">Introduction</a>
+                                        class="toc-item text-left flex-1 p-0.5 rounded transition-colors duration-200 text-gray-700 hover:text-blue-500 hover:bg-gray-100">Introduction</a>
                                 </div>
                             </li>
 
@@ -430,23 +437,23 @@
                                         </svg>
                                     </button>
                                     <a href="#Most-Chatbots"
-                                        class="toc-item text-sm text-left flex-1 p-0.5 rounded transition-colors duration-200 text-gray-700 hover:text-blue-500 hover:bg-gray-100 ">Why Most Chatbots Fail to Impress (And Often Annoy)</a>
+                                        class="toc-item text-left flex-1 p-0.5 rounded transition-colors duration-200 text-gray-700 hover:text-blue-500 hover:bg-gray-100 ">Why Most Chatbots Fail to Impress (And Often Annoy)</a>
                                 </div>
                                 <ul class="ml-6 mt-1 space-y-1 hidden">
                                     <li><a href="#Project-Complexity-Scope"
-                                            class="toc-subitem text-left w-full p-0.5 rounded transition-colors duration-200 text-gray-600 hover:text-blue-500 hover:bg-gray-100 text-[13px]">
+                                            class="toc-subitem text-left w-full p-0.5 rounded transition-colors duration-200 text-gray-600 hover:text-blue-500 hover:bg-gray-100">
                                             1. Lack of Context and Memory</a></li>
                                     <li><a href="#Core-Features-Functionality"
-                                            class="toc-subitem text-left w-full p-0.5 rounded transition-colors duration-200 text-gray-600 hover:text-blue-500 hover:bg-gray-100 text-[13px]">
+                                            class="toc-subitem text-left w-full p-0.5 rounded transition-colors duration-200 text-gray-600 hover:text-blue-500 hover:bg-gray-100">
                                            2. Robotic, Impersonal Interactions</a></li>
                                     <li><a href="#User-Interface-Experience"
-                                            class="toc-subitem text-left w-full p-0.5 rounded transition-colors duration-200 text-gray-600 hover:text-blue-500 hover:bg-gray-100 text-[13px]">
+                                            class="toc-subitem text-left w-full p-0.5 rounded transition-colors duration-200 text-gray-600 hover:text-blue-500 hover:bg-gray-100">
                                            3. Inability to Handle Complexity (Escalation Failures)</a></li>
                                     <li><a href="#AI-Training-Data-Model-Development"
-                                            class="toc-subitem text-left w-full p-0.5 rounded transition-colors duration-200 text-gray-600 hover:text-blue-500 hover:bg-gray-100 text-[13px]">
+                                            class="toc-subitem text-left w-full p-0.5 rounded transition-colors duration-200 text-gray-600 hover:text-blue-500 hover:bg-gray-100">
                                             4. Poor Integration and Data Silos</a></li>
                                     <li><a href="#Maintenance-Updates-Hosting"
-                                            class="toc-subitem text-left w-full p-0.5 rounded transition-colors duration-200 text-gray-600 hover:text-blue-500 hover:bg-gray-100 text-[13px]">
+                                            class="toc-subitem text-left w-full p-0.5 rounded transition-colors duration-200 text-gray-600 hover:text-blue-500 hover:bg-gray-100">
                                            5. Over-automation without Human Oversight</a></li>
                                 </ul>
                             </li>
@@ -461,17 +468,17 @@
                                         </svg>
                                     </button>
                                     <a href="#Foundation-Understanding"
-                                        class="toc-item text-sm text-left flex-1 p-0.5 rounded transition-colors duration-200 text-gray-700 hover:text-blue-500 hover:bg-gray-100 ">The Foundation Understanding User Needs & Business Goals</a>
+                                        class="toc-item text-left flex-1 p-0.5 rounded transition-colors duration-200 text-gray-700 hover:text-blue-500 hover:bg-gray-100 ">The Foundation Understanding User Needs & Business Goals</a>
                                 </div>
                                 <ul class="ml-6 mt-1 space-y-1 hidden">
                                     <li><a href="#Defining-Your-Chatbot"
-                                            class="toc-subitem text-left w-full p-0.5 rounded transition-colors duration-200 text-gray-600 hover:text-blue-500 hover:bg-gray-100 text-[13px]">
+                                            class="toc-subitem text-left w-full p-0.5 rounded transition-colors duration-200 text-gray-600 hover:text-blue-500 hover:bg-gray-100">
                                             Defining Your Chatbot’s Purpose and Scope</a></li>
                                     <li><a href="#Identifying-Key-User"
-                                            class="toc-subitem text-left w-full p-0.5 rounded transition-colors duration-200 text-gray-600 hover:text-blue-500 hover:bg-gray-100 text-[13px]">
+                                            class="toc-subitem text-left w-full p-0.5 rounded transition-colors duration-200 text-gray-600 hover:text-blue-500 hover:bg-gray-100">
                                           Identifying Key User Journeys and Pain Points</a></li>
                                     <li><a href="#Setting-Measurable-KPIs"
-                                            class="toc-subitem text-left w-full p-0.5 rounded transition-colors duration-200 text-gray-600 hover:text-blue-500 hover:bg-gray-100 text-[13px]">
+                                            class="toc-subitem text-left w-full p-0.5 rounded transition-colors duration-200 text-gray-600 hover:text-blue-500 hover:bg-gray-100">
                                           Setting Measurable KPIs</a></li>
                                 </ul>
                             </li>
@@ -487,18 +494,18 @@
                                         </svg>
                                     </button>
                                     <a href="#Core-Pillars"
-                                        class="toc-item text-sm text-left flex-1 p-0.5 rounded transition-colors duration-200 text-gray-700 hover:text-blue-500 hover:bg-gray-100">Core Pillars of a Non-Annoying AI Chatbot</a>
+                                        class="toc-item text-left flex-1 p-0.5 rounded transition-colors duration-200 text-gray-700 hover:text-blue-500 hover:bg-gray-100">Core Pillars of a Non-Annoying AI Chatbot</a>
                                 </div>
                                 <ul class="ml-6 mt-1 space-y-1 hidden">
                                     <li><a href="#Advanced-Conversational-AI"
-                                            class="toc-subitem text-left w-full p-0.5 rounded transition-colors duration-200 text-gray-600 hover:text-blue-500 hover:bg-gray-100 text-[13px]">Advanced Conversational AI: Beyond Keywords</a>
+                                            class="toc-subitem text-left w-full p-0.5 rounded transition-colors duration-200 text-gray-600 hover:text-blue-500 hover:bg-gray-100">Advanced Conversational AI: Beyond Keywords</a>
                                     </li>
                                     <li><a href="#Robust-Knowledge-Base"
-                                            class="toc-subitem text-left w-full p-0.5 rounded transition-colors duration-200 text-gray-600 hover:text-blue-500 hover:bg-gray-100 text-[13px]">A Robust Knowledge Base Chatbot</a></li>
+                                            class="toc-subitem text-left w-full p-0.5 rounded transition-colors duration-200 text-gray-600 hover:text-blue-500 hover:bg-gray-100">A Robust Knowledge Base Chatbot</a></li>
                                     <li><a href="#Seamless-Human-Handoff"
-                                            class="toc-subitem text-left w-full p-0.5 rounded transition-colors duration-200 text-gray-600 hover:text-blue-500 hover:bg-gray-100 text-[13px]">Seamless Human Handoff (The Escape Hatch)</a></li>
+                                            class="toc-subitem text-left w-full p-0.5 rounded transition-colors duration-200 text-gray-600 hover:text-blue-500 hover:bg-gray-100">Seamless Human Handoff (The Escape Hatch)</a></li>
                                     <li><a href="#The-Power-of-Voice"
-                                            class="toc-subitem text-left w-full p-0.5 rounded transition-colors duration-200 text-gray-600 hover:text-blue-500 hover:bg-gray-100 text-[13px]">The Power of Voice: Voice Assistant Development Integration</a></li>
+                                            class="toc-subitem text-left w-full p-0.5 rounded transition-colors duration-200 text-gray-600 hover:text-blue-500 hover:bg-gray-100">The Power of Voice: Voice Assistant Development Integration</a></li>
                                 </ul>
                             </li>
                             <!-- 4. end Platform-Based vs. Custom-Built: Weighing Your Options -->
@@ -514,20 +521,20 @@
                                         </svg>
                                     </button>
                                     <a href="#Specific-Costs"
-                                        class="toc-item text-sm text-left flex-1 p-0.5 rounded transition-colors duration-200 text-gray-700 hover:text-blue-500 hover:bg-gray-100">Building Your Chatbot A Step-by-Step Approach with WebMob Technologies</a>
+                                        class="toc-item text-left flex-1 p-0.5 rounded transition-colors duration-200 text-gray-700 hover:text-blue-500 hover:bg-gray-100">Building Your Chatbot A Step-by-Step Approach with WebMob Technologies</a>
                                 </div>
                                 <ul class="ml-6 mt-1 space-y-1 hidden">
                                     <li><a href="#Discovery-Strategy"
-                                            class="toc-subitem text-left w-full p-0.5 rounded transition-colors duration-200 text-gray-600 hover:text-blue-500 hover:bg-gray-100 text-[13px]">Step 1: Discovery & Strategy</a>
+                                            class="toc-subitem text-left w-full p-0.5 rounded transition-colors duration-200 text-gray-600 hover:text-blue-500 hover:bg-gray-100">Step 1: Discovery & Strategy</a>
                                     </li>
                                     <li><a href="#Design-Development"
-                                            class="toc-subitem text-left w-full p-0.5 rounded transition-colors duration-200 text-gray-600 hover:text-blue-500 hover:bg-gray-100 text-[13px]">Step 2: Design & Development</a>
+                                            class="toc-subitem text-left w-full p-0.5 rounded transition-colors duration-200 text-gray-600 hover:text-blue-500 hover:bg-gray-100">Step 2: Design & Development</a>
                                     </li>
                                     <li><a href="#Testing-Iteration"
-                                            class="toc-subitem text-left w-full p-0.5 rounded transition-colors duration-200 text-gray-600 hover:text-blue-500 hover:bg-gray-100 text-[13px]">Step 3: Testing & Iteration</a>
+                                            class="toc-subitem text-left w-full p-0.5 rounded transition-colors duration-200 text-gray-600 hover:text-blue-500 hover:bg-gray-100">Step 3: Testing & Iteration</a>
                                     </li>
                                     <li><a href="#Deployment-Ongoing"
-                                            class="toc-subitem text-left w-full p-0.5 rounded transition-colors duration-200 text-gray-600 hover:text-blue-500 hover:bg-gray-100 text-[13px]">Step 4: Deployment & Ongoing Optimization</a>
+                                            class="toc-subitem text-left w-full p-0.5 rounded transition-colors duration-200 text-gray-600 hover:text-blue-500 hover:bg-gray-100">Step 4: Deployment & Ongoing Optimization</a>
                                     </li>
                                 </ul>
                             </li>
@@ -544,7 +551,7 @@
                                         </svg>
                                     </button>
                                     <a href="#Maximizing-ROI"
-                                        class="toc-item text-sm text-left flex-1 p-0.5 rounded transition-colors duration-200 text-gray-700 hover:text-blue-500 hover:bg-gray-100">Measuring Success Metrics That Matter</a>
+                                        class="toc-item text-left flex-1 p-0.5 rounded transition-colors duration-200 text-gray-700 hover:text-blue-500 hover:bg-gray-100">Measuring Success Metrics That Matter</a>
                                 </div>
                             </li>
                             <!-- 6. end Maximizing ROI: Why Your Investment in Custom AI Pays Off -->
@@ -560,7 +567,7 @@
                                         </svg>
                                     </button>
                                     <a href="#Partner-with-an-Expert"
-                                        class="toc-item text-sm text-left flex-1 p-0.5 rounded transition-colors duration-200 text-gray-700 hover:text-blue-500 hover:bg-gray-100">The Future of AI in Customer Service What’s Next?</a>
+                                        class="toc-item text-left flex-1 p-0.5 rounded transition-colors duration-200 text-gray-700 hover:text-blue-500 hover:bg-gray-100">The Future of AI in Customer Service What’s Next?</a>
                                 </div>
                             </li>
                             <!-- 7. end Partner with an Expert AI Customer Service Company: WebMob Technologies -->
@@ -575,8 +582,8 @@
                                                 d="M9 5l7 7-7 7" />
                                         </svg>
                                     </button>
-                                    <a href="#Your-Partner-in-Building"
-                                        class="toc-item text-sm text-left flex-1 p-0.5 rounded transition-colors duration-200 text-gray-700 hover:text-blue-500 hover:bg-gray-100">Your Partner in Building Better Bots</a>
+                                    <a href="#Your-Partner-Building"
+                                        class="toc-item text-left flex-1 p-0.5 rounded transition-colors duration-200 text-gray-700 hover:text-blue-500 hover:bg-gray-100">Your Partner in Building Better Bots</a>
                                 </div>
                             </li>
                             <!-- 8. end Conclusion: Your Journey to Intelligent Automation Starts Here -->
@@ -592,23 +599,23 @@
                                         </svg>
                                     </button>
                                     <a href="#faq"
-                                        class="toc-item text-sm text-left flex-1 p-0.5 rounded transition-colors duration-200 text-gray-700 hover:text-blue-500 hover:bg-gray-100">FAQs: Your Chatbot Questions Answered</a>
+                                        class="toc-item text-left flex-1 p-0.5 rounded transition-colors duration-200 text-gray-700 hover:text-blue-500 hover:bg-gray-100">FAQs: Your Chatbot Questions Answered</a>
                                 </div>
                                 <ul class="ml-6 mt-1 space-y-1 hidden">
                                     <li><a href="#q1"
-                                            class="toc-subitem text-left w-full p-0.5 rounded transition-colors duration-200 text-gray-600 hover:text-blue-500 hover:bg-gray-100 text-[13px]">Q1.
+                                            class="toc-subitem text-left w-full p-0.5 rounded transition-colors duration-200 text-gray-600 hover:text-blue-500 hover:bg-gray-100">Q1.
                                              How long does it take to build a custom customer service chatbot?</a></li>
                                     <li><a href="#q2"
-                                            class="toc-subitem text-left w-full p-0.5 rounded transition-colors duration-200 text-gray-600 hover:text-blue-500 hover:bg-gray-100 text-[13px]">Q2.
+                                            class="toc-subitem text-left w-full p-0.5 rounded transition-colors duration-200 text-gray-600 hover:text-blue-500 hover:bg-gray-100">Q2.
                                             What are the key factors influencing the cost of a chatbot?</a></li>
                                     <li><a href="#q3"
-                                            class="toc-subitem text-left w-full p-0.5 rounded transition-colors duration-200 text-gray-600 hover:text-blue-500 hover:bg-gray-100 text-[13px]">Q3.
+                                            class="toc-subitem text-left w-full p-0.5 rounded transition-colors duration-200 text-gray-600 hover:text-blue-500 hover:bg-gray-100">Q3.
                                             Can our existing knowledge base be used for a new chatbot?</a></li>
                                     <li><a href="#q4"
-                                            class="toc-subitem text-left w-full p-0.5 rounded transition-colors duration-200 text-gray-600 hover:text-blue-500 hover:bg-gray-100 text-[13px]">Q4.
+                                            class="toc-subitem text-left w-full p-0.5 rounded transition-colors duration-200 text-gray-600 hover:text-blue-500 hover:bg-gray-100">Q4.
                                             What is the difference between a simple chatbot and conversational AI?</a></li>
                                     <li><a href="#q5"
-                                            class="toc-subitem text-left w-full p-0.5 rounded transition-colors duration-200 text-gray-600 hover:text-blue-500 hover:bg-gray-100 text-[13px]">Q5.
+                                            class="toc-subitem text-left w-full p-0.5 rounded transition-colors duration-200 text-gray-600 hover:text-blue-500 hover:bg-gray-100">Q5.
                                             What makes WebMob Technologies the ideal partner for AI for customer service development?</a></li>
                                 </ul>
                             </li>
@@ -624,7 +631,7 @@
                                         </svg>
                                     </button>
                                     <a href="#best-practices"
-                                        class="toc-item text-sm text-left flex-1 p-0.5 rounded transition-colors duration-200 text-gray-700 hover:text-blue-500 hover:bg-gray-100">Best
+                                        class="toc-item text-left flex-1 p-0.5 rounded transition-colors duration-200 text-gray-700 hover:text-blue-500 hover:bg-gray-100">Best
                                         Practices</a>
                                 </div>
                             </li>
@@ -676,63 +683,11 @@
                 </div>
             </aside>
 
-             <!-- Mobile/Tablet Sticky TOC Accordion (Top of Screen after Hero) -->
-                    <div id="mobileTOC" class="relative block lg:hidden mobile-toc-sticky left-0 right-0 z-40 bg-white shadow-lg">
-                        <button id="mobileTOCToggle"
-                            class="w-full flex items-center justify-between px-4 sm:px-6 py-4 text-left">
-                            <div class="flex items-center gap-3">
-                                <svg class="w-5 h-5 text-blue-600" fill="none" stroke="currentColor"
-                                    viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                        d="M4 6h16M4 12h16M4 18h16" />
-                                </svg>
-                                <span class="text-base sm:text-lg font-semibold text-gray-900">Table of Contents</span>
-                            </div>
-                            <svg class="toc-toggle-arrow w-5 h-5 text-gray-600" fill="none" stroke="currentColor"
-                                viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M19 9l-7 7-7-7" />
-                            </svg>
-                        </button>
-
-                        <!-- Mobile TOC Content (Collapsible) -->
-                       <div id="mobileTOCContent" class="absolute left-0 right-0 top-full bg-white shadow-lg overflow-hidden transition-all duration-300 ease-in-out max-h-0 z-50">
-                            <div class="px-4 sm:px-6 pb-4 max-h-[70vh] overflow-y-auto">
-                                <ul class="space-y-1">
-                                    <li><a href="#introduction"
-                                            class="block text-sm py-2 px-3 rounded text-gray-700 hover:text-blue-500 hover:bg-gray-50 transition">Introduction</a>
-                                    </li>
-                                    <li><a href="#Most-Chatbots"
-                                            class="block text-sm py-2 px-3 rounded text-gray-700 hover:text-blue-500 hover:bg-gray-50 transition">Why Most Chatbots Fail to Impress (And Often Annoy)</a></li>
-                                    <li><a href="#Foundation-Understanding"
-                                            class="block text-sm py-2 px-3 rounded text-gray-700 hover:text-blue-500 hover:bg-gray-50 transition">The Foundation Understanding User Needs & Business Goals</a></li>
-                                    <li><a href="#Core-Pillars"
-                                            class="block text-sm py-2 px-3 rounded text-gray-700 hover:text-blue-500 hover:bg-gray-50 transition">Core Pillars of a Non-Annoying AI Chatbot</a></li>
-                                    <li><a href="#Specific-Costs"
-                                            class="block text-sm py-2 px-3 rounded text-gray-700 hover:text-blue-500 hover:bg-gray-50 transition">Building Your Chatbot A Step-by-Step Approach with WebMob Technologies</a></li>
-                                    <li><a href="#Maximizing-ROI"
-                                            class="block text-sm py-2 px-3 rounded text-gray-700 hover:text-blue-500 hover:bg-gray-50 transition">Measuring Success Metrics That Matter</a></li>
-                                    <li><a href="#Partner-with-an-Expert"
-                                            class="block text-sm py-2 px-3 rounded text-gray-700 hover:text-blue-500 hover:bg-gray-50 transition">The Future of AI in Customer Service What’s Next?</a></li>
-                                    <li><a href="#Your-Partner-in-Building"
-                                            class="block text-sm py-2 px-3 rounded text-gray-700 hover:text-blue-500 hover:bg-gray-50 transition">Your Partner in Building Better Bots</a>
-                                    </li>
-                                    <li><a href="#faq"
-                                            class="block text-sm py-2 px-3 rounded text-gray-700 hover:text-blue-500 hover:bg-gray-50 transition">FAQs: Your Chatbot Questions Answered</a>
-                                    </li>
-                                    <li><a href="#best-practices"
-                                            class="block text-sm py-2 px-3 rounded text-gray-700 hover:text-blue-500 hover:bg-gray-50 transition">Best
-                                            Practices</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-
             <!-- Main Content -->
             <main class="">
                 <article class="bg-white rounded-2xl shadow-md overflow-hidden">
 
-                    <div class="relative sm:h-96 overflow-hidden">
+                    <div class="relative h-96 overflow-hidden">
                         <img src="./assets/image/blog/how-to-build-an-ai-chatbot.png"
                             alt="Generative AI transforming industries and modern business processes" loading="lazy"
                             class="w-full h-full object-fill">
@@ -1087,7 +1042,7 @@
 
                             <!-- Partner with an Expert AI Customer Service Company: WebMob Technologies  -->
                             <div>
-                                <h2 class="text-3xl font-bold text-gray-900 my-6" id="Your-Partner-in-Building">
+                                <h2 class="text-3xl font-bold text-gray-900 my-6" id="Your-Partner-Building">
                                     Your Partner in Building Better Bots</h2>
                                 <p class="text-gray-700 leading-relaxed text-lg mb-3">Moving from a frustrating, robotic script to a truly helpful customer service chatbot is a journey of strategy, technology, and user-centric design. It requires a deep understanding of AI for customer service and a commitment to continuous improvement. When done right, a chatbot becomes a valuable asset that improves efficiency and makes customers happier.</p>
                                 <p class="text-gray-700 leading-relaxed text-lg mb-3">Ready to build a chatbot your users will thank you for? Partner with WebMob Technologies to create an intelligent, effective conversational AI solution tailored to your business.</p>
@@ -1381,7 +1336,7 @@
 
     <!-- Footer -->
     <footer class="bg-white text-black">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12  lg:py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-12  lg:py-16">
             <!-- Main Footer Content -->
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
 
@@ -1491,8 +1446,6 @@
                                 class="text-gray-600 hover:text-blue-500 transition-colors text-sm">Case Studies</a></li>
                         <li class="flex items-center justify-start"><a href="https://uniqueit-poc.github.io/shreyansPadmani/index.html#lets-talk"
                                 class="text-gray-600 hover:text-blue-500 transition-colors text-sm">Contact Us</a></li>
-                        <li class="flex items-center justify-start"><a  href="sitemap.html"
-                                class="text-gray-600 hover:text-blue-500 transition-colors text-sm">SiteMap</a></li>
                     </ul>
                 </div>
 
@@ -1559,8 +1512,115 @@
     </footer>
     <!--end Footer -->
 
-<script src="./assets/js/dev-script.js"></script>
-    
+
+    <!-- <script>
+        // TOGGLE SUB ITEMS
+        document.querySelectorAll('.toggle').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const currentItem = btn.closest('.toc-item-wrapper');
+                const sublist = currentItem.querySelector('ul');
+                const icon = btn.querySelector('svg');
+
+                const isHidden = sublist.classList.contains('hidden');
+
+                // Close all others
+                document.querySelectorAll('.toc-item-wrapper ul').forEach(ul => ul.classList.add('hidden'));
+                document.querySelectorAll('.toggle svg').forEach(svg => svg.classList.remove('rotate-90'));
+
+                if (isHidden) {
+                    sublist.classList.remove('hidden');
+                    icon.classList.add('rotate-90');
+                }
+            });
+        });
+
+        // SCROLL-SPY ACTIVE CLASS
+        const headings = document.querySelectorAll('h1, h2');
+        const tocLinks = document.querySelectorAll('.toc a');
+
+        window.addEventListener('scroll', () => {
+            let current = null;
+
+            headings.forEach(heading => {
+                const top = heading.getBoundingClientRect().top;
+                if (top <= 100) current = heading;
+            });
+
+            if (current) {
+                tocLinks.forEach(link => link.classList.remove('active'));
+                const activeLink = document.querySelector(`.toc a[href="#${current.id}"]`);
+                if (activeLink) activeLink.classList.add('active');
+
+                // Open parent ul if child active
+                document.querySelectorAll('.toc-item-wrapper ul').forEach(ul => ul.classList.add('hidden'));
+                if (activeLink.closest('ul')) {
+                    activeLink.closest('ul').classList.remove('hidden');
+                    const parentBtn = activeLink.closest('.toc-item-wrapper')?.querySelector('.toggle svg');
+                    if (parentBtn) parentBtn.classList.add('rotate-90');
+                }
+            }
+        });
+    </script> -->
+
+    <script>
+       const headings = document.querySelectorAll('h1, h2');
+const tocLinks = document.querySelectorAll('.toc a');
+const progressBar = document.getElementById('pageProgress');
+
+window.addEventListener('scroll', () => {
+
+    /* =========================
+       PAGE PROGRESS
+    ========================== */
+
+    const scrollTop = window.scrollY;
+    const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+    const progress = (scrollTop / docHeight) * 100;
+
+    progressBar.style.width = progress + "%";
+
+
+    /* =========================
+       SCROLL SPY
+    ========================== */
+
+    let current = null;
+    const offset = window.innerHeight * 0.50;
+
+    headings.forEach(heading => {
+        const top = heading.getBoundingClientRect().top;
+
+        if (top <= offset) {
+            current = heading;
+        }
+    });
+
+    if (current) {
+
+        tocLinks.forEach(link => link.classList.remove('active'));
+
+        const activeLink =
+            document.querySelector(`.toc a[href="#${current.id}"]`);
+
+        if (activeLink) activeLink.classList.add('active');
+
+        document.querySelectorAll('.toc-item-wrapper ul')
+            .forEach(ul => ul.classList.add('hidden'));
+
+        if (activeLink.closest('ul')) {
+
+            activeLink.closest('ul').classList.remove('hidden');
+
+            const parentBtn =
+                activeLink.closest('.toc-item-wrapper')
+                ?.querySelector('.toggle svg');
+
+            if (parentBtn) parentBtn.classList.add('rotate-90');
+        }
+    }
+
+});
+    </script>
 </body>
 
 </html>
