@@ -371,35 +371,38 @@ function handleScroll(sliderId, direction) {
 document.addEventListener("DOMContentLoaded", function () {
 
   const modal = document.getElementById("exitModal");
-
-  // Stop if modal does not exist on this page
   if (!modal) return;
 
-  /* =========================
-     Show Modal After 4 Sec
-  ========================== */
-
+  // SHOW AFTER 4 SEC (ONLY ONCE PER SESSION)
   window.addEventListener("load", function () {
     if (!sessionStorage.getItem("modalShown")) {
-      setTimeout(function () {
+      setTimeout(() => {
         modal.classList.add("active");
+        modal.classList.remove("hidden");
         sessionStorage.setItem("modalShown", "true");
       }, 4000);
     }
   });
 
-  /* =========================
-     Close Modal Function
-  ========================== */
-
+  // CLOSE FUNCTION
   function closeModal() {
     modal.classList.remove("active");
+    modal.classList.add("hidden");
   }
 
-  /* =========================
-     Form Submit
-  ========================== */
+  window.closeModal = closeModal;
 
+  // OUTSIDE CLICK CLOSE
+  modal.addEventListener("click", function (e) {
+    if (e.target === modal) closeModal();
+  });
+
+  // ESC CLOSE
+  document.addEventListener("keydown", function (e) {
+    if (e.key === "Escape") closeModal();
+  });
+
+  // FORM SUBMIT
   window.handleSubmit = function (event) {
     event.preventDefault();
     alert("Form submitted successfully!");
@@ -407,28 +410,7 @@ document.addEventListener("DOMContentLoaded", function () {
     return false;
   };
 
-  /* =========================
-     Close on Outside Click
-  ========================== */
-
-  modal.addEventListener("click", function (e) {
-    if (e.target === modal) {
-      closeModal();
-    }
-  });
-
-  /* =========================
-     Close on ESC Key
-  ========================== */
-
-  document.addEventListener("keydown", function (e) {
-    if (e.key === "Escape") {
-      closeModal();
-    }
-  });
-
 });
-
 // end home page auto open model
 
 // Our AI Development Process section
