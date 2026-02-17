@@ -47,9 +47,11 @@
                                     <path
                                         d="M4.60728 19.392L5.67703 16.6875C5.72997 16.5541 5.85854 16.4666 6.00056 16.4666C6.14258 16.4666 6.27031 16.5541 6.32325 16.6875L7.39299 19.392L10.0678 20.4736C10.1997 20.5271 10.2863 20.6563 10.2863 20.7999C10.2863 20.9435 10.1997 21.0735 10.0678 21.1271L7.39299 22.2087L6.32325 24.9123C6.27031 25.0457 6.14258 25.1332 6.00056 25.1332C5.85854 25.1332 5.72997 25.0457 5.67703 24.9123L4.60728 22.2087L1.93333 21.1271C1.8014 21.0735 1.71484 20.9435 1.71484 20.7999C1.71484 20.6563 1.8014 20.5271 1.93333 20.4736L4.60728 19.392Z" />
                                 </svg>
-                                <span class="relative text-blue-900 font-bold py-2 inline-block nav-link">
+                                <a href="index.html">
+                                    <span class="relative text-blue-900 font-bold py-2 inline-block nav-link">
                                     Expertise
                                 </span>
+                                </a>
                                 <!-- Chevron Icon -->
                                 <svg class="chevron-icon w-4 h-4 text-blue-900" fill="none" stroke="currentColor"
                                     viewBox="0 0 24 24">
@@ -122,6 +124,11 @@
                                     class="absolute top-0 right-0 transform -translate-y-1/2 flex h-5 w-5 items-center justify-center rounded-full bg-blue-500 text-[10px] font-bold text-white shadow-sm ring-2 ring-white">
                                     20
                                 </span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="faq.html" class="nav-link">
+                                FAQ'S
                             </a>
                         </li>
                     </ul>
@@ -719,7 +726,7 @@
                                     d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z">
                                 </path>
                             </svg>
-                            <span>NLP Models & APIs</span>
+                            <span>Platform Providers</span>
                             <svg class="w-5 h-5 ml-auto arrow" fill="none" stroke="currentColor" viewBox="0 0 24 24"
                                 aria-hidden="true" focusable="false">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -735,7 +742,7 @@
                                     d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4">
                                 </path>
                             </svg>
-                            <span>Vector Databases</span>
+                            <span>Software Providers</span>
                             <svg class="w-5 h-5 ml-auto arrow" fill="none" stroke="currentColor" viewBox="0 0 24 24"
                                 aria-hidden="true" focusable="false">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -751,7 +758,7 @@
                                     d="M4 5a1 1 0 011-1h4a1 1 0 011 1v7a1 1 0 01-1 1H5a1 1 0 01-1-1V5zM14 5a1 1 0 011-1h4a1 1 0 011 1v7a1 1 0 01-1 1h-4a1 1 0 01-1-1V5zM4 16a1 1 0 011-1h4a1 1 0 011 1v3a1 1 0 01-1 1H5a1 1 0 01-1-1v-3zM14 16a1 1 0 011-1h4a1 1 0 011 1v3a1 1 0 01-1 1h-4a1 1 0 01-1-1v-3z">
                                 </path>
                             </svg>
-                            <span>NLP Frameworks</span>
+                            <span>End Users</span>
                             <svg class="w-5 h-5 ml-auto arrow" fill="none" stroke="currentColor" viewBox="0 0 24 24"
                                 aria-hidden="true" focusable="false">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -766,7 +773,7 @@
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                     d="M13 10V3L4 14h7v7l9-11h-7z"></path>
                             </svg>
-                            <span>Deployment & MLOps</span>
+                            <span>Service Providers</span>
                             <svg class="w-5 h-5 ml-auto arrow" fill="none" stroke="currentColor" viewBox="0 0 24 24"
                                 aria-hidden="true" focusable="false">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -782,146 +789,261 @@
 
                     <!-- Models -->
                     <div id="models-content" class="tech-content active grid-cols-2 gap-4 lg:gap-6">
-                        <div class="tech-card bg-white rounded-2xl p-6 shadow-sm hover:shadow-md transition-shadow">
+                       <div class="tech-card bg-white-100 border border-gray-800 rounded-2xl p-6 shadow-sm hover:shadow-md transition-shadow">
                             <div class="flex items-center gap-4">
-                                <div
-                                    class="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center text-white font-bold text-sm">
-                                    BT
+                                <div class="w-12 h-12 flex items-center justify-center">
+                                    <div
+                                        class="w-12 h-12 p-2 rounded-lg flex items-center justify-center text-white font-bold text-sm">
+                                        <img src="./assets/image/icon/OpenAl.svg" alt="OpenAl">
+                                    </div>
                                 </div>
-                                <span class="text-lg font-semibold text-gray-800">BERT</span>
+                                <span class="text-lg font-semibold text-gray-800">OpenAl</span>
                             </div>
                         </div>
-
-                        <div class="tech-card bg-white rounded-2xl p-6 shadow-sm hover:shadow-md transition-shadow">
+                        <div class="tech-card bg-white-100 border border-gray-800 rounded-2xl p-6 shadow-sm hover:shadow-md transition-shadow">
                             <div class="flex items-center gap-4">
-                                <div
-                                    class="w-10 h-10 bg-purple-600 rounded-lg flex items-center justify-center text-white font-bold text-sm">
-                                    GPT
+                                <div class="w-12 h-12 flex items-center justify-center">
+                                    <div
+                                        class="w-12 h-12 p-2 rounded-lg flex items-center justify-center text-white font-bold text-sm">
+                                        <img src="./assets/image/icon/Hugging-Face-Transformers.svg" alt="Hugging-Face-Transformers">
+                                    </div>
                                 </div>
-                                <span class="text-lg font-semibold text-gray-800">Transformer Models</span>
+                                <span class="text-lg font-semibold text-gray-800">Hugging Face Transformers</span>
                             </div>
                         </div>
-
-                        <div class="tech-card bg-white rounded-2xl p-6 shadow-sm hover:shadow-md transition-shadow">
+                        <div class="tech-card bg-white-100 border border-gray-800 rounded-2xl p-6 shadow-sm hover:shadow-md transition-shadow">
                             <div class="flex items-center gap-4">
-                                <div
-                                    class="w-10 h-10 bg-blue-500 rounded-lg flex items-center justify-center text-white font-bold text-sm">
-                                    HF
+                                <div class="w-12 h-12 flex items-center justify-center">
+                                    <div
+                                        class="w-12 h-12 p-2 rounded-lg flex items-center justify-center text-white font-bold text-sm">
+                                        <img src="./assets/image/icon/wit-ai.svg" alt="wit.ai">
+                                    </div>
                                 </div>
-                                <span class="text-lg font-semibold text-gray-800">Hugging Face APIs</span>
+                                <span class="text-lg font-semibold text-gray-800">wit.ai</span>
                             </div>
                         </div>
-
-                        <div class="tech-card bg-white rounded-2xl p-6 shadow-sm hover:shadow-md transition-shadow">
+                        <div class="tech-card bg-white-100 border border-gray-800 rounded-2xl p-6 shadow-sm hover:shadow-md transition-shadow">
                             <div class="flex items-center gap-4">
-                                <div
-                                    class="w-10 h-10 bg-red-500 rounded-lg flex items-center justify-center text-white font-bold text-sm">
-                                    TX
+                                <div class="w-12 h-12 flex items-center justify-center">
+                                    <div
+                                        class="w-12 h-12 p-2 rounded-lg flex items-center justify-center text-white font-bold text-sm">
+                                        <img src="./assets/image/icon/IBM.svg" alt="IBM">
+                                    </div>
                                 </div>
-                                <span class="text-lg font-semibold text-gray-800">Text Generation Models</span>
+                                <span class="text-lg font-semibold text-gray-800">IBM</span>
+                            </div>
+                        </div>
+                        <div class="tech-card bg-white-100 border border-gray-800 rounded-2xl p-6 shadow-sm hover:shadow-md transition-shadow">
+                            <div class="flex items-center gap-4">
+                                <div class="w-12 h-12 flex items-center justify-center">
+                                    <div
+                                        class="w-12 h-12 p-2 rounded-lg flex items-center justify-center text-white font-bold text-sm">
+                                        <img src="./assets/image/icon/bitext.svg" alt="bitext">
+                                    </div>
+                                </div>
+                                <span class="text-lg font-semibold text-gray-800">bitext</span>
+                            </div>
+                        </div>
+                        <div class="tech-card bg-white-100 border border-gray-800 rounded-2xl p-6 shadow-sm hover:shadow-md transition-shadow">
+                            <div class="flex items-center gap-4">
+                                <div class="w-12 h-12 flex items-center justify-center">
+                                    <div
+                                        class="w-12 h-12 p-2 rounded-lg flex items-center justify-center text-white font-bold text-sm">
+                                        <img src="./assets/image/icon/MindMeld.svg" alt="MindMeld">
+                                    </div>
+                                </div>
+                                <span class="text-lg font-semibold text-gray-800">MindMeld</span>
                             </div>
                         </div>
                     </div>
 
                     <!-- Vector DBs -->
                     <div id="vector-content" class="tech-content grid-cols-2 gap-4 lg:gap-6">
-                        <div class="tech-card bg-white rounded-2xl p-6 shadow-sm hover:shadow-md transition-shadow">
+                        <div class="tech-card bg-white-100 border border-gray-800 rounded-2xl p-6 shadow-sm hover:shadow-md transition-shadow">
                             <div class="flex items-center gap-4">
-                                <div
-                                    class="w-10 h-10 bg-teal-500 rounded-lg flex items-center justify-center text-white font-bold text-sm">
-                                    F
+                                <div class="w-12 h-12 flex items-center justify-center">
+                                    <div
+                                        class="w-12 h-12 p-2 rounded-lg flex items-center justify-center text-white font-bold text-sm">
+                                        <img src="./assets/image/icon/3M.svg" alt="3M">
+                                    </div>
                                 </div>
-                                <span class="text-lg font-semibold text-gray-800">FAISS</span>
+                                <span class="text-lg font-semibold text-gray-800">3M</span>
                             </div>
                         </div>
-
-                        <div class="tech-card bg-white rounded-2xl p-6 shadow-sm hover:shadow-md transition-shadow">
+                        <div class="tech-card bg-white-100 border border-gray-800 rounded-2xl p-6 shadow-sm hover:shadow-md transition-shadow">
                             <div class="flex items-center gap-4">
-                                <div
-                                    class="w-10 h-10 bg-purple-600 rounded-lg flex items-center justify-center text-white font-bold text-sm">
-                                    M
+                                <div class="w-12 h-12 flex items-center justify-center">
+                                    <div
+                                        class="w-12 h-12 p-2 rounded-lg flex items-center justify-center text-white font-bold text-sm">
+                                        <img src="./assets/image/icon/Amenity-Analytics.svg" alt="Amenity-Analytics">
+                                    </div>
                                 </div>
-                                <span class="text-lg font-semibold text-gray-800">Milvus</span>
+                                <span class="text-lg font-semibold text-gray-800">Amenity Analytics</span>
+                            </div>
+                        </div>
+                        <div class="tech-card bg-white-100 border border-gray-800 rounded-2xl p-6 shadow-sm hover:shadow-md transition-shadow">
+                            <div class="flex items-center gap-4">
+                                <div class="w-12 h-12 flex items-center justify-center">
+                                    <div
+                                        class="w-12 h-12 p-2 rounded-lg flex items-center justify-center text-white font-bold text-sm">
+                                        <img src="./assets/image/icon/Lexalytics.svg" alt="Lexalytics">
+                                    </div>
+                                </div>
+                                <span class="text-lg font-semibold text-gray-800">Lexalytics</span>
+                            </div>
+                        </div>
+                        <div class="tech-card bg-white-100 border border-gray-800 rounded-2xl p-6 shadow-sm hover:shadow-md transition-shadow">
+                            <div class="flex items-center gap-4">
+                                <div class="w-12 h-12 flex items-center justify-center">
+                                    <div
+                                        class="w-12 h-12 p-2 rounded-lg flex items-center justify-center text-white font-bold text-sm">
+                                        <img src="./assets/image/icon/MonkeyLearn.svg" alt="MonkeyLearn">
+                                    </div>
+                                </div>
+                                <span class="text-lg font-semibold text-gray-800">Monkey Learn</span>
+                            </div>
+                        </div>
+                        <div class="tech-card bg-white-100 border border-gray-800 rounded-2xl p-6 shadow-sm hover:shadow-md transition-shadow">
+                            <div class="flex items-center gap-4">
+                                <div class="w-12 h-12 flex items-center justify-center">
+                                    <div
+                                        class="w-12 h-12 p-2 rounded-lg flex items-center justify-center text-white font-bold text-sm">
+                                        <img src="./assets/image/icon/inbenta.svg" alt="inbenta">
+                                    </div>
+                                </div>
+                                <span class="text-lg font-semibold text-gray-800">inbenta</span>
+                            </div>
+                        </div>
+                        <div class="tech-card bg-white-100 border border-gray-800 rounded-2xl p-6 shadow-sm hover:shadow-md transition-shadow">
+                            <div class="flex items-center gap-4">
+                                <div class="w-12 h-12 flex items-center justify-center">
+                                    <div
+                                        class="w-12 h-12 p-2 rounded-lg flex items-center justify-center text-white font-bold text-sm">
+                                        <img src="./assets/image/icon/rapidminer.svg" alt="rapidminer">
+                                    </div>
+                                </div>
+                                <span class="text-lg font-semibold text-gray-800">Rapidminer</span>
                             </div>
                         </div>
                     </div>
 
                     <!-- NLP Frameworks -->
                     <div id="frameworks-content" class="tech-content grid-cols-2 gap-4 lg:gap-6">
-                        <div class="tech-card bg-white rounded-2xl p-6 shadow-sm hover:shadow-md transition-shadow">
+                        <div class="tech-card bg-white-100 border border-gray-800 rounded-2xl p-6 shadow-sm hover:shadow-md transition-shadow">
                             <div class="flex items-center gap-4">
-                                <div
-                                    class="w-10 h-10 bg-green-500 rounded-lg flex items-center justify-center text-white font-bold text-sm">
-                                    NL
+                                <div class="w-12 h-12 flex items-center justify-center">
+                                    <div
+                                        class="w-12 h-12 p-2 rounded-lg flex items-center justify-center text-white font-bold text-sm">
+                                        <img src="./assets/image/icon/Apple.svg" alt="Apple">
+                                    </div>
                                 </div>
-                                <span class="text-lg font-semibold text-gray-800">NLTK</span>
+                                <span class="text-lg font-semibold text-gray-800">Apple</span>
                             </div>
                         </div>
-
-                        <div class="tech-card bg-white rounded-2xl p-6 shadow-sm hover:shadow-md transition-shadow">
+                        <div class="tech-card bg-white-100 border border-gray-800 rounded-2xl p-6 shadow-sm hover:shadow-md transition-shadow">
                             <div class="flex items-center gap-4">
-                                <div
-                                    class="w-10 h-10 bg-orange-500 rounded-lg flex items-center justify-center text-white font-bold text-sm">
-                                    SP
+                                <div class="w-12 h-12 flex items-center justify-center">
+                                    <div
+                                        class="w-12 h-12 p-2 rounded-lg flex items-center justify-center text-white font-bold text-sm">
+                                        <img src="./assets/image/icon/Twitter.svg" alt="Twitter">
+                                    </div>
                                 </div>
-                                <span class="text-lg font-semibold text-gray-800">spaCy</span>
+                                <span class="text-lg font-semibold text-gray-800">Twitter</span>
                             </div>
                         </div>
-
-                        <div class="tech-card bg-white rounded-2xl p-6 shadow-sm hover:shadow-md transition-shadow">
+                        <div class="tech-card bg-white-100 border border-gray-800 rounded-2xl p-6 shadow-sm hover:shadow-md transition-shadow">
                             <div class="flex items-center gap-4">
-                                <div
-                                    class="w-10 h-10 bg-blue-500 rounded-lg flex items-center justify-center text-white font-bold text-sm">
-                                    PT
+                                <div class="w-12 h-12 flex items-center justify-center">
+                                    <div
+                                        class="w-12 h-12 p-2 rounded-lg flex items-center justify-center text-white font-bold text-sm">
+                                        <img src="./assets/image/icon/Amazon.svg" alt="Amazon">
+                                    </div>
                                 </div>
-                                <span class="text-lg font-semibold text-gray-800">PyTorch</span>
+                                <span class="text-lg font-semibold text-gray-800">Amazon</span>
                             </div>
                         </div>
-
-                        <div class="tech-card bg-white rounded-2xl p-6 shadow-sm hover:shadow-md transition-shadow">
+                        <div class="tech-card bg-white-100 border border-gray-800 rounded-2xl p-6 shadow-sm hover:shadow-md transition-shadow">
                             <div class="flex items-center gap-4">
-                                <div
-                                    class="w-10 h-10 bg-red-500 rounded-lg flex items-center justify-center text-white font-bold text-sm">
-                                    TF
+                                <div class="w-12 h-12 flex items-center justify-center">
+                                    <div
+                                        class="w-12 h-12 p-2 rounded-lg flex items-center justify-center text-white font-bold text-sm">
+                                        <img src="./assets/image/icon/Google-OCR.svg" alt="Google-OCR">
+                                    </div>
                                 </div>
-                                <span class="text-lg font-semibold text-gray-800">TensorFlow</span>
+                                <span class="text-lg font-semibold text-gray-800">Google OCR</span>
+                            </div>
+                        </div>
+                        <div class="tech-card bg-white-100 border border-gray-800 rounded-2xl p-6 shadow-sm hover:shadow-md transition-shadow">
+                            <div class="flex items-center gap-4">
+                                <div class="w-12 h-12 flex items-center justify-center">
+                                    <div
+                                        class="w-12 h-12 p-2 rounded-lg flex items-center justify-center text-white font-bold text-sm">
+                                        <img src="./assets/image/icon/Meta.svg" alt="Meta">
+                                    </div>
+                                </div>
+                                <span class="text-lg font-semibold text-gray-800">Meta</span>
                             </div>
                         </div>
                     </div>
 
                     <!-- Deployment -->
                     <div id="deployment-content" class="tech-content grid-cols-2 gap-4 lg:gap-6">
-                        <div class="tech-card bg-white rounded-2xl p-6 shadow-sm hover:shadow-md transition-shadow">
+                        <div class="tech-card bg-white-100 border border-gray-800 rounded-2xl p-6 shadow-sm hover:shadow-md transition-shadow">
                             <div class="flex items-center gap-4">
-                                <div
-                                    class="w-10 h-10 bg-orange-500 rounded-lg flex items-center justify-center text-white font-bold text-sm">
-                                    AWS
+                                <div class="w-12 h-12 flex items-center justify-center">
+                                    <div
+                                        class="w-12 h-12 p-2 rounded-lg flex items-center justify-center text-white font-bold text-sm">
+                                        <img src="./assets/image/icon/wipro.svg" alt="wipro">
+                                    </div>
                                 </div>
-                                <span class="text-lg font-semibold text-gray-800">AWS</span>
+                                <span class="text-lg font-semibold text-gray-800">wipro</span>
                             </div>
                         </div>
-
-                        <div class="tech-card bg-white rounded-2xl p-6 shadow-sm hover:shadow-md transition-shadow">
+                        <div class="tech-card bg-white-100 border border-gray-800 rounded-2xl p-6 shadow-sm hover:shadow-md transition-shadow">
                             <div class="flex items-center gap-4">
-                                <div
-                                    class="w-10 h-10 bg-blue-600 rounded-lg flex items-center justify-center text-white font-bold text-sm">
-                                    D
+                                <div class="w-12 h-12 flex items-center justify-center">
+                                    <div
+                                        class="w-12 h-12 p-2 rounded-lg flex items-center justify-center text-white font-bold text-sm">
+                                        <img src="./assets/image/icon/NUANCE.svg" alt="NUANCE">
+                                    </div>
                                 </div>
-                                <span class="text-lg font-semibold text-gray-800">Docker</span>
+                                <span class="text-lg font-semibold text-gray-800">NUANCE</span>
                             </div>
                         </div>
-
-                        <div class="tech-card bg-white rounded-2xl p-6 shadow-sm hover:shadow-md transition-shadow">
+                        <div class="tech-card bg-white-100 border border-gray-800 rounded-2xl p-6 shadow-sm hover:shadow-md transition-shadow">
                             <div class="flex items-center gap-4">
-                                <div
-                                    class="w-10 h-10 bg-blue-500 rounded-lg flex items-center justify-center text-white font-bold text-sm">
-                                    K8
+                                <div class="w-12 h-12 flex items-center justify-center">
+                                    <div
+                                        class="w-12 h-12 p-2 rounded-lg flex items-center justify-center text-white font-bold text-sm">
+                                        <img src="./assets/image/icon/Infosys.svg" alt="Infosys">
+                                    </div>
                                 </div>
-                                <span class="text-lg font-semibold text-gray-800">Kubernetes</span>
+                                <span class="text-lg font-semibold text-gray-800">Infosys</span>
+                            </div>
+                        </div>
+                        <div class="tech-card bg-white-100 border border-gray-800 rounded-2xl p-6 shadow-sm hover:shadow-md transition-shadow">
+                            <div class="flex items-center gap-4">
+                                <div class="w-12 h-12 flex items-center justify-center">
+                                    <div
+                                        class="w-12 h-12 p-2 rounded-lg flex items-center justify-center text-white font-bold text-sm">
+                                        <img src="./assets/image/icon/Ssas.svg" alt="Ssas ">
+                                    </div>
+                                </div>
+                                <span class="text-lg font-semibold text-gray-800">Ssas </span>
+                            </div>
+                        </div>
+                        <div class="tech-card bg-white-100 border border-gray-800 rounded-2xl p-6 shadow-sm hover:shadow-md transition-shadow">
+                            <div class="flex items-center gap-4">
+                                <div class="w-12 h-12 flex items-center justify-center">
+                                    <div
+                                        class="w-12 h-12 p-2 rounded-lg flex items-center justify-center text-white font-bold text-sm">
+                                        <img src="./assets/image/icon/Microsoft.svg" alt="Microsoft">
+                                    </div>
+                                </div>
+                                <span class="text-lg font-semibold text-gray-800">Microsoft</span>
                             </div>
                         </div>
                     </div>
-
                 </div>
             </div>
         </div>
@@ -1257,9 +1379,9 @@
     <!--end faq section -->
 
     <!-- Let's Talk -->
-    <section class="py-16 min-h-screen flex items-center justify-center bg-blue-500" id="lets-talk">
+    <section class="px-4 sm:px-0 py-16 min-h-screen flex items-center justify-center bg-blue-500" id="lets-talk">
         <div
-            class="w-full px-1 sm:px-6 max-w-7xl lg:px-12 mx-auto rounded-xl shadow-2xl overflow-hidden bg-white pb-4 ">
+            class="w-full px-2 sm:px-6 max-w-7xl lg:px-12 mx-auto rounded-xl shadow-2xl overflow-hidden bg-white pb-4 ">
 
             <!-- GRID LAYOUT -->
             <div class="grid grid-cols-1 lg:grid-cols-[65%_35%]">

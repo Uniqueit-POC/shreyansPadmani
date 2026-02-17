@@ -695,41 +695,41 @@
     }
 
     /* Show active slide */
-    #slide1:checked~.testimonial-content #content1,
+    /* #slide1:checked~.testimonial-content #content1,
     #slide2:checked~.testimonial-content #content2,
     #slide3:checked~.testimonial-content #content3 {
         display: block;
-    }
+    } */
 
     /* Navigation logic */
 
     /* Default hide all */
-    .prev-1,
+    /* .prev-1,
     .prev-2,
     .prev-3,
     .next-1,
     .next-2,
     .next-3 {
         display: none;
-    }
+    } */
 
     /* When slide1 active */
-    #slide1:checked~.testimonial-nav .prev-1,
+    /* #slide1:checked~.testimonial-nav .prev-1,
     #slide1:checked~.testimonial-nav .next-1 {
         display: flex;
     }
 
     /* When slide2 active */
-    #slide2:checked~.testimonial-nav .prev-2,
+    /* #slide2:checked~.testimonial-nav .prev-2,
     #slide2:checked~.testimonial-nav .next-2 {
         display: flex;
-    }
+    } */
 
     /* When slide3 active */
-    #slide3:checked~.testimonial-nav .prev-3,
+    /* #slide3:checked~.testimonial-nav .prev-3,
     #slide3:checked~.testimonial-nav .next-3 {
         display: flex;
-    }
+    }  */
 
     .modal-overlay {
         display   : none;
@@ -755,7 +755,7 @@
     .testimonial-slide {
         display: none;
     }
-
+/* 
     #slide1:checked~.testimonial-content #content1,
     #slide2:checked~.testimonial-content #content2,
     #slide3:checked~.testimonial-content #content3 {
@@ -763,14 +763,14 @@
     }
 
     /* Navigation arrows styling */
-    #slide1:checked~.testimonial-nav label[for="slide3"],
+    /* #slide1:checked~.testimonial-nav label[for="slide3"],
     #slide1:checked~.testimonial-nav label[for="slide2"],
     #slide2:checked~.testimonial-nav label[for="slide1"],
     #slide2:checked~.testimonial-nav label[for="slide3"],
     #slide3:checked~.testimonial-nav label[for="slide2"],
     #slide3:checked~.testimonial-nav label[for="slide1"] {
         display: flex;
-    }
+    } */
 
     .nav-label {
         display: none;
@@ -986,3 +986,47 @@
         transform : rotate(90deg);
         transition: transform 0.2s;
     }
+            .line-preview {
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            display: inline;
+        }
+
+        .feature-badge { animation: pulse 2s infinite; }
+        @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.8; } }
+        
+        .glass-effect {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .modal-overlay {
+  display: none;
+}
+
+.modal-overlay.active {
+  display: flex;
+}
+
+.testimonial-slide {
+  display: none;
+}
+
+/* Show active slide */
+#slide1:checked ~ .testimonial-content #content1,
+#slide2:checked ~ .testimonial-content #content2,
+#slide3:checked ~ .testimonial-content #content3 {
+  display: block;
+}
+
+/* Arrow visibility control */
+#slide1:checked ~ .testimonial-nav .prev-1 { display: none; }
+#slide1:checked ~ .testimonial-nav .next-1 { display: flex; }
+
+#slide2:checked ~ .testimonial-nav .prev-2,
+#slide2:checked ~ .testimonial-nav .next-2 { display: flex; }
+
+#slide3:checked ~ .testimonial-nav .prev-3 { display: flex; }
+#slide3:checked ~ .testimonial-nav .next-3 { display: none; }

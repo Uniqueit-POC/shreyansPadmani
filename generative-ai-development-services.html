@@ -47,9 +47,11 @@
                                     <path
                                         d="M4.60728 19.392L5.67703 16.6875C5.72997 16.5541 5.85854 16.4666 6.00056 16.4666C6.14258 16.4666 6.27031 16.5541 6.32325 16.6875L7.39299 19.392L10.0678 20.4736C10.1997 20.5271 10.2863 20.6563 10.2863 20.7999C10.2863 20.9435 10.1997 21.0735 10.0678 21.1271L7.39299 22.2087L6.32325 24.9123C6.27031 25.0457 6.14258 25.1332 6.00056 25.1332C5.85854 25.1332 5.72997 25.0457 5.67703 24.9123L4.60728 22.2087L1.93333 21.1271C1.8014 21.0735 1.71484 20.9435 1.71484 20.7999C1.71484 20.6563 1.8014 20.5271 1.93333 20.4736L4.60728 19.392Z" />
                                 </svg>
-                                <span class="relative text-blue-900 font-bold py-2 inline-block nav-link">
+                                <a href="index.html">
+                                    <span class="relative text-blue-900 font-bold py-2 inline-block nav-link">
                                     Expertise
                                 </span>
+                                </a>
                                 <!-- Chevron Icon -->
                                 <svg class="chevron-icon w-4 h-4 text-blue-900" fill="none" stroke="currentColor"
                                     viewBox="0 0 24 24">
@@ -122,6 +124,11 @@
                                     class="absolute top-0 right-0 transform -translate-y-1/2 flex h-5 w-5 items-center justify-center rounded-full bg-blue-500 text-[10px] font-bold text-white shadow-sm ring-2 ring-white">
                                     20
                                 </span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="faq.html" class="nav-link">
+                                FAQ'S
                             </a>
                         </li>
                     </ul>
@@ -751,7 +758,7 @@
                                     d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z">
                                 </path>
                             </svg>
-                            <span>Models & API's</span>
+                            <span>Front-end development frameworks</span>
                             <svg class="w-5 h-5 ml-auto arrow" fill="none" stroke="currentColor" viewBox="0 0 24 24"
                                 aria-hidden="true" focusable="false">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -767,7 +774,7 @@
                                     d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4">
                                 </path>
                             </svg>
-                            <span>Vector Databases</span>
+                            <span>Back-end development languages/frameworks</span>
                             <svg class="w-5 h-5 ml-auto arrow" fill="none" stroke="currentColor" viewBox="0 0 24 24"
                                 aria-hidden="true" focusable="false">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -783,7 +790,7 @@
                                     d="M4 5a1 1 0 011-1h4a1 1 0 011 1v7a1 1 0 01-1 1H5a1 1 0 01-1-1V5zM14 5a1 1 0 011-1h4a1 1 0 011 1v7a1 1 0 01-1 1h-4a1 1 0 01-1-1V5zM4 16a1 1 0 011-1h4a1 1 0 011 1v3a1 1 0 01-1 1H5a1 1 0 01-1-1v-3zM14 16a1 1 0 011-1h4a1 1 0 011 1v3a1 1 0 01-1 1h-4a1 1 0 01-1-1v-3z">
                                 </path>
                             </svg>
-                            <span>LLM Frameworks</span>
+                            <span>Cloud platforms</span>
                             <svg class="w-5 h-5 ml-auto arrow" fill="none" stroke="currentColor" viewBox="0 0 24 24"
                                 aria-hidden="true" focusable="false">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -798,7 +805,7 @@
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                     d="M13 10V3L4 14h7v7l9-11h-7z"></path>
                             </svg>
-                            <span>Deployment</span>
+                            <span>Databases</span>
                             <svg class="w-5 h-5 ml-auto arrow" fill="none" stroke="currentColor" viewBox="0 0 24 24"
                                 aria-hidden="true" focusable="false">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -812,270 +819,200 @@
                 <div class="relative">
 
                     <div id="models-content" class="tech-content active grid-cols-2 gap-4 lg:gap-6">
-                        <div class="tech-card bg-white rounded-2xl p-6 shadow-sm hover:shadow-md transition-shadow">
+                        <div class="tech-card bg-white-100 border border-gray-800 rounded-2xl p-6 shadow-sm hover:shadow-md transition-shadow">
                             <div class="flex items-center gap-4">
                                 <div class="w-12 h-12 flex items-center justify-center">
                                     <div
-                                        class="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center text-white font-bold text-sm">
-                                        GPT</div>
+                                        class="w-12 h-12 p-2 rounded-lg flex items-center justify-center text-white font-bold text-sm">
+                                        <img src="./assets/image/icon/Angular.svg" alt="Angular">
+                                    </div>
                                 </div>
-                                <span class="text-lg font-semibold text-gray-800">GPT-4</span>
+                                <span class="text-lg font-semibold text-gray-800">Angular</span>
                             </div>
                         </div>
-                        <div class="tech-card bg-white rounded-2xl p-6 shadow-sm hover:shadow-md transition-shadow">
+                        <div class="tech-card bg-white-100 border border-gray-800 rounded-2xl p-6 shadow-sm hover:shadow-md transition-shadow">
                             <div class="flex items-center gap-4">
                                 <div class="w-12 h-12 flex items-center justify-center">
                                     <div
-                                        class="w-10 h-10 bg-purple-600 rounded-lg flex items-center justify-center text-white font-bold text-xl">
-                                        A</div>
+                                        class="w-12 h-12 p-2 rounded-lg flex items-center justify-center text-white font-bold text-sm">
+                                        <img src="./assets/image/icon/React-js.svg" alt="React-js">
+                                    </div>
                                 </div>
-                                <span class="text-lg font-semibold text-gray-800">Claude</span>
+                                <span class="text-lg font-semibold text-gray-800">React-js</span>
                             </div>
                         </div>
-                        <div class="tech-card bg-white rounded-2xl p-6 shadow-sm hover:shadow-md transition-shadow">
-                            <div class="flex items-center gap-4">
-                                <div class="w-12 h-12 flex items-center justify-center">
-                                    <svg class="w-10 h-10" viewBox="0 0 24 24" aria-hidden="true" focusable="false"
-                                        fill="none">
-                                        <circle cx="12" cy="12" r="8" fill="#4285F4" />
-                                    </svg>
-                                </div>
-                                <span class="text-lg font-semibold text-gray-800">Gemini</span>
-                            </div>
-                        </div>
-                        <div class="tech-card bg-white rounded-2xl p-6 shadow-sm hover:shadow-md transition-shadow">
+                        <div class="tech-card bg-white-100 border border-gray-800 rounded-2xl p-6 shadow-sm hover:shadow-md transition-shadow">
                             <div class="flex items-center gap-4">
                                 <div class="w-12 h-12 flex items-center justify-center">
                                     <div
-                                        class="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center text-white font-bold text-sm">
-                                        DE</div>
+                                        class="w-12 h-12 p-2 rounded-lg flex items-center justify-center text-white font-bold text-sm">
+                                        <img src="./assets/image/icon/Vue-js.svg" alt="Vue-js">
+                                    </div>
                                 </div>
-                                <span class="text-lg font-semibold text-gray-800">DALL-E</span>
+                                <span class="text-lg font-semibold text-gray-800">Vue-js</span>
                             </div>
                         </div>
-                        <div class="tech-card bg-white rounded-2xl p-6 shadow-sm hover:shadow-md transition-shadow">
+                        <div class="tech-card bg-white-100 border border-gray-800 rounded-2xl p-6 shadow-sm hover:shadow-md transition-shadow">
                             <div class="flex items-center gap-4">
                                 <div class="w-12 h-12 flex items-center justify-center">
                                     <div
-                                        class="w-10 h-10 bg-indigo-600 rounded-lg flex items-center justify-center text-white font-bold text-xl">
-                                        SD</div>
+                                        class="w-12 h-12 p-2 rounded-lg flex items-center justify-center text-white font-bold text-sm">
+                                        <img src="./assets/image/icon/Blazor.svg" alt="Blazor">
+                                    </div>
                                 </div>
-                                <span class="text-lg font-semibold text-gray-800">Stable Diffusion</span>
-                            </div>
-                        </div>
-                        <div class="tech-card bg-white rounded-2xl p-6 shadow-sm hover:shadow-md transition-shadow">
-                            <div class="flex items-center gap-4">
-                                <div class="w-12 h-12 flex items-center justify-center">
-                                    <div
-                                        class="w-10 h-10 bg-pink-500 rounded-lg flex items-center justify-center text-white font-bold text-xl">
-                                        MJ</div>
-                                </div>
-                                <span class="text-lg font-semibold text-gray-800">Midjourney</span>
+                                <span class="text-lg font-semibold text-gray-800">Blazor</span>
                             </div>
                         </div>
                     </div>
 
                     <div id="vector-content" class="tech-content grid-cols-2 gap-4 lg:gap-6">
-                        <div class="tech-card bg-white rounded-2xl p-6 shadow-sm hover:shadow-md transition-shadow">
+                        <div class="tech-card bg-white-100 border border-gray-800 rounded-2xl p-6 shadow-sm hover:shadow-md transition-shadow">
                             <div class="flex items-center gap-4">
                                 <div class="w-12 h-12 flex items-center justify-center">
                                     <div
-                                        class="w-10 h-10 bg-teal-500 rounded-lg flex items-center justify-center text-white font-bold text-xl">
-                                        P</div>
+                                        class="w-12 h-12 p-2 rounded-lg flex items-center justify-center text-white font-bold text-sm">
+                                        <img src="./assets/image/icon/Python.svg" alt="Python.svg">
+                                    </div>
                                 </div>
-                                <span class="text-lg font-semibold text-gray-800">Pinecone</span>
+                                <span class="text-lg font-semibold text-gray-800">Python.svg</span>
                             </div>
                         </div>
-                        <div class="tech-card bg-white rounded-2xl p-6 shadow-sm hover:shadow-md transition-shadow">
+                        <div class="tech-card bg-white-100 border border-gray-800 rounded-2xl p-6 shadow-sm hover:shadow-md transition-shadow">
                             <div class="flex items-center gap-4">
                                 <div class="w-12 h-12 flex items-center justify-center">
                                     <div
-                                        class="w-10 h-10 bg-green-600 rounded-lg flex items-center justify-center text-white font-bold text-xl">
-                                        W</div>
+                                        class="w-12 h-12 p-2 rounded-lg flex items-center justify-center text-white font-bold text-sm">
+                                        <img src="./assets/image/icon/node-js.svg" alt="node-js">
+                                    </div>
                                 </div>
-                                <span class="text-lg font-semibold text-gray-800">Weaviate</span>
+                                <span class="text-lg font-semibold text-gray-800">node.js</span>
                             </div>
                         </div>
-                        <div class="tech-card bg-white rounded-2xl p-6 shadow-sm hover:shadow-md transition-shadow">
+                        <div class="tech-card bg-white-100 border border-gray-800 rounded-2xl p-6 shadow-sm hover:shadow-md transition-shadow">
                             <div class="flex items-center gap-4">
                                 <div class="w-12 h-12 flex items-center justify-center">
                                     <div
-                                        class="w-10 h-10 bg-blue-500 rounded-lg flex items-center justify-center text-white font-bold text-xl">
-                                        M</div>
+                                        class="w-12 h-12 p-2 rounded-lg flex items-center justify-center text-white font-bold text-sm">
+                                        <img src="./assets/image/icon/Django.svg" alt="Django">
+                                    </div>
                                 </div>
-                                <span class="text-lg font-semibold text-gray-800">Milvus</span>
+                                <span class="text-lg font-semibold text-gray-800">Django</span>
                             </div>
                         </div>
-                        <div class="tech-card bg-white rounded-2xl p-6 shadow-sm hover:shadow-md transition-shadow">
+                        <div class="tech-card bg-white-100 border border-gray-800 rounded-2xl p-6 shadow-sm hover:shadow-md transition-shadow">
                             <div class="flex items-center gap-4">
                                 <div class="w-12 h-12 flex items-center justify-center">
                                     <div
-                                        class="w-10 h-10 bg-red-500 rounded-lg flex items-center justify-center text-white font-bold text-xl">
-                                        Q</div>
+                                        class="w-12 h-12 p-2 rounded-lg flex items-center justify-center text-white font-bold text-sm">
+                                        <img src="./assets/image/icon/Ruby_On_Rails.svg" alt="Ruby_On_Rails">
+                                    </div>
                                 </div>
-                                <span class="text-lg font-semibold text-gray-800">Qdrant</span>
-                            </div>
-                        </div>
-                        <div class="tech-card bg-white rounded-2xl p-6 shadow-sm hover:shadow-md transition-shadow">
-                            <div class="flex items-center gap-4">
-                                <div class="w-12 h-12 flex items-center justify-center">
-                                    <div
-                                        class="w-10 h-10 bg-purple-500 rounded-lg flex items-center justify-center text-white font-bold text-xl">
-                                        C</div>
-                                </div>
-                                <span class="text-lg font-semibold text-gray-800">ChromaDB</span>
-                            </div>
-                        </div>
-                        <div class="tech-card bg-white rounded-2xl p-6 shadow-sm hover:shadow-md transition-shadow">
-                            <div class="flex items-center gap-4">
-                                <div class="w-12 h-12 flex items-center justify-center">
-                                    <div
-                                        class="w-10 h-10 bg-yellow-500 rounded-lg flex items-center justify-center text-white font-bold text-xl">
-                                        F</div>
-                                </div>
-                                <span class="text-lg font-semibold text-gray-800">Faiss</span>
+                                <span class="text-lg font-semibold text-gray-800">Ruby On Rails</span>
                             </div>
                         </div>
                     </div>
 
                     <div id="frameworks-content" class="tech-content  grid-cols-2 gap-4 lg:gap-6">
-                        <div class="tech-card bg-white rounded-2xl p-6 shadow-sm hover:shadow-md transition-shadow">
-                            <div class="flex items-center gap-4">
-                                <div class="w-12 h-12 flex items-center justify-center">
-                                    <svg class="w-10 h-10" viewBox="0 0 24 24" aria-hidden="true" focusable="false"
-                                        fill="none">
-                                        <path d="M12 2L2 7L12 12L22 7L12 2Z" fill="#FF6B6B" stroke="#FF6B6B"
-                                            stroke-width="2" />
-                                        <path d="M2 17L12 22L22 17" stroke="#FF6B6B" stroke-width="2" />
-                                        <path d="M2 12L12 17L22 12" stroke="#FF6B6B" stroke-width="2" />
-                                    </svg>
-                                </div>
-                                <span class="text-lg font-semibold text-gray-800">LangChain</span>
-                            </div>
-                        </div>
-                        <div class="tech-card bg-white rounded-2xl p-6 shadow-sm hover:shadow-md transition-shadow">
-                            <div class="flex items-center gap-4">
-                                <div class="w-12 h-12 flex items-center justify-center">
-                                    <svg class="w-10 h-10" viewBox="0 0 24 24" aria-hidden="true" focusable="false"
-                                        fill="none">
-                                        <rect x="4" y="4" width="7" height="7" fill="#00D4FF" />
-                                        <rect x="13" y="4" width="7" height="7" fill="#00D4FF" />
-                                        <rect x="4" y="13" width="7" height="7" fill="#00D4FF" />
-                                        <rect x="13" y="13" width="7" height="7" fill="#00D4FF" />
-                                    </svg>
-                                </div>
-                                <span class="text-lg font-semibold text-gray-800">LlamaIndex</span>
-                            </div>
-                        </div>
-                        <div class="tech-card bg-white rounded-2xl p-6 shadow-sm hover:shadow-md transition-shadow">
+                        <div class="tech-card bg-white-100 border border-gray-800 rounded-2xl p-6 shadow-sm hover:shadow-md transition-shadow">
                             <div class="flex items-center gap-4">
                                 <div class="w-12 h-12 flex items-center justify-center">
                                     <div
-                                        class="w-10 h-10 bg-green-500 rounded-lg flex items-center justify-center text-white font-bold text-xl">
-                                        H</div>
+                                        class="w-12 h-12 p-2 rounded-lg flex items-center justify-center text-white font-bold text-sm">
+                                        <img src="./assets/image/icon/AWS.svg" alt="AWS">
+                                    </div>
                                 </div>
-                                <span class="text-lg font-semibold text-gray-800">Haystack</span>
+                                <span class="text-lg font-semibold text-gray-800">AWS</span>
                             </div>
                         </div>
-                        <div class="tech-card bg-white rounded-2xl p-6 shadow-sm hover:shadow-md transition-shadow">
-                            <div class="flex items-center gap-4">
-                                <div class="w-12 h-12 flex items-center justify-center">
-                                    <svg class="w-10 h-10" viewBox="0 0 24 24" aria-hidden="true" focusable="false"
-                                        fill="none">
-                                        <rect x="3" y="3" width="7" height="7" fill="#F25022" />
-                                        <rect x="14" y="3" width="7" height="7" fill="#7FBA00" />
-                                        <rect x="3" y="14" width="7" height="7" fill="#00A4EF" />
-                                        <rect x="14" y="14" width="7" height="7" fill="#FFB900" />
-                                    </svg>
-                                </div>
-                                <span class="text-lg font-semibold text-gray-800">Microsoft</span>
-                            </div>
-                        </div>
-                        <div class="tech-card bg-white rounded-2xl p-6 shadow-sm hover:shadow-md transition-shadow">
-                            <div class="flex items-center gap-4">
-                                <div class="w-12 h-12 flex items-center justify-center">
-                                    <svg class="w-10 h-10" viewBox="0 0 24 24" aria-hidden="true" focusable="false"
-                                        fill="none">
-                                        <path
-                                            d="M12 2C10.07 2 8.5 3.57 8.5 5.5C8.5 7.43 10.07 9 12 9C13.93 9 15.5 7.43 15.5 5.5C15.5 3.57 13.93 2 12 2Z"
-                                            fill="#76B900" />
-                                        <ellipse cx="12" cy="15" rx="8" ry="7" fill="#76B900" />
-                                    </svg>
-                                </div>
-                                <span class="text-lg font-semibold text-gray-800">NVIDIA</span>
-                            </div>
-                        </div>
-                        <div class="tech-card bg-white rounded-2xl p-6 shadow-sm hover:shadow-md transition-shadow">
+                        <div class="tech-card bg-white-100 border border-gray-800 rounded-2xl p-6 shadow-sm hover:shadow-md transition-shadow">
                             <div class="flex items-center gap-4">
                                 <div class="w-12 h-12 flex items-center justify-center">
                                     <div
-                                        class="w-10 h-10 bg-orange-500 rounded-lg flex items-center justify-center text-white font-bold text-xl">
-                                        TF</div>
+                                        class="w-12 h-12 p-2 rounded-lg flex items-center justify-center text-white font-bold text-sm">
+                                        <img src="./assets/image/icon/Azure.svg" alt="Azure">
+                                    </div>
                                 </div>
-                                <span class="text-lg font-semibold text-gray-800">TensorFlow</span>
+                                <span class="text-lg font-semibold text-gray-800">Azure</span>
+                            </div>
+                        </div>
+                        <div class="tech-card bg-white-100 border border-gray-800 rounded-2xl p-6 shadow-sm hover:shadow-md transition-shadow">
+                            <div class="flex items-center gap-4">
+                                <div class="w-12 h-12 flex items-center justify-center">
+                                    <div
+                                        class="w-12 h-12 p-2 rounded-lg flex items-center justify-center text-white font-bold text-sm">
+                                        <img src="./assets/image/icon/google-cloud.svg" alt="google-cloud">
+                                    </div>
+                                </div>
+                                <span class="text-lg font-semibold text-gray-800">google cloud</span>
                             </div>
                         </div>
                     </div>
 
                     <div id="deployment-content" class="tech-content grid-cols-2 gap-4 lg:gap-6">
-                        <div class="tech-card bg-white rounded-2xl p-6 shadow-sm hover:shadow-md transition-shadow">
+                        <div class="tech-card bg-white-100 border border-gray-800 rounded-2xl p-6 shadow-sm hover:shadow-md transition-shadow">
                             <div class="flex items-center gap-4">
                                 <div class="w-12 h-12 flex items-center justify-center">
                                     <div
-                                        class="w-10 h-10 bg-orange-500 rounded-lg flex items-center justify-center text-white font-bold text-sm">
-                                        AWS</div>
+                                        class="w-12 h-12 p-2 rounded-lg flex items-center justify-center text-white font-bold text-sm">
+                                        <img src="./assets/image/icon/PostgreSQL.svg" alt="PostgreSQL">
+                                    </div>
                                 </div>
-                                <span class="text-lg font-semibold text-gray-800">AWS</span>
+                                <span class="text-lg font-semibold text-gray-800">Postgre SQL</span>
                             </div>
                         </div>
-                        <div class="tech-card bg-white rounded-2xl p-6 shadow-sm hover:shadow-md transition-shadow">
+                        <div class="tech-card bg-white-100 border border-gray-800 rounded-2xl p-6 shadow-sm hover:shadow-md transition-shadow">
                             <div class="flex items-center gap-4">
                                 <div class="w-12 h-12 flex items-center justify-center">
                                     <div
-                                        class="w-10 h-10 bg-blue-600 rounded-lg flex items-center justify-center text-white font-bold text-xl">
-                                        Az</div>
+                                        class="w-12 h-12 p-2 rounded-lg flex items-center justify-center text-white font-bold text-sm">
+                                        <img src="./assets/image/icon/MySQL.svg" alt="MySQL">
+                                    </div>
                                 </div>
-                                <span class="text-lg font-semibold text-gray-800">Azure</span>
+                                <span class="text-lg font-semibold text-gray-800">MySQL</span>
                             </div>
                         </div>
-                        <div class="tech-card bg-white rounded-2xl p-6 shadow-sm hover:shadow-md transition-shadow">
+                        <div class="tech-card bg-white-100 border border-gray-800 rounded-2xl p-6 shadow-sm hover:shadow-md transition-shadow">
                             <div class="flex items-center gap-4">
                                 <div class="w-12 h-12 flex items-center justify-center">
                                     <div
-                                        class="w-10 h-10 bg-blue-500 rounded-lg flex items-center justify-center text-white font-bold text-sm">
-                                        GCP</div>
+                                        class="w-12 h-12 p-2 rounded-lg flex items-center justify-center text-white font-bold text-sm">
+                                        <img src="./assets/image/icon/SQL-Server.svg" alt="SQL-Server">
+                                    </div>
                                 </div>
-                                <span class="text-lg font-semibold text-gray-800">Google Cloud</span>
+                                <span class="text-lg font-semibold text-gray-800">SQL Server</span>
                             </div>
                         </div>
-                        <div class="tech-card bg-white rounded-2xl p-6 shadow-sm hover:shadow-md transition-shadow">
+                        <div class="tech-card bg-white-100 border border-gray-800 rounded-2xl p-6 shadow-sm hover:shadow-md transition-shadow">
                             <div class="flex items-center gap-4">
                                 <div class="w-12 h-12 flex items-center justify-center">
                                     <div
-                                        class="w-10 h-10 bg-blue-500 rounded-lg flex items-center justify-center text-white font-bold text-xl">
-                                        D</div>
+                                        class="w-12 h-12 p-2 rounded-lg flex items-center justify-center text-white font-bold text-sm">
+                                        <img src="./assets/image/icon/Firebase.svg" alt="Firebase">
+                                    </div>
                                 </div>
-                                <span class="text-lg font-semibold text-gray-800">Docker</span>
+                                <span class="text-lg font-semibold text-gray-800">Firebase</span>
                             </div>
                         </div>
-                        <div class="tech-card bg-white rounded-2xl p-6 shadow-sm hover:shadow-md transition-shadow">
+                        <div class="tech-card bg-white-100 border border-gray-800 rounded-2xl p-6 shadow-sm hover:shadow-md transition-shadow">
                             <div class="flex items-center gap-4">
                                 <div class="w-12 h-12 flex items-center justify-center">
                                     <div
-                                        class="w-10 h-10 bg-blue-600 rounded-lg flex items-center justify-center text-white font-bold text-xl">
-                                        K8</div>
+                                        class="w-12 h-12 p-2 rounded-lg flex items-center justify-center text-white font-bold text-sm">
+                                        <img src="./assets/image/icon/BigQuery.svg" alt="BigQuery">
+                                    </div>
                                 </div>
-                                <span class="text-lg font-semibold text-gray-800">Kubernetes</span>
+                                <span class="text-lg font-semibold text-gray-800">BigQuery</span>
                             </div>
                         </div>
-                        <div class="tech-card bg-white rounded-2xl p-6 shadow-sm hover:shadow-md transition-shadow">
+                        <div class="tech-card bg-white-100 border border-gray-800 rounded-2xl p-6 shadow-sm hover:shadow-md transition-shadow">
                             <div class="flex items-center gap-4">
                                 <div class="w-12 h-12 flex items-center justify-center">
                                     <div
-                                        class="w-10 h-10 bg-black rounded-lg flex items-center justify-center text-white font-bold text-xl">
-                                        ▲</div>
+                                        class="w-12 h-12 p-2 rounded-lg flex items-center justify-center text-white font-bold text-sm">
+                                        <img src="./assets/image/icon/Azure-Synapse-Analytics.svg" alt="Azure-Synapse-Analytics">
+                                    </div>
                                 </div>
-                                <span class="text-lg font-semibold text-gray-800">Vercel</span>
+                                <span class="text-lg font-semibold text-gray-800">Azure Synapse Analytics</span>
                             </div>
                         </div>
                     </div>
@@ -1442,9 +1379,9 @@
     <!--end faq section -->
 
     <!-- Let's Talk -->
-    <section class="py-16 min-h-screen flex items-center justify-center bg-blue-500" id="lets-talk">
+    <section class="px-4 sm:px-0 py-16 min-h-screen flex items-center justify-center bg-blue-500" id="lets-talk">
         <div
-            class="w-full px-1 sm:px-6 max-w-7xl lg:px-12 mx-auto rounded-xl shadow-2xl overflow-hidden bg-white pb-4 ">
+            class="w-full px-2 sm:px-6 max-w-7xl lg:px-12 mx-auto rounded-xl shadow-2xl overflow-hidden bg-white pb-4 ">
 
             <!-- GRID LAYOUT -->
             <div class="grid grid-cols-1 lg:grid-cols-[65%_35%]">
