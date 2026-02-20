@@ -964,3 +964,14 @@
 
 /* Arrow visibility control */
 
+.full-text {
+    display: none;
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease-in-out, opacity 0.5s ease-in-out;
+}
+
+.short-text {
+    transition: opacity 0.3s ease;
+}
